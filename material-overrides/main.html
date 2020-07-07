@@ -4,3 +4,15 @@
 	{{ super() }}
     <link rel="stylesheet" href="{{ 'assets/stylesheets/moonbeam.css' | url }}">
 {% endblock %}
+
+{%- block htmltitle -%} 
+   {%- if page.is_homepage -%} 
+     <title>Documentation for the Moonbeam Smart Contract Platform</title> 
+   {%- elif page and page.meta and page.meta.title -%} 
+     <title>{{ page.title }} | {{ config.site_name }}</title> 
+   {%- elif page and page.title and not page.is_homepage -%} 
+     <title>{{ page.title }} | {{ config.site_name }}</title> 
+   {%- else -%}
+     <title>{{ config.site_name }}</title> 
+   {%- endif -%} 
+ {%- endblock -%} 
