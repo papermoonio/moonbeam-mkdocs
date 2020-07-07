@@ -1,0 +1,74 @@
+/* Basic font styling */
+h1,h2,h3,h4 {
+  font-family: 'Varela Round', sans-serif;
+  }
+:root {
+
+  /* Default color shades */
+  --md-default-fg-color:               #000000;
+  --md-default-fg-color--light:        #353535;
+  --md-default-fg-color--lighter:      #B6AFAF;
+  --md-default-fg-color--lightest:     #F0EFEF;
+  --md-default-bg-color:               ...;
+  --md-default-bg-color--light:        ...;
+  --md-default-bg-color--lighter:      ...;
+  --md-default-bg-color--lightest:     ...;
+
+  /* Primary color shades */
+  --md-primary-fg-color:               #171E43;
+  --md-primary-fg-color--light:        #646A8F;
+  --md-primary-fg-color--dark:         #222b60;
+  --md-primary-bg-color:               #ffffff;
+  --md-primary-bg-color--light:        ...;
+
+  /* Accent color shades */
+  --md-accent-fg-color:                #296564;
+  --md-accent-fg-color--transparent:   ...;
+  --md-accent-bg-color:                ...;
+  --md-accent-bg-color--light:         ...;
+
+  /* Code block color shades */
+  --md-code-bg-color:                  ...;
+  --md-code-fg-color:                  ...;
+}
+/* General styling adjustments */
+[data-md-toggle=search]:checked~.md-header .md-search__input {
+    color: #ffffff;
+}
+.md-search-result {
+	background-color: #ffffff;
+}
+.md-typeset a{
+	color: #42A2A0;
+}
+.md-nav__link .md-nav__link--active{
+	font-weight: bold;
+}
+a:hover{
+	text-decoration: underline;
+}
+.md-main__inner{
+	margin-bottom:50px;
+}
+
+/* Hides paragraph mark at end of anchored text */
+.md-content .headerlink {
+	display: none;
+	visibility: hidden;
+}
+.md-sidebar {
+	background-color: #ffffff;
+}
+
+/* Styling for the Admonition modules (recolors the "note" field to Moonbeam blue */
+.md-typeset .admonition.note{
+	border-color: #53CBC9
+}
+.md-typeset .note>.admonition-title{
+	background-color: rgba(83, 203, 201, 0.2);
+	
+}
+.md-typeset .note>.admonition-title::before{
+	background-color: #53cbc9;
+}
+
