@@ -1,10 +1,8 @@
 #!/bin/bash
 LOGPATH=/var/log/s3_moonbeam_docs_sync.log
-DOCPATH=/var/www/moonbeam-docs-stage/moonbeam-docs
-# clean file and directory permissions
-
+DOCPATH=/var/www/moonbeam-docs-stage
 # check for repo changes
-cd $DOCPATH
+cd $DOCPATH/moonbeam-docs
 if /usr/bin/git checkout master &&
     /usr/bin/git fetch origin master &&
     [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ]
@@ -23,7 +21,12 @@ then
     cp robots.txt /var/www/moonbeam-docs-static/robots.txt
 
     # push changes to s3
-    /usr/local/bin/s3_website push --config-dir $DOCPATH/../ &>>$LOGPATH
+    /usr/local/bin/s3_website push --config-dir $DOCPATH/ &>>$LOGPATH
     echo +++ Finished at $(date +%F.%H%M%S) ++++++++++++++ >>$LOGPATH
     echo .
 fi
+# reset file and directory permissions
+chown root:users -R $DOCPATH
+find $DOCPATH/ -type d -exec chmod 775 {} \;
+find $DOCPATH/ -type f -exec chmod 664 {} \;
+chmod 774 $DOCPATH/s3_website_sync
