@@ -34,11 +34,11 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/MoonbeamNetwork
       name: Twitter
-    - icon: moonbeam/riot
+    - icon: moonbeam/element
       link: https://riot.im/app/#/room/!dzULkAiPePEaverEEP:matrix.org?via=matrix.org
-      name: Riot
+      name: Element (Riot)
     - icon: fontawesome/brands/telegram-plane
-      link: https://t.me/PureStake
+      link: https://t.me/Moonbeam_Official
       name: Telegram
     - icon: fontawesome/solid/envelope
       link: https://moonbeam.network/newsletter/ 
