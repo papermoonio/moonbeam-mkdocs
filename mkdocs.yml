@@ -22,6 +22,7 @@ markdown_extensions:
       permalink: true
       title: Sections
   - admonition
+  - pymdownx.snippets
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
