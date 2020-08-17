@@ -38,7 +38,7 @@ extra:
       link: https://twitter.com/MoonbeamNetwork
       name: Twitter
     - icon: moonbeam/element
-      link: https://riot.im/app/#/room/!dzULkAiPePEaverEEP:matrix.org?via=matrix.org
+      link: https://app.element.io/#/room/#moonbeam:matrix.org
       name: Element (Riot)
     - icon: fontawesome/brands/telegram-plane
       link: https://t.me/Moonbeam_Official
