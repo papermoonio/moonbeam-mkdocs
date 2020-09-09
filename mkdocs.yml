@@ -37,6 +37,9 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/MoonbeamNetwork
       name: Twitter
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/nWbtA9x
+      name: Discord
     - icon: moonbeam/element
       link: https://app.element.io/#/room/#moonbeam:matrix.org
       name: Element (Riot)
@@ -50,7 +53,7 @@ extra:
       link: https://github.com/PureStake/moonbeam
       name: GitHub
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/channel/UCTp8x3FpKsFonoUET6i90jg
+      link: https://www.youtube.com/c/MoonbeamNetwork?sub_confirmation=1
       name: YouTube
 google_analytics:
   - UA-135971059-6
