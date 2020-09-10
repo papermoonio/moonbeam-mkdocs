@@ -53,7 +53,7 @@ extra:
       link: https://github.com/PureStake/moonbeam
       name: GitHub
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/c/MoonbeamNetwork?sub_confirmation=1
+      link: https://www.youtube.com/c/MoonbeamNetwork
       name: YouTube
 google_analytics:
   - UA-135971059-6
