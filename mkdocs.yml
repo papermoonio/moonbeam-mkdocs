@@ -32,6 +32,9 @@ markdown_extensions:
 plugins:
   - search
   - awesome-pages
+  - redirects:
+      redirect_maps:
+        'resources/networks.md': 'networks/overview.md'
 extra:
   social:
     - icon: fontawesome/brands/twitter
