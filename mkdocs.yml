@@ -35,6 +35,12 @@ plugins:
   - redirects:
       redirect_maps:
         'resources/networks.md': 'networks/overview.md'
+        'getting-started/setting-up-a-node.md': 'getting-started/local-node/setting-up-a-node.md'
+        'getting-started/using-metamask.md': 'getting-started/local-node/using-metamask.md'
+        'getting-started/using-remix.md': 'getting-started/local-node/using-remix.md'
+        'getting-started/using-truffle.md': 'getting-started/local-node/using-truffle.md'
+        'getting-started/web3-transaction.md': 'getting-started/local-node/web3-transaction.md'
+        'getting-started/web3-contract.md': 'getting-started/local-node/web3-contract.md'
 extra:
   social:
     - icon: fontawesome/brands/twitter
