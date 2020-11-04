@@ -8,7 +8,7 @@ if /usr/bin/git checkout master &&
     [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ]
 then
     echo . >>$LOGPATH
-    echo +++ $(date +%F.%H%M%S) - Syncing Doc Changes to S3... >>$LOGPATH
+    echo +++ $(date +%F' '%H:%M:%S) - Pulling Changes from Github... >>$LOGPATH
     # pull changes
     /usr/bin/git merge origin/master &>>$LOGPATH
 
@@ -21,9 +21,9 @@ then
     cp robots.txt /var/www/moonbeam-docs-static/robots.txt
 
     # push changes to s3
-    /usr/local/bin/s3_website push --config-dir $DOCPATH/ &>>$LOGPATH
-    echo +++ Finished at $(date +%F.%H%M%S) ++++++++++++++ >>$LOGPATH
-    echo .
+    # this is now done manually via the admin portal
+### /usr/local/bin/s3_website push --config-dir $DOCPATH/ &>>$LOGPATH
+    echo +++ Finished at $(date +%F' '%H:%M:%S) +++++++++++++++++++ >>$LOGPATH
 fi
 # reset file and directory permissions
 chown root:users -R $DOCPATH
