@@ -5,7 +5,7 @@ h1,h2,h3,h4 {
 :root {
 
   /* Default color shades */
-  --md-default-fg-color:               #000000;
+  --md-default-fg-color:               #171E43;
   --md-default-fg-color--light:        #353535;
   --md-default-fg-color--lighter:      #B6AFAF;
   --md-default-fg-color--lightest:     #F0EFEF;
@@ -73,5 +73,11 @@ a:hover{
 }
 .md-typeset .note>.admonition-title::before{
 	background-color: #53cbc9;
+}
+
+/* Styling for the Copy to Clipboard message */
+.md-dialog{
+	color: #ffffff;
+	text-align: center;
 }
 
