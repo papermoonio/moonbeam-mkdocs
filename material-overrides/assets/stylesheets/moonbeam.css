@@ -5,7 +5,7 @@ h1,h2,h3,h4 {
 :root {
 
   /* Default color shades */
-  --md-default-fg-color:               #171E43;
+  --md-default-fg-color:               #000000;
   --md-default-fg-color--light:        #353535;
   --md-default-fg-color--lighter:      #B6AFAF;
   --md-default-fg-color--lightest:     #F0EFEF;
@@ -79,5 +79,12 @@ a:hover{
 .md-dialog{
 	color: #ffffff;
 	text-align: center;
+	background: #171E43;
+}
+
+/* Styling for Tables */
+.md-typeset .md-typeset__table table th{
+	background-color: #171E43;
+	color: #ffffff;
 }
 
