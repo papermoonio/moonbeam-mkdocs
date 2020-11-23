@@ -41,6 +41,8 @@ plugins:
         'getting-started/using-truffle.md': 'getting-started/local-node/using-truffle.md'
         'getting-started/web3-transaction.md': 'getting-started/local-node/web3-transaction.md'
         'getting-started/web3-contract.md': 'getting-started/local-node/web3-contract.md'
+        'getting-started/testnet/pubsub.md': 'integrations/pubsub.md'
+        'getting-started/testnet/precompiles.md': 'integrations/precompiles.md'
 extra:
   social:
     - icon: fontawesome/brands/twitter
