@@ -39,10 +39,14 @@ plugins:
         'getting-started/using-metamask.md': 'getting-started/local-node/using-metamask.md'
         'getting-started/using-remix.md': 'getting-started/local-node/using-remix.md'
         'getting-started/using-truffle.md': 'getting-started/local-node/using-truffle.md'
-        'getting-started/web3-transaction.md': 'getting-started/local-node/web3-transaction.md'
-        'getting-started/web3-contract.md': 'getting-started/local-node/web3-contract.md'
+        'getting-started/web3-transaction.md': 'getting-started/local-node/web3-js/web3-transaction.md'
+        'getting-started/web3-contract.md': 'getting-started/local-node/web3-js/web3-contract.md'
         'getting-started/testnet/pubsub.md': 'integrations/pubsub.md'
         'getting-started/testnet/precompiles.md': 'integrations/precompiles.md'
+        'getting-started/local-node/web3-transaction.md': 'getting-started/local-node/web3-js/web3-transaction.md'
+        'getting-started/local-node/web3-contract.md': 'getting-started/local-node/web3-js/web3-contract.md'
+        'getting-started/local-node/ethers-transaction.md': 'getting-started/local-node/ethers-js/ethers-transaction.md'
+        'getting-started/local-node/ethers-contract.md': 'getting-started/local-node/ethers-js/ethers-contract.md'
 extra:
   social:
     - icon: fontawesome/brands/twitter
