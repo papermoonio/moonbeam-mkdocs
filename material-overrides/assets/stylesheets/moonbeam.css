@@ -88,3 +88,7 @@ a:hover{
 	color: #ffffff;
 }
 
+/* Tables centered */
+.md-typeset__scrollwrap {
+   text-align: center;
+}
