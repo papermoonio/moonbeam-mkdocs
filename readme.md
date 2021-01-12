@@ -2,11 +2,12 @@
 
 ### Website URLS:
 
- - **Production site:** https://docs.moonbeam.network
- - **Staging site:** http://docs-stage.moonbeam.network/
- - **Dev site:** http://docs-dev.moonbeam.network/
+- **Production site:** https://docs.moonbeam.network
+- **Staging site:** http://docs-stage.moonbeam.network/
+- **Dev site:** http://docs-dev.moonbeam.network/
 
-*Note: to access staging and dev sites you need to be on the internal PureStake VPN and add the following entries to your host file:*
+_Note: to access staging and dev sites you need to be on the internal PureStake VPN and add the following entries to your host file:_
+
 ```
 3.18.120.148 docs-stage.moonbeam.network
 3.18.120.148 docs-dev.moonbeam.network
@@ -25,6 +26,16 @@ Next you also need to install the [material for MkDocs](https://squidfunk.github
 ```
 pip install mkdocs-material
 ```
+
+Then install the plugins
+
+```
+pip install mkdocs-awesome-pages-plugin
+pip install mkdocs-redirects
+pip install mkdocs-macros-plugin
+```
+
+Alternatively install everything at once with `pip install -r requirements.txt`
 
 ## Getting started
 
@@ -57,12 +68,11 @@ mkdocs serve
 
 After a successful build, the site should be available at `http://127.0.0.1:8000`
 
-
 ## Other Notes
 
 https://www.mkdocs.org/
 https://squidfunk.github.io/mkdocs-material/
 
-This repo contains the mkdocs config files, theme overrides and css changes. 
+This repo contains the mkdocs config files, theme overrides and css changes.
 The actual content is stored in the moonbeam-docs repo and pulled into the moonbeam-docs sub-directory during build.
 The static site is published to S3 using s3_website https://github.com/laurilehmijoki/s3_website
