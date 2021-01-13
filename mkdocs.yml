@@ -49,7 +49,7 @@ plugins:
         'getting-started/local-node/ethers-contract.md': 'getting-started/local-node/ethers-js/ethers-contract.md'
   - macros:
       include_yaml:
-      - moonbeam-docs/variables.yaml
+      - moonbeam-docs/variables.yml
 extra:
   social:
     - icon: fontawesome/brands/twitter
