@@ -47,6 +47,9 @@ plugins:
         'getting-started/local-node/web3-contract.md': 'getting-started/local-node/web3-js/web3-contract.md'
         'getting-started/local-node/ethers-transaction.md': 'getting-started/local-node/ethers-js/ethers-transaction.md'
         'getting-started/local-node/ethers-contract.md': 'getting-started/local-node/ethers-js/ethers-contract.md'
+  - macros:
+      include_yaml:
+      - moonbeam-docs/variables.yml
 extra:
   social:
     - icon: fontawesome/brands/twitter
