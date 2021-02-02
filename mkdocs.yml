@@ -24,11 +24,14 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: moonbeam-docs/code-snippets
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      options:
-        custom_icons:
-          - material-overrides/.icons
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+        options:
+           custom_icons:
+              - material-overrides/.icons
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  
 plugins:
   - search
   - awesome-pages
