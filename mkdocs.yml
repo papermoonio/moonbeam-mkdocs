@@ -50,6 +50,8 @@ plugins:
         'getting-started/local-node/web3-contract.md': 'getting-started/local-node/web3-js/web3-contract.md'
         'getting-started/local-node/ethers-transaction.md': 'getting-started/local-node/ethers-js/ethers-transaction.md'
         'getting-started/local-node/ethers-contract.md': 'getting-started/local-node/ethers-js/ethers-contract.md'
+        'integrations/metamask.md': 'integrations/wallets/metamask.md'
+        'integrations/polkadotjs.md': 'integrations/wallets/polkadotjs.md'
   - macros:
       include_yaml:
       - moonbeam-docs/variables.yml
