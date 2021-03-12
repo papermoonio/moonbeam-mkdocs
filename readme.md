@@ -52,9 +52,10 @@ So first, lets clone this repository:
 
 ```
 git clone https://github.com/PureStake/moonbeam-mkdocs
+cd moonbeam-mkdocs
 ```
 
-Next, we head into the folder just created and clone the [moonbeam-docs repository](https://github.com/PureStake/moonbeam-docs):
+Next, inside the folder just created, clone the [moonbeam-docs repository](https://github.com/PureStake/moonbeam-docs):
 
 ```
 git clone https://github.com/PureStake/moonbeam-docs
@@ -63,6 +64,7 @@ git clone https://github.com/PureStake/moonbeam-docs
 Get submodules: 
 
 ```
+cd moonbeam-docs
 git submodule init
 git submodule update
 ```
@@ -70,6 +72,7 @@ git submodule update
 Now in the `moonbeam-mkdocs` folder (which should be the current one) you can build the site by running:
 
 ```
+cd ..
 mkdocs serve
 ```
 
