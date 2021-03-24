@@ -72,6 +72,11 @@ a:hover{
 	background-color: #ffffff;
 }
 
+/*Hide Nav Bar header*/
+label.md-nav__title {
+   display: none;
+}
+
 /* Styling for the Admonition modules (recolors the "note" field to Moonbeam blue */
 .md-typeset .admonition.note{
 	border-color: #53CBC9
