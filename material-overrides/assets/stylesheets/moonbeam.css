@@ -175,3 +175,6 @@ a:hover{
    color: #53cbc9;
    border-color: #53cbc9;
 }
+label.md-nav__title { 
+    display: none;
+}
