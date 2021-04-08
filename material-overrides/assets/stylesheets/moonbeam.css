@@ -73,6 +73,24 @@ a:hover{
 	background-color: #ffffff;
 }
 
+/*Hide Nav Bar header*/
+label.md-nav__title {
+   font-size: 0;
+}
+/* Adjust Nav Bar header for smaller screens*/
+@media screen and (max-width: 76.1875em) {
+   /*Hide Nav Bar header label text - only show back arrow */
+   .md-nav--primary .md-nav__title {
+      height: 0;
+      padding-top: 2rem;
+   }
+   /* Increase Nav Bar header size for Moonbeam logo */
+   .md-nav--primary .md-nav__title[for="__drawer"] {
+      height: 5.6rem;
+      padding-top: 3rem;
+   }
+}
+
 /* Styling for the Admonition modules (recolors the "note" field to Moonbeam blue */
 .md-typeset .admonition.note{
 	border-color: #53CBC9
@@ -174,7 +192,4 @@ a:hover{
 .md-typeset .tabbed-set > input:checked + label {
    color: #53cbc9;
    border-color: #53cbc9;
-}
-label.md-nav__title { 
-    display: none;
 }
