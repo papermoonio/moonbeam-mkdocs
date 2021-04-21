@@ -217,6 +217,12 @@ label.md-nav__title {
    text-decoration: none;   
 }
 
+/* Center Buttons */
+.button-wrapper {
+   display: flex;
+   justify-content: center;
+}
+
 /* MetaMask Error Modal Styling */
 .error-modal-container {
    display: flex;
