@@ -210,3 +210,9 @@ label.md-nav__title {
    text-decoration: none;
 }
 
+/* Disabled Connect MetaMask Nav Button Styling */
+.md-button.connectMetaMask-nav.disabled-button {
+   opacity: 0.5;
+   cursor: default;
+   text-decoration: none;   
+}
