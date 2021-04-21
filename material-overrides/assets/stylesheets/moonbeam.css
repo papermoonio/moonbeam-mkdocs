@@ -193,3 +193,20 @@ label.md-nav__title {
    color: #53cbc9;
    border-color: #53cbc9;
 }
+
+/* Focus/Hover Button Styling */
+.md-typeset .md-button:focus, .md-typeset .md-button:hover {
+	background-color: #171E43;
+   border-color: #171E43;
+   color: #ffffff;
+}
+
+/* Disabled Button Styling */
+.md-typeset .md-button.disabled-button, .md-typeset .md-button.disabled-button:hover {
+   opacity: 0.5;
+   cursor: default;
+   background-color: #ffffff;
+   color: #171E43;
+   text-decoration: none;
+}
+
