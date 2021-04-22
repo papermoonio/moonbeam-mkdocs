@@ -193,3 +193,80 @@ label.md-nav__title {
    color: #53cbc9;
    border-color: #53cbc9;
 }
+
+/* Focus/Hover Button Styling */
+.md-typeset .md-button:focus, .md-typeset .md-button:hover {
+	background-color: #171E43;
+   border-color: #171E43;
+   color: #ffffff;
+}
+
+/* Disabled Button Styling */
+.md-typeset .md-button.disabled-button, .md-typeset .md-button.disabled-button:hover {
+   opacity: 0.5;
+   cursor: default;
+   background-color: #ffffff;
+   color: #171E43;
+   text-decoration: none;
+}
+
+/* Connect MetaMask Nav Button Styling */
+.md-button.connectMetaMask-nav {
+   border: 1px solid #ffffff;
+   font-size: 1.5em;
+   line-height: 0;
+   display: flex;
+   align-items: center;
+   border: 1px solid rgba(255, 255, 255, .5);
+   border-radius: 2em;
+   margin: .3em .5em;
+   text-decoration: none;
+}
+.md-button.connectMetaMask-nav:hover {
+   background-color: #ffffff;
+   color: #171E43;
+}
+.md-button.connectMetaMask-nav.disabled-button {
+   opacity: 0.5;
+   cursor: default;
+}
+.md-button.connectMetaMask-nav.disabled-button:hover {
+   background-color: #171E43;
+   color: #ffffff;
+}
+
+/* Center Buttons */
+.button-wrapper {
+   display: flex;
+   justify-content: center;
+}
+
+/* MetaMask Error Modal Styling */
+.error-modal-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+}
+.error-modal {
+   background-color: rgba(0, 3, 45, .85);
+   color: #ffffff;
+   border-radius: .2em;
+   margin: 15% auto;
+   width: 33%;
+   opacity: 1;
+   font-size: 2em;
+   padding: 1em;
+   overflow: scroll;
+}
+.close-modal {
+   font-size: 2em;
+   float: right;
+   cursor: pointer;
+   margin-left: .2em;
+}
