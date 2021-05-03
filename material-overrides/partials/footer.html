@@ -41,6 +41,23 @@
   {% endif %}
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
+      <div>
+        <p class="md-footer-connect">Connect with us</p>
+        <div>{% include "partials/social.html" %}</div>
+      </div>
+      <form class="md-footer-newsletter">
+        <label for="newsletter-signup">Moonbuilders Newsletter
+          <div class="md-footer-newsletter-label">
+            <em>sign up to get the latest news and updates</em>
+          </div>
+        </label>
+        <div class="md-footer-newsletter-submit">
+          <input class="newsletter-input" type="email" id="newsletter-signup" placeholder="your@email.com"/>
+          <input type="submit" value="Join" class="newsletter-submit md-button"/> 
+        </div>
+      </form>
+    </div>
+    <div class="md-footer-meta__inner md-grid center">
       <div class="md-footer-copyright">
         {% if config.copyright %}
           <div class="md-footer-copyright__highlight">
@@ -52,7 +69,6 @@
           Material for MkDocs
         </a-->
       </div>
-      {% include "partials/social.html" %}
     </div>
   </div>
 </footer>

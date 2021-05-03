@@ -270,3 +270,35 @@ label.md-nav__title {
    cursor: pointer;
    margin-left: .2em;
 }
+
+/* Footer Styling */
+footer.md-footer {
+   background-color: #171E43;
+}
+.md-footer-newsletter {
+   display: flex;
+   flex-direction: column;
+   margin-top: 1em;
+}
+.md-footer-newsletter-label {
+   font-size: .9em;
+   line-height: normal;
+}
+.md-footer-newsletter-submit {
+   display: flex;
+   margin-top: 1em;
+}
+.newsletter-input {
+   padding: .75em;
+}
+.newsletter-submit.md-button {
+   border: none;
+   border-radius: unset;
+   cursor: pointer;
+}
+.md-footer-meta__inner.md-grid.center {
+   justify-content: center;
+}
+p.md-footer-connect {
+   margin: 1em 0 0 1em;
+}
