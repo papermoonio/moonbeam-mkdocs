@@ -276,29 +276,46 @@ footer.md-footer {
    background-color: #171E43;
 }
 .md-footer-newsletter {
-   display: flex;
-   flex-direction: column;
    margin-top: 1em;
 }
 .md-footer-newsletter-label {
    font-size: .9em;
    line-height: normal;
 }
-.md-footer-newsletter-submit {
-   display: flex;
-   margin-top: 1em;
-}
-.newsletter-input {
-   padding: .75em;
-}
-.newsletter-submit.md-button {
-   border: none;
-   border-radius: unset;
-   cursor: pointer;
-}
 .md-footer-meta__inner.md-grid.center {
    justify-content: center;
 }
 p.md-footer-connect {
    margin: 1em 0 0 1em;
+}
+
+/* Newsletter Signup Styling */
+.hs-form-field label {
+   display: none;
+}
+.hs-button.primary.large {
+   padding: .75em;
+   cursor: pointer;
+   opacity: .7;
+}
+.hs-button.primary.large:hover {
+   opacity: 1;
+}
+.hs-input {
+   padding: .75em;
+   background-color: #171e43;
+   color: #ffffff;
+}
+.hs-input::placeholder {
+   color:rgba(255, 255, 255, .6)
+}
+.hs-form {
+   display: flex;
+   margin-top: 1em;
+   box-sizing: border-box;
+}
+.hs-form-field .hs-error-msgs .hs-error-msg {
+   display: table-caption;
+   width: 300%;
+   font-size: .9em;
 }
