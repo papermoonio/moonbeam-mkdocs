@@ -78,9 +78,6 @@ extra:
     - icon: fontawesome/brands/telegram-plane
       link: https://t.me/Moonbeam_Official
       name: Telegram
-    - icon: fontawesome/solid/envelope
-      link: https://moonbeam.network/newsletter/ 
-      name: Email Newsletter
     - icon: fontawesome/brands/github
       link: https://github.com/PureStake/moonbeam
       name: GitHub
