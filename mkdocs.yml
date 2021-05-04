@@ -7,7 +7,7 @@ copyright: © 2021 PureStake, Inc. All Rights Reserved.
 #repo_name: PureStake/moonbeam-docs
 #repo_url: https://github.com/PureStake/moonbeam-docs
 #edit_uri: ""
-extra_javascript: [js/connectMetaMask.js, js/errorModal.js]
+extra_javascript: [js/connectMetaMask.js, js/errorModal.js, js/expandNav.js]
 theme: 
   name: material
   custom_dir: material-overrides
@@ -15,6 +15,8 @@ theme:
   logo:  /assets/images/Moonbeam-Favicon-50.png
   font:
     text: Open Sans
+  features:
+    - navigation.tabs
 markdown_extensions:
   - codehilite
   - meta
@@ -78,9 +80,6 @@ extra:
     - icon: fontawesome/brands/telegram-plane
       link: https://t.me/Moonbeam_Official
       name: Telegram
-    - icon: fontawesome/solid/envelope
-      link: https://moonbeam.network/newsletter/ 
-      name: Email Newsletter
     - icon: fontawesome/brands/github
       link: https://github.com/PureStake/moonbeam
       name: GitHub
