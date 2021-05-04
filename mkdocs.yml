@@ -66,9 +66,6 @@ plugins:
       - moonbeam-docs/variables.yml
 extra:
   social:
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/MoonbeamNetwork
-      name: Twitter
     - icon: fontawesome/brands/discord
       link: https://discord.gg/PfpUATX
       name: Discord
@@ -78,12 +75,15 @@ extra:
     - icon: fontawesome/brands/telegram-plane
       link: https://t.me/Moonbeam_Official
       name: Telegram
-    - icon: fontawesome/brands/github
-      link: https://github.com/PureStake/moonbeam
-      name: GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/MoonbeamNetwork
+      name: Twitter
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/c/MoonbeamNetwork
       name: YouTube
+    - icon: fontawesome/brands/github
+      link: https://github.com/PureStake/moonbeam
+      name: GitHub
 google_analytics:
   - UA-135971059-6
   - auto
