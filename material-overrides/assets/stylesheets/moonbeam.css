@@ -270,3 +270,48 @@ label.md-nav__title {
    cursor: pointer;
    margin-left: .2em;
 }
+
+/* Footer Styling */
+footer.md-footer {
+   background-color: #171E43;
+}
+.md-footer-newsletter {
+   margin-top: 1em;
+}
+.md-footer-meta__inner.md-grid.center {
+   justify-content: center;
+}
+p.md-footer-connect {
+   margin: 1em 0 0 1em;
+}
+
+/* Newsletter Signup Styling */
+.hs-form-field label {
+   display: none;
+}
+.hs-button.primary.large {
+   cursor: pointer;
+   opacity: .7;
+   font-size: 11px;
+   padding: 9.4px;
+}
+.hs-button.primary.large:hover {
+   opacity: 1;
+}
+.hs-input {
+   background-color: #171e43;
+   color: #ffffff;
+   padding: 8px;
+}
+.hs-input::placeholder {
+   color:rgba(255, 255, 255, .6)
+}
+.hs-form {
+   margin-top: 1em;
+   display: flex;
+}
+.hs-form-field .hs-error-msgs .hs-error-msg {
+   display: table-caption;
+   width: 300%;
+   font-size: .9em;
+}
