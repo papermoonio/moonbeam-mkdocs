@@ -290,27 +290,25 @@ p.md-footer-connect {
    display: none;
 }
 .hs-button.primary.large {
-   padding: .4em;
    cursor: pointer;
    opacity: .7;
-   font-size: .7em;
-   vertical-align: bottom;
+   font-size: 11px;
+   padding: 9.4px;
 }
 .hs-button.primary.large:hover {
    opacity: 1;
 }
 .hs-input {
-   padding: .2em;
    background-color: #171e43;
    color: #ffffff;
+   padding: 8px;
 }
 .hs-input::placeholder {
    color:rgba(255, 255, 255, .6)
 }
 .hs-form {
-   display: flex;
    margin-top: 1em;
-   box-sizing: border-box;
+   display: flex;
 }
 .hs-form-field .hs-error-msgs .hs-error-msg {
    display: table-caption;
