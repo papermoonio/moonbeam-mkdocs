@@ -1,8 +1,8 @@
 #!/bin/bash
-LOGPATH=/var/log/s3_moonbeam_docs_sync.log
-DOCPATH=/var/www/moonbeam-docs-stage
+LOGPATH=/var/log/moonbeam_docs_cn_sync.log
+DOCPATH=/var/www/moonbeam-docs-cn-stage
 # check for repo changes
-cd $DOCPATH/moonbeam-docs
+cd $DOCPATH/moonbeam-docs-cn
 if /usr/bin/git checkout master &&
     /usr/bin/git fetch origin master &&
     [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ]
@@ -11,22 +11,20 @@ then
     echo +++ $(date +%F' '%H:%M:%S) - Pulling Changes from Github... >>$LOGPATH
     # pull changes
     /usr/bin/git merge origin/master &>>$LOGPATH
+    /usr/bin/git submodule update --remote &>>$LOGPATH
 
     # build mkdoc
     echo 'docs updated, building site' >>$LOGPATH
     cd ..
-    /usr/local/bin/mkdocs build --clean &>>$LOGPATH
+###    /usr/local/bin/mkdocs build --clean &>>$LOGPATH
 
     # copy robots.txt
     cp robots.txt /var/www/moonbeam-docs-static/robots.txt
 
-    # push changes to s3
-    # this is now done manually via the admin portal
-### /usr/local/bin/s3_website push --config-dir $DOCPATH/ &>>$LOGPATH
     echo +++ Finished at $(date +%F' '%H:%M:%S) +++++++++++++++++++ >>$LOGPATH
 fi
 # reset file and directory permissions
 chown root:users -R $DOCPATH
 find $DOCPATH/ -type d -exec chmod 775 {} \;
 find $DOCPATH/ -type f -exec chmod 664 {} \;
-chmod 774 $DOCPATH/s3_website_sync
+chmod 774 $DOCPATH/git_sync

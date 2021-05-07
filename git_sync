@@ -1,0 +1,46 @@
+#!/bin/bash
+LOGPATH=/var/log/s3_moonbeam_docs_sync.log
+DOCPATH=/var/www/moonbeam-docs-stage
+LOGMRK=0
+# check for repo changes
+cd $DOCPATH
+if /usr/bin/git checkout master &&
+    /usr/bin/git fetch origin master &&
+    [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ]
+then
+    LOGMRK=1
+    echo . >>$LOGPATH
+    echo +++ $(date +%F' '%H:%M:%S) - Pulling Changes from mkdocs Repo... >>$LOGPATH
+    # pull changes
+    /usr/bin/git merge origin/master &>>$LOGPATH
+fi
+
+cd $DOCPATH/moonbeam-docs
+if /usr/bin/git checkout master &&
+    /usr/bin/git fetch origin master &&
+    [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ]
+then
+    LOGMRK=1
+    echo . >>$LOGPATH
+    echo +++ $(date +%F' '%H:%M:%S) - Pulling Changes from DOCS Repo... >>$LOGPATH
+    # pull changes
+    /usr/bin/git merge origin/master &>>$LOGPATH
+    /usr/bin/git submodule update --remote &>>$LOGPATH
+
+    # build mkdoc
+    echo 'docs updated, building site' >>$LOGPATH
+    cd ..
+    # forcing restart mkdocs-server to prevent hanging of server, currently disabled was caused by a dependency issue
+#    screen -XS docs-stage quit
+#    screen -S docs-stage -dm bash -c "cd /var/www/moonbeam-docs-stage/ && /usr/local/bin/mkdocs serve --dev-addr 0.0.0.0:8000"
+    /usr/local/bin/mkdocs build --clean &>>$LOGPATH
+
+    # copy robots.txt
+    cp robots.txt /var/www/moonbeam-docs-static/robots.txt
+fi
+[ $LOGMRK -eq 1 ] && echo +++ Finished at $(date +%F' '%H:%M:%S) +++++++++++++++++++ >>$LOGPATH
+# reset file and directory permissions
+chown root:users -R $DOCPATH
+find $DOCPATH/ -type d -exec chmod 775 {} \;
+find $DOCPATH/ -type f -exec chmod 664 {} \;
+chmod 774 $DOCPATH/git_sync
