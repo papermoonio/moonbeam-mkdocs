@@ -1,5 +1,5 @@
 #!/bin/bash
-LOGPATH=/var/log/moonbeam_docs_cn_sync.log
+LOGPATH=/var/log/s3_moonbeam_docs_sync.log
 DOCPATH=/var/www/moonbeam-docs-cn-stage
 # check for repo changes
 cd $DOCPATH/moonbeam-docs-cn
