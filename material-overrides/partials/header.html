@@ -32,15 +32,21 @@
       <a class="md-header-nav__button md-button connectMetaMask-nav md-typeset">Connect MetaMask</a>
     </div>
     {% if "search" in config["plugins"] %}
-      <label class="md-header-nav__button md-icon" for="__search">
-        {% include ".icons/material/magnify.svg" %}
-      </label>
-      {% include "partials/search.html" %}
+    <label class="md-header-nav__button md-icon" for="__search">
+      {% include ".icons/material/magnify.svg" %}
+    </label>
+    {% include "partials/search.html" %}
     {% endif %}
     {% if config.repo_url %}
-      <div class="md-header-nav__source">
-        {% include "partials/source.html" %}
-      </div>
+    <div class="md-header-nav__source">
+      {% include "partials/source.html" %}
+    </div>
     {% endif %}
+    <div>
+      <select class="language-select">
+        <option class="en" value="en">English</option>
+        <option class="cn" value="cn">Chinese</option>
+      </select>
+    </div>
   </nav>
 </header>

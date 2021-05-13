@@ -315,3 +315,15 @@ p.md-footer-connect {
    width: 300%;
    font-size: .9em;
 }
+
+.language-select {
+   font-family: "Open Sans";
+   font-size: .7rem;
+   color: white;
+   background-color: transparent;
+   border: none;
+   margin: .5rem 0 .5rem 1rem;
+}
+.language-select:focus-visible {
+   outline: none;
+}
