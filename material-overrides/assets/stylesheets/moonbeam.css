@@ -316,14 +316,64 @@ p.md-footer-connect {
    font-size: .9em;
 }
 
-.language-select {
+/* Language Dropdown Styling */
+.select-wrapper {
    font-family: "Open Sans";
    font-size: .7rem;
    color: white;
-   background-color: transparent;
-   border: none;
-   margin: .5rem 0 .5rem 1rem;
+   background-color: #171e43;
+   margin:0 auto;
+   max-width:225px;
+   padding:1rem;
+   position:relative;
+   z-index:3;
+   display: flex;
+   justify-content: flex-end;
+   padding-right: 2rem;
 }
-.language-select:focus-visible {
-   outline: none;
+.select-wrapper::after {
+   border-color: white transparent;
+   border-style:solid;
+   border-width:6px 6px 0;
+   content:"";
+   height:0;
+   margin-top:-4px;
+   position:absolute;
+   right:1rem;
+   top:50%;
+   width:0;
+}
+.select-wrapper .language-select {
+   background: #171e43;
+   box-shadow:3px 3px 3px rgba(0,0,0,.2);
+   display:none;
+   left:0;
+   list-style:none;
+   margin-top:0;
+   opacity:0;
+   padding-left:0;
+   pointer-events:none;
+   position:absolute;
+   right:0;
+   top:100%;
+   z-index:2;
+}
+.select-wrapper .language-select li {
+   color: white;
+   display:block;
+   padding:1rem;
+   text-decoration:none; 
+}
+.select-wrapper .language-select li:hover {
+   background-color: white;
+   color:#171e43;
+}
+.select-wrapper.active::after {
+   border-width:0 6px 6px;
+}
+.select-wrapper.active .language-select {
+   display:block;
+   opacity:1;
+   pointer-events:auto;
+   opacity: .9;
 }
