@@ -12,15 +12,11 @@ then
     echo +++ $(date +%F' '%H:%M:%S) - Pulling Changes from Github... >>$LOGPATH
     # pull changes
     /usr/bin/git merge origin/master &>>$LOGPATH
-#    /usr/bin/git submodule update --remote &>>$LOGPATH
 
     # build mkdoc
     echo 'docs updated, building site' >>$LOGPATH
     cd ..
     /usr/local/bin/mkdocs build --clean &>>$LOGPATH
-
-    # copy robots.txt
-    cp robots.txt /var/www/moonbeam-docs-static/robots.txt
 
     # fix relative links to include language subdir
     find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/|href=\"\/cn\/|g" '{}' \;
