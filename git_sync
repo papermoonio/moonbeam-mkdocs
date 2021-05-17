@@ -44,3 +44,4 @@ chown root:users -R $DOCPATH
 find $DOCPATH/ -type d -exec chmod 775 {} \;
 find $DOCPATH/ -type f -exec chmod 664 {} \;
 chmod 774 $DOCPATH/git_sync
+chmod 774 $DOCPATH/mkdocs-cn/git_sync

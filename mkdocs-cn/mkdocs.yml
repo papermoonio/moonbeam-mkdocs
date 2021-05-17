@@ -15,6 +15,7 @@ theme:
   logo:  /assets/images/Moonbeam-Favicon-50.png
   font:
     text: Open Sans
+  language: zh
 markdown_extensions:
   - codehilite
   - meta
