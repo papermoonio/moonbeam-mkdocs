@@ -9,7 +9,6 @@ copyright: © 2021 PureStake, Inc. All Rights Reserved.
 #edit_uri: ""
 extra_javascript: [js/connectMetaMask.js, js/errorModal.js, js/handleLanguageChange.js]
 theme:
-  language: zh
   name: material
   custom_dir: material-overrides
   favicon: /assets/images/Moonbeam-Favicon-50.png
