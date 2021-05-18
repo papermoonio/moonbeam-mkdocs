@@ -1,7 +1,7 @@
 #!/bin/bash
 LOGPATH=/var/log/s3_moonbeam_docs_sync.log
 DOCPATH=/var/www/moonbeam-docs-cn-stage
-STATICPATH=/var/www/moonbeam-doc-static/cn
+STATICPATH=/var/www/moonbeam-docs-static/cn
 # check for repo changes
 cd $DOCPATH/moonbeam-docs-cn
 if /usr/bin/git checkout master &&
