@@ -60,12 +60,12 @@ plugins:
         'getting-started/testnet/precompiles.md': 'integrations/precompiles.md'
         'getting-started/testnet/connect.md': 'getting-started/moonbase/connect.md'
         'getting-started/testnet/metamask.md': 'getting-started/moonbase/metamask.md'
+        'getting-started/testnet/faucet.md':'getting-started/moonbase/faucet.md'
         'integrations/metamask.md': 'integrations/wallets/metamask.md'
         'integrations/polkadotjs.md': 'integrations/wallets/polkadotjs.md'
         'integrations/jslibraries/web3js.md': 'integrations/ethlibraries/web3js.md'
         'integrations/jslibraries/etherjs.md': 'integrations/ethlibraries/etherjs.md'
         'networks/testnet.md': 'networks/moonbase.md'
-
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
