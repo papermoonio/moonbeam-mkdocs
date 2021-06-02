@@ -228,9 +228,9 @@ label.md-nav__title {
    line-height: 0;
    display: flex;
    align-items: center;
-   border: 1px solid rgba(255, 255, 255, 0.5);
+   border: 2px solid rgba(255, 255, 255, 0.5);
    border-radius: 2em;
-   padding: 1.5em 1em;
+   padding: 1em 1em;
    margin: 0.3em 0.5em;
    text-decoration: none;
 }
@@ -331,7 +331,7 @@ p.md-footer-connect {
 /* Language Dropdown Styling */
 .select-wrapper {
    font-family: 'Open Sans';
-   font-size: 0.7rem;
+   font-size: 0.75rem;
    color: white;
    background-color: #171e43;
    margin: 0 auto;
