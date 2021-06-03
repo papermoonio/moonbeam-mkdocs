@@ -289,6 +289,12 @@ label.md-nav__title {
    cursor: pointer;
    margin-left: 0.2em;
 }
+@media screen and (max-width: 76.1875em) {
+   .error-modal {
+      width: 80%;
+      margin: 25% auto;
+   }
+}
 
 /* Footer Styling */
 footer.md-footer {
