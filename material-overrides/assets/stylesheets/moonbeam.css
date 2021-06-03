@@ -230,7 +230,7 @@ label.md-nav__title {
    align-items: center;
    border: 2px solid rgba(255, 255, 255, 0.5);
    border-radius: 2em;
-   padding: 1em 1em;
+   padding: 1em;
    margin: 0.3em 0.5em;
    text-decoration: none;
 }
@@ -245,6 +245,13 @@ label.md-nav__title {
 .md-button.connectMetaMask-nav.disabled-button:hover {
    background-color: #171e43;
    color: #ffffff;
+}
+@media screen and (max-width: 76.1875em) {
+   .md-button.connectMetaMask-nav {
+      line-height: .8em;
+      padding: .25em .5em;
+      text-align: center;
+   }
 }
 
 /* Center Buttons */
@@ -338,7 +345,7 @@ p.md-footer-connect {
    max-width: 225px;
    padding: 1rem;
    position: relative;
-   z-index: 3;
+   z-index: 1;
    display: flex;
    justify-content: flex-end;
    padding-right: 2rem;
