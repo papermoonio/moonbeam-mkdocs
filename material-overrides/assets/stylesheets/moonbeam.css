@@ -228,9 +228,9 @@ label.md-nav__title {
    line-height: 0;
    display: flex;
    align-items: center;
-   border: 1px solid rgba(255, 255, 255, 0.5);
+   border: 2px solid rgba(255, 255, 255, 0.5);
    border-radius: 2em;
-   padding: 1.5em 1em;
+   padding: 1em;
    margin: 0.3em 0.5em;
    text-decoration: none;
 }
@@ -245,6 +245,13 @@ label.md-nav__title {
 .md-button.connectMetaMask-nav.disabled-button:hover {
    background-color: #171e43;
    color: #ffffff;
+}
+@media screen and (max-width: 76.1875em) {
+   .md-button.connectMetaMask-nav {
+      line-height: .8em;
+      padding: .25em .5em;
+      text-align: center;
+   }
 }
 
 /* Center Buttons */
@@ -281,6 +288,12 @@ label.md-nav__title {
    float: right;
    cursor: pointer;
    margin-left: 0.2em;
+}
+@media screen and (max-width: 76.1875em) {
+   .error-modal {
+      width: 80%;
+      margin: 25% auto;
+   }
 }
 
 /* Footer Styling */
@@ -331,14 +344,14 @@ p.md-footer-connect {
 /* Language Dropdown Styling */
 .select-wrapper {
    font-family: 'Open Sans';
-   font-size: 0.7rem;
+   font-size: 0.75rem;
    color: white;
    background-color: #171e43;
    margin: 0 auto;
    max-width: 225px;
    padding: 1rem;
    position: relative;
-   z-index: 3;
+   z-index: 1;
    display: flex;
    justify-content: flex-end;
    padding-right: 2rem;
