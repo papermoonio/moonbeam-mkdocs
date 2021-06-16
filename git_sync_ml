@@ -1,9 +1,12 @@
 #!/bin/bash
+# default language cn
+lang=cn
+[ ! -z $1 ] && lang=$1
 LOGPATH=/var/log/s3_moonbeam_docs_sync.log
-DOCPATH=/var/www/moonbeam-docs-cn-stage
-STATICPATH=/var/www/moonbeam-docs-static/cn
+DOCPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-stage
+STATICPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-static
 # check for repo changes
-cd $DOCPATH/moonbeam-docs-cn
+cd $DOCPATH/moonbeam-docs-$lang
 if /usr/bin/git checkout master &&
     /usr/bin/git fetch origin master &&
     [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ]
@@ -14,12 +17,12 @@ then
     /usr/bin/git merge origin/master &>>$LOGPATH
 
     # build mkdoc
-    echo 'docs updated, building site' >>$LOGPATH
+    echo docs updated, building $lang site >>$LOGPATH
     cd ..
     /usr/local/bin/mkdocs build --clean &>>$LOGPATH
 
     # fix relative links to include language subdir
-    find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/|href=\"\/cn\/|g" '{}' \;
+    find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/|href=\"\/$lang\/|g" '{}' \;
 
     echo +++ Finished at $(date +%F' '%H:%M:%S) +++++++++++++++++++ >>$LOGPATH
 fi
@@ -27,4 +30,6 @@ fi
 chown root:users -R $DOCPATH
 find $DOCPATH/ -type d -exec chmod 775 {} \;
 find $DOCPATH/ -type f -exec chmod 664 {} \;
-chmod 774 $DOCPATH/git_sync
+chown root:users -R $STATICPATH
+find $STATICPATH/ -type d -exec chmod 775 {} \;
+find $STATICPATH/ -type f -exec chmod 664 {} \;

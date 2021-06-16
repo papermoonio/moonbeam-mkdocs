@@ -1,6 +1,7 @@
 #!/bin/bash
 LOGPATH=/var/log/s3_moonbeam_docs_sync.log
 DOCPATH=/var/www/moonbeam-docs-stage
+STATICPATH=/var/www/moonbeam-docs-static
 LOGMRK=0
 # check for repo changes
 cd $DOCPATH
@@ -28,20 +29,25 @@ then
     /usr/bin/git submodule update --remote &>>$LOGPATH
 
     # build mkdoc
-    echo 'docs updated, building site' >>$LOGPATH
+    echo 'docs updated, building en site' >>$LOGPATH
     cd ..
-    # forcing restart mkdocs-server to prevent hanging of server, currently disabled was caused by a dependency issue
-#    screen -XS docs-stage quit
-#    screen -S docs-stage -dm bash -c "cd /var/www/moonbeam-docs-stage/ && /usr/local/bin/mkdocs serve --dev-addr 0.0.0.0:8000"
     /usr/local/bin/mkdocs build --clean &>>$LOGPATH
 
+    # create symlinks to language specific subdirs
+    [ ! -L /var/www/moonbeam-docs-static/cn ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static /var/www/moonbeam-docs-static/cn
+    [ ! -L /var/www/moonbeam-docs-static/ru ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-ru-static /var/www/moonbeam-docs-static/ru
+    [ ! -L /var/www/moonbeam-docs-static/es ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-es-static /var/www/moonbeam-docs-static/es
+
     # copy robots.txt
-    cp robots.txt /var/www/moonbeam-docs-static/robots.txt
+    cp $DOCPATH/robots.txt /var/www/moonbeam-docs-static/robots.txt
 fi
 [ $LOGMRK -eq 1 ] && echo +++ Finished at $(date +%F' '%H:%M:%S) +++++++++++++++++++ >>$LOGPATH
+
 # reset file and directory permissions
 chown root:users -R $DOCPATH
 find $DOCPATH/ -type d -exec chmod 775 {} \;
 find $DOCPATH/ -type f -exec chmod 664 {} \;
-chmod 774 $DOCPATH/git_sync
-chmod 774 $DOCPATH/mkdocs-cn/git_sync
+find $DOCPATH/ -type f -name git_sync* -exec chmod 774 {} \;
+chown root:users -R $STATICPATH
+find $STATICPATH/ -type d -exec chmod 775 {} \;
+find $STATICPATH/ -type f -exec chmod 664 {} \;

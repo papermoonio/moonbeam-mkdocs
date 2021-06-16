@@ -1,8 +1,8 @@
 site_name: Moonbeam Docs
-site_url: https://docs.moonbeam.network/cn/
+site_url: https://docs.moonbeam.network/es/
 home_url: https://moonbeam.network/
-site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
-docs_dir: moonbeam-docs-cn
+site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-es-static
+docs_dir: moonbeam-docs-es
 copyright: © 2021 PureStake, Inc. All Rights Reserved. 
 #repo_name: PureStake/moonbeam-docs
 #repo_url: https://github.com/PureStake/moonbeam-docs
@@ -15,7 +15,7 @@ theme:
   logo:  /assets/images/Moonbeam-Favicon-50.png
   font:
     text: Open Sans
-  language: zh
+  language: es
 markdown_extensions:
   - codehilite
   - meta
@@ -24,7 +24,7 @@ markdown_extensions:
       title: Sections
   - admonition
   - pymdownx.snippets:
-      base_path: moonbeam-docs-cn/snippets
+      base_path: moonbeam-docs-es/snippets
   - pymdownx.emoji:
         emoji_index: !!python/name:materialx.emoji.twemoji
         emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -64,7 +64,7 @@ plugins:
         'integrations/jslibraries/etherjs.md': 'integrations/ethlibraries/etherjs.md'
   - macros:
       include_yaml:
-      - moonbeam-docs-cn/variables.yml
+      - moonbeam-docs-es/variables.yml
 extra:
   social:
     - icon: fontawesome/brands/discord
