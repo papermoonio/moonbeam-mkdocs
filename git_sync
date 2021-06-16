@@ -47,7 +47,7 @@ fi
 chown root:users -R $DOCPATH
 find $DOCPATH/ -type d -exec chmod 775 {} \;
 find $DOCPATH/ -type f -exec chmod 664 {} \;
-find $DOCPATH/ -type f -name git_sync* -exec chmod 774 {} \;
+find $DOCPATH/ -type f -name 'git_sync*' -exec chmod 774 {} \;
 chown root:users -R $STATICPATH
 find $STATICPATH/ -type d -exec chmod 775 {} \;
 find $STATICPATH/ -type f -exec chmod 664 {} \;
