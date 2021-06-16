@@ -3,6 +3,8 @@ LOGPATH=/var/log/s3_moonbeam_docs_sync.log
 DOCPATH=/var/www/moonbeam-docs-stage
 STATICPATH=/var/www/moonbeam-docs-static
 LOGMRK=0
+force=0
+[ ! -z $1 ] && [ $1 == '-f' ] && force=1
 # check for repo changes
 cd $DOCPATH
 if /usr/bin/git checkout master &&
@@ -14,12 +16,18 @@ then
     echo +++ $(date +%F' '%H:%M:%S) - Pulling Changes from mkdocs Repo... >>$LOGPATH
     # pull changes
     /usr/bin/git merge origin/master &>>$LOGPATH
+    # rebuild all sites to apply latest mkdocs changes
+    force=1
+    $DOCPATH/git_sync_ml cn -f
+    $DOCPATH/git_sync_ml ru -f
+    #$DOCPATH/git_sync_ml es -f
 fi
 
 cd $DOCPATH/moonbeam-docs
 if /usr/bin/git checkout master &&
     /usr/bin/git fetch origin master &&
-    [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ]
+    [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ] ||
+    [ $force == 1 ]
 then
     LOGMRK=1
     echo . >>$LOGPATH
@@ -36,7 +44,7 @@ then
     # create symlinks to language specific subdirs
     [ ! -L /var/www/moonbeam-docs-static/cn ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static /var/www/moonbeam-docs-static/cn
     [ ! -L /var/www/moonbeam-docs-static/ru ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-ru-static /var/www/moonbeam-docs-static/ru
-    [ ! -L /var/www/moonbeam-docs-static/es ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-es-static /var/www/moonbeam-docs-static/es
+    #[ ! -L /var/www/moonbeam-docs-static/es ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-es-static /var/www/moonbeam-docs-static/es
 
     # copy robots.txt
     cp $DOCPATH/robots.txt /var/www/moonbeam-docs-static/robots.txt

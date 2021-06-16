@@ -1,7 +1,10 @@
 #!/bin/bash
 # default language cn
 lang=cn
+# force build without repo changes
+force=0
 [ ! -z $1 ] && lang=$1
+[ ! -z $2 ] && [ $2 == '-f' ] && force=1
 LOGPATH=/var/log/s3_moonbeam_docs_sync.log
 DOCPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-stage
 STATICPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-static
@@ -9,7 +12,8 @@ STATICPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-static
 cd $DOCPATH/moonbeam-docs-$lang
 if /usr/bin/git checkout master &&
     /usr/bin/git fetch origin master &&
-    [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ]
+    [ `/usr/bin/git rev-list HEAD...origin/master --count` != 0 ] ||
+    [ $force == 1 ]
 then
     echo . >>$LOGPATH
     echo +++ $(date +%F' '%H:%M:%S) - Pulling Changes from Github... >>$LOGPATH
