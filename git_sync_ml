@@ -30,6 +30,13 @@ then
 
     echo +++ Finished at $(date +%F' '%H:%M:%S) +++++++++++++++++++ >>$LOGPATH
 fi
+# check/create symlinks
+[ ! -L $DOCPATH/moonbeam-docs-$lang/.gitmodules ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/.gitmodules $DOCPATH/moonbeam-docs-$lang/.gitmodules
+[ ! -L $DOCPATH/moonbeam-docs-$lang/variables.yml ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/variables.yml $DOCPATH/moonbeam-docs-$lang/variables.yml
+[ ! -L $DOCPATH/moonbeam-docs-$lang/dapps-list ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/dapps-list $DOCPATH/moonbeam-docs-$lang/dapps-list
+[ ! -L $DOCPATH/moonbeam-docs-$lang/images ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/images $DOCPATH/moonbeam-docs-$lang/images
+[ ! -L $DOCPATH/moonbeam-docs-$lang/js ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/js $DOCPATH/moonbeam-docs-$lang/js
+[ ! -L $DOCPATH/moonbeam-docs-$lang/snippets/code ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/snippets/code $DOCPATH/moonbeam-docs-$lang/snippets/code
 # reset file and directory permissions
 chown root:users -R $DOCPATH
 find $DOCPATH/ -type d -exec chmod 775 {} \;
