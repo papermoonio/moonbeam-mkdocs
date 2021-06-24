@@ -3,16 +3,17 @@ site_url: https://docs.moonbeam.network/cn/
 home_url: https://moonbeam.network/
 site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
 docs_dir: moonbeam-docs-cn
-copyright: © 2021 PureStake, Inc. All Rights Reserved. 
+copyright: © 2021 PureStake, Inc. All Rights Reserved.
 #repo_name: PureStake/moonbeam-docs
 #repo_url: https://github.com/PureStake/moonbeam-docs
 #edit_uri: ""
-extra_javascript: [js/connectMetaMask.js, js/errorModal.js, js/handleLanguageChange.js]
+extra_javascript:
+  [js/connectMetaMask.js, js/errorModal.js, js/handleLanguageChange.js]
 theme:
   name: material
   custom_dir: material-overrides
   favicon: /assets/images/Moonbeam-Favicon-50.png
-  logo:  /assets/images/Moonbeam-Favicon-50.png
+  logo: /assets/images/Moonbeam-Favicon-50.png
   font:
     text: Open Sans
   language: zh
@@ -26,16 +27,16 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: moonbeam-docs-cn/snippets
   - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
-        options:
-           custom_icons:
-              - material-overrides/.icons
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - material-overrides/.icons
   - pymdownx.tabbed
   - pymdownx.superfences
   - pymdownx.details
   - attr_list
-  
+
 plugins:
   - search
   - awesome-pages
@@ -58,13 +59,17 @@ plugins:
         'getting-started/local-node/ethers-js/ethers-contract.md': 'getting-started/local-node/deploy-contract.md'
         'getting-started/testnet/pubsub.md': 'integrations/pubsub.md'
         'getting-started/testnet/precompiles.md': 'integrations/precompiles.md'
+        'getting-started/testnet/connect.md': 'getting-started/moonbase/connect.md'
+        'getting-started/testnet/metamask.md': 'getting-started/moonbase/metamask.md'
+        'getting-started/testnet/faucet.md': 'getting-started/moonbase/faucet.md'
         'integrations/metamask.md': 'integrations/wallets/metamask.md'
         'integrations/polkadotjs.md': 'integrations/wallets/polkadotjs.md'
         'integrations/jslibraries/web3js.md': 'integrations/ethlibraries/web3js.md'
         'integrations/jslibraries/etherjs.md': 'integrations/ethlibraries/etherjs.md'
+        'networks/testnet.md': 'networks/moonbase.md'
   - macros:
       include_yaml:
-      - moonbeam-docs-cn/variables.yml
+        - moonbeam-docs-cn/variables.yml
 extra:
   social:
     - icon: fontawesome/brands/discord
