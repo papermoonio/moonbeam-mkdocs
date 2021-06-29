@@ -226,6 +226,7 @@ label.md-nav__title {
 .md-typeset .tabbed-content {
   box-shadow: 0 -0.05rem #9e9e9e;
   background-color: #ffffff;
+  border: solid 1px var(--md-default-fg-color--lighter);
 }
 .md-typeset .tabbed-set {
   background-color: rgba(83, 203, 201, 0.2);
