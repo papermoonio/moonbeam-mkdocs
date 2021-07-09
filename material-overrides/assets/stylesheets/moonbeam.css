@@ -385,7 +385,7 @@ p.md-footer-connect {
   color: white;
   background-color: #171e43;
   margin: 0 auto;
-  max-width: 225px;
+  max-width: 300px;
   padding: 1rem;
   position: relative;
   z-index: 1;
@@ -405,7 +405,7 @@ p.md-footer-connect {
   top: 50%;
   width: 0;
 }
-.select-wrapper .language-select {
+.select-wrapper .select {
   background: #171e43;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   display: none;
@@ -420,20 +420,20 @@ p.md-footer-connect {
   top: 100%;
   z-index: 2;
 }
-.select-wrapper .language-select li {
+.select-wrapper .select li {
   color: white;
   display: block;
   padding: 1rem;
   text-decoration: none;
 }
-.select-wrapper .language-select li:hover {
+.select-wrapper .select li:hover {
   background-color: white;
   color: #171e43;
 }
 .select-wrapper.active::after {
   border-width: 0 6px 6px;
 }
-.select-wrapper.active .language-select {
+.select-wrapper.active .select {
   display: block;
   opacity: 1;
   pointer-events: auto;
