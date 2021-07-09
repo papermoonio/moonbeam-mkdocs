@@ -29,7 +29,12 @@
         </div>
       {% endif %}
     </div>
-      <a class="md-header-nav__button md-button connectMetaMask-nav md-typeset">Connect MetaMask</a>
+    <div class="metamask-select-wrapper select-wrapper">
+      <span class="metamask-select-label">Connect MetaMask</span>
+      <ul class="metamask-select select">
+        <li class="moonbase" value="moonbase">Moonbase Alpha</li>
+        <li class="moonriver" value="moonriver">Moonriver</li>
+      </ul>
     </div>
     {% if "search" in config["plugins"] %}
     <label class="md-header-nav__button md-icon" for="__search">
@@ -42,9 +47,9 @@
       {% include "partials/source.html" %}
     </div>
     {% endif %}
-    <div class="select-wrapper">
-      <span class="select-label"></span>
-      <ul class="language-select">
+    <div class="language-select-wrapper select-wrapper">
+      <span class="language-select-label select-label"></span>
+      <ul class="language-select select">
         <li class="en" value="en">English</li>
         <li class="cn" value="cn">中文</li>
         <li class="es" value="es">Español</li>
