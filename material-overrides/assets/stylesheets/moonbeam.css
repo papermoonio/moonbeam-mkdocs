@@ -136,6 +136,16 @@ label.md-nav__title {
 .md-typeset .nota > .admonition-title::before {
   background-color: #53cbc9;
 }
+/* French note */
+.md-typeset .admonition.remarque {
+  border-color: #53cbc9;
+}
+.md-typeset .remarque > .admonition-title {
+  background-color: rgba(83, 203, 201, 0.2);
+}
+.md-typeset .remarque > .admonition-title::before {
+  background-color: #53cbc9;
+}
 
 /* Styling for custom Admonition notes used for releases */
 .md-typeset .admonition.release,
