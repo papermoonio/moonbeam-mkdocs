@@ -260,37 +260,6 @@ a:hover {
   text-decoration: none;
 }
 
-/* Connect MetaMask Nav Button Styling */
-.md-button.connectMetaMask-nav {
-  font-size: 1.5em;
-  line-height: 0;
-  display: flex;
-  align-items: center;
-  border: 2px solid #53cbc9;
-  border-radius: .3em;
-  padding: 1em;
-  margin: 0.3em 0.5em;
-  text-decoration: none;
-  color: #53cbc9;
-}
-.md-button.connectMetaMask-nav:hover {
-  transform: scale(1.05);
-}
-.md-button.connectMetaMask-nav.disabled-button {
-  opacity: 0.5;
-  cursor: default;
-}
-.md-button.connectMetaMask-nav.disabled-button:hover {
-  transform: none;
-}
-@media screen and (max-width: 76.1875em) {
-  .md-button.connectMetaMask-nav {
-    line-height: 0.8em;
-    padding: 0.25em 0.5em;
-    text-align: center;
-  }
-}
-
 /* Center Buttons */
 .button-wrapper {
   display: flex;
@@ -602,4 +571,13 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
 }
 .subsection-wrapper .card:first-child {
   margin-left: .75em;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .select-wrapper{
+    font-size: 1.25em;
+  }
+  .md-header-nav__ellipsis {
+    display: none;
+  }
 }
