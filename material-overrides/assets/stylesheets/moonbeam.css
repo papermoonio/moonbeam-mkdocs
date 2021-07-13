@@ -258,6 +258,7 @@ label.md-nav__title {
 .button-wrapper {
   display: flex;
   justify-content: center;
+  margin: 1em;
 }
 
 /* MetaMask Error Modal Styling */
