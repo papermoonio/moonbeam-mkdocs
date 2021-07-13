@@ -254,39 +254,6 @@ label.md-nav__title {
   text-decoration: none;
 }
 
-/* Connect MetaMask Nav Button Styling */
-.md-button.connectMetaMask-nav {
-  border: 1px solid #ffffff;
-  font-size: 1.5em;
-  line-height: 0;
-  display: flex;
-  align-items: center;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 2em;
-  padding: 1em;
-  margin: 0.3em 0.5em;
-  text-decoration: none;
-}
-.md-button.connectMetaMask-nav:hover {
-  background-color: #ffffff;
-  color: #171e43;
-}
-.md-button.connectMetaMask-nav.disabled-button {
-  opacity: 0.5;
-  cursor: default;
-}
-.md-button.connectMetaMask-nav.disabled-button:hover {
-  background-color: #171e43;
-  color: #ffffff;
-}
-@media screen and (max-width: 76.1875em) {
-  .md-button.connectMetaMask-nav {
-    line-height: 0.8em;
-    padding: 0.25em 0.5em;
-    text-align: center;
-  }
-}
-
 /* Center Buttons */
 .button-wrapper {
   display: flex;
@@ -434,4 +401,13 @@ p.md-footer-connect {
   opacity: 1;
   pointer-events: auto;
   opacity: 0.9;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .select-wrapper{
+    font-size: 1.25em;
+  }
+  .md-header-nav__ellipsis {
+    display: none;
+  }
 }
