@@ -44,6 +44,7 @@ def add_attributes_to_file(root, f):
                 attribute = attribute.replace("'", "")
                 attribute = attribute.replace("&", "")
                 attribute = attribute.replace("/", "")
+                attribute = attribute.replace("?", "")
                 attribute = attribute.replace("  ", " ")
               
                 # Create attribute from header
