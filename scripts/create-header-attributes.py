@@ -9,10 +9,7 @@
 # nestled inside of the `moonbeam-mkdocs` repo. Then simply run   #
 # `python scripts/create-header-attributes.py` in your terminal.  #
 # Then open the `moonbeam-docs` repo to see the changes have been #
-# made and are ready to commit. That's it! If you happen to make  #
-# a mistake, make sure you go to the `moonbeam-docs` repo and     #
-# discard any changes to start over. If you try to run it a 2nd   #
-# time in a row, the headers will be generated incorrectly.       #
+# made and are ready to commit. That's it!                        #
 
 import os
 
@@ -34,6 +31,9 @@ def add_attributes_to_file(root, f):
         for line in file:
             if (line.startswith("##")):
                 # Remove line break from header and any white space at the end of the header
+                if ("{: #" in line):
+                  line = line.split("{")[0]
+
                 line = line.replace("\n", "").strip()
 
                 # Remove any pre-existing characters
