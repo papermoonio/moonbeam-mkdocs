@@ -1,0 +1,90 @@
+# --- 👋 Welcome to the script for creating header attributes --- #
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+# The purpose of this script is to create attributes for every    #
+# header in every file. These attributes will be used to link to  #
+# sections in all non-English language repositores. Allowing for  #
+# the section headers to be translated to the given language.     #
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+# To use the script, ensure that the `moonbeam-docs` repo is      #
+# nestled inside of the `moonbeam-mkdocs` repo. Then simply run   #
+# `python scripts/create-header-attributes.py` in your terminal.  #
+# Then open the `moonbeam-docs` repo to see the changes have been #
+# made and are ready to commit. That's it! If you happen to make  #
+# a mistake, make sure you go to the `moonbeam-docs` repo and     #
+# discard any changes to start over. If you try to run it a 2nd   #
+# time in a row, the headers will be generated incorrectly.       #
+
+import os
+
+def filter_root_directories(variable):
+    omit_dirs = ["snippets", "js", "images"]
+    if ((variable not in omit_dirs) and (variable.find(".") == -1)):
+        return variable
+
+
+def add_attributes_to_file(root, f):
+  # Ignore .pages and index.md files
+    if (f != ".pages") & (f != "index.md"):
+        filename = root + "/" + f
+        file = open(filename, "r")
+
+        content = ""
+
+        # Read the content for each file, modify any headers, and save output to content variable
+        for line in file:
+            if (line.startswith("##")):
+                # Remove line break from header and any white space at the end of the header
+                line = line.replace("\n", "").strip()
+
+                # Remove any pre-existing characters
+                attribute = line.replace("(", "")
+                attribute = attribute.replace(")", "")
+                attribute = attribute.replace("-", "")
+                attribute = attribute.replace(".", "")
+                attribute = attribute.replace("'", "")
+                attribute = attribute.replace("&", "")
+                attribute = attribute.replace("/", "")
+                attribute = attribute.replace("  ", " ")
+              
+                # Create attribute from header
+                attribute = attribute.split(" ")[1:]
+
+                attribute = "-".join(attribute)
+                attribute = "{: #" + attribute + " }"
+
+                # Combine header and attribute and add line break back in
+                new_line = line + " " + attribute.lower() + " \n"
+                content += (new_line)
+            else:
+                content += (line)
+
+        file.close()
+
+        # Create a new file to write the modifications to
+        new_filename = filename.replace(".md", "-new.md")
+        new_file = open(new_filename, "w")
+        new_file.write(content)
+        new_file.close()
+
+        # Delete existing file
+        os.remove(filename)
+
+        # Rename the new file, essentially replacing the old file
+        os.rename(new_filename, filename)
+
+
+root_items = os.listdir('moonbeam-docs')
+filteredDirectories = list(filter(filter_root_directories, root_items))
+
+# Create attributes for the filtered directories
+for dir in filteredDirectories:
+    for root, dirs, files in os.walk('moonbeam-docs/' + dir):
+        # Ignore dapps-list for right now
+        if ("dapps-list" in root):
+            break
+
+        for f in files:
+            add_attributes_to_file(root, f)
+
+# Create attributes for the README.md file
+add_attributes_to_file("moonbeam-docs/", "README.md")
