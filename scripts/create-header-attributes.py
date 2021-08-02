@@ -35,21 +35,24 @@ def add_attributes_to_file(root, f):
                   line = line.split("{")[0]
 
                 line = line.replace("\n", "").strip()
+                words = line.split(" ")
 
-                # Remove any pre-existing characters
-                attribute = line.replace("(", "")
-                attribute = attribute.replace(")", "")
-                attribute = attribute.replace("-", "")
-                attribute = attribute.replace(".", "")
-                attribute = attribute.replace("'", "")
-                attribute = attribute.replace("&", "")
-                attribute = attribute.replace("/", "")
-                attribute = attribute.replace("?", "")
-                attribute = attribute.replace("  ", " ")
-              
+                new_words = []
+                for word in words:
+                    new_word = word.replace("(", "")
+                    new_word = new_word.replace(")", "")
+                    new_word = new_word.replace(".", "")
+                    new_word = new_word.replace("'", "")
+                    new_word = new_word.replace("?", "")
+                    new_word = new_word.replace(":", "")
+                    new_word = new_word.replace('"', "")
+                    new_word = new_word.replace("/", "")
+                    new_word = new_word.replace("&", "-")
+                    if (new_word != "-") and (new_word != ""):
+                        new_words.append(new_word.strip())
+
                 # Create attribute from header
-                attribute = attribute.split(" ")[1:]
-
+                attribute = new_words[1:]
                 attribute = "-".join(attribute)
                 attribute = "{: #" + attribute + " }"
 
