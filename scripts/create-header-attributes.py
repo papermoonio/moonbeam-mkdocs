@@ -45,6 +45,7 @@ def add_attributes_to_file(root, f):
                     new_word = new_word.replace("'", "")
                     new_word = new_word.replace("?", "")
                     new_word = new_word.replace(":", "")
+                    new_word = new_word.replace(",", "")
                     new_word = new_word.replace('"', "")
                     new_word = new_word.replace("/", "")
                     new_word = new_word.replace("&", "-")
