@@ -14,7 +14,7 @@
 import os
 
 def filter_root_directories(variable):
-    omit_dirs = ["snippets", "js", "images"]
+    omit_dirs = ["js", "images"]
     if ((variable not in omit_dirs) and (variable.find(".") == -1)):
         return variable
 
@@ -65,7 +65,16 @@ def add_attributes_to_file(root, f):
         file.close()
 
         # Create a new file to write the modifications to
-        new_filename = filename.replace(".md", "-new.md")
+        new_filename = ""
+        if (".md" in filename):
+            new_filename = filename.replace(".md", "-new.md")
+        elif (".py" in filename):
+            new_filename = filename.replace(".py", "-new.py")
+        elif (".js" in filename):
+            new_filename = filename.replace(".js", "-new.js")
+        elif (".sol" in filename):
+            new_filename = filename.replace(".sol", "-new.sol")
+
         new_file = open(new_filename, "w")
         new_file.write(content)
         new_file.close()
