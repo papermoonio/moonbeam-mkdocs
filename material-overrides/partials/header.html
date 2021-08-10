@@ -10,7 +10,7 @@
       {% include ".icons/material/menu" ~ ".svg" %}
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      {% if config.site_name == page.title %}
+      {% if config.site_name == page.title or page.title == "Home" %}
         <div class="md-header-nav__ellipsis md-ellipsis">
           {{ config.site_name }}
         </div>
@@ -29,8 +29,7 @@
         </div>
       {% endif %}
     </div>
-      <a class="md-header-nav__button md-button connectMetaMask-nav md-typeset">Connect MetaMask</a>
-    </div>
+    <a class="md-header-nav__button md-button connectMetaMask-nav md-typeset">Connect MetaMask</a>
     {% if "search" in config["plugins"] %}
     <label class="md-header-nav__button md-icon" for="__search">
       {% include ".icons/material/magnify.svg" %}

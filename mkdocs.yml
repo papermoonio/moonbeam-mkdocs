@@ -16,6 +16,10 @@ theme:
   logo: /assets/images/Moonbeam-Favicon-50.png
   font:
     text: Open Sans
+  features: 
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
 markdown_extensions:
   - codehilite
   - meta

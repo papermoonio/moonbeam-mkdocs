@@ -1,0 +1,122 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+<div class="home">
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="column">
+        <h2 class="card-title">Building on Moonbeam</h2>
+        <p class="card-info">Learn how to get started developing your dApp with a Moonbeam development node or on the Moonbase Alpha Testnet</p>
+      </div>
+      <div class="column-sm">
+        <img class="icon" src="{{ 'assets/images/iconmonstr-brick-9.svg' }}"/>
+      </div>
+    </div>
+    <div class="hover-content" style="display: none">
+      <a href="{{ config.site_url }}builders/getting-started/">
+        <div>Getting Started</div>
+      </a>
+      <a href="{{ config.site_url }}builders/tools/">
+        <div>Tools</div>
+      </a>
+      <a href="{{ config.site_url }}builders/integrations/">
+        <div>Integrations</div>
+      </a>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="column">
+        <h2 class="card-title">Node Operators</h2>
+        <p class="card-info">Find everything you need to know about running a node, becoming a collator or nominator, and more</p>
+      </div>
+      <div class="column-sm">
+        <img class="icon" src="{{ 'assets/images/iconmonstr-process-1.svg' }}"/>
+      </div>
+    </div>
+    <div class="hover-content" style="display: none">
+      <a href="{{ config.site_url }}node-operators/networks/">
+        <div>Networks</div>
+      </a>
+      <a href="{{ config.site_url }}node-operators/oracles/">
+        <div>Oracles</div>
+      </a>
+      <a href="{{ config.site_url }}node-operators/indexers/">
+        <div>Indexers</div>
+      </a>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="column">
+        <h2 class="card-title">Learn</h2>
+        <p class="card-info">Find everything you need to know about Moonbeam including an overview of the platform, features, and a list of community created DApps</p>
+      </div>
+      <div class="column-sm">
+        <img class="icon" src="{{ 'assets/images/iconmonstr-process-1.svg' }}"/>
+      </div>
+    </div>
+    <div class="hover-content" style="display: none">
+      <a href="{{ config.site_url }}learn/platform/">
+        <div>Platform</div>
+      </a>
+      <a href="{{ config.site_url }}learn/features/">
+        <div>Features</div>
+      </a>
+      <a href="{{ config.site_url }}learn/dapps-list/">
+        <div>Dapps List</div>
+      </a>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="column">
+        <h2 class="card-title">Tutorials</h2>
+        <p class="card-info">Check out all of our tutorials</p>
+      </div>
+      <div class="column-sm">
+        <img class="icon" src="{{ 'assets/images/iconmonstr-process-1.svg' }}"/>
+      </div>
+    </div>
+    <div class="hover-content" style="display: none">
+      <a href="{{ config.site_url }}tutorials/local-node/">
+        <div>Local Node</div>
+      </a>
+      <a href="{{ config.site_url }}tutorials/moonbase-alpha/">
+        <div>Moonbase Alpha</div>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block htmltitle %}
+  {%- if page.is_homepage -%} 
+    <title>Moonbeam Docs</title>
+  {%- endif -%} 
+{% endblock %}
+
+{% block content %}
+  <div class="home-background"></div>
+{% endblock %}
+
+{% block site_nav %}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    const cardWrappers = document.querySelectorAll('.card-wrapper');
+    cardWrappers.forEach(cardWrapper => {
+      const [content, hoverContent] = cardWrapper.children;
+      cardWrapper.addEventListener("mouseover", () => {
+        content.style.display = "none";
+        hoverContent.style.display = "block";
+      })
+      cardWrapper.addEventListener("mouseout", () => {
+        content.style.display = "block";
+        hoverContent.style.display = "none";
+      })
+    })
+  </script>
+{% endblock %}
