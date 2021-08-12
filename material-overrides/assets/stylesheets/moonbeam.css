@@ -76,10 +76,6 @@ a:hover {
   background-color: #ffffff;
 }
 
-/*Hide Nav Bar header*/
-label.md-nav__title {
-  font-size: 0;
-}
 /* Adjust Nav Bar header for smaller screens*/
 @media screen and (max-width: 76.1875em) {
   /*Hide Nav Bar header label text - only show back arrow */
@@ -266,28 +262,26 @@ label.md-nav__title {
 
 /* Connect MetaMask Nav Button Styling */
 .md-button.connectMetaMask-nav {
-  border: 1px solid #ffffff;
   font-size: 1.5em;
   line-height: 0;
   display: flex;
   align-items: center;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 2em;
+  border: 2px solid #53cbc9;
+  border-radius: .3em;
   padding: 1em;
   margin: 0.3em 0.5em;
   text-decoration: none;
+  color: #53cbc9;
 }
 .md-button.connectMetaMask-nav:hover {
-  background-color: #ffffff;
-  color: #171e43;
+  transform: scale(1.05);
 }
 .md-button.connectMetaMask-nav.disabled-button {
   opacity: 0.5;
   cursor: default;
 }
 .md-button.connectMetaMask-nav.disabled-button:hover {
-  background-color: #171e43;
-  color: #ffffff;
+  transform: none;
 }
 @media screen and (max-width: 76.1875em) {
   .md-button.connectMetaMask-nav {
@@ -444,4 +438,133 @@ p.md-footer-connect {
   opacity: 1;
   pointer-events: auto;
   opacity: 0.9;
+}
+
+/* ****** 👇 NEW STUFF👇 ****** */
+
+/* Home Page Styling */
+.home {
+  font-family: "Open Sans";
+  margin: auto;
+}
+.row {
+  display: flex;
+  justify-content: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: .5em;
+}
+.hero {
+  width: 110em;
+}
+h1.hero-title {
+  font-weight: 400;
+}
+h1.hero-title, h3.hero-info {
+  font-family: "Open Sans";
+}
+.md-typeset h3.hero-info {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+.row.hero-buttons {
+  justify-content: start;
+  transition: all .2s ease-in-out;
+}
+.row.hero-buttons button span {
+  vertical-align: text-top;
+}
+.pink-primary-button.md-button, .pink-primary-button.md-button:hover, .pink-primary-button.md-button:focus {
+  background-color: #E1147b;
+  color: white;
+  border: none;
+  font-family: "Open Sans";
+  margin-right: 1em;
+  line-height: 1.7em;
+}
+.pink-primary-button.md-button > span > svg {
+  fill: white;
+}
+.pink-secondary-button.md-button, button.pink-secondary-button.md-button:hover, button.pink-secondary-button.md-button:focus {
+  border-color: #E1147b;
+  color: #E1147b;
+  background-color: white;
+  font-family: "Open Sans";
+}
+.pink-secondary-button.md-button > span > svg {
+  fill: #E1147b;
+}
+.pink-primary-button.md-button:hover, .pink-secondary-button.md-button:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  width: 25em;
+  min-height: 10em;
+  border-radius: .5em;
+  border: 1px solid lightgrey;
+  margin: .75em;
+  overflow: auto;
+  padding: 1em;
+  transition: all .2s ease-in-out;
+}
+.card:first-child {
+  margin-left: 0;
+}
+.card:last-child {
+  margin-right: 0;
+}
+h2.card-title {
+  font-family: "Open Sans";
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: 500;
+}
+.card-info {
+  font-family: "Open Sans";
+  font-size: .9em;
+}
+.icon {
+  width: 7em;
+  height: 7em;  
+}
+.learn-more {
+  color: #53cbc9;
+  font-weight: bold;
+}
+.learn-more span, .in-this-section-item span {
+  vertical-align: text-top;
+}
+.learn-more span svg {
+  fill: #53cbc9;
+}
+p.in-this-section {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+a.in-this-section-item {
+  font-size: .9em;
+  line-height: 1;
+  margin: .5em 0;
+  display: block;
+}
+
+
+
+/* Styling for section headers on left hand side navigation menu */
+nav.md-nav[data-md-level="1"] > label.md-nav__title {
+  font-size: 1.2em;
+}
+/* Section lines */
+li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
+  border-left: 1px solid black;
+}
+
+.subsection-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

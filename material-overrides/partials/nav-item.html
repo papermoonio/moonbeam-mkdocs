@@ -67,7 +67,7 @@
           {% endif %}
         </label>
         <!-- Add the title as a class here so it can be accessed in renderSubsections.js -->
-        <ul class="md-nav__list {{ nav_item.title.lower().replace(' ', '-').replace('&', 'and') }}" data-md-scrollfix>
+        <ul class="md-nav__list {{ nav_item.url.replace('/', '-') }}" data-md-scrollfix>
 
           <!-- Render nested item list -->
           {% for nav_item in nav_item.children %}
