@@ -480,32 +480,34 @@ h1.hero-title, h3.hero-info {
   transition: all .2s ease-in-out;
   margin-top: 2em;
 }
-.row.hero-buttons button span {
-  vertical-align: text-top;
+.row.hero-buttons button, .row.hero-buttons button:hover {
+  display: flex;
+  align-items: center;
+  border-color: #E1147b;
+  font-family: "Open Sans";
+  border-radius: .3em;  
+  padding: .4em;
+  cursor: pointer;
+}
+.row.hero-buttons a:hover {
+  text-decoration: none;
 }
 .pink-primary-button.md-button, .pink-primary-button.md-button:hover, .pink-primary-button.md-button:focus {
   background-color: #E1147b;
   color: white;
-  border: none;
-  font-family: "Open Sans";
   margin-right: 1em;
-  line-height: 1.7em;
-  border-radius: .3em;  
-  padding: .4em;
 }
 .pink-primary-button.md-button > span > svg {
   fill: white;
+  display: flex;
 }
 .pink-secondary-button.md-button, button.pink-secondary-button.md-button:hover, button.pink-secondary-button.md-button:focus {
-  border-color: #E1147b;
   color: #E1147b;
   background-color: white;
-  font-family: "Open Sans";
-  border-radius: .3em;
-  padding: .4em;
 }
 .pink-secondary-button.md-button > span > svg {
   fill: #E1147b;
+  display: flex;
 }
 .pink-primary-button.md-button:hover, .pink-secondary-button.md-button:hover {
   transform: scale(1.05);
@@ -544,12 +546,15 @@ h2.card-title {
   color: #53cbc9;
   font-weight: bold;
   font-size: .8em;
+  display: flex;
 }
 .learn-more span, .in-this-section-item span {
   vertical-align: middle;
 }
 .learn-more span svg {
   fill: #53cbc9;
+  width: 1.5em;
+  vertical-align: text-top;
 }
 p.in-this-section {
   text-transform: uppercase;
@@ -559,7 +564,7 @@ p.in-this-section {
 }
 a.in-this-section-item {
   font-size: .7em;
-  line-height: 0;
+  line-height: .9;
   margin: .5em 0;
   display: block;
 }
