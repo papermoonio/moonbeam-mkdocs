@@ -4,11 +4,11 @@ home_url: https://moonbeam.network/
 site_dir: /var/www/moonbeam-docs-static
 docs_dir: moonbeam-docs
 copyright: © 2021 PureStake, Inc. All Rights Reserved.
-#repo_name: PureStake/moonbeam-docs
-#repo_url: https://github.com/PureStake/moonbeam-docs
-#edit_uri: ""
 extra_javascript:
-  [js/connectMetaMask.js, js/errorModal.js, js/handleLanguageChange.js, js/renderSubsections.js]
+- js/connectMetaMask.js
+- js/errorModal.js
+- js/handleLanguageChange.js
+- js/renderSubsections.js
 theme:
   name: material
   custom_dir: material-overrides
@@ -16,84 +16,119 @@ theme:
   logo: /assets/images/Moonbeam-Favicon-50.png
   font:
     text: Open Sans
-  features: 
-    - navigation.tabs
-    - navigation.sections
-    - navigation.indexes
+  features:
+  - navigation.tabs
+  - navigation.sections
+  - navigation.indexes
 markdown_extensions:
-  - codehilite
-  - meta
-  - toc:
-      permalink: true
-      title: Sections
-  - admonition
-  - pymdownx.snippets:
-      base_path: moonbeam-docs/snippets
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      options:
-        custom_icons:
-          - material-overrides/.icons
-  - pymdownx.tabbed
-  - pymdownx.superfences
-  - pymdownx.details
-  - attr_list
-
+- codehilite
+- meta
+- toc:
+    permalink: true
+    title: Sections
+- admonition
+- pymdownx.snippets:
+    base_path: moonbeam-docs/snippets
+- pymdownx.emoji:
+    emoji_index: !!python/name:materialx.emoji.twemoji
+    emoji_generator: !!python/name:materialx.emoji.to_svg
+    options:
+      custom_icons:
+      - material-overrides/.icons
+- pymdownx.tabbed
+- pymdownx.superfences
+- pymdownx.details
+- attr_list
 plugins:
-  - search
-  - awesome-pages
-  - section-index
-  - redirects:
-      redirect_maps:
-        'resources/networks.md': 'networks/overview.md'
-        'getting-started/setting-up-a-node.md': 'getting-started/local-node/setting-up-a-node.md'
-        'getting-started/using-metamask.md': 'getting-started/local-node/using-metamask.md'
-        'getting-started/using-remix.md': 'getting-started/local-node/using-remix.md'
-        'getting-started/using-truffle.md': 'getting-started/local-node/using-truffle.md'
-        'getting-started/web3-transaction.md': 'getting-started/local-node/send-transaction.md'
-        'getting-started/web3-contract.md': 'getting-started/local-node/deploy-contract.md'
-        'getting-started/local-node/web3-transaction.md': 'getting-started/local-node/send-transaction.md'
-        'getting-started/local-node/ethers-transaction.md': 'getting-started/local-node/send-transaction.md'
-        'getting-started/local-node/web3-contract.md': 'getting-started/local-node/deploy-contract.md'
-        'getting-started/local-node/ethers-contract.md': 'getting-started/local-node/deploy-contract.md'
-        'getting-started/local-node/web3-js/web3-transaction.md': 'getting-started/local-node/send-transaction.md'
-        'getting-started/local-node/web3-js/web3-contract.md': 'getting-started/local-node/deploy-contract.md'
-        'getting-started/local-node/ethers-js/ethers-transaction.md': 'getting-started/local-node/send-transaction.md'
-        'getting-started/local-node/ethers-js/ethers-contract.md': 'getting-started/local-node/deploy-contract.md'
-        'getting-started/testnet/pubsub.md': 'integrations/pubsub.md'
-        'getting-started/testnet/precompiles.md': 'integrations/precompiles.md'
-        'getting-started/testnet/connect.md': 'getting-started/moonbase/connect.md'
-        'getting-started/testnet/metamask.md': 'getting-started/moonbase/metamask.md'
-        'getting-started/testnet/faucet.md': 'getting-started/moonbase/faucet.md'
-        'integrations/metamask.md': 'integrations/wallets/metamask.md'
-        'integrations/polkadotjs.md': 'integrations/wallets/polkadotjs.md'
-        'integrations/jslibraries/web3js.md': 'integrations/ethlibraries/web3js.md'
-        'integrations/jslibraries/etherjs.md': 'integrations/ethlibraries/etherjs.md'
-        'networks/testnet.md': 'networks/moonbase.md'
-  - macros:
-      include_yaml:
-        - moonbeam-docs/variables.yml
+- search
+- awesome-pages
+- section-index
+- redirects:
+    redirect_maps:
+      governance/proposals.md: tokens/governance/proposals.md
+      governance/voting.md: tokens/governance/voting.md
+      integrations/indexers/covalent.md: builders/integrations/indexers/covalent.md
+      integrations/indexers/thegraph.md: builders/integrations/indexers/thegraph.md
+      integrations/openzeppelin/defender.md: builders/tools/openzeppelin/defender.md
+      integrations/openzeppelin/overview.md: builders/tools/openzeppelin/overview.md
+      integrations/oracles/band-protocol.md: builders/integrations/oracles/band-protocol.md
+      integrations/oracles/chainlink.md: builders/integrations/oracles/chainlink.md
+      integrations/oracles/razor-network.md: builders/integrations/oracles/razor-network.md
+      networks/moonbase.md: learn/platform/networks/moonbase.md
+      networks/moonriver.md: learn/platform/networks/moonriver.md
+      networks/overview.md: learn/platform/networks/overview.md
+      staking/stake.md: tokens/staking/stake.md
+      staking/stakingprecompile.md: tokens/staking/stakingprecompile.md
+      getting-started/local-node/deploy-contract.md: builders/interact/eth-libraries/deploy-contract.md
+      getting-started/local-node/send-transaction.md: builders/interact/eth-libraries/send-transaction.md
+      getting-started/moonbase/metamask.md: tokens/connect/metamask.md
+      integrations/bridges/ethereum/chainbridge.md: builders/integrations/bridges/eth/chainbridge.md
+      integrations/debug-trace.md: builders/tools/debug-trace.md
+      integrations/ethlibraries/etherjs.md: builders/tools/eth-libraries/etherjs.md
+      integrations/ethlibraries/web3js.md: builders/tools/eth-libraries/web3js.md
+      integrations/ethlibraries/web3py.md: builders/tools/eth-libraries/web3py.md
+      integrations/explorers.md: builders/tools/explorers.md
+      integrations/hardhat.md: builders/interact/hardhat.md
+      integrations/precompiles.md: builders/tools/precompiles.md
+      integrations/pubsub.md: builders/tools/pubsub.md
+      integrations/remix.md: builders/tools/remix.md
+      integrations/waffle-mars.md: builders/interact/waffle-mars.md
+      integrations/wallets/ledger.md: tokens/connect/ledger.md
+      integrations/wallets/mathwallet.md: tokens/connect/mathwallet.md
+      integrations/wallets/nifty.md: tokens/connect/nifty.md
+      integrations/wallets/polkadotjs.md: tokens/connect/polkadotjs.md
+      integrations/wallets/trezor.md: tokens/connect/trezor.md
+      learn/consensus.md: learn/features/consensus.md
+      learn/eth-compatibility.md: learn/features/eth-compatibility.md
+      learn/technology.md: learn/platform/technology.md
+      learn/unified-accounts.md: learn/features/unified-accounts.md
+      learn/xchain-plans.md: learn/features/xchain-plans.md
+      node-operators/indexers/thegraph-node.md: node-operators/indexer-nodes/thegraph-node.md
+      node-operators/oracles/node-chainlink.md: node-operators/oracle-nodes/node-chainlink.md
+      overview/why-polkadot.md: learn/platform/why-polkadot.md
+      resources/code.md: learn/platform/code.md
+      resources/glossary.md: learn/platform/glossary.md
+      resources/links.md: learn/platform/links.md
+      resources/roadmap.md: learn/platform/roadmap.md
+      getting-started/local-node/using-truffle.md: builders/interact/truffle.md
+      integrations/wallets/metamask.md: tokens/connect/metamask.md
+      learn/token.md: learn/platform/tokens.md
+      overview/vision-features.md: learn/platform/vision.md
+      getting-started/local-node/setting-up-a-node.md: builders/get-started/moonbeam-dev.md
+      getting-started/local-node/using-metamask.md: tokens/connect/metamask.md
+      getting-started/local-node/using-remix.md: builders/interact/remix.md
+      getting-started/moonbase/connect.md: builders/get-started/moonbase.md
+      getting-started/moonbase/faucet.md: builders/get-started/moonbase.md
+      getting-started/moonriver/connect.md: builders/get-started/moonriver.md
+      getting-started/moonriver/integrate-metamask.md: 
+      governance/overview.md: learn/features/governance.md
+      integrations/openzeppelin/contracts.md: builders/interact/oz-remix.md
+      integrations/trufflebox.md: builders/interact/truffle.md
+      staking/overview.md: learn/features/staking.md
+      treasury/overview.md: learn/features/treasury.md
+- macros:
+    include_yaml:
+    - moonbeam-docs/variables.yml
 extra:
   social:
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/PfpUATX
-      name: Discord
-    - icon: moonbeam/element
-      link: https://app.element.io/#/room/#moonbeam:matrix.org
-      name: Element (Riot)
-    - icon: fontawesome/brands/telegram-plane
-      link: https://t.me/Moonbeam_Official
-      name: Telegram
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/MoonbeamNetwork
-      name: Twitter
-    - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/c/MoonbeamNetwork
-      name: YouTube
-    - icon: fontawesome/brands/github
-      link: https://github.com/PureStake/moonbeam
-      name: GitHub
+  - icon: fontawesome/brands/discord
+    link: https://discord.gg/PfpUATX
+    name: Discord
+  - icon: moonbeam/element
+    link: https://app.element.io/#/room/#moonbeam:matrix.org
+    name: Element (Riot)
+  - icon: fontawesome/brands/telegram-plane
+    link: https://t.me/Moonbeam_Official
+    name: Telegram
+  - icon: fontawesome/brands/twitter
+    link: https://twitter.com/MoonbeamNetwork
+    name: Twitter
+  - icon: fontawesome/brands/youtube
+    link: https://www.youtube.com/c/MoonbeamNetwork
+    name: YouTube
+  - icon: fontawesome/brands/github
+    link: https://github.com/PureStake/moonbeam
+    name: GitHub
 google_analytics:
-  - UA-135971059-6
-  - auto
+- UA-135971059-6
+- auto
