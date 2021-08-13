@@ -440,8 +440,6 @@ p.md-footer-connect {
   opacity: 0.9;
 }
 
-/* ****** 👇 NEW STUFF👇 ****** */
-
 /* Home Page Styling */
 .home {
   font-family: "Open Sans";
@@ -457,10 +455,18 @@ p.md-footer-connect {
   margin: .5em;
 }
 .hero {
-  width: 110em;
+  width: 90em;
+}
+.hero-column {
+  margin-right: 3em;
 }
 h1.hero-title {
   font-weight: 400;
+  font-size: 1.75em;
+  margin-top: 1em;
+}
+h3.hero-info {
+  font-size: 1em;
 }
 h1.hero-title, h3.hero-info {
   font-family: "Open Sans";
@@ -472,6 +478,7 @@ h1.hero-title, h3.hero-info {
 .row.hero-buttons {
   justify-content: start;
   transition: all .2s ease-in-out;
+  margin-top: 2em;
 }
 .row.hero-buttons button span {
   vertical-align: text-top;
@@ -483,6 +490,8 @@ h1.hero-title, h3.hero-info {
   font-family: "Open Sans";
   margin-right: 1em;
   line-height: 1.7em;
+  border-radius: .3em;  
+  padding: .4em;
 }
 .pink-primary-button.md-button > span > svg {
   fill: white;
@@ -492,6 +501,8 @@ h1.hero-title, h3.hero-info {
   color: #E1147b;
   background-color: white;
   font-family: "Open Sans";
+  border-radius: .3em;
+  padding: .4em;
 }
 .pink-secondary-button.md-button > span > svg {
   fill: #E1147b;
@@ -499,7 +510,6 @@ h1.hero-title, h3.hero-info {
 .pink-primary-button.md-button:hover, .pink-secondary-button.md-button:hover {
   transform: scale(1.05);
 }
-
 .card {
   width: 25em;
   min-height: 10em;
@@ -507,7 +517,7 @@ h1.hero-title, h3.hero-info {
   border: 1px solid lightgrey;
   margin: .75em;
   overflow: auto;
-  padding: 1em;
+  padding: 0 1em;
   transition: all .2s ease-in-out;
 }
 .card:first-child {
@@ -519,23 +529,24 @@ h1.hero-title, h3.hero-info {
 h2.card-title {
   font-family: "Open Sans";
   margin: 0;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 500;
 }
 .card-info {
   font-family: "Open Sans";
-  font-size: .9em;
+  font-size: .8em;
 }
 .icon {
-  width: 7em;
-  height: 7em;  
+  width: 6em;
+  height: 6em;  
 }
 .learn-more {
   color: #53cbc9;
   font-weight: bold;
+  font-size: .8em;
 }
 .learn-more span, .in-this-section-item span {
-  vertical-align: text-top;
+  vertical-align: middle;
 }
 .learn-more span svg {
   fill: #53cbc9;
@@ -544,15 +555,14 @@ p.in-this-section {
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: .5em;
+  font-size: .7em;
 }
 a.in-this-section-item {
-  font-size: .9em;
-  line-height: 1;
+  font-size: .7em;
+  line-height: 0;
   margin: .5em 0;
   display: block;
 }
-
-
 
 /* Styling for section headers on left hand side navigation menu */
 nav.md-nav[data-md-level="1"] > label.md-nav__title {
@@ -563,8 +573,28 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
   border-left: 1px solid black;
 }
 
+/* Section index page styles */
 .subsection-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+.subsection-wrapper .card {
+  min-height: unset;
+  padding: 1em;
+  min-width: unset;
+  width: 25%;
+  display: flex;
+}
+.subsection-wrapper .card a {
+  text-align: center;
+  align-self: center;
+  margin: auto;
+}
+.subsection-wrapper .card .title {
+  font-size: 1.5em;
+  margin: 0;
+}
+.subsection-wrapper .card .icon {
+  width: 4em;
 }
