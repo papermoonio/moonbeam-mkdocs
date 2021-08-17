@@ -2,7 +2,8 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 # The purpose of this script is to create index pages for each directory. The script      #
 # works by looking at your local file directory in the nestled `moonbeam-docs` repo for   #
-# any directories without a `index.md` file and generates one for that directory. 
+# any directories without a `index.md` file. If it finds any missing `index.md` files it  #
+# will generate one for that directory.                                                   #
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 # To use the script, ensure that the `moonbeam-docs` repo is nestled inside of the        #
 #  `moonbeam-mkdocs` repo and on your branch with the latest changes. Then simply run     #
