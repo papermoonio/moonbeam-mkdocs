@@ -8,22 +8,28 @@ def filter_root_directories(variable):
     if ((variable not in omit_dirs) and (variable.find(".") == -1)):
         return variable
 
-filteredDirectories = list(filter(filter_root_directories, root_items))
+def create_index_page(path, dirname):
+  if (not os.path.exists(path)):
+      new_file_for_dir = open(path, "w+")
+      readable_dir = dirname.replace("-", " ").title()
 
-for dir in filteredDirectories:
+      if (readable_dir in "Openzeppelin"):
+        readable_dir = "OpenZeppelin"
+
+      new_file_for_dir_content =  "---\ntitle: " + readable_dir.title() + "\ntemplate: main.html\n---\n\n<div class='subsection-wrapper'></div>"
+      new_file_for_dir.write(new_file_for_dir_content)
+      print("Created index page: " + path)
+
+filtered_directories = list(filter(filter_root_directories, root_items))
+
+for dir in filtered_directories:
+    create_index_page("moonbeam-docs/" + dir + "/index.md", dir)
+        
     for root, dirs, files in os.walk('moonbeam-docs/' + dir):
       if ("dapps-list" in root):
         continue
       elif (len(dirs) > 0):
-        filteredSubdirs = list(filter(filter_root_directories, dirs))
-        for subdir in filteredSubdirs:
-          if (os.path.exists(root +  "/" + subdir + "/index.md")):
-            print("TRUE")
-
-          new_file_for_subdir = open(root + "/" + subdir + "/index.md", "w+")
-          readable_subdir = subdir.replace("-", " ").title()
-          if (readable_subdir in "Openzeppelin"):
-            readable_subdir = "OpenZeppelin"
-
-          new_file_for_subdir_content =  "---\ntitle: " + readable_subdir.title() + "\ntemplate: main.html\n---\n\n<div class='subsection-wrapper'></div>"
-          new_file_for_subdir.write(new_file_for_subdir_content)
+        filtered_subdirs = list(filter(filter_root_directories, dirs))
+        for subdir in filtered_subdirs:
+          create_index_page(root +  "/" + subdir + "/index.md", subdir)
+        
