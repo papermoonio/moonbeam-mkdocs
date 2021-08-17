@@ -1,3 +1,16 @@
+# ----------------- 👋 Welcome to the script for generating index pages ------------------#
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+# The purpose of this script is to create index pages for each directory. The script      #
+# works by looking at your local file directory in the nestled `moonbeam-docs` repo for   #
+# any directories without a `index.md` file and generates one for that directory. 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+# To use the script, ensure that the `moonbeam-docs` repo is nestled inside of the        #
+#  `moonbeam-mkdocs` repo and on your branch with the latest changes. Then simply run     #
+# `python scripts/create-index-pages.py` in your terminal. There will be logs printed to  #
+# the terminal to let you know which index pages were created. If there weren't any       #
+# created, there will be no output. You can head to the `moonbeam-docs` repo to see any   #
+# newly generated files.                                                                  #
+
 import os
 from typing import Container
 
