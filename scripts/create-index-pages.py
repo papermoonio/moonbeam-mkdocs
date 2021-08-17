@@ -13,7 +13,6 @@
 # newly generated files.                                                                  #
 
 import os
-from typing import Container
 
 root_items = os.listdir('moonbeam-docs')
 
