@@ -146,7 +146,7 @@ print("🔧 Modifying existing redirects...")
 print("➕ Creating new redirects...")
 
 mkdocs_yaml = yaml.unsafe_load(open("mkdocs.yml", "r"))
-prev_mapping = mkdocs_yaml["plugins"][3]["redirects"]["redirect_maps"]
+prev_mapping = mkdocs_yaml["plugins"][2]["redirects"]["redirect_maps"]
 prev_values = list(prev_mapping.values())
 prev_keys = list(prev_mapping.keys())
 
@@ -160,9 +160,9 @@ new_dict = {}
 for redirect in redirect_map:
   new_dict[redirect.previous_path] = redirect.current_path
 
-mkdocs_yaml["plugins"][3]["redirects"]["redirect_maps"] = new_dict
+mkdocs_yaml["plugins"][2]["redirects"]["redirect_maps"] = new_dict
 with open("mkdocs.yml", "w") as f:
-    yaml.dump(mkdocs_yaml, f, sort_keys=False, allow_unicode=True, indent=2)
+    yaml.dump(mkdocs_yaml, f, sort_keys=False, allow_unicode=True, default_style="'", indent=2)
 
 print("✅ Successfully updated the mkdocs.yml file with new redirects")
 
