@@ -7,9 +7,9 @@ h4 {
 }
 :root {
   /* Default color shades */
-  --md-default-fg-color: #000000;
   --md-default-fg-color--light: #353535;
   --md-default-fg-color--lighter: #b6afaf;
+  --md-default-fg-color: #000000;
   --md-default-fg-color--lightest: #f0efef;
   --md-default-bg-color: #ffffff;
   --md-default-bg-color--light: ...;
@@ -264,11 +264,11 @@ a:hover {
 .button-wrapper {
   display: flex;
   justify-content: center;
-  margin: 1em;
+  margin: .5em;
 }
 
 /* MetaMask Error Modal Styling */
-.error-modal-container {
+.error-modal-container, .network-modal-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -279,7 +279,7 @@ a:hover {
   width: 100%;
   height: 100%;
 }
-.error-modal {
+.error-modal, .network-modal {
   background-color: rgba(0, 3, 45, 0.85);
   color: #ffffff;
   border-radius: 0.2em;
@@ -297,10 +297,28 @@ a:hover {
   margin-left: 0.2em;
 }
 @media screen and (max-width: 76.1875em) {
-  .error-modal {
+  .error-modal, .network-modal {
     width: 80%;
     margin: 25% auto;
   }
+}
+.connect-network {
+  font-size: .75em;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  border: 2px solid #53cbc9;
+  border-radius: .3em;
+  padding: 1em;
+  text-decoration: none;
+  color: #53cbc9;
+}
+.connect-network:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.connect-header {
+  margin-bottom: 1em;
 }
 
 /* Footer Styling */
@@ -591,3 +609,37 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
   }
 }
 
+/* Connect MetaMask Nav Button Styling */
+.md-button.connectMetaMask-nav {
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  border: 2px solid #53cbc9;
+  border-radius: .3em;
+  padding: 1em;
+  margin: 0.3em 0.5em;
+  text-decoration: none;
+  color: #53cbc9;
+}
+.md-button.connectMetaMask-nav:hover {
+  transform: scale(1.05);
+}
+.md-button.connectMetaMask-nav.disabled-button {
+  opacity: 0.5;
+  cursor: default;
+}
+.md-button.connectMetaMask-nav.disabled-button:hover, .connect-network.disabled-button:hover {
+  transform: none;
+}
+.connect-network.disabled-button {
+  color: grey;
+  border-color: grey;
+  cursor: default;
+}
+@media screen and (max-width: 76.1875em) {
+  .md-button.connectMetaMask-nav {
+    line-height: 0.8em;
+    padding: 0.25em 0.5em;
+    text-align: center;
+  }
+}

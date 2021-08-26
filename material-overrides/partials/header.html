@@ -29,13 +29,7 @@
         </div>
       {% endif %}
     </div>
-    <div class="metamask-select-wrapper select-wrapper">
-      <span class="metamask-select-label">Connect MetaMask</span>
-      <ul class="metamask-select select">
-        <li class="moonbase" value="moonbase">Moonbase Alpha</li>
-        <li class="moonriver" value="moonriver">Moonriver</li>
-      </ul>
-    </div>
+    <a class="md-header-nav__button md-button connectMetaMask-nav md-typeset">Connect MetaMask</a>
     {% if "search" in config["plugins"] %}
     <label class="md-header-nav__button md-icon" for="__search">
       {% include ".icons/material/magnify.svg" %}
