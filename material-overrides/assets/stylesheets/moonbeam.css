@@ -564,11 +564,14 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
   margin: auto;
 }
 .subsection-wrapper .card .title {
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 0;
 }
 .subsection-wrapper .card .icon {
-  width: 4em;
+  width: 5em;
+}
+.subsection-wrapper .card .icon[src="/images/index-pages/blank.png"] {
+  display: none;
 }
 .subsection-wrapper .card:first-child {
   margin-left: .75em;
@@ -587,3 +590,4 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
     display: block;
   }
 }
+
