@@ -519,7 +519,7 @@ h1.hero-title, h3.hero-info {
   border: 1px solid lightgrey;
   margin: .75em;
   overflow: auto;
-  padding: 0 1em;
+  padding: .75em 1em;
   transition: all .2s ease-in-out;
 }
 .card:first-child {
@@ -537,10 +537,6 @@ h2.card-title {
 .card-info {
   font-family: "Open Sans";
   font-size: .8em;
-}
-.icon {
-  width: 6em;
-  height: 6em;  
 }
 .learn-more {
   color: #53cbc9;
@@ -565,7 +561,7 @@ p.in-this-section {
 a.in-this-section-item {
   font-size: .7em;
   line-height: .9;
-  margin: .5em 0;
+  margin-top: .5em;
   display: block;
 }
 
@@ -587,9 +583,10 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
 .subsection-wrapper .card {
   min-height: unset;
   padding: 1em;
-  min-width: unset;
-  width: 25%;
+  width: 22%;
   display: flex;
+  flex: 23%;
+  max-width: 22%;
 }
 .subsection-wrapper .card a {
   text-align: center;
@@ -602,4 +599,7 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
 }
 .subsection-wrapper .card .icon {
   width: 4em;
+}
+.subsection-wrapper .card:first-child {
+  margin-left: .75em;
 }
