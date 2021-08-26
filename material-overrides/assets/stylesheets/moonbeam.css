@@ -574,11 +574,16 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
   margin-left: .75em;
 }
 
+.md-sidebar.md-sidebar--primary.home {
+  display: none
+}
+
 @media screen and (max-width: 76.1875em) {
   .select-wrapper{
     font-size: 1.25em;
   }
-  .md-header-nav__ellipsis {
-    display: none;
+
+  .md-sidebar.md-sidebar--primary.home {
+    display: block;
   }
 }
