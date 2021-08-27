@@ -275,9 +275,12 @@ label.md-nav__title {
 .error-modal-container, .network-modal-container {
   position: fixed;
   z-index: 1;
-  left: 50%;
   top: 10%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 33%;
 }
 .error-modal, .network-modal {
   background-color: #171e43;
@@ -295,9 +298,17 @@ label.md-nav__title {
   cursor: pointer;
   margin-left: 0.2em;
 }
-@media screen and (max-width: 76.1875em) {
+@media screen and (max-width: 46.1875em) {
+  .error-modal-container, .network-modal-container {
+    width: 80%;
+  }
   .error-modal, .network-modal {
     margin: 25% auto;
+  }
+}
+@media screen and (max-width: 76.1875em) {
+  .error-modal-container, .network-modal-container {
+    width: 50%;
   }
 }
 .connect-network {
