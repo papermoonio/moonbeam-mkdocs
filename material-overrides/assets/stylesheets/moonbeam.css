@@ -286,7 +286,6 @@ label.md-nav__title {
   background-color: #171e43;
   color: #ffffff;
   border-radius: 0.2em;
-  border: 2px solid #53cbc9; 
   margin: 15% auto;
   font-size: 2em;
   padding: 1em;
@@ -331,6 +330,7 @@ label.md-nav__title {
 .connect-header {
   margin-bottom: 1em;
   font-family: 'Open Sans';
+  font-size: 1em;
 }
 
 /* Footer Styling */
