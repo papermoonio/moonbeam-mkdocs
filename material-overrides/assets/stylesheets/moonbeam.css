@@ -7,9 +7,9 @@ h4 {
 }
 :root {
   /* Default color shades */
-  --md-default-fg-color: #000000;
   --md-default-fg-color--light: #353535;
   --md-default-fg-color--lighter: #b6afaf;
+  --md-default-fg-color: #000000;
   --md-default-fg-color--lightest: #f0efef;
   --md-default-bg-color: #ffffff;
   --md-default-bg-color--light: ...;
@@ -264,47 +264,15 @@ label.md-nav__title {
   text-decoration: none;
 }
 
-/* Connect MetaMask Nav Button Styling */
-.md-button.connectMetaMask-nav {
-  border: 1px solid #ffffff;
-  font-size: 1.5em;
-  line-height: 0;
-  display: flex;
-  align-items: center;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 2em;
-  padding: 1em;
-  margin: 0.3em 0.5em;
-  text-decoration: none;
-}
-.md-button.connectMetaMask-nav:hover {
-  background-color: #ffffff;
-  color: #171e43;
-}
-.md-button.connectMetaMask-nav.disabled-button {
-  opacity: 0.5;
-  cursor: default;
-}
-.md-button.connectMetaMask-nav.disabled-button:hover {
-  background-color: #171e43;
-  color: #ffffff;
-}
-@media screen and (max-width: 76.1875em) {
-  .md-button.connectMetaMask-nav {
-    line-height: 0.8em;
-    padding: 0.25em 0.5em;
-    text-align: center;
-  }
-}
-
 /* Center Buttons */
 .button-wrapper {
   display: flex;
   justify-content: center;
+  margin: .5em;
 }
 
 /* MetaMask Error Modal Styling */
-.error-modal-container {
+.error-modal-container, .network-modal-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -315,7 +283,7 @@ label.md-nav__title {
   width: 100%;
   height: 100%;
 }
-.error-modal {
+.error-modal, .network-modal {
   background-color: rgba(0, 3, 45, 0.85);
   color: #ffffff;
   border-radius: 0.2em;
@@ -333,10 +301,28 @@ label.md-nav__title {
   margin-left: 0.2em;
 }
 @media screen and (max-width: 76.1875em) {
-  .error-modal {
+  .error-modal, .network-modal {
     width: 80%;
     margin: 25% auto;
   }
+}
+.connect-network {
+  font-size: .75em;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  border: 2px solid #53cbc9;
+  border-radius: .3em;
+  padding: 1em;
+  text-decoration: none;
+  color: #53cbc9;
+}
+.connect-network:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.connect-header {
+  margin-bottom: 1em;
 }
 
 /* Footer Styling */
@@ -444,4 +430,39 @@ p.md-footer-connect {
   opacity: 1;
   pointer-events: auto;
   opacity: 0.9;
+}
+
+/* Connect MetaMask Nav Button Styling */
+.md-button.connectMetaMask-nav {
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  border: 2px solid #53cbc9;
+  border-radius: .3em;
+  padding: 1em;
+  margin: 0.3em 0.5em;
+  text-decoration: none;
+  color: #53cbc9;
+}
+.md-button.connectMetaMask-nav:hover {
+  transform: scale(1.05);
+}
+.md-button.connectMetaMask-nav.disabled-button {
+  opacity: 0.5;
+  cursor: default;
+}
+.md-button.connectMetaMask-nav.disabled-button:hover, .connect-network.disabled-button:hover {
+  transform: none;
+}
+.connect-network.disabled-button {
+  color: grey;
+  border-color: grey;
+  cursor: default;
+}
+@media screen and (max-width: 76.1875em) {
+  .md-button.connectMetaMask-nav {
+    line-height: 0.8em;
+    padding: 0.25em 0.5em;
+    text-align: center;
+  }
 }
