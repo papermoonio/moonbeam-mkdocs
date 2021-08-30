@@ -269,23 +269,20 @@ a:hover {
 
 /* MetaMask Error Modal Styling */
 .error-modal-container, .network-modal-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   z-index: 1;
+  top: 10%;
   left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 33%;
 }
 .error-modal, .network-modal {
-  background-color: rgba(0, 3, 45, 0.85);
+  background-color: #171e43;
   color: #ffffff;
   border-radius: 0.2em;
   margin: 15% auto;
-  width: 33%;
-  opacity: 1;
   font-size: 2em;
   padding: 1em;
   overflow: scroll;
@@ -296,22 +293,31 @@ a:hover {
   cursor: pointer;
   margin-left: 0.2em;
 }
-@media screen and (max-width: 76.1875em) {
-  .error-modal, .network-modal {
+@media screen and (max-width: 46.1875em) {
+  .error-modal-container, .network-modal-container {
     width: 80%;
+  }
+  .error-modal, .network-modal {
     margin: 25% auto;
+  }
+}
+@media screen and (max-width: 76.1875em) {
+  .error-modal-container, .network-modal-container {
+    width: 50%;
   }
 }
 .connect-network {
   font-size: .75em;
-  line-height: 0;
+  line-height: 1;
   display: flex;
   align-items: center;
   border: 2px solid #53cbc9;
   border-radius: .3em;
-  padding: 1em;
+  padding: .5em;
   text-decoration: none;
-  color: #53cbc9;
+  color: #53cbc9;  
+  font-family: 'Open Sans';
+  text-align: center;
 }
 .connect-network:hover {
   transform: scale(1.05);
@@ -319,6 +325,8 @@ a:hover {
 }
 .connect-header {
   margin-bottom: 1em;
+  font-family: 'Open Sans';
+  font-size: .8em;
 }
 
 /* Footer Styling */

@@ -6,15 +6,8 @@
 # moved at all. If any content has been moved, the script will try to match the moved     #
 # content and add it to the `redirect_maps` config in `mkdocs.yml`.                       #
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-# To use the script, you will need to have a GitHub personal access token, instructions   #
-# to create one are here:                                                                 #
-# https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
-#                                                                                         #
-# Select `repo` from list of scopes. And click `Generate Token`. Now you should be able   #
-# to run the script which accesses the GitHub API using your credentials.                 #
-#                                                                                         #
-# Next, ensure that the `moonbeam-docs` repo is nestled inside of the `moonbeam-mkdocs`   #
-# repo and on your branch with the latest changes. Then simply run                        #
+# To use the script, ensure that the `moonbeam-docs` repo is nestled inside of the        #
+#  `moonbeam-mkdocs` repo and on your branch with the latest changes. Then simply run     #
 # `python scripts/calculate-redirects.py` in your terminal. There will be logs printed to #
 # the terminal. Please read through them as they will guide you on which redirects need   #
 # to be manually reviewed and any possible duplicates to be reviewed as well.             #
@@ -153,7 +146,7 @@ print("🔧 Modifying existing redirects...")
 print("➕ Creating new redirects...")
 
 mkdocs_yaml = yaml.unsafe_load(open("mkdocs.yml", "r"))
-prev_mapping = mkdocs_yaml["plugins"][3]["redirects"]["redirect_maps"]
+prev_mapping = mkdocs_yaml["plugins"][2]["redirects"]["redirect_maps"]
 prev_values = list(prev_mapping.values())
 prev_keys = list(prev_mapping.keys())
 
@@ -167,9 +160,9 @@ new_dict = {}
 for redirect in redirect_map:
   new_dict[redirect.previous_path] = redirect.current_path
 
-mkdocs_yaml["plugins"][3]["redirects"]["redirect_maps"] = new_dict
+mkdocs_yaml["plugins"][2]["redirects"]["redirect_maps"] = new_dict
 with open("mkdocs.yml", "w") as f:
-    yaml.dump(mkdocs_yaml, f, sort_keys=False, allow_unicode=True, indent=2)
+    yaml.dump(mkdocs_yaml, f, sort_keys=False, allow_unicode=True, default_style="'", indent=2)
 
 print("✅ Successfully updated the mkdocs.yml file with new redirects")
 
