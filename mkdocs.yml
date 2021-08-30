@@ -107,6 +107,13 @@
       'integrations/trufflebox.md': 'builders/interact/truffle.md'
       'staking/overview.md': 'learn/features/staking.md'
       'treasury/overview.md': 'learn/features/treasury.md'
+      'dapps-list/template.md': 'learn/dapps-list/template.md'
+      'dapps-list/bridges/chainbridge.md': 'learn/dapps-list/bridges/eth/chainbridge.md'
+      'dapps-list/defi/sushiswap.md': 'learn/dapps-list/defi/sushiswap.md'
+      'dapps-list/metatransactions/biconomy.md': 'learn/dapps-list/metatransactions/biconomy.md'
+      'dapps-list/oracles/chainlink.md': 'learn/dapps-list/oracles/chainlink.md'
+      'dapps-list/oracles/dia.md': 'learn/dapps-list/oracles/dia.md'
+
 - 'macros':
     'include_yaml':
     - 'moonbeam-docs/variables.yml'
