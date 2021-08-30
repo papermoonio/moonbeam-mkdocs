@@ -323,10 +323,11 @@ a:hover {
   transform: scale(1.05);
   text-decoration: none;
 }
-.connect-header {
+.network-modal-header, .error-modal-header {
   margin-bottom: 1em;
   font-family: 'Open Sans';
-  font-size: .8em;
+  font-size: .9em;
+  font-weight: normal;
 }
 
 /* Footer Styling */
