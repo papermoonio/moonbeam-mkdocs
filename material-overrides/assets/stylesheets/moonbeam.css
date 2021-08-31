@@ -535,10 +535,10 @@ h2.card-title {
   min-height: 4em;
 }
 .card > div:nth-child(2) {
-  min-height: 3em;
+  min-height: 3.5em;
 }
 .card > div:nth-child(3) {
-  min-height: 6.25em;
+  min-height: 6em;
 }
 .card-info {
   font-family: "Open Sans";
