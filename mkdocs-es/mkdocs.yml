@@ -8,7 +8,7 @@ copyright: © 2021 PureStake, Inc. All Rights Reserved.
 #repo_url: https://github.com/PureStake/moonbeam-docs
 #edit_uri: ""
 extra_javascript:
-  [js/connectMetaMask.js, js/errorModal.js, js/handleLanguageChange.js]
+  [js/connectMetaMask.js, js/errorModal.js, js/handleLanguageChange.js, js/networkModal.js]
 theme:
   name: material
   custom_dir: material-overrides
