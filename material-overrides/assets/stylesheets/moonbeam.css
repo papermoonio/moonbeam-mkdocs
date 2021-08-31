@@ -531,6 +531,15 @@ h2.card-title {
   font-size: 1.2em;
   font-weight: 500;
 }
+.card > div:first-child {
+  min-height: 4em;
+}
+.card > div:nth-child(2) {
+  min-height: 3em;
+}
+.card > div:nth-child(3) {
+  min-height: 6.25em;
+}
 .card-info {
   font-family: "Open Sans";
   font-size: .8em;
@@ -541,7 +550,7 @@ h2.card-title {
   font-size: .8em;
   display: flex;
 }
-.learn-more span, .in-this-section-item span {
+.learn-more span {
   vertical-align: middle;
 }
 .learn-more span svg {
@@ -549,17 +558,22 @@ h2.card-title {
   width: 1.5em;
   vertical-align: text-top;
 }
+div.in-this-section-item {
+  display: flex;
+  align-items: end;
+  margin-top: .5em
+}
 p.in-this-section {
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: .5em;
   font-size: .7em;
 }
-a.in-this-section-item {
+a.in-this-section-link {
   font-size: .7em;
-  line-height: .9;
-  margin-top: .5em;
-  display: block;
+  line-height: 1.2em;
+  margin-left: .5em;
+  align-self: center;
 }
 
 /* Styling for section headers on left hand side navigation menu */
