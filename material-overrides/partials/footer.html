@@ -3,7 +3,7 @@
 -#}
 {% import "partials/language.html" as lang with context %}
 <footer class="md-footer">
-  {% if page.previous_page or page.next_page %}
+  {% if page.previous_page or page.next_page and page.meta.title != "Home" %}
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="{{ lang.t('footer.title') }}">
         {% if page.previous_page %}

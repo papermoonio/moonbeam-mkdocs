@@ -76,10 +76,6 @@ a:hover {
   background-color: #ffffff;
 }
 
-/*Hide Nav Bar header*/
-label.md-nav__title {
-  font-size: 0;
-}
 /* Adjust Nav Bar header for smaller screens*/
 @media screen and (max-width: 76.1875em) {
   /*Hide Nav Bar header label text - only show back arrow */
@@ -327,10 +323,11 @@ label.md-nav__title {
   transform: scale(1.05);
   text-decoration: none;
 }
-.connect-header {
+.network-modal-header, .error-modal-header {
   margin-bottom: 1em;
   font-family: 'Open Sans';
-  font-size: .8em;
+  font-size: .9em;
+  font-weight: normal;
 }
 
 /* Footer Styling */
@@ -385,7 +382,7 @@ p.md-footer-connect {
   color: white;
   background-color: #171e43;
   margin: 0 auto;
-  max-width: 225px;
+  max-width: 300px;
   padding: 1rem;
   position: relative;
   z-index: 1;
@@ -405,7 +402,7 @@ p.md-footer-connect {
   top: 50%;
   width: 0;
 }
-.select-wrapper .language-select {
+.select-wrapper .select {
   background: #171e43;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   display: none;
@@ -420,24 +417,219 @@ p.md-footer-connect {
   top: 100%;
   z-index: 2;
 }
-.select-wrapper .language-select li {
+.select-wrapper .select li {
   color: white;
   display: block;
   padding: 1rem;
   text-decoration: none;
 }
-.select-wrapper .language-select li:hover {
+.select-wrapper .select li:hover {
   background-color: white;
   color: #171e43;
 }
 .select-wrapper.active::after {
   border-width: 0 6px 6px;
 }
-.select-wrapper.active .language-select {
+.select-wrapper.active .select {
   display: block;
   opacity: 1;
   pointer-events: auto;
   opacity: 0.9;
+}
+
+/* Home Page Styling */
+.home {
+  font-family: "Open Sans";
+  margin: auto;
+}
+.row {
+  display: flex;
+  justify-content: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: .5em;
+}
+.hero {
+  width: 90em;
+}
+.hero-column {
+  margin-right: 3em;
+}
+h1.hero-title {
+  font-weight: 400;
+  font-size: 1.75em;
+  margin-top: 1em;
+}
+h3.hero-info {
+  font-size: 1em;
+}
+h1.hero-title, h3.hero-info {
+  font-family: "Open Sans";
+}
+.md-typeset h3.hero-info {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+.row.hero-buttons {
+  justify-content: start;
+  transition: all .2s ease-in-out;
+  margin-top: 2em;
+}
+.row.hero-buttons button, .row.hero-buttons button:hover {
+  display: flex;
+  align-items: center;
+  border-color: #E1147b;
+  font-family: "Open Sans";
+  border-radius: .3em;  
+  padding: .4em;
+  cursor: pointer;
+}
+.row.hero-buttons a:hover {
+  text-decoration: none;
+}
+.pink-primary-button.md-button, .pink-primary-button.md-button:hover, .pink-primary-button.md-button:focus {
+  background-color: #E1147b;
+  color: white;
+  margin-right: 1em;
+}
+.pink-primary-button.md-button > span > svg {
+  fill: white;
+  display: flex;
+}
+.pink-secondary-button.md-button, button.pink-secondary-button.md-button:hover, button.pink-secondary-button.md-button:focus {
+  color: #E1147b;
+  background-color: white;
+}
+.pink-secondary-button.md-button > span > svg {
+  fill: #E1147b;
+  display: flex;
+}
+.pink-primary-button.md-button:hover, .pink-secondary-button.md-button:hover {
+  transform: scale(1.05);
+}
+.card {
+  width: 25em;
+  min-height: 10em;
+  border-radius: .5em;
+  border: 1px solid lightgrey;
+  margin: .75em;
+  overflow: auto;
+  padding: .75em 1em;
+  transition: all .2s ease-in-out;
+}
+.card:first-child {
+  margin-left: 0;
+}
+.card:last-child {
+  margin-right: 0;
+}
+h2.card-title {
+  font-family: "Open Sans";
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.card > div:first-child {
+  min-height: 4em;
+}
+.card > div:nth-child(2) {
+  min-height: 3.5em;
+}
+.card > div:nth-child(3) {
+  min-height: 6em;
+}
+.card-info {
+  font-family: "Open Sans";
+  font-size: .8em;
+}
+.learn-more {
+  color: #53cbc9;
+  font-weight: bold;
+  font-size: .8em;
+  display: flex;
+}
+.learn-more span {
+  vertical-align: middle;
+}
+.learn-more span svg {
+  fill: #53cbc9;
+  width: 1.5em;
+  vertical-align: text-top;
+}
+div.in-this-section-item {
+  display: flex;
+  align-items: end;
+  margin-top: .5em
+}
+p.in-this-section {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: .5em;
+  font-size: .7em;
+}
+a.in-this-section-link {
+  font-size: .7em;
+  line-height: 1.2em;
+  margin-left: .5em;
+  align-self: center;
+}
+
+/* Styling for section headers on left hand side navigation menu */
+nav.md-nav[data-md-level="1"] > label.md-nav__title {
+  font-size: 1.2em;
+}
+/* Section lines */
+li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
+  border-left: 1px solid black;
+}
+
+/* Section index page styles */
+.subsection-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.subsection-wrapper .card {
+  min-height: unset;
+  padding: 1em;
+  width: 22%;
+  display: flex;
+  flex: 23%;
+  max-width: 22%;
+}
+.subsection-wrapper .card a {
+  text-align: center;
+  align-self: center;
+  margin: auto;
+}
+.subsection-wrapper .card .title {
+  font-size: 1em;
+  margin: 0;
+}
+.subsection-wrapper .card .icon {
+  width: 5em;
+}
+.subsection-wrapper .card .icon[src="/images/index-pages/blank.png"] {
+  display: none;
+}
+.subsection-wrapper .card:first-child {
+  margin-left: .75em;
+}
+
+.md-sidebar.md-sidebar--primary.home {
+  display: none
+}
+
+@media screen and (max-width: 76.1875em) {
+  .select-wrapper{
+    font-size: 1.25em;
+  }
+
+  .md-sidebar.md-sidebar--primary.home {
+    display: block;
+  }
 }
 
 /* Connect MetaMask Nav Button Styling */

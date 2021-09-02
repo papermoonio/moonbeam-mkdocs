@@ -10,7 +10,7 @@
       {% include ".icons/material/menu" ~ ".svg" %}
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      {% if config.site_name == page.title %}
+      {% if config.site_name == page.title or page.title == "Home" %}
         <div class="md-header-nav__ellipsis md-ellipsis">
           {{ config.site_name }}
         </div>
@@ -41,9 +41,9 @@
       {% include "partials/source.html" %}
     </div>
     {% endif %}
-    <div class="select-wrapper">
-      <span class="select-label"></span>
-      <ul class="language-select">
+    <div class="language-select-wrapper select-wrapper">
+      <span class="language-select-label select-label"></span>
+      <ul class="language-select select">
         <li class="en" value="en">English</li>
         <li class="cn" value="cn">中文</li>
         <li class="es" value="es">Español</li>
