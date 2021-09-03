@@ -451,11 +451,12 @@ p.md-footer-connect {
   flex-direction: column;
   margin: .5em;
 }
-.hero {
+.hero-img {
   width: 90em;
 }
 .hero-column {
   margin-right: 3em;
+  margin-left: 0;
 }
 h1.hero-title {
   font-weight: 400;
@@ -574,6 +575,56 @@ a.in-this-section-link {
   line-height: 1.2em;
   margin-left: .5em;
   align-self: center;
+}
+@media screen and (max-width: 76.1875em) {
+  .card {
+    flex-wrap: wrap;
+    max-width: 40%;
+  }
+  .cards {
+    flex-wrap: wrap;
+  }
+  .row.hero, .row.cards {
+    width: 90%;
+    margin: auto;
+  }
+  .hero-img {
+    margin: auto;
+  }
+  .row.hero-buttons {
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+  .row.hero-buttons > a {
+    margin: .25em 0;
+  }
+  .card:first-child, .hero-column {
+    margin-left: .75em;
+  }
+  .card:last-child {
+    margin-right: .75em;
+  }
+  h1.hero-title {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 48.125em) {
+  .hero-img {
+    display: none;
+  }
+  .card {
+    max-width: unset;
+    margin: .5em 0;
+  }
+  .hero-column, .card:first-child, .card:last-child {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 30em) {
+  .md-header-nav__ellipsis.md-ellipsis {
+    display: none;
+  }
 }
 
 /* Styling for section headers on left hand side navigation menu */
