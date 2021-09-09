@@ -561,7 +561,7 @@ h2.card-title {
 }
 div.in-this-section-item {
   display: flex;
-  align-items: end;
+  align-items: start;
   margin-top: .5em
 }
 p.in-this-section {
@@ -574,9 +574,51 @@ a.in-this-section-link {
   font-size: .7em;
   line-height: 1.2em;
   margin-left: .5em;
+}
+/* Section index page styles */
+.subsection-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.subsection-wrapper .card {
+  min-height: unset;
+  padding: 1em;
+  width: 22%;
+  display: flex;
+  flex: 23%;
+  max-width: 22%;
+}
+.subsection-wrapper .card a {
+  text-align: center;
   align-self: center;
+  margin: auto;
+}
+.subsection-wrapper .card .title {
+  font-size: 1em;
+  margin: 0;
+}
+.subsection-wrapper .card .icon {
+  width: 5em;
+}
+.subsection-wrapper .card .icon[src="/images/index-pages/blank.png"] {
+  display: none;
+}
+.subsection-wrapper .card:first-child {
+  margin-left: .75em;
+}
+
+.md-sidebar.md-sidebar--primary.home {
+  display: none
 }
 @media screen and (max-width: 76.1875em) {
+  .select-wrapper{
+    font-size: 1.25em;
+  }
+  
+  .md-sidebar.md-sidebar--primary.home {
+    display: block;
+  }
   .card {
     flex-wrap: wrap;
     max-width: 40%;
@@ -620,6 +662,13 @@ a.in-this-section-link {
     margin-left: 0;
     margin-right: 0;
   }
+  .subsection-wrapper .card {
+    flex: 100%;
+    max-width: 16em;
+  }
+  .subsection-wrapper .card, .subsection-wrapper .card:first-child,  .subsection-wrapper .card:last-child {
+    margin: .25em;
+  }
 }
 @media screen and (max-width: 30em) {
   .md-header-nav__ellipsis.md-ellipsis {
@@ -634,53 +683,6 @@ nav.md-nav[data-md-level="1"] > label.md-nav__title {
 /* Section lines */
 li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
   border-left: 1px solid black;
-}
-
-/* Section index page styles */
-.subsection-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.subsection-wrapper .card {
-  min-height: unset;
-  padding: 1em;
-  width: 22%;
-  display: flex;
-  flex: 23%;
-  max-width: 22%;
-}
-.subsection-wrapper .card a {
-  text-align: center;
-  align-self: center;
-  margin: auto;
-}
-.subsection-wrapper .card .title {
-  font-size: 1em;
-  margin: 0;
-}
-.subsection-wrapper .card .icon {
-  width: 5em;
-}
-.subsection-wrapper .card .icon[src="/images/index-pages/blank.png"] {
-  display: none;
-}
-.subsection-wrapper .card:first-child {
-  margin-left: .75em;
-}
-
-.md-sidebar.md-sidebar--primary.home {
-  display: none
-}
-
-@media screen and (max-width: 76.1875em) {
-  .select-wrapper{
-    font-size: 1.25em;
-  }
-
-  .md-sidebar.md-sidebar--primary.home {
-    display: block;
-  }
 }
 
 /* Connect MetaMask Nav Button Styling */
