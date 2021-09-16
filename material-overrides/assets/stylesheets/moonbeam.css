@@ -285,7 +285,7 @@ a:hover {
   margin: 15% auto;
   font-size: 2em;
   padding: 1em;
-  overflow: scroll;
+  overflow: auto;
 }
 .close-modal {
   font-size: 2em;
