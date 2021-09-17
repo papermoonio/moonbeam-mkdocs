@@ -531,6 +531,7 @@ h2.card-title {
   margin: 0;
   font-size: 1.2em;
   font-weight: 500;
+  color: #353535;
 }
 .card > div:first-child {
   min-height: 4em;
