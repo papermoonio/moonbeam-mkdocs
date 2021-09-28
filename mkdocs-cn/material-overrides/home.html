@@ -1,0 +1,184 @@
+{% extends "main.html" %}
+
+{% block htmltitle %}
+{%- if page.is_homepage -%}
+<title>Moonbeam Docs</title>
+{%- endif -%}
+{% endblock %}
+
+{% block content %}
+<div class="home">
+  <div class="row hero">
+    <div class="column hero-column">
+      <h1 class="hero-title">欢迎访问Moonbeam资源及资料库</h1>
+      <h3 class="hero-info">Moonbeam结合了两者优点：以太坊的熟悉且易于使用的工具和波卡（Polkadot）的可扩展性、可互操作架构。
+        <br><br>
+        查阅资料库中的如工具、集成等教程，开始在Moonbeam上创建您的项目吧。</h3>
+
+      <div class="row hero-buttons">
+        <a href="{{ config.site_url }}builders/get-started/">
+          <button class="pink-primary-button md-button">开始构建节点<span class="md-icon">{% include
+              ".icons/material/arrow-right.svg" %}</span></button>
+        </a>
+        <a href="{{ config.site_url }}learn/platform/welcome/">
+          <button class="pink-secondary-button md-button">了解基本信息<span class="md-icon">{% include
+              ".icons/material/arrow-right.svg" %}</span></button>
+        </a>
+      </div>
+    </div>
+    <div class="column">
+      <img class="hero-img" src="{{ 'assets/images/hero.png' }}" />
+    </div>
+  </div>
+  <div class="row cards">
+    <div class="card">
+      <div>
+        <img src="{{ 'assets/images/builders.png' }}" />
+      </div>
+      <div>
+        <h2 class="card-title">在Moonbeam上构建</h2>
+      </div>
+      <div>
+        <p class="card-info">此板块将向您演示如何在Moonbeam、Moonriver、Moonbase Alpha测试网上构建新的应用或这部署已经构建的Solidity/Vyper智能合约。</p>
+      </div>
+      <div>
+        <a class="learn-more" href="{{ config.site_url }}builders/">了解更多<span>{% include
+            ".icons/material/arrow-right.svg" %}</span></a>
+      </div>
+      <div>
+        <p class="card-info in-this-section">在这个板块中：</p>
+        <div class="in-this-section-item">
+          <img src="{{ 'assets/images/page.png' }}" />
+          <a class="in-this-section-link" href="{{ config.site_url }}builders/get-started/moonriver/">
+            如何连接Moonriver
+          </a>
+        </div>
+        <div class="in-this-section-item">
+          <img src="{{ 'assets/images/page.png' }}" />
+          <a class="in-this-section-link" href="{{ config.site_url }}builders/interact/eth-libraries/deploy-contract/">
+            如何通过使用以太坊工具在Moonbeam上部署合约
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <img src="{{ 'assets/images/tokens.png' }}" />
+      </div>
+      <div>
+        <h2 class="card-title">使用您的MOVR和GLMR Token</h2>
+      </div>
+      <div>
+        <p class="card-info">此板块将向您演示如何通过钱包/DApps使用您的MOVR和GLMR Token，或是通过质押获得奖励。</p>
+      </div>
+      <div>
+        <a class="learn-more" href="{{ config.site_url }}tokens/">了解更多 <span>{% include
+            ".icons/material/arrow-right.svg" %}</span></a>
+      </div>
+      <div>
+        <p class="card-info in-this-section">在这个板块中：</p>
+        <div class="in-this-section-item">
+          <img src="{{ 'assets/images/page.png' }}" />
+          <a class="in-this-section-link" href="{{ config.site_url }}tokens/connect/metamask/">
+            如何连接MetaMask至Moonriver
+          </a>
+        </div>
+        <div class="in-this-section-item">
+          <img src="{{ 'assets/images/page.png' }}" />
+          <a class="in-this-section-link" href="{{ config.site_url }}tokens/staking/stake/">
+            如何质押（提名）一个收集人
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <img src="{{ 'assets/images/node-operators.png' }}" />
+      </div>
+      <div>
+        <h2 class="card-title">运行节点</h2>
+      </div>
+      <div>
+        <p class="card-info">此板块将向您演示如何在Moonbeam和Moonriver上运行节点以及如何成为收集人等。</p>
+      </div>
+      <div>
+        <a class="learn-more" href="{{ config.site_url }}node-operators/">了解更多 <span>{% include
+            ".icons/material/arrow-right.svg" %}</span></a>
+      </div>
+      <div>
+        <p class="card-info in-this-section">在这个板块中：</p>
+        <div class="in-this-section-item">
+          <img src="{{ 'assets/images/page.png' }}" />
+          <a class="in-this-section-link" href="{{ config.site_url }}node-operators/networks/full-node/">
+            设置节点
+          </a>
+        </div>
+        <div class="in-this-section-item">
+          <img src="{{ 'assets/images/page.png' }}" />
+          <a class="in-this-section-link" href="{{ config.site_url }}node-operators/networks/telemetry/">
+            运行Telemetry设置节点
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <img src="{{ 'assets/images/learn.png' }}" />
+      </div>
+      <div>
+        <h2 class="card-title">关于Moonbeam</h2>
+      </div>
+      <div>
+        <p class="card-info">此版块将带您深入了解Moonbeam生态系统——为何这条兼容以太坊的平行链会如此瞩目。</p>
+      </div>
+      <div>
+        <a class="learn-more" href="{{ config.site_url }}learn/">了解更多 <span>{% include
+            ".icons/material/arrow-right.svg" %}</span></a>
+      </div>
+      <div>
+        <p class="card-info in-this-section">在这个板块中：</p>
+        <div class="in-this-section-item">
+          <img src="{{ 'assets/images/page.png' }}" />
+          <a class="in-this-section-link" href="{{ config.site_url }}learn/platform/networks/overview/">
+            Moonbeam网络概览
+          </a>
+        </div>
+        <div class="in-this-section-item">
+          <img src="{{ 'assets/images/page.png' }}" />
+          <a class="in-this-section-link" href="{{ config.site_url }}learn/dapps-list/">
+            探索DApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+
+{% block site_nav %}
+{% if nav %}
+{% if page and page.meta and page.meta.hide %}
+{% set hidden = "hidden" if "navigation" in page.meta.hide %}
+{% endif %}
+<div class="md-sidebar md-sidebar--primary home" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      {% include "partials/nav.html" %}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% if page.toc and not "toc.integrate" in features %}
+{% if page and page.meta and page.meta.hide %}
+{% set hidden = "hidden" if "toc" in page.meta.hide %}
+{% endif %}
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      {% include "partials/toc.html" %}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
