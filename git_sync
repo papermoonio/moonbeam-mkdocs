@@ -20,9 +20,9 @@ then
     # rebuild all sites to apply latest mkdocs changes
     force=1
     $DOCPATH/git_sync_ml cn -f
-    $DOCPATH/git_sync_ml ru -f
-    $DOCPATH/git_sync_ml es -f
-    $DOCPATH/git_sync_ml fr -f
+    #$DOCPATH/git_sync_ml ru -f
+    #$DOCPATH/git_sync_ml es -f
+    #$DOCPATH/git_sync_ml fr -f
 fi
 
 cd $DOCPATH/moonbeam-docs
