@@ -15,31 +15,16 @@ _Note: to access staging and dev sites you need to be on the internal PureStake 
 
 ## Pre-requisites
 
-To get started you need to have [mkdocs](https://www.mkdocs.org/) installed, you can do so with `pip`:
+To get started you need to have [mkdocs](https://www.mkdocs.org/) installed. All dependencies can be installed with a single command, you can run:
 
 ```
-pip install mkdocs
+pip install -r requirements.txt
 ```
 
-Next you also need to install the [material for MkDocs](https://squidfunk.github.io/mkdocs-material/) with pip:
-
-```
-pip install mkdocs-material
-```
-
-Then install the plugins
-
-```
-pip install mkdocs-awesome-pages-plugin
-pip install mkdocs-redirects
-pip install mkdocs-macros-plugin
-```
-
-Alternatively install everything at once with `pip install -r requirements.txt`
 
 ## Getting started
 
-With the dependencies install, let's proceed to clone the necessary repositoires. In order to everything work correctly the file structure needs to be the following:
+With the dependencies install, let's proceed to clone the necessary repos. In order to everything work correctly the file structure needs to be the following:
 
 ```
 moonbeam-mkdocs
@@ -65,8 +50,8 @@ Get submodules:
 
 ```
 cd moonbeam-docs
-git submodule init
-git submodule update
+git submodule update --init
+c ..
 ```
 
 Now in the `moonbeam-mkdocs` folder (which should be the current one) you can build the site by running:
