@@ -598,6 +598,9 @@ p.quick-ref-title {
   margin-top: 0;
   margin-bottom: 2em;
 }
+.quick-ref-buttons a {
+  margin-right: .3em;
+}
 .md-button.quick-ref-button:hover, .md-button.quick-ref-button:focus {
   background-color: lightgrey;
   border-color: lightgrey;
