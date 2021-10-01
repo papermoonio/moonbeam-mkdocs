@@ -37,6 +37,8 @@ then
     # temporary patch to fix relative path of the assets to 
     # an absolute path in multi language folders
     find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/$lang\/assets\/|href=\"\/assets\/|g" '{}' \;
+    # remove images folder of the static sites as they are not necessary
+    rm -rf $STATICPATH/images/
 
     echo +++ Finished at $(date +%F' '%H:%M:%S) +++++++++++++++++++ >>$LOGPATH
 fi
