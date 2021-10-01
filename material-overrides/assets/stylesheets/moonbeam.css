@@ -476,7 +476,7 @@ h1.hero-title, h3.hero-info {
 .row.hero-buttons {
   justify-content: start;
   transition: all .2s ease-in-out;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 .row.hero-buttons button, .row.hero-buttons button:hover {
   display: flex;
@@ -576,6 +576,38 @@ a.in-this-section-link {
   line-height: 1.2em;
   margin-left: .5em;
 }
+.quick-refs {
+  display: flex;
+  flex-direction: column;
+}
+p.quick-ref-title {
+  font-size: 1.3em;
+  margin-top: 1.8em;
+  margin-bottom: .3em;
+}
+.md-button.quick-ref-button {
+  font-family: "Open Sans";
+  border-radius: .3em;
+  padding: .4em;
+  cursor: pointer;
+  color: grey;
+  border-color: lightgrey;
+  background: lightgrey;
+  font-size: .8em;
+}
+.quick-ref-buttons {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+.quick-ref-buttons a {
+  margin-right: .3em;
+}
+.md-button.quick-ref-button:hover, .md-button.quick-ref-button:focus {
+  background-color: lightgrey;
+  border-color: lightgrey;
+  color: grey;
+  transform: scale(1.05);
+}
 /* Section index page styles */
 .subsection-wrapper {
   display: flex;
@@ -589,6 +621,8 @@ a.in-this-section-link {
   display: flex;
   flex: 23%;
   max-width: 22%;
+  box-sizing: border-box;
+  margin: .5em;
 }
 .subsection-wrapper .card a {
   text-align: center;
@@ -605,10 +639,6 @@ a.in-this-section-link {
 .subsection-wrapper .card .icon[src="/images/index-pages/blank.png"] {
   display: none;
 }
-.subsection-wrapper .card:first-child {
-  margin-left: .75em;
-}
-
 .md-sidebar.md-sidebar--primary.home {
   display: none
 }
@@ -667,7 +697,7 @@ a.in-this-section-link {
     flex: 100%;
     max-width: 16em;
   }
-  .subsection-wrapper .card, .subsection-wrapper .card:first-child,  .subsection-wrapper .card:last-child {
+  .subsection-wrapper .card {
     margin: .25em;
   }
 }
