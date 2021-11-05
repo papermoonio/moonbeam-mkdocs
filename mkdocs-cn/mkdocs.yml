@@ -139,7 +139,6 @@ docs_dir: moonbeam-docs-cn
         'dapps-list/oracles/chainlink.md': 'learn/dapps-list/oracles/chainlink.md'
         'dapps-list/oracles/dia.md': 'learn/dapps-list/oracles/dia.md'
         'builders/interact/metamask-dapp.md': 'https://medium.com/moonbeam-network/integrate-metamask-into-a-dapp-ea7528c5a786'
-        'builders/tools/debug-trace.md': 'node-operators/networks/debug-trace.md'
 
   - 'macros':
       'include_yaml':
