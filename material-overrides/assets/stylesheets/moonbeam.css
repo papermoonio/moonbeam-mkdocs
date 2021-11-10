@@ -64,7 +64,8 @@ a:hover {
   text-decoration: underline;
 }
 .md-main__inner {
-  margin-bottom: 50px;
+  margin-bottom: .25em;
+  margin-top: .25em;
 }
 
 /* Hides paragraph mark at end of anchored text */
@@ -366,6 +367,11 @@ p.md-footer-connect {
 }
 p.md-footer-connect, .md-footer-newsletter label, .md-ellipsis {
   font-size: .9em;
+}
+.md-footer-copyright.center {
+  display: flex;
+  align-items: end;
+  margin-bottom: .75em;
 }
 
 /* Newsletter Signup Styling */
