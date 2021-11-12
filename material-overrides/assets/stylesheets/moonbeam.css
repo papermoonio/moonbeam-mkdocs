@@ -365,13 +365,19 @@ p.md-footer-connect {
 .md-footer-nav__button {
   margin: 0;
 }
-p.md-footer-connect, .md-footer-newsletter label, .md-ellipsis {
-  font-size: .9em;
+p.md-footer-connect, .newsletter-label, .md-ellipsis {
+  font-size: .64rem;
 }
 .md-footer-copyright.center {
   display: flex;
   align-items: end;
-  margin-bottom: .75em;
+  margin-bottom: .5em;
+}
+.md-footer-social {
+  align-self: flex-end;
+}
+.column.newsletter {
+  margin: 0;
 }
 
 /* Newsletter Signup Styling */
@@ -381,8 +387,8 @@ p.md-footer-connect, .md-footer-newsletter label, .md-ellipsis {
 .hs-button.primary.large {
   cursor: pointer;
   opacity: 0.7;
-  font-size: 11px;
-  padding: 9.4px;
+  font-size: 10px;
+  padding: 7px;
 }
 .hs-button.primary.large:hover {
   opacity: 1;
@@ -390,11 +396,11 @@ p.md-footer-connect, .md-footer-newsletter label, .md-ellipsis {
 .hs-input {
   background-color: #171e43;
   color: #ffffff;
-  padding: 8px;
+  padding: 5px;
 }
 .hs-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
-  font-size: .9em;
+  font-size: 11px;
 }
 .hs-form {
   margin-top: 1em;
@@ -409,12 +415,12 @@ p.md-footer-connect, .md-footer-newsletter label, .md-ellipsis {
 /* Language Dropdown Styling */
 .select-wrapper {
   font-family: 'Open Sans';
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: white;
   background-color: #171e43;
   margin: 0 auto;
   max-width: 300px;
-  padding: 1rem;
+  padding: .5rem;
   position: relative;
   z-index: 1;
   display: flex;
@@ -758,6 +764,7 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
   margin: 0.3em 0.5em;
   text-decoration: none;
   color: #53cbc9;
+  font-size: .7rem;
 }
 .md-button.connectMetaMask-nav:hover {
   transform: scale(1.05);
@@ -780,4 +787,18 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
     padding: 0.25em 0.5em;
     text-align: center;
   }
+}
+
+/* General nav styling */
+.md-header-nav__topic.md-ellipsis, .md-header-nav__ellipsis {
+  font-size: .9rem;
+}
+.md-tabs__item {
+  height: 2rem;
+}
+.md-tabs__link {
+  margin-top: .25rem;
+}
+.md-search__input {
+  font-size: .7rem;
 }
