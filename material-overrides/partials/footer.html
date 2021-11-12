@@ -41,34 +41,34 @@
   {% endif %}
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div>
+      <div class="md-footer-social">
         <p class="md-footer-connect">Connect with us</p>
         <div>{% include "partials/social.html" %}</div>
       </div>
-      <form class="md-footer-newsletter">
-        <label>Moonbuilders Newsletter</label>
-        <!-- These script tags are for the newsletter signup and must be here -->
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-        <script>
-            hbspt.forms.create({
-            region: "na1",
-            portalId: "6074164",
-            formId: "e5b4a7bd-1d01-479a-ac4a-da1b38bb1acb"
-          });
-        </script>
-      </form>
-    </div>
-    <div class="md-footer-meta__inner md-grid center">
-      <div class="md-footer-copyright">
+      <div class="md-footer-copyright center">
         {% if config.copyright %}
           <div class="md-footer-copyright__highlight">
             {{ config.copyright }}
           </div>
         {% endif %}
-        <!-- Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a-->
+          <!-- Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a-->
+      </div>
+      <div class="column newsletter">
+        <label class="newsletter-label">Moonbuilders Newsletter</label>
+        <form class="md-footer-newsletter">
+          <!-- These script tags are for the newsletter signup and must be here -->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+              hbspt.forms.create({
+              region: "na1",
+              portalId: "6074164",
+              formId: "e5b4a7bd-1d01-479a-ac4a-da1b38bb1acb"
+            });
+          </script>
+        </form>
       </div>
     </div>
   </div>
