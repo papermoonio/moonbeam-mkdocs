@@ -84,7 +84,7 @@
         'networks/moonriver.md': 'learn/platform/networks/moonriver.md'
         'networks/overview.md': 'learn/platform/networks/overview.md'
         'staking/stake.md': 'tokens/staking/stake.md'
-        'staking/stakingprecompile.md': 'tokens/staking/stakingprecompile.md'
+        'staking/stakingprecompile.md': 'builders/tools/precompiles/staking.md'
         'getting-started/local-node/deploy-contract.md': 'builders/interact/eth-libraries/deploy-contract.md'
         'getting-started/local-node/send-transaction.md': 'builders/interact/eth-libraries/send-transaction.md'
         'getting-started/moonbase/metamask.md': 'tokens/connect/metamask.md'
@@ -142,7 +142,7 @@
         'builders/get-started/api-providers.md': 'builders/get-started/endpoints.md'
         'node-operators/networks/full-node.md': 'node-operators/networks/run-a-node/overview.md'
         'node-operators/networks/compile-binary.md': 'node-operators/networks/run-a-node/systemd.md'
-
+        'builders/tools/precompiles.md': 'builders/tools/precompiles/eth-mainnet.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs/variables.yml'
