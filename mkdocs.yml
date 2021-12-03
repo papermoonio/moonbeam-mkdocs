@@ -88,7 +88,6 @@
         'getting-started/local-node/deploy-contract.md': 'builders/interact/eth-libraries/deploy-contract.md'
         'getting-started/local-node/send-transaction.md': 'builders/interact/eth-libraries/send-transaction.md'
         'getting-started/moonbase/metamask.md': 'tokens/connect/metamask.md'
-        'integrations/bridges/ethereum/chainbridge.md': 'builders/integrations/bridges/eth/chainbridge.md'
         'integrations/debug-trace.md': 'builders/tools/debug-trace.md'
         'integrations/ethlibraries/etherjs.md': 'builders/tools/eth-libraries/etherjs.md'
         'integrations/ethlibraries/web3js.md': 'builders/tools/eth-libraries/web3js.md'
