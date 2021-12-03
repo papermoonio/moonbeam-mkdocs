@@ -149,6 +149,7 @@ docs_dir: moonbeam-docs-cn
         'builders/tools/remix.md': 'builders/tools/eth-dev-env/remix.md'
         'builders/tools/truffle.md': 'builders/tools/eth-dev-env/truffle.md'
         'builders/tools/waffle.md': 'builders/tools/eth-dev-env/waffle.md'
+        'integrations/bridges/ethereum/chainbridge.md': 'builders/integrations/bridges/eth/chainbridge.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs-cn/variables.yml'
