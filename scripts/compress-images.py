@@ -1,42 +1,47 @@
-from PIL import Image
+# ------- 👋 Welcome to the script for compressing images ------- #
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+# The purpose of this script is to compress images that are       #
+# larger than 900KB.                                              #
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+# To use the script, ensure that the `moonbeam-docs` repo is      #
+# nestled inside of the `moonbeam-mkdocs` repo. Then simply run   #
+# `python scripts/compress-images.py` in your terminal. The       #
+# script will check all of the images to see the current size and #
+# if any are larger than 900KB, it will use the Tinify library to #
+# compress the images. Tinify compresses images by selectively    #
+# decreasing the number of colors in the image so fewer bytes are #
+# required to store the data. To use the Tinify library, you will #
+# need an API key. Check LastPass or create your own using the    #
+# link below. Once compression is done, you will see that the     #
+# original image has been renamed to "uncompressed" and you can   #
+# compare the two images. It looks like there is no difference,   #
+# but in many cases the file size is reduced significantly 🥳.    #
+# Once the script is complete, you can commit the changes in your #
+# local `moonbeam-docs` repo! And that's it!                      #
+
 import os
-import sys
-import math
-import io
+import shutil
+import tinify
 
-root = "moonbeam-docs/images/"
+# https://tinypng.com/developers
+tinify.key = "INSERT_API_KEY_HERE"
 
-def resize_image(image):
-  # Min and Max quality
-   Qmin, Qmax = 25, 96
-   # Highest acceptable quality found
-   Qacc = -1
-   while Qmin <= Qmax:
-      m = math.floor((Qmin + Qmax) / 2)
+# function to resize large images
+def compress_image(image):
+  print("🖼 Compressing " + image)
 
-      # Encode into memory and get size
-      buffer = io.BytesIO()
-      image.save(buffer, format="png", quality=m)
-      s = buffer.getbuffer().nbytes
+  # copy existing file and save as "uncompressed-image-name"
+  destination = "uncompressed-" + image
+  shutil.copyfile(image, destination)
 
-      if s <= 921600:
-         Qacc = m
-         Qmin = m + 1
-      elif s > 921600:
-         Qmax = m - 1
+  # use the existing file to compress the image
+  compressed_image = tinify.from_file(image)
 
-      
-      if Qacc == -1:
-        (width, height) = (image.width // 2, image.height // 2)
-        image = image.resize((width, height), Image.ANTIALIAS)
-        image.save(buffer, format="png", quality=30, optimize=True, compress_level=9)
-        print("resized!", buffer.tell()/1024)
-        Qacc = 30
+  # save new compressed file as "image-name"
+  compressed_image.to_file(image)
 
-      return Qacc
-
-# function to compress images within the given directory
-def compress_images(dir):
+# function to check image size and determine if compression is needed
+def check_size(dir):
   # change the directory
   os.chdir(dir)
   files = os.listdir()
@@ -49,17 +54,12 @@ def compress_images(dir):
   if len(images) > 0:
     # iterate over each of the images
     for image in images:
-      # check if the image has already been compressed
-      if ("compressed-" in image) or ("compressed-" + image in images):
-        img = Image.open(image)
-        quality = resize_image(img)
-        print(os.stat(image).st_size/1000, quality)
-        continue
-      else:
-        # open and compress the image and then save it with a new name
-        img = Image.open(image)
-        print("Image " + image + " is: " + img.size)
-        # img.save("compressed-"+ image, optimize=True, quality=quality)
+      size_in_bytes = os.stat(image).st_size # represents the size of the file in bytes
+      size_in_kilobytes = size_in_bytes/1024
+
+      if (size_in_kilobytes > 900):
+        # compress the image
+        compress_image(image)
 
   # reset directory to mkdocs root
   cwd = os.getcwd()
@@ -68,13 +68,15 @@ def compress_images(dir):
 
 # function to get all directories and subdirectories
 def listdirs(root_dir):
-    # iterate over each directory and compress the images
+    # iterate over each directory and check and resize image sizes as needed
     for item in os.scandir(root_dir):
         if item.is_dir():
             listdirs(item)
-            compress_images(item.path)
-    
+            check_size(item.path)
 
 print("⌚️ Compressing images this could take a few minutes...")
+
+root = "moonbeam-docs/images/"
 listdirs(root)
-print("✅ Compressing images completed")
+
+print("✅ Compressing images completed, please check out your local moonbeam-docs directory to see the changes")
