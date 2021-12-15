@@ -22,49 +22,57 @@
 import os
 import shutil
 import tinify
+from PIL.PngImagePlugin import PngImageFile, PngInfo
 
 # https://tinypng.com/developers
 tinify.key = "INSERT_API_KEY_HERE"
 
 # function to resize large images
 def compress_image(image):
-  print("🖼 Compressing " + image)
+    # use metadata to mark the file as compressed
+    img = PngImageFile(image)
+    metadata = PngInfo()
+    metadata.add_text("compressed", "true")
+    img.save(image, pnginfo=metadata)
 
-  # copy existing file and save as "uncompressed-image-name"
-  destination = "uncompressed-" + image
-  shutil.copyfile(image, destination)
+    print("🖼 Compressing " + image)
 
-  # use the existing file to compress the image
-  compressed_image = tinify.from_file(image)
+    # compress the image
+    compressed_image = tinify.from_file(image)
 
-  # save new compressed file as "image-name"
-  compressed_image.to_file(image)
+    # save new compressed file
+    compressed_image.to_file(image)
 
 # function to check image size and determine if compression is needed
 def check_size(dir):
-  # change the directory
-  os.chdir(dir)
-  files = os.listdir()
+    # change the directory
+    os.chdir(dir)
+    files = os.listdir()
 
-  # extract all of the images:
-  images = [file for file in files if file.endswith(('png'))]
+    # extract all of the images:
+    images = [file for file in files if file.endswith(('png'))]
 
-  # some directories may only contain subdirectories without images to compress, so make sure
-  # there are images that can be compressed before proceeding
-  if len(images) > 0:
-    # iterate over each of the images
-    for image in images:
-      size_in_bytes = os.stat(image).st_size # represents the size of the file in bytes
-      size_in_kilobytes = size_in_bytes/1024
+    # some directories may only contain subdirectories without images to compress, so make sure
+    # there are images that can be compressed before proceeding
+    if len(images) > 0:
+        # iterate over each of the images
+        for image in images:
+            # represents the size of the file in bytes
+            size_in_bytes = os.stat(image).st_size
+            size_in_kilobytes = size_in_bytes/1024
 
-      if (size_in_kilobytes > 900):
-        # compress the image
-        compress_image(image)
+            img = PngImageFile(image)
 
-  # reset directory to mkdocs root
-  cwd = os.getcwd()
-  mkdocs_root = cwd.split(root)[0]
-  os.chdir(mkdocs_root)
+            if (size_in_kilobytes > 900):
+                # check metadata to see if image has already been compressed
+                if "compressed" not in img.text:
+                    # if not, compress the image
+                    compress_image(image)
+
+    # reset directory to mkdocs root
+    cwd = os.getcwd()
+    mkdocs_root = cwd.split(root)[0]
+    os.chdir(mkdocs_root)
 
 # function to get all directories and subdirectories
 def listdirs(root_dir):
