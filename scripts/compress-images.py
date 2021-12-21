@@ -13,14 +13,13 @@
 # required to store the data. To use the Tinify library, you will #
 # need an API key. Check LastPass or create your own using the    #
 # link below. Once compression is done, you will see that the     #
-# original image has been renamed to "uncompressed" and you can   #
-# compare the two images. It looks like there is no difference,   #
-# but in many cases the file size is reduced significantly 🥳.    #
+# original image has been replaced. If the image happens to be    #
+# the same size or larger after compression, you will be notified #
+# to manually resize the image in Inkscape and re-run the script. #
 # Once the script is complete, you can commit the changes in your #
 # local `moonbeam-docs` repo! And that's it!                      #
 
 import os
-import shutil
 import tinify
 from PIL.PngImagePlugin import PngImageFile, PngInfo
 
@@ -28,20 +27,26 @@ from PIL.PngImagePlugin import PngImageFile, PngInfo
 tinify.key = "INSERT_API_KEY_HERE"
 
 # function to resize large images
-def compress_image(image):
-    # use metadata to mark the file as compressed
-    img = PngImageFile(image)
-    metadata = PngInfo()
-    metadata.add_text("compressed", "true")
-    img.save(image, pnginfo=metadata)
-
+def compress_image(image, original_size):
     print("🖼 Compressing " + image)
 
     # compress the image
     compressed_image = tinify.from_file(image)
-
-    # save new compressed file
+        
+    # save to file
     compressed_image.to_file(image)
+
+    # check the image size, if the image hasn't gone down in size, try resizing in inkscape
+    size_in_kilobytes = os.stat(image).st_size/1024
+    if size_in_kilobytes >= original_size:
+        print("Image increased in size after compression, please resize this image manually in Inkscape and run the script again (" + image + ")")
+        print("==========")
+    else:
+        # use metadata to mark the file as compressed
+        img = PngImageFile(image)
+        metadata = PngInfo()
+        metadata.add_text("compressed", "true")
+        img.save(image, pnginfo=metadata)
 
 # function to check image size and determine if compression is needed
 def check_size(dir):
@@ -63,11 +68,11 @@ def check_size(dir):
 
             img = PngImageFile(image)
 
-            if (size_in_kilobytes > 900):
+            # check if size of the image is larger than 900KB
+            if size_in_kilobytes > 900:
                 # check metadata to see if image has already been compressed
                 if "compressed" not in img.text:
-                    # if not, compress the image
-                    compress_image(image)
+                    compress_image(image, size_in_kilobytes)
 
     # reset directory to mkdocs root
     cwd = os.getcwd()
