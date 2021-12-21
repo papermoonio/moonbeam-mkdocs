@@ -39,7 +39,7 @@ def compress_image(image, original_size):
     # check the image size, if the image hasn't gone down in size, try resizing in inkscape
     size_in_kilobytes = os.stat(image).st_size/1024
     if size_in_kilobytes >= original_size:
-        print("Image increased in size after compression, please resize this image manually in Inkscape and run the script again (" + image + ")")
+        print("Image increased in size after compression, please re-export this image manually using a lower dpi in Inkscape and run the script again (" + image + ")")
         print("==========")
     else:
         # use metadata to mark the file as compressed
