@@ -149,6 +149,8 @@
         'builders/tools/waffle.md': 'builders/tools/eth-dev-env/waffle.md'
         'integrations/bridges/ethereum/chainbridge.md': 'builders/integrations/bridges/eth/chainbridge.md'
         'tokens/staking/stakingprecompile.md': 'builders/tools/precompiles/staking.md'
+        'dapps-list/template.md': 'learn/dapps-list/index.md'
+        'learn/dapps-list/template.md': 'learn/dapps-list/index.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs/variables.yml'
