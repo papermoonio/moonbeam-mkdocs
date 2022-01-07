@@ -115,9 +115,10 @@
         'learn/dapps-list/defi': 'learn/dapps-list/index.md'
         'learn/dapps-list/defi/sushiswap.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/defi/amaralend.md': 'learn/dapps-list/index.md'
+        'learn/dapps-list/metaTransactions/biconomy.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/oracles/dia.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/oracles/chainlink.md': 'builders/integrations/oracles/chainlink.md'
-        'learn/dapps-list/metaTransactions/biconomy.md': 'learn/dapps-list/index.md'
+        'learn/dapps-list/template.md': 'learn/dapps-list/index.md'
         'node-operators/indexers/thegraph-node.md': 'node-operators/indexer-nodes/thegraph-node.md'
         'node-operators/oracles/node-chainlink.md': 'node-operators/oracle-nodes/node-chainlink.md'
         'overview/why-polkadot.md': 'learn/platform/why-polkadot.md'
@@ -146,6 +147,7 @@
         'dapps-list/metatransactions/biconomy.md': 'learn/dapps-list/index.md'
         'dapps-list/oracles/chainlink.md': 'builders/integrations/oracles/chainlink.md'
         'dapps-list/oracles/dia.md': 'learn/dapps-list/index.md'
+        'dapps-list/template.md': 'learn/dapps-list/index.md'
         'builders/interact/metamask-dapp.md': 'https://medium.com/moonbeam-network/integrate-metamask-into-a-dapp-ea7528c5a786'
         'builders/get-started/api-providers.md': 'builders/get-started/endpoints.md'
         'node-operators/networks/full-node.md': 'node-operators/networks/run-a-node/overview.md'
@@ -159,8 +161,6 @@
         'builders/tools/waffle.md': 'builders/tools/eth-dev-env/waffle.md'
         'integrations/bridges/ethereum/chainbridge.md': 'builders/integrations/bridges/eth/chainbridge.md'
         'tokens/staking/stakingprecompile.md': 'builders/tools/precompiles/staking.md'
-        'dapps-list/template.md': 'learn/dapps-list/index.md'
-        'learn/dapps-list/template.md': 'learn/dapps-list/index.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs/variables.yml'
