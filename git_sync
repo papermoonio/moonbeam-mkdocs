@@ -36,7 +36,6 @@ then
     echo +++ $(date +%F' '%H:%M:%S) - Pulling Changes from DOCS Repo... >>$LOGPATH
     # pull changes
     /usr/bin/git merge origin/master &>>$LOGPATH
-    /usr/bin/git submodule update --remote &>>$LOGPATH
 
     # build mkdoc
     echo 'docs updated, building en site' >>$LOGPATH

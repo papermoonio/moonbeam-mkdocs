@@ -9,9 +9,7 @@ LOGPATH=/var/log/s3_moonbeam_docs_sync.log
 DOCPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-stage
 STATICPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-static
 # check/create symlinks
-[ ! -L $DOCPATH/moonbeam-docs-$lang/.gitmodules ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/.gitmodules $DOCPATH/moonbeam-docs-$lang/.gitmodules
 [ ! -L $DOCPATH/moonbeam-docs-$lang/variables.yml ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/variables.yml $DOCPATH/moonbeam-docs-$lang/variables.yml
-[ ! -L $DOCPATH/moonbeam-docs-$lang/learn/dapps-list ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/learn/dapps-list $DOCPATH/moonbeam-docs-$lang/learn/dapps-list
 [ ! -L $DOCPATH/moonbeam-docs-$lang/images ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/images $DOCPATH/moonbeam-docs-$lang/images
 [ ! -L $DOCPATH/moonbeam-docs-$lang/js ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/js $DOCPATH/moonbeam-docs-$lang/js
 [ ! -L $DOCPATH/moonbeam-docs-$lang/snippets/code ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/snippets/code $DOCPATH/moonbeam-docs-$lang/snippets/code
