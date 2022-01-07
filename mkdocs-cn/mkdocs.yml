@@ -132,7 +132,6 @@ docs_dir: moonbeam-docs-cn
         'integrations/trufflebox.md': 'builders/interact/truffle.md'
         'staking/overview.md': 'learn/features/staking.md'
         'treasury/overview.md': 'learn/features/treasury.md'
-        'dapps-list/template.md': 'learn/dapps-list/template.md'
         'dapps-list/bridges/chainbridge.md': 'learn/dapps-list/bridges/eth/chainbridge.md'
         'dapps-list/defi/sushiswap.md': 'learn/dapps-list/defi/sushiswap.md'
         'dapps-list/metatransactions/biconomy.md': 'learn/dapps-list/metaTransactions/biconomy.md'
@@ -149,8 +148,10 @@ docs_dir: moonbeam-docs-cn
         'builders/tools/remix.md': 'builders/tools/eth-dev-env/remix.md'
         'builders/tools/truffle.md': 'builders/tools/eth-dev-env/truffle.md'
         'builders/tools/waffle.md': 'builders/tools/eth-dev-env/waffle.md'
-        'integrations/bridges/ethereum/chanbridge.md': 'builders/integrations/bridges/eth/chainbridge.md'
+        'integrations/bridges/ethereum/chainbridge.md': 'builders/integrations/bridges/eth/chainbridge.md'
         'tokens/staking/stakingprecompile.md': 'builders/tools/precompiles/staking.md'
+        'dapps-list/template.md': 'learn/dapps-list/index.md'
+        'learn/dapps-list/template.md': 'learn/dapps-list/index.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs-cn/variables.yml'
