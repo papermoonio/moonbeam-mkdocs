@@ -116,6 +116,7 @@
         'learn/dapps-list/defi/sushiswap.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/defi/amaralend.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/metaTransactions/biconomy.md': 'learn/dapps-list/index.md'
+        'learn/dapps-list/metaTransactions/index.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/oracles/dia.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/oracles/chainlink.md': 'builders/integrations/oracles/chainlink.md'
         'learn/dapps-list/template.md': 'learn/dapps-list/index.md'
