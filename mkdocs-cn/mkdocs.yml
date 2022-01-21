@@ -46,7 +46,7 @@ docs_dir: moonbeam-docs-cn
   - 'section-index'
   - 'redirects':
       'redirect_maps':
-       'resources/networks.md': 'learn/platform/networks/overview.md'
+        'resources/networks.md': 'learn/platform/networks/overview.md'
         'getting-started/setting-up-a-node.md': 'builders/get-started/moonbeam-dev.md'
         'getting-started/using-metamask.md': 'tokens/connect/metamask.md'
         'getting-started/using-remix.md': 'builders/interact/remix.md'
