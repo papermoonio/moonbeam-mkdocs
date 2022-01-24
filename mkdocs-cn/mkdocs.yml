@@ -75,6 +75,7 @@ docs_dir: moonbeam-docs-cn
         'governance/voting.md': 'tokens/governance/voting.md'
         'integrations/indexers/covalent.md': 'builders/integrations/indexers/covalent.md'
         'integrations/indexers/thegraph.md': 'builders/integrations/indexers/thegraph.md'
+        'integrations/thegraph.md': 'builders/integrations/indexers/thegraph.md'
         'integrations/openzeppelin/defender.md': 'builders/tools/eth-dev-env/openzeppelin/defender.md'
         'integrations/openzeppelin/overview.md': 'builders/tools/eth-dev-env/openzeppelin/overview.md'
         'integrations/oracles/band-protocol.md': 'builders/integrations/oracles/band-protocol.md'
