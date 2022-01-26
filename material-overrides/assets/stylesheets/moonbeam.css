@@ -490,6 +490,7 @@ p.md-footer-connect, .newsletter-label, .md-ellipsis {
 }
 .hero-img {
   width: 90em;
+  margin: auto;
 }
 .hero-column {
   margin-right: 3em;
@@ -552,16 +553,11 @@ h1.hero-title, h3.hero-info {
   min-height: 10em;
   border-radius: .5em;
   border: 1px solid lightgrey;
-  margin: .75em;
   overflow: auto;
   padding: .75em 1em;
   transition: all .2s ease-in-out;
-}
-.card:first-child {
-  margin-left: 0;
-}
-.card:last-child {
-  margin-right: 0;
+  margin-right: .5em;
+  margin-bottom: .75em;
 }
 h2.card-title {
   font-family: "Open Sans";
@@ -614,7 +610,6 @@ a.in-this-section-link {
   margin-left: .5em;
 }
 .quick-refs {
-  display: flex;
   flex-direction: column;
 }
 p.quick-ref-title {
@@ -635,9 +630,12 @@ p.quick-ref-title {
 .quick-ref-buttons {
   margin-top: 0;
   margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
 }
 .quick-ref-buttons a {
   margin-right: .3em;
+  margin-bottom: .5em;
 }
 .md-button.quick-ref-button:hover, .md-button.quick-ref-button:focus {
   background-color: lightgrey;
@@ -683,22 +681,28 @@ p.quick-ref-title {
   .select-wrapper{
     font-size: 1.25em;
   }
-  
   .md-sidebar.md-sidebar--primary.home {
     display: block;
   }
-  .card {
+  .row.cards {
     flex-wrap: wrap;
-    max-width: 40%;
   }
   .cards {
-    flex-wrap: wrap;
+    flex-grow: 1;
+    width: unset;
+  }
+  .card {
+    width: unset;
+    flex: 40%
+  }
+  .card > div:first-child, .card > div:nth-child(2) {
+    min-height: 1em;
+  }
+  .card > div:nth-child(3) {
+    min-height: 5em;
   }
   .row.hero, .row.cards {
     width: 90%;
-    margin: auto;
-  }
-  .hero-img {
     margin: auto;
   }
   .row.hero-buttons {
@@ -708,12 +712,6 @@ p.quick-ref-title {
   .row.hero-buttons > a {
     margin: .25em 0;
   }
-  .card:first-child, .hero-column {
-    margin-left: .75em;
-  }
-  .card:last-child {
-    margin-right: .75em;
-  }
   h1.hero-title {
     margin-top: 0;
   }
@@ -722,11 +720,15 @@ p.quick-ref-title {
   .hero-img {
     display: none;
   }
-  .card {
-    max-width: unset;
-    margin: .5em 0;
+  .cards {
+    flex-grow: 1;
   }
-  .hero-column, .card:first-child, .card:last-child {
+  .card {
+    width: unset;
+    margin: .5em 0;
+    flex: 100%
+  }
+  .hero-column {
     margin-left: 0;
     margin-right: 0;
   }
