@@ -163,6 +163,7 @@ docs_dir: moonbeam-docs-cn
         'builders/tools/waffle.md': 'builders/tools/eth-dev-env/waffle.md'
         'integrations/bridges/ethereum/chainbridge.md': 'builders/integrations/bridges/eth/chainbridge.md'
         'tokens/staking/stakingprecompile.md': 'builders/tools/precompiles/staking.md'
+        'node-operators/networks/collator.md': 'node-operators/networks/collators/index.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs-cn/variables.yml'
