@@ -368,16 +368,17 @@ p.md-footer-connect {
 p.md-footer-connect, .newsletter-label, .md-ellipsis {
   font-size: .64rem;
 }
-.md-footer-copyright.center {
-  display: flex;
-  align-items: end;
-  margin-bottom: .5em;
-}
 .md-footer-social {
   align-self: flex-end;
 }
 .column.newsletter {
   margin: 0;
+}
+.network-links {
+  text-align: center;
+}
+.network-links > a {
+  margin-right: 1em;
 }
 
 /* Newsletter Signup Styling */
