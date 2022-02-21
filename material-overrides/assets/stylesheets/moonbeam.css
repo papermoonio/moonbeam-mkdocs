@@ -814,9 +814,13 @@ li > nav.md-nav[data-md-level="3"], li > nav.md-nav[data-md-level="4"] {
   min-height: 75vh;
   margin-bottom: .5rem;
 }
-.disclaimer {
+.disclaimer, .page-disclaimer {
   margin-top: auto;
-  font-size: .6em;
+  font-size: x-small;
+  font-style: italic;
+}
+.page-disclaimer {
+  margin-top: 3em;
 }
 @media screen and (max-width: 719px) {
   .md-content__inner.main-page {
