@@ -29,7 +29,7 @@ docs_dir: moonbeam-docs-cn
       'title': 'Sections'
   - 'admonition'
   - 'pymdownx.snippets':
-      'base_path': 'moonbeam-docs-cn/snippets'
+      'base_path': 'moonbeam-docs-cn/.snippets'
   - 'pymdownx.emoji':
       'emoji_index': !!python/name:materialx.emoji.twemoji
       'emoji_generator': !!python/name:materialx.emoji.to_svg

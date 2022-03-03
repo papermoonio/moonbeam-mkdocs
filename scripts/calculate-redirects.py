@@ -18,9 +18,9 @@ import requests
 import os
 import yaml
 
-# Function to filter root items to get rid of those including a ".", "snippets", "js", "images", and "dapps-list"
+# Function to filter root items to get rid of those including a "." (i.e. ".snippets"), "js", "images", and "dapps-list"
 def filter_root_directories(variable):
-    omit_dirs = ["snippets", "js", "images", "dapps-list"]
+    omit_dirs = ["js", "images", "dapps-list"]
     if ((variable not in omit_dirs) and (variable.find(".") == -1)):
         return variable
 
@@ -62,7 +62,7 @@ def fetch_previous_file_paths():
   rootTree = requests.get("https://api.github.com/repos/PureStake/moonbeam-docs/git/trees/" + sha + "?recursive=1").json()["tree"]
 
   for item in rootTree:
-    omit_dirs = ["snippets", "js", "images", "dapps-list", ".", "README.md"]
+    omit_dirs = [".snippets", "js", "images", "dapps-list", ".", "README.md"]
     path = item["path"]
     if not path.startswith(tuple(omit_dirs)) and path.endswith(".md"):
       previous_file_paths.append(path)
