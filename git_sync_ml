@@ -15,7 +15,7 @@ cp -Rsf /var/www/moonbeam-docs-stage/mkdocs-$lang/* $DOCPATH
 [ ! -L $DOCPATH/moonbeam-docs-$lang/variables.yml ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/variables.yml $DOCPATH/moonbeam-docs-$lang/variables.yml
 [ ! -L $DOCPATH/moonbeam-docs-$lang/images ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/images $DOCPATH/moonbeam-docs-$lang/images
 [ ! -L $DOCPATH/moonbeam-docs-$lang/js ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/js $DOCPATH/moonbeam-docs-$lang/js
-[ ! -L $DOCPATH/moonbeam-docs-$lang/snippets/code ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/snippets/code $DOCPATH/moonbeam-docs-$lang/snippets/code
+[ ! -L $DOCPATH/moonbeam-docs-$lang/.snippets/code ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/.snippets/code $DOCPATH/moonbeam-docs-$lang/.snippets/code
 # check for repo changes
 cd $DOCPATH/moonbeam-docs-$lang
 if /usr/bin/git checkout master &&
