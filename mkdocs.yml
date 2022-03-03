@@ -201,7 +201,7 @@
         'builders/interact/identity.md': 'tokens/manage/identity.md'
         'builders/tools/multisig-safe.md': 'tokens/manage/multisig-safe.md'
         'builders/interact/proxy-accounts.md': 'tokens/manage/proxy-accounts.md'
-        'builders/tools/eth-libraries/etherjs.md': 'builders/build/eth-api/libraries/ethersjs/'
+        'builders/tools/eth-libraries/etherjs.md': 'builders/build/eth-api/libraries/ethersjs.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs/variables.yml'
