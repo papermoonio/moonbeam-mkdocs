@@ -35,6 +35,8 @@ then
 
     # fix relative links to include language subdir
     find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/|href=\"\/$lang\/|g" '{}' \;
+    # update instances where the language is duplicated
+    find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/$lang/$lang/|href=\"\/$lang\/|g" '{}' \;
     # temporary patch to fix relative path of the assets to
     # an absolute path in multi language folders
     find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/$lang\/assets\/|href=\"\/assets\/|g" '{}' \;
