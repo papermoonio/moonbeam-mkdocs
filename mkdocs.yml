@@ -177,8 +177,10 @@
         'builders/tools/eth-dev-env/openzeppelin/defender.md': 'builders/build/eth-api/dev-env/openzeppelin/defender.md'
         'builders/tools/eth-dev-env/openzeppelin/overview.md': 'builders/build/eth-api/dev-env/openzeppelin/overview.md'
         'builders/interact/oz-remix.md': 'builders/build/eth-api/dev-env/openzeppelin/contracts.md'
+        'builders/tools/eth-dev-env/remix.md': 'builders/build/eth-api/dev-env/remix.md'
         'builders/interact/remix.md' : 'builders/build/eth-api/dev-env/remix.md'
         'builders/interact/truffle.md': 'builders/build/eth-api/dev-env/truffle.md'
+        'builders/tools/eth-dev-env/truffle.md': 'builders/build/eth-api/dev-env/truffle.md'
         'builders/interact/waffle-mars.md' : 'builders/build/eth-api/dev-env/waffle-mars.md'
         'builders/tools/eth-dev-env/mars.md': 'builders/build/eth-api/dev-env/waffle-mars.md' 
         'builders/tools/eth-dev-env/waffle.md': 'builders/build/eth-api/dev-env/waffle-mars.md' 
@@ -186,7 +188,6 @@
         'builders/interact/eth-libraries/send-transaction.md' : 'builders/build/eth-api/libraries/index.md'
         'builders/tools/eth-libraries/web3js.md': 'builders/build/eth-api/libraries/web3js.md'
         'builders/tools/eth-libraries/web3py.md': 'builders/build/eth-api/libraries/web3py.md'
-        'builders/tools/eth-libraries/ethersjs.md': 'builders/build/eth-api/libraries/ethersjs.md'
         'builders/tools/pubsub.md': 'builders/build/eth-api/pubsub.md'
         'builders/tools/verify-contracts/block-explorers.md': 'builders/build/eth-api/verify-contracts/block-explorers.md'
         'builders/tools/verify-contracts/etherscan-plugins.md': 'builders/build/eth-api/verify-contracts/etherscan-plugins.md'
@@ -202,6 +203,7 @@
         'builders/tools/multisig-safe.md': 'tokens/manage/multisig-safe.md'
         'builders/interact/proxy-accounts.md': 'tokens/manage/proxy-accounts.md'
         'builders/tools/eth-libraries/etherjs.md': 'builders/build/eth-api/libraries/ethersjs.md'
+        'builders/interact/scaffold-eth.md': 'builders/build/eth-api/dev-env/scaffold-eth/'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs/variables.yml'
