@@ -17,7 +17,7 @@ import os
 root_items = os.listdir('moonbeam-docs')
 
 def filter_root_directories(variable):
-    omit_dirs = ["js", "images", "snippets", "dapps-list"]
+    omit_dirs = ["js", "images", ".snippets", "dapps-list"]
     if ((variable not in omit_dirs) and (variable.find(".") == -1)):
         return variable
 

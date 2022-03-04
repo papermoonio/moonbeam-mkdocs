@@ -9,10 +9,13 @@ LOGPATH=/var/log/s3_moonbeam_docs_sync.log
 DOCPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-stage
 STATICPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-static
 # check/create symlinks
+[ ! -L $DOCPATH/material-overrides ] && cp -Rs /var/www/moonbeam-docs-stage/material-overrides $DOCPATH/material-overrides
+# symlinks to specific mkdocs-$lang options to overwrite
+cp -Rsf /var/www/moonbeam-docs-stage/mkdocs-$lang/* $DOCPATH
 [ ! -L $DOCPATH/moonbeam-docs-$lang/variables.yml ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/variables.yml $DOCPATH/moonbeam-docs-$lang/variables.yml
 [ ! -L $DOCPATH/moonbeam-docs-$lang/images ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/images $DOCPATH/moonbeam-docs-$lang/images
 [ ! -L $DOCPATH/moonbeam-docs-$lang/js ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/js $DOCPATH/moonbeam-docs-$lang/js
-[ ! -L $DOCPATH/moonbeam-docs-$lang/snippets/code ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/snippets/code $DOCPATH/moonbeam-docs-$lang/snippets/code
+[ ! -L $DOCPATH/moonbeam-docs-$lang/.snippets/code ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/.snippets/code $DOCPATH/moonbeam-docs-$lang/.snippets/code
 # check for repo changes
 cd $DOCPATH/moonbeam-docs-$lang
 if /usr/bin/git checkout master &&
@@ -32,11 +35,16 @@ then
 
     # fix relative links to include language subdir
     find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/|href=\"\/$lang\/|g" '{}' \;
-    # temporary patch to fix relative path of the assets to 
+    # update instances where the language is duplicated
+    find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/$lang/$lang/|href=\"\/$lang\/|g" '{}' \;
+    # temporary patch to fix relative path of the assets to
     # an absolute path in multi language folders
     find $STATICPATH -type f -name index.html -exec sed -i "s|href=\"\/$lang\/assets\/|href=\"\/assets\/|g" '{}' \;
     # remove images folder of the static sites as they are not necessary
     rm -rf $STATICPATH/images/
+    ### Making all external source links HTTPS
+    find $STATICPATH -type f -name "*.html" -exec sed -i "s|href=\"\/\/|href=\"https:\/\/|g" '{}' \;
+    find $STATICPATH -type f -name "*.html" -exec sed -i "s|src=\"\/\/|src=\"https:\/\/|g" '{}' \;
 
     echo +++ Finished at $(date +%F' '%H:%M:%S) +++++++++++++++++++ >>$LOGPATH
 fi
