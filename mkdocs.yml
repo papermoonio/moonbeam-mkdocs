@@ -203,7 +203,7 @@
         'builders/tools/multisig-safe.md': 'tokens/manage/multisig-safe.md'
         'builders/interact/proxy-accounts.md': 'tokens/manage/proxy-accounts.md'
         'builders/tools/eth-libraries/etherjs.md': 'builders/build/eth-api/libraries/ethersjs.md'
-        'builders/interact/scaffold-eth.md': 'builders/build/eth-api/dev-env/scaffold-eth/'
+        'builders/interact/scaffold-eth.md': 'builders/build/eth-api/dev-env/scaffold-eth.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs/variables.yml'
