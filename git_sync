@@ -44,9 +44,9 @@ then
 
     # create symlinks to language specific subdirs
     [ ! -L /var/www/moonbeam-docs-static/cn ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static /var/www/moonbeam-docs-static/cn
-    [ ! -L /var/www/moonbeam-docs-static/ru ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-ru-static /var/www/moonbeam-docs-static/ru
-    [ ! -L /var/www/moonbeam-docs-static/es ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-es-static /var/www/moonbeam-docs-static/es
-    [ ! -L /var/www/moonbeam-docs-static/fr ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-fr-static /var/www/moonbeam-docs-static/fr
+    #[ ! -L /var/www/moonbeam-docs-static/ru ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-ru-static /var/www/moonbeam-docs-static/ru
+    #[ ! -L /var/www/moonbeam-docs-static/es ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-es-static /var/www/moonbeam-docs-static/es
+    #[ ! -L /var/www/moonbeam-docs-static/fr ] && ln -s /var/www/mkdocs-multi-lang/moonbeam-docs-fr-static /var/www/moonbeam-docs-static/fr
 
     # copy robots.txt
     cp $DOCPATH/robots.txt /var/www/moonbeam-docs-static/robots.txt
