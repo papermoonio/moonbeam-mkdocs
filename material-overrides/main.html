@@ -9,7 +9,7 @@
    {%- if page.is_homepage -%} 
      <title>Documentation for the Moonbeam Smart Contract Platform</title> 
    {%- elif page and page.meta and page.meta.title -%} 
-     <title>{{ page.title }} | {{ config.site_name }}</title> 
+     <title>{{ page.meta.title }} | {{ config.site_name }}</title> 
    {%- elif page and page.title and not page.is_homepage -%} 
      <title>{{ page.title }} | {{ config.site_name }}</title> 
    {%- else -%}
