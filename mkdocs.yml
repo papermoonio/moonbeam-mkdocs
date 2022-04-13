@@ -205,6 +205,7 @@
               'builders/tools/eth-libraries/etherjs.md': 'builders/build/eth-api/libraries/ethersjs.md'
               'builders/interact/scaffold-eth.md': 'builders/build/eth-api/dev-env/scaffold-eth.md'
               ### Deprecated Language Site Redirects ###
+              'es/index.md': 'index.md'
               'es/resources/networks.md': 'learn/platform/networks/overview.md'
               'es/getting-started/setting-up-a-node.md': 'builders/get-started/networks/moonbeam-dev.md'
               'es/getting-started/using-metamask.md': 'tokens/connect/metamask.md'
@@ -292,6 +293,7 @@
               'es/treasury/overview.md': 'learn/features/treasury.md'
               'es/overview/why-polkadot.md': 'learn/platform/why-polkadot.md'
               'es/overview/vision-features.md': 'learn/platform/vision.md'
+              'fr/index.md': 'index.md'
               'fr/resources/networks.md': 'learn/platform/networks/overview.md'
               'fr/getting-started/setting-up-a-node.md': 'builders/get-started/networks/moonbeam-dev.md'
               'fr/getting-started/using-metamask.md': 'tokens/connect/metamask.md'
@@ -379,6 +381,7 @@
               'fr/treasury/overview.md': 'learn/features/treasury.md'
               'fr/overview/why-polkadot.md': 'learn/platform/why-polkadot.md'
               'fr/overview/vision-features.md': 'learn/platform/vision.md'
+              'ru/index.md': 'index.md'
               'ru/resources/networks.md': 'learn/platform/networks/overview.md'
               'ru/getting-started/setting-up-a-node.md': 'builders/get-started/networks/moonbeam-dev.md'
               'ru/getting-started/using-metamask.md': 'tokens/connect/metamask.md'
