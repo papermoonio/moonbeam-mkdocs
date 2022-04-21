@@ -116,6 +116,7 @@ docs_dir: moonbeam-docs-cn
         'learn/dapps-list/bridges/eth/index.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/bridges/eth/chainbridge.md': 'builders/integrations/bridges/chainbridge.md'
         'builders/integrations/bridges/eth/chainbridge.md': 'builders/integrations/bridges/chainbridge.md'
+        'builders/integrations/bridges/eth/index.md': 'builders/integrations/bridges/index.md'
         'learn/dapps-list/defi/index.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/defi/sushiswap.md': 'learn/dapps-list/index.md'
         'learn/dapps-list/defi/amaralend.md': 'learn/dapps-list/index.md'

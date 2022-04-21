@@ -147,6 +147,7 @@
               'staking/overview.md': 'learn/features/staking.md'
               'treasury/overview.md': 'learn/features/treasury.md'
               'builders/integrations/bridges/eth/chainbridge.md': 'builders/integrations/bridges/chainbridge.md'
+              'builders/integrations/bridges/eth/index.md': 'builders/integrations/bridges/index.md'
               'dapps-list/bridges/chainbridge.md': 'builders/integrations/bridges/chainbridge.md'
               'dapps-list/defi/sushiswap.md': 'learn/dapps-list/index.md'
               'dapps-list/metatransactions/biconomy.md': 'learn/dapps-list/index.md'
