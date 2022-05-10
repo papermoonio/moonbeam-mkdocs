@@ -101,7 +101,7 @@ docs_dir: moonbeam-docs-cn
         'integrations/pubsub.md': 'builders/build/eth-api/pubsub.md'
         'integrations/remix.md': 'builders/build/eth-api/dev-env/remix.md'
         'integrations/waffle-mars.md': 'builders/build/eth-api/dev-env/waffle-mars.md'
-        'integrations/wallets/ledger.md': 'tokens/connect/ledger.md'
+        'integrations/wallets/ledger.md': 'tokens/connect/ledger/index.md'
         'integrations/wallets/mathwallet.md': 'tokens/connect/mathwallet.md'
         'integrations/wallets/nifty.md': 'tokens/connect/nifty.md'
         'integrations/wallets/polkadotjs.md': 'tokens/connect/polkadotjs.md'
