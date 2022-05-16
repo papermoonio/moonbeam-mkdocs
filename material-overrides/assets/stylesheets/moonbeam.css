@@ -223,6 +223,9 @@ a:hover {
   background-color: #171e43;
   color: #ffffff;
 }
+.md-typeset table:not([class]) td {
+  vertical-align: middle;
+}
 
 /* Tables centered */
 .md-typeset__scrollwrap {
