@@ -93,6 +93,9 @@ print("✅ Removing deleted files")
 # directory is empty
 # > If it's empty then delete the directory
 for file in removed_files:
+    # if the file is an image, it can be skipped because those have already been removed in the English repo
+    if (file.startswith('images/')):
+        continue
     os.remove(root + file)
 
     directory_path = root + file[:file.rfind('/')]
@@ -106,8 +109,6 @@ print("✅ Renaming moved files")
 # > If it doesn't exist, create it
 # Then check to make sure that the parent directory is not empty
 # > If it's empty, delete the directory
-renamed_f = Renamed('builders/integrations/bridges/eth/chainbridge.md', 'builders/integrations/bridges/chainbridge.md')
-renamed_files = [renamed_f]
 for file in renamed_files:
     curr_directory_path = root + file.current_path[:file.current_path.rfind('/')]
     if not os.path.exists(curr_directory_path):
