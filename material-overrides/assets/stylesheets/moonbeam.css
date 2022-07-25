@@ -60,6 +60,13 @@ h4 {
 .md-nav__link .md-nav__link--active {
   font-weight: bold;
 }
+a.md-nav__link {
+  margin-top: .45em;
+  font-size: .9em;
+}
+.md-nav__item--section {
+  margin: 1em 0;
+}
 a:hover {
   text-decoration: underline;
 }
