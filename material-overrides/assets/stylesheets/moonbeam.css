@@ -64,6 +64,9 @@ a.md-nav__link {
   margin-top: .45em;
   font-size: .9em;
 }
+label.md-nav__link {
+  margin-top: .45em;
+}
 .md-nav__item--section {
   margin: 1em 0;
 }
