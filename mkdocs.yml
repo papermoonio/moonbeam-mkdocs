@@ -10,7 +10,6 @@
     - 'js/networkModal.js'
     - 'js/handleLanguageChange.js'
     - 'js/renderSubsections.js'
-    - 'js/updateTabDefault.js'
 'theme':
     'name': 'material'
     'custom_dir': 'material-overrides'
