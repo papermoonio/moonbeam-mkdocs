@@ -3,7 +3,7 @@
 'home_url': 'https://moonbeam.network/'
 'site_dir': '/var/www/moonbeam-docs-static'
 'docs_dir': 'moonbeam-docs'
-'copyright': '© 2022 PureStake, Inc. All Rights Reserved.'
+'copyright': '© 2022 Moonbeam Foundation. All Rights Reserved.'
 'extra_javascript':
     - 'js/connectMetaMask.js'
     - 'js/errorModal.js'
