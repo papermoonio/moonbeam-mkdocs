@@ -506,10 +506,12 @@ p.md-footer-connect, .newsletter-label, .md-ellipsis {
 .hero-img {
   width: 90em;
   margin: auto;
+  padding: 1em;
 }
 .hero-column {
   margin-right: 3em;
   margin-left: 0;
+  width: 100%;
 }
 h1.hero-title {
   font-weight: 400;
