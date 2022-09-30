@@ -506,10 +506,12 @@ p.md-footer-connect, .newsletter-label, .md-ellipsis {
 .hero-img {
   width: 90em;
   margin: auto;
+  padding: 1em;
 }
 .hero-column {
   margin-right: 3em;
   margin-left: 0;
+  width: 100%;
 }
 h1.hero-title {
   font-weight: 400;
@@ -529,7 +531,8 @@ h1.hero-title, h3.hero-info {
 .row.hero-buttons {
   justify-content: start;
   transition: all .2s ease-in-out;
-  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
 }
 .row.hero-buttons button, .row.hero-buttons button:hover {
   display: flex;
@@ -539,6 +542,8 @@ h1.hero-title, h3.hero-info {
   border-radius: .3em;  
   padding: .4em;
   cursor: pointer;
+  margin-right: .5em;
+  margin-bottom: .5em;
 }
 .row.hero-buttons a:hover {
   text-decoration: none;
@@ -546,7 +551,6 @@ h1.hero-title, h3.hero-info {
 .pink-primary-button.md-button, .pink-primary-button.md-button:hover, .pink-primary-button.md-button:focus {
   background-color: #E1147b;
   color: white;
-  margin-right: 1em;
 }
 .pink-primary-button.md-button > span > svg {
   fill: white;
@@ -629,8 +633,7 @@ a.in-this-section-link {
 }
 p.quick-ref-title {
   font-size: 1.3em;
-  margin-top: 1.8em;
-  margin-bottom: .3em;
+  margin-bottom: .5em;
 }
 .md-button.quick-ref-button {
   font-family: "Open Sans";
