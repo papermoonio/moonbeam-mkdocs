@@ -223,7 +223,6 @@
               'builders/xcm/fees.md': 'builders/interoperability/xcm/fees.md'
               'builders/xcm/index.md': 'builders/interoperability/xcm/index.md'
               'builders/xcm/overview.md': 'builders/interoperability/xcm/overview.md'
-              'builders/xcm/xc20.md': 'builders/interoperability/xcm/xc20.md'
               'builders/xcm/xc20/index.md': 'builders/interoperability/xcm/xc20/index.md'
               'builders/xcm/xc20/overview.md': 'builders/interoperability/xcm/xc20/overview.md'
               'builders/xcm/xc20/mintable-xc20.md': 'builders/interoperability/xcm/xc20/mintable-xc20.md'
