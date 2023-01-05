@@ -46,14 +46,6 @@ Next, inside the folder just created, clone the [moonbeam-docs repository](https
 git clone https://github.com/PureStake/moonbeam-docs
 ```
 
-Get submodules: 
-
-```
-cd moonbeam-docs
-git submodule update --init
-c ..
-```
-
 Now in the `moonbeam-mkdocs` folder (which should be the current one) you can build the site by running:
 
 ```
