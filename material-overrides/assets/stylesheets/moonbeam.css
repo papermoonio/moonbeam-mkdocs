@@ -33,15 +33,8 @@ h4 {
   --md-code-bg-color: ...;
   --md-code-fg-color: ...;
 
-  /* SVG images for release icons, encoded base64 with svgo*/
-  --md-admonition-icon--v1-release: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDQuNzYyIDMuOTY5Ij48dGV4dCBzdHlsZT0ibGluZS1oZWlnaHQ6MS4yNTstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidWYXJlbGEgUm91bmQnIiB4PSIuOTM3IiB5PSIzLjMwNyIgZm9udC1zaXplPSIzLjcwNCIgZm9udC1mYW1pbHk9IlZhcmVsYSBSb3VuZCIgbGV0dGVyLXNwYWNpbmc9Ii0uMjY1IiB3b3JkLXNwYWNpbmc9IjAiIHN0cm9rZS13aWR0aD0iLjI2NSI+PHRzcGFuIHg9Ii45MzciIHk9IjMuMzA3IiBzdHlsZT0iLWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjonT3BlbiBTYW5zJyIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1mYW1pbHk9Ik9wZW4gU2FucyI+djE8L3RzcGFuPjwvdGV4dD48cmVjdCB3aWR0aD0iNC42MjUiIGhlaWdodD0iMy44MzIiIHg9Ii4wNjkiIHk9Ii4wNjkiIHJ5PSIuNDEzIiByeD0iLjQxIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iLjEzNyIvPjwvc3ZnPg==');
-  --md-admonition-icon--v2-release: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDQuNzYyIDMuOTY5Ij48dGV4dCBzdHlsZT0ibGluZS1oZWlnaHQ6MS4yNTstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidWYXJlbGEgUm91bmQnIiB4PSIuNjI0IiB5PSIzLjMyNiIgZm9udC1zaXplPSIzLjcwNCIgZm9udC1mYW1pbHk9IlZhcmVsYSBSb3VuZCIgbGV0dGVyLXNwYWNpbmc9Ii0uMjY1IiB3b3JkLXNwYWNpbmc9IjAiIHN0cm9rZS13aWR0aD0iLjI2NSI+PHRzcGFuIHg9Ii42MjQiIHk9IjMuMzI2IiBzdHlsZT0iLWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjonT3BlbiBTYW5zJyIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1mYW1pbHk9Ik9wZW4gU2FucyI+djI8L3RzcGFuPjwvdGV4dD48cmVjdCB3aWR0aD0iNC42MjUiIGhlaWdodD0iMy44MzIiIHg9Ii4wNjkiIHk9Ii4wNjkiIHJ5PSIuNDEzIiByeD0iLjQxIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iLjEzNyIvPjwvc3ZnPg==');
-  --md-admonition-icon--v3-release: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDQuNzYyIDMuOTY5Ij48dGV4dCBzdHlsZT0ibGluZS1oZWlnaHQ6MS4yNTstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidWYXJlbGEgUm91bmQnIiB4PSIuNjMzIiB5PSIzLjMwNyIgZm9udC1zaXplPSIzLjcwNCIgZm9udC1mYW1pbHk9IlZhcmVsYSBSb3VuZCIgbGV0dGVyLXNwYWNpbmc9Ii0uMjY1IiB3b3JkLXNwYWNpbmc9IjAiIHN0cm9rZS13aWR0aD0iLjI2NSI+PHRzcGFuIHg9Ii42MzMiIHk9IjMuMzA3IiBzdHlsZT0iLWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjonT3BlbiBTYW5zJyIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1mYW1pbHk9Ik9wZW4gU2FucyI+djM8L3RzcGFuPjwvdGV4dD48cmVjdCB3aWR0aD0iNC42MjUiIGhlaWdodD0iMy44MzIiIHg9Ii4wNjkiIHk9Ii4wNjkiIHJ5PSIuNDEzIiByeD0iLjQxIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iLjEzNyIvPjwvc3ZnPg==');
-  --md-admonition-icon--v4-release: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDQuNzYyIDMuOTY5Ij48dGV4dCBzdHlsZT0ibGluZS1oZWlnaHQ6MS4yNTstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidWYXJlbGEgUm91bmQnIiB4PSIuNTYyIiB5PSIzLjMxNCIgZm9udC1zaXplPSIzLjcwNCIgZm9udC1mYW1pbHk9IlZhcmVsYSBSb3VuZCIgbGV0dGVyLXNwYWNpbmc9Ii0uMjY1IiB3b3JkLXNwYWNpbmc9IjAiIHN0cm9rZS13aWR0aD0iLjI2NSI+PHRzcGFuIHg9Ii41NjIiIHk9IjMuMzE0IiBzdHlsZT0iLWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjonT3BlbiBTYW5zJyIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1mYW1pbHk9Ik9wZW4gU2FucyI+djQ8L3RzcGFuPjwvdGV4dD48cmVjdCB3aWR0aD0iNC42MjUiIGhlaWdodD0iMy44MzIiIHg9Ii4wNjkiIHk9Ii4wNjkiIHJ5PSIuNDEzIiByeD0iLjQxIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iLjEzNyIvPjwvc3ZnPg==');
-  --md-admonition-icon--v5-release: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDQuNzYyIDMuOTY5Ij48dGV4dCBzdHlsZT0ibGluZS1oZWlnaHQ6MS4yNTstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidWYXJlbGEgUm91bmQnIiB4PSIuNjMyIiB5PSIzLjI4OCIgZm9udC1zaXplPSIzLjcwNCIgZm9udC1mYW1pbHk9IlZhcmVsYSBSb3VuZCIgbGV0dGVyLXNwYWNpbmc9Ii0uMjY1IiB3b3JkLXNwYWNpbmc9IjAiIHN0cm9rZS13aWR0aD0iLjI2NSI+PHRzcGFuIHg9Ii42MzIiIHk9IjMuMjg4IiBzdHlsZT0iLWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjonT3BlbiBTYW5zJyIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1mYW1pbHk9Ik9wZW4gU2FucyI+djU8L3RzcGFuPjwvdGV4dD48cmVjdCB3aWR0aD0iNC42MjUiIGhlaWdodD0iMy44MzIiIHg9Ii4wNjkiIHk9Ii4wNjkiIHJ5PSIuNDEzIiByeD0iLjQxIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iLjEzNyIvPjwvc3ZnPg==');
-  --md-admonition-icon--v6-release: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDQuNzYyIDMuOTY5Ij48dGV4dCBzdHlsZT0ibGluZS1oZWlnaHQ6MS4yNTstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidWYXJlbGEgUm91bmQnIiB4PSIuNjE1IiB5PSIzLjMwNyIgZm9udC1zaXplPSIzLjcwNCIgZm9udC1mYW1pbHk9IlZhcmVsYSBSb3VuZCIgbGV0dGVyLXNwYWNpbmc9Ii0uMjY1IiB3b3JkLXNwYWNpbmc9IjAiIHN0cm9rZS13aWR0aD0iLjI2NSI+PHRzcGFuIHg9Ii42MTUiIHk9IjMuMzA3IiBzdHlsZT0iLWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjonT3BlbiBTYW5zJyIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1mYW1pbHk9Ik9wZW4gU2FucyI+djY8L3RzcGFuPjwvdGV4dD48cmVjdCB3aWR0aD0iNC42MjUiIGhlaWdodD0iMy44MzIiIHg9Ii4wNjkiIHk9Ii4wNjkiIHJ5PSIuNDEzIiByeD0iLjQxIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iLjEzNyIvPjwvc3ZnPg==');
-  --md-admonition-icon--v7-release: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljc2MiAzLjk2OSIgaGVpZ2h0PSIxNSIgd2lkdGg9IjE4Ij48dGV4dCB5PSIzLjMwNyIgeD0iLjYxOSIgc3R5bGU9ImxpbmUtaGVpZ2h0OjEuMjU7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjonVmFyZWxhIFJvdW5kJyIgZm9udC1zaXplPSIzLjcwNCIgZm9udC1mYW1pbHk9IlZhcmVsYSBSb3VuZCIgbGV0dGVyLXNwYWNpbmc9Ii0uMjY1IiB3b3JkLXNwYWNpbmc9IjAiIHN0cm9rZS13aWR0aD0iLjI2NSI+PHRzcGFuIHN0eWxlPSItaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidPcGVuIFNhbnMnIiB5PSIzLjMwNyIgeD0iLjYxOSIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1mYW1pbHk9Ik9wZW4gU2FucyI+djc8L3RzcGFuPjwvdGV4dD48cmVjdCByeD0iLjQxIiByeT0iLjQxMyIgeT0iLjA2OSIgeD0iLjA2OSIgaGVpZ2h0PSIzLjgzMiIgd2lkdGg9IjQuNjI1IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iLjEzNyIvPjwvc3ZnPg==');
-  --md-admonition-icon--v8-release: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDQuNzYyIDMuOTY5Ij48dGV4dCB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHlsZT0iZm9udC1zaXplOjMuNzA0MTdweDtsaW5lLWhlaWdodDoxLjI1O2ZvbnQtZmFtaWx5OidWYXJlbGEgUm91bmQnOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246J1ZhcmVsYSBSb3VuZCc7bGV0dGVyLXNwYWNpbmc6LS4yNjQ1ODNweDt3b3JkLXNwYWNpbmc6MDtmaWxsOiMwMDA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlLXdpZHRoOi4yNjQ1ODMiIHg9Ii42MjEiIHk9IjMuMzA3Ij48dHNwYW4geD0iLjYyMSIgeT0iMy4zMDciIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0OjQwMDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtc2l6ZTozLjcwNDE3cHg7Zm9udC1mYW1pbHk6J09wZW4gU2Fucyc7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjonT3BlbiBTYW5zJztmaWxsOiMwMDA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlLXdpZHRoOi4yNjQ1ODMiPnY4PC90c3Bhbj48L3RleHQ+PHJlY3Qgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2Utd2lkdGg6LjEzNzIwMztzdHJva2UtbWl0ZXJsaW1pdDo0O3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2Utb3BhY2l0eToxIiB3aWR0aD0iNC42MjUiIGhlaWdodD0iMy44MzIiIHg9Ii4wNjkiIHk9Ii4wNjkiIHJ5PSIuNDEzIiByeD0iLjQxIi8+PC9zdmc+');
+  /* SVG image of star for challenge icon, encoded base64 with svg */
+  --md-admonition-icon--challenge: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0ibTkuMzUgMjAuNDUgNS4zIDIuMjVxLjktMS44IDEuOTI1LTMuNTVRMTcuNiAxNy40IDE4Ljc1IDE1LjhMMTQuOCAxNVptNy43IDQuMDUgNi42NSA2LjY1cTIuODUtMS4zIDUuMzUtMi45NSAyLjUtMS42NSA0LjA1LTMuMiA0LjA1LTQuMDUgNS45NS04LjMgMS45LTQuMjUgMi4wNS05LjYtNS4zNS4xNS05LjYgMi4wNXQtOC4zIDUuOTVxLTEuNTUgMS41NS0zLjIgNC4wNS0xLjY1IDIuNS0yLjk1IDUuMzVabTExLjQ1LTQuOHEtMS0xLTEtMi40NzV0MS0yLjQ3NXExLTEgMi40NzUtMXQyLjQ3NSAxcTEgMSAxIDIuNDc1dC0xIDIuNDc1cS0xIDEtMi40NzUgMXQtMi40NzUtMVptLS43NSAxOS4xNSA1LjQ1LTUuNDUtLjgtMy45NXEtMS42IDEuMTUtMy4zNSAyLjE3NVQyNS41IDMzLjU1Wm0xNi4zLTM0LjdxLjQ1IDYuOC0xLjcgMTIuNC0yLjE1IDUuNi03LjEgMTAuNTVsLS4xLjEtLjEuMSAxLjEgNS41cS4xNS43NS0uMDc1IDEuNDUtLjIyNS43LS43NzUgMS4yNWwtOC41NSA4LjYtNC4yNS05LjktOC41LTguNS05LjktNC4yNSA4LjYtOC41NXEuNTUtLjU1IDEuMjUtLjc3NS43LS4yMjUgMS40NS0uMDc1bDUuNSAxLjFxLjA1LS4wNS4xLS4wNzUuMDUtLjAyNS4xLS4wNzUgNC45NS00Ljk1IDEwLjU1LTcuMTI1IDUuNi0yLjE3NSAxMi40LTEuNzI1Wm0tMzYuNiAyNy42UTkuMiAzMCAxMS43MjUgMjkuOTc1IDE0LjI1IDI5Ljk1IDE2IDMxLjdxMS43NSAxLjc1IDEuNzI1IDQuMjc1UTE3LjcgMzguNSAxNS45NSA0MC4yNXEtMS4zIDEuMy00LjAyNSAyLjE1UTkuMiA0My4yNSAzLjc1IDQ0cS43NS01LjQ1IDEuNTc1LTguMi44MjUtMi43NSAyLjEyNS00LjA1Wm0yLjEgMi4xNXEtLjcuNzUtMS4yNSAyLjM1dC0uOTUgNC4xcTIuNS0uNCA0LjEtLjk1IDEuNi0uNTUgMi4zNS0xLjI1Ljk1LS44NS45NzUtMi4xMjUuMDI1LTEuMjc1LS44NzUtMi4yMjUtLjk1LS45LTIuMjI1LS44NzUtMS4yNzUuMDI1LTIuMTI1Ljk3NVoiLz48L3N2Zz4=');
 }
 
 /* General styling adjustments */
@@ -154,71 +147,20 @@ a:hover {
   background-color: #53cbc9;
 }
 
-/* Styling for custom Admonition notes used for releases */
-.md-typeset .admonition.release,
-.md-typeset details.release {
-  border-color: rgb(83, 203, 201);
+/* Styling for custom Admonition notes used for challenges */
+.md-typeset .admonition.challenge,
+.md-typeset details.challenge {
+  border-color: rgb(79, 51, 106);
 }
-.md-typeset .release > .admonition-title,
-.md-typeset .release > summary {
-  background-color: rgba(224, 245, 245, 0.7);
-  border-left: 0.2rem solid rgb(83, 203, 201);
+.md-typeset .challenge > .admonition-title,
+.md-typeset .challenge > summary {
+  background-color: rgba(79, 51, 106, 0.1);
 }
-/* Adding v1 svg icon*/
-.md-typeset .release.v1 > .admonition-title::before,
-.md-typeset .release.v1 > summary::before {
-  background-color: rgb(83, 203, 201);
-  -webkit-mask-image: var(--md-admonition-icon--v1-release);
-  mask-image: var(--md-admonition-icon--v1-release);
-}
-/* Adding v2 svg icon*/
-.md-typeset .release.v2 > .admonition-title::before,
-.md-typeset .release.v2 > summary::before {
-  background-color: rgb(83, 203, 201);
-  -webkit-mask-image: var(--md-admonition-icon--v2-release);
-  mask-image: var(--md-admonition-icon--v2-release);
-}
-/* Adding v3 svg icon*/
-.md-typeset .release.v3 > .admonition-title::before,
-.md-typeset .release.v3 > summary::before {
-  background-color: rgb(83, 203, 201);
-  -webkit-mask-image: var(--md-admonition-icon--v3-release);
-  mask-image: var(--md-admonition-icon--v3-release);
-}
-/* Adding v4 svg icon*/
-.md-typeset .release.v4 > .admonition-title::before,
-.md-typeset .release.v4 > summary::before {
-  background-color: rgb(83, 203, 201);
-  -webkit-mask-image: var(--md-admonition-icon--v4-release);
-  mask-image: var(--md-admonition-icon--v4-release);
-}
-/* Adding v5 svg icon*/
-.md-typeset .release.v5 > .admonition-title::before,
-.md-typeset .release.v5 > summary::before {
-  background-color: rgb(83, 203, 201);
-  -webkit-mask-image: var(--md-admonition-icon--v5-release);
-  mask-image: var(--md-admonition-icon--v5-release);
-}
-/* Adding v6 svg icon*/
-.md-typeset .release.v6 > .admonition-title::before,
-.md-typeset .release.v6 > summary::before {
-  background-color: rgb(83, 203, 201);
-  -webkit-mask-image: var(--md-admonition-icon--v6-release);
-  mask-image: var(--md-admonition-icon--v6-release);
-}
-/* Adding v7 svg icon*/
-.md-typeset .release.v7 > .admonition-title::before,
-.md-typeset .release.v7 > summary::before {
-  background-color: rgb(83, 203, 201);
-  -webkit-mask-image: var(--md-admonition-icon--v7-release);
-  mask-image: var(--md-admonition-icon--v7-release);
-}
-/* Adding v8 svg icon*/
-.md-typeset .release.v8 > .admonition-title::before,
-.md-typeset .release.v8 > summary::before {
-  background-color: rgb(83, 203, 201);
-  -webkit-mask-image: var(--md-admonition-icon--v8-release);
-  mask-image: var(--md-admonition-icon--v8-release);
+.md-typeset .challenge > .admonition-title::before,
+.md-typeset .challenge > summary::before {
+  background-color: rgb(79, 51, 106);
+  -webkit-mask-image: var(--md-admonition-icon--challenge);
+          mask-image: var(--md-admonition-icon--challenge);
 }
 
 /* Styling for the Copy to Clipboard message */
