@@ -6,7 +6,7 @@ h4 {
   font-family: 'Varela Round', sans-serif;
 }
 
-:root {
+:root, [data-md-color-scheme=default] {
   /* Default color shades */
   --md-default-fg-color--light: #353535;
   --md-default-fg-color--lighter: #b6afaf;
