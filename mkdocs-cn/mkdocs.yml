@@ -36,14 +36,14 @@ docs_dir: moonbeam-docs-cn
       'options':
         'custom_icons':
           - 'material-overrides/.icons'
-  - 'pymdownx.tabbed'
+  - 'pymdownx.tabbed':
+      'alternate_style': !!bool 'true'
   - 'pymdownx.superfences'
   - 'pymdownx.details'
   - 'attr_list'
 'plugins':
   - 'search'
   - 'awesome-pages'
-  - 'section-index'
   - 'redirects':
       'redirect_maps':
         'resources/networks.md': 'learn/platform/networks/overview.md'
@@ -242,7 +242,7 @@ docs_dir: moonbeam-docs-cn
     - 'icon': 'moonbeam/element'
       'link': 'https://app.element.io/#/room/#moonbeam:matrix.org'
       'name': 'Element (Riot)'
-    - 'icon': 'fontawesome/brands/telegram-plane'
+    - 'icon': 'fontawesome/brands/telegram'
       'link': 'https://t.me/Moonbeam_Official'
       'name': 'Telegram'
     - 'icon': 'fontawesome/brands/twitter'
@@ -254,6 +254,6 @@ docs_dir: moonbeam-docs-cn
     - 'icon': 'fontawesome/brands/github'
       'link': 'https://github.com/PureStake/moonbeam'
       'name': 'GitHub'
-'google_analytics':
-  - 'UA-135971059-6'
-  - 'auto'
+  'analytics':
+    'provider': 'google'
+    'property': 'UA-135971059-6'

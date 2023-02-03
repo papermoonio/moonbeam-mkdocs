@@ -213,7 +213,7 @@
   </div>
 </div>
 {% endif %}
-{% if page.toc and not "toc.integrate" in features %}
+{% if page.toc and not "toc.integrate" in config.theme.features %}
 {% if page and page.meta and page.meta.hide %}
 {% set hidden = "hidden" if "toc" in page.meta.hide %}
 {% endif %}
