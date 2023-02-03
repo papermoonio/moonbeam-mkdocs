@@ -21,6 +21,7 @@
         - 'navigation.tabs'
         - 'navigation.sections'
         - 'navigation.indexes'
+        - content.code.copy
 'markdown_extensions':
     - 'codehilite'
     - 'meta'
