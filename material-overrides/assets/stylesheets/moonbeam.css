@@ -59,22 +59,19 @@ h4 {
   font-weight: bold;
 }
 
+/* Set all non-primary sections font and margin size to be smaller */
 .md-nav__link.md-nav__link--index,
 .md-nav__link {
   margin-top: .45em;
   font-size: .9em;
 }
 
+/* Make the primary section font larger on left nav (i.e., Build, Node Operators, etc.) */
 #__nav_2:first-child~.md-nav__link a,
 #__nav_3:first-child~.md-nav__link a,
 #__nav_4:first-child~.md-nav__link a,
 #__nav_5:first-child~.md-nav__link a {
   font-size: 1.2em;
-  /* Make the primary section font larger on left nav */
-}
-
-label.md-nav__link {
-  margin-top: .45em;
 }
 
 .md-nav__item .md-nav__link--active {
@@ -104,7 +101,7 @@ a:hover {
   background-color: #ffffff;
 }
 
-/* Adjust Nav Bar header for smaller screens*/
+/* Adjust Nav Bar styling for smaller screens*/
 @media screen and (max-width: 76.1875em) {
 
   /*Hide Nav Bar header label text - only show back arrow */
@@ -117,6 +114,20 @@ a:hover {
   .md-nav--primary .md-nav__title[for='__drawer'] {
     height: 5.6rem;
     padding-top: 3rem;
+  }
+
+  /* For the left side nav/hamburger menu options on smaller screens*/
+  .md-nav__link.md-nav__link--index > a,
+  #__nav_2:first-child~.md-nav__link a,
+  #__nav_3:first-child~.md-nav__link a,
+  #__nav_4:first-child~.md-nav__link a,
+  #__nav_5:first-child~.md-nav__link a {
+    font-size: 1em;
+  }
+
+  .md-nav__link.md-nav__link--index,
+  .md-nav__link {
+    margin-top: unset;
   }
 }
 
