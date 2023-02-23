@@ -21,7 +21,7 @@ docs_dir: moonbeam-docs-cn
     - 'navigation.tabs'
     - 'navigation.sections'
     - 'navigation.indexes'
-    - content.code.copy
+    - 'content.code.copy'
 'markdown_extensions':
   - 'codehilite'
   - 'meta'
