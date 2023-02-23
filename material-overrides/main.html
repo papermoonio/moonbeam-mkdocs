@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block site_meta %}
-    {{ super() }}
+  {{ super() }}
     {% if page and page.meta and page.meta.keywords %}
       <meta name="keywords" content="{{ page.meta.keywords }}">
     {% endif %}
