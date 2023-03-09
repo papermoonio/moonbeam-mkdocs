@@ -1011,3 +1011,22 @@ li>nav.md-nav[data-md-level="4"] {
     min-height: 77vh;
   }
 }
+
+/* Feedback widget styling */
+.md-feedback {
+  margin: 2em auto;
+  text-align: center;
+  border: 1px solid #53cbc9;
+  border-radius: 0.2em;
+  width: 30%;
+  padding: 0.7em;
+}
+
+.md-feedback__title {
+  font-family: 'Varela Round', sans-serif;
+  color: #353535;
+}
+
+.md-feedback__icon:not(:disabled).md-icon:hover {
+  color: #53cbc9;
+}
