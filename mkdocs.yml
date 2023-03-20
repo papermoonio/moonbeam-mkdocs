@@ -235,6 +235,9 @@
               'builders/xcm/xc-integration.md': 'builders/interoperability/xcm/xc-integration.md'
               'builders/xcm/xcm-transactor.md': 'builders/interoperability/xcm/xcm-transactor.md'
               'builders/xcm/remote-evm-calls.md': 'builders/interoperability/xcm/remote-evm-calls.md'
+              'builders/get-started/networks/layer2/index.md': 'builders/get-started/networks/index.md'
+              'builders/get-started/networks/layer2/bobabase.md': 'builders/get-started/networks/index.md'
+              'builders/get-started/networks/layer2/bobabeam.md': 'builders/get-started/networks/index.md'
               ### Deprecated Language Site Redirects ###
               'es/index.md': 'index.md'
               'es/resources/networks.md': 'learn/platform/networks/overview.md'
