@@ -1030,3 +1030,20 @@ li>nav.md-nav[data-md-level="4"] {
 .md-feedback__icon:not(:disabled).md-icon:hover {
   color: #53cbc9;
 }
+
+/* Document date styling */
+.md-source-file {
+  display: flex;
+  justify-content: center;
+  margin-top: .5em;
+}
+.md-source-file small {
+  display: flex;
+  align-items: end;
+}
+.source-file-label {
+  margin-right: .5em;
+}
+.source-file-seperator {
+  margin: 0 .5em;
+}
