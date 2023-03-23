@@ -47,6 +47,7 @@
     - 'awesome-pages'
     - 'git-revision-date-localized':
         'enable_creation_date': !!bool 'true'
+        'enabled': !ENV [CI, false]
     - 'redirects':
           'redirect_maps':
               'resources/networks.md': 'learn/platform/networks/overview.md'
