@@ -10,6 +10,7 @@ docs_dir: moonbeam-docs-cn
   - 'js/networkModal.js'
   - 'js/handleLanguageChange.js'
   - 'js/renderSubsections.js'
+  - 'js/externalLinkModal.js'
 'theme':
   'name': 'material'
   'custom_dir': 'material-overrides'
