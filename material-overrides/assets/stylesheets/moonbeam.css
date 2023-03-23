@@ -309,7 +309,8 @@ a:hover {
   margin: .5em;
 }
 
-/* MetaMask Error Modal Styling */
+/* Modal Styling */
+.external-link-modal-container,
 .error-modal-container,
 .network-modal-container {
   position: fixed;
@@ -322,6 +323,11 @@ a:hover {
   width: 33%;
 }
 
+.external-link-modal-container {
+  width: 40%;
+}
+
+.external-link-modal,
 .error-modal,
 .network-modal {
   background-color: #171e43;
@@ -333,20 +339,25 @@ a:hover {
   overflow: auto;
 }
 
+.close-external-link-modal,
 .close-modal {
   font-size: 2em;
   float: right;
   cursor: pointer;
-  margin-left: 0.2em;
+  margin-left: 0.5em;
+}
+
+.external-link-message {
+  font-size: .8em;
 }
 
 @media screen and (max-width: 46.1875em) {
-
+  .external-link-modal-container,
   .error-modal-container,
   .network-modal-container {
     width: 80%;
   }
-
+  .external-link-modal,
   .error-modal,
   .network-modal {
     margin: 25% auto;
@@ -354,7 +365,7 @@ a:hover {
 }
 
 @media screen and (max-width: 76.1875em) {
-
+  .external-link-modal-container,
   .error-modal-container,
   .network-modal-container {
     width: 50%;
@@ -380,12 +391,17 @@ a:hover {
   text-decoration: none;
 }
 
+.external-link-modal-header,
 .network-modal-header,
 .error-modal-header {
   margin-bottom: 1em;
   font-family: 'Open Sans';
   font-size: .9em;
   font-weight: normal;
+}
+
+.external-link-modal-header {
+  font-weight: 600;
 }
 
 /* Footer Styling */
@@ -617,13 +633,16 @@ h3.hero-info {
   margin-bottom: 2em;
 }
 
-.row.hero-buttons {
+.row.hero-buttons, .row.modal-buttons, .row.modal-buttons button {
   justify-content: start;
   transition: all .2s ease-in-out;
   display: flex;
   flex-wrap: wrap;
+  font-weight: 700;
 }
 
+.row.modal-buttons button,
+.row.modal-buttons button:hover,
 .row.hero-buttons button,
 .row.hero-buttons button:hover {
   display: flex;
@@ -637,6 +656,16 @@ h3.hero-info {
   margin-bottom: .5em;
 }
 
+.row.modal-buttons {
+  margin-top: 1em;
+  justify-content: end;
+}
+
+.row.modal-buttons button {
+  font-size: .75em;
+}
+
+.row.modal-buttons a:hover,
 .row.hero-buttons a:hover {
   text-decoration: none;
 }
