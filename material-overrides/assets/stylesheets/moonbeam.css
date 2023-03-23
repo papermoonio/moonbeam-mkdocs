@@ -323,6 +323,10 @@ a:hover {
   width: 33%;
 }
 
+.external-link-modal-container {
+  width: 40%;
+}
+
 .external-link-modal,
 .error-modal,
 .network-modal {
@@ -634,6 +638,7 @@ h3.hero-info {
   transition: all .2s ease-in-out;
   display: flex;
   flex-wrap: wrap;
+  font-weight: 700;
 }
 
 .row.modal-buttons button,
@@ -651,8 +656,9 @@ h3.hero-info {
   margin-bottom: .5em;
 }
 
-.row.row.modal-buttons {
+.row.modal-buttons {
   margin-top: 1em;
+  justify-content: end;
 }
 
 .row.modal-buttons button {
