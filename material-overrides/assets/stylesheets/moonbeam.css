@@ -1041,6 +1041,12 @@ li>nav.md-nav[data-md-level="4"] {
   }
 }
 
+@media screen and (max-width: 30em) {
+  .md-button.connectMetaMask-nav {
+    display: none;
+  }
+}
+
 /* General nav styling */
 .md-tabs__item {
   height: 2rem;
