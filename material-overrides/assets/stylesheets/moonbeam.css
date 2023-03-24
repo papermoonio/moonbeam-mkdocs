@@ -45,11 +45,7 @@ h4 {
   color: #000000;
 }
 
-.md-search-result {
-  background-color: #ffffff;
-}
-
-.md-nav {
+.md-search-result, .md-nav, .md-sidebar {
   background-color: #ffffff;
 }
 
@@ -97,10 +93,6 @@ a:hover {
 .md-content .headerlink {
   display: none;
   visibility: hidden;
-}
-
-.md-sidebar {
-  background-color: #ffffff;
 }
 
 /* Adjust Nav Bar styling for smaller screens*/
@@ -309,7 +301,8 @@ a:hover {
   margin: .5em;
 }
 
-/* MetaMask Error Modal Styling */
+/* Modal Styling */
+.external-link-modal-container,
 .error-modal-container,
 .network-modal-container {
   position: fixed;
@@ -322,6 +315,11 @@ a:hover {
   width: 33%;
 }
 
+.external-link-modal-container {
+  width: 40%;
+}
+
+.external-link-modal,
 .error-modal,
 .network-modal {
   background-color: #171e43;
@@ -333,31 +331,41 @@ a:hover {
   overflow: auto;
 }
 
+.close-external-link-modal,
 .close-modal {
   font-size: 2em;
   float: right;
   cursor: pointer;
-  margin-left: 0.2em;
+  margin-left: 0.5em;
+}
+
+.external-link-message {
+  font-size: .8em;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .error-modal-container,
+  .network-modal-container {
+    width: 50%;
+  }
+
+  .external-link-modal-container {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 46.1875em) {
-
   .error-modal-container,
   .network-modal-container {
     width: 80%;
   }
-
   .error-modal,
   .network-modal {
     margin: 25% auto;
   }
-}
 
-@media screen and (max-width: 76.1875em) {
-
-  .error-modal-container,
-  .network-modal-container {
-    width: 50%;
+  .external-link-modal-container {
+    width: 90%;
   }
 }
 
@@ -380,12 +388,17 @@ a:hover {
   text-decoration: none;
 }
 
+.external-link-modal-header,
 .network-modal-header,
 .error-modal-header {
   margin-bottom: 1em;
   font-family: 'Open Sans';
   font-size: .9em;
   font-weight: normal;
+}
+
+.external-link-modal-header {
+  font-weight: 600;
 }
 
 /* Footer Styling */
@@ -597,6 +610,10 @@ p.md-footer-connect,
   width: 100%;
 }
 
+.row.quick-refs-medium, .row.hero-buttons-small {
+  display: none;
+}
+
 h1.hero-title {
   font-weight: 400;
   font-size: 1.75em;
@@ -617,13 +634,16 @@ h3.hero-info {
   margin-bottom: 2em;
 }
 
-.row.hero-buttons {
+.row.hero-buttons, .row.modal-buttons, .row.modal-buttons button {
   justify-content: start;
   transition: all .2s ease-in-out;
   display: flex;
   flex-wrap: wrap;
+  font-weight: 700;
 }
 
+.row.modal-buttons button,
+.row.modal-buttons button:hover,
 .row.hero-buttons button,
 .row.hero-buttons button:hover {
   display: flex;
@@ -637,6 +657,16 @@ h3.hero-info {
   margin-bottom: .5em;
 }
 
+.row.modal-buttons {
+  margin-top: 1em;
+  justify-content: end;
+}
+
+.row.modal-buttons button {
+  font-size: .75em;
+}
+
+.row.modal-buttons a:hover,
 .row.hero-buttons a:hover {
   text-decoration: none;
 }
@@ -851,7 +881,7 @@ p.quick-ref-title {
 
   .card {
     width: unset;
-    flex: 40%
+    flex: 40%;
   }
 
   .card>div:first-child,
@@ -881,6 +911,49 @@ p.quick-ref-title {
   h1.hero-title {
     margin-top: 0;
   }
+
+  .row.quick-refs {
+    display: none;
+  }
+
+  .row.quick-refs-medium {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+
+  .row.quick-refs-medium .quick-ref-title {
+    margin-top: 0;
+  }
+
+}
+
+@media screen and (max-width: 62em) {
+  .hero-img {
+    padding: 0;
+    width: 60em;
+  }
+
+  .hero-info ~ .row.hero-buttons {
+    display: none;
+  }
+
+  .row.hero ~ .row.hero-buttons-small {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+
+  .row.quick-refs-medium .quick-ref-title {
+    margin-top: 1.3em;
+  }
+}
+
+@media screen and (max-width: 57.325em) {
+  .hero-img {
+    padding: 0;
+    width: 60em;
+  }
 }
 
 @media screen and (max-width: 48.125em) {
@@ -895,7 +968,7 @@ p.quick-ref-title {
   .card {
     width: unset;
     margin: .5em 0;
-    flex: 100%
+    flex: 100%;
   }
 
   .hero-column {
