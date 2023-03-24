@@ -947,8 +947,11 @@ p.quick-ref-title {
     width: 90%;
     margin: auto;
   }
-}
 
+  .row.quick-refs-medium .quick-ref-title {
+    margin-top: 1.3em;
+  }
+}
 
 @media screen and (max-width: 57.325em) {
   .hero-img {
