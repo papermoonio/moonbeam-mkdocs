@@ -41,6 +41,10 @@ h4 {
 }
 
 /* General styling adjustments */
+body {
+  min-width: fit-content;
+}
+
 [data-md-toggle='search']:checked~.md-header .md-search__input {
   color: #000000;
 }
@@ -714,7 +718,7 @@ button.pink-secondary-button.md-button:focus {
 }
 
 h2.card-title {
-  font-family: "Open Sans";
+  font-family: 'Varela Round', sans-serif;
   margin: 0;
   font-size: 1.2em;
   font-weight: 500;
@@ -734,7 +738,6 @@ h2.card-title {
 }
 
 .card-info {
-  font-family: "Open Sans";
   font-size: .8em;
 }
 
