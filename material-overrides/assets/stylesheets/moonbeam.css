@@ -45,11 +45,7 @@ h4 {
   color: #000000;
 }
 
-.md-search-result {
-  background-color: #ffffff;
-}
-
-.md-nav {
+.md-search-result, .md-nav, .md-sidebar {
   background-color: #ffffff;
 }
 
@@ -97,10 +93,6 @@ a:hover {
 .md-content .headerlink {
   display: none;
   visibility: hidden;
-}
-
-.md-sidebar {
-  background-color: #ffffff;
 }
 
 /* Adjust Nav Bar styling for smaller screens*/
