@@ -1137,3 +1137,22 @@ li>nav.md-nav[data-md-level="4"] {
 .source-file-seperator {
   margin: 0 .5em;
 }
+
+
+@media screen and (max-width: 30em) {
+  .source-file-seperator {
+    display: none;
+  }
+
+  .md-source-file {
+    margin: auto;
+  }
+
+  .md-source-file small {
+    display: block;
+  }
+  
+  .disclaimer {
+    margin: 2em auto;
+  }
+}
