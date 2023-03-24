@@ -41,6 +41,10 @@ h4 {
 }
 
 /* General styling adjustments */
+body {
+  min-width: fit-content;
+}
+
 [data-md-toggle='search']:checked~.md-header .md-search__input {
   color: #000000;
 }
@@ -714,7 +718,7 @@ button.pink-secondary-button.md-button:focus {
 }
 
 h2.card-title {
-  font-family: "Open Sans";
+  font-family: 'Varela Round', sans-serif;
   margin: 0;
   font-size: 1.2em;
   font-weight: 500;
@@ -734,7 +738,6 @@ h2.card-title {
 }
 
 .card-info {
-  font-family: "Open Sans";
   font-size: .8em;
 }
 
@@ -1041,6 +1044,12 @@ li>nav.md-nav[data-md-level="4"] {
   }
 }
 
+@media screen and (max-width: 30em) {
+  .md-button.connectMetaMask-nav {
+    display: none;
+  }
+}
+
 /* General nav styling */
 .md-tabs__item {
   height: 2rem;
@@ -1127,4 +1136,22 @@ li>nav.md-nav[data-md-level="4"] {
 
 .source-file-seperator {
   margin: 0 .5em;
+}
+
+@media screen and (max-width: 30em) {
+  .source-file-seperator {
+    display: none;
+  }
+
+  .md-source-file {
+    margin: auto;
+  }
+
+  .md-source-file small {
+    display: block;
+  }
+  
+  .disclaimer {
+    margin: 2em auto;
+  }
 }
