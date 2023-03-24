@@ -154,7 +154,7 @@ a:hover {
 }
 
 /* Russian note */
-.md-typeset .admonition.примечание {
+/* .md-typeset .admonition.примечание {
   border-color: #53cbc9;
 }
 
@@ -164,10 +164,10 @@ a:hover {
 
 .md-typeset .примечание>.admonition-title::before {
   background-color: #53cbc9;
-}
+} */
 
 /* Spanish note */
-.md-typeset .admonition.nota {
+/* .md-typeset .admonition.nota {
   border-color: #53cbc9;
 }
 
@@ -177,10 +177,10 @@ a:hover {
 
 .md-typeset .nota>.admonition-title::before {
   background-color: #53cbc9;
-}
+} */
 
 /* French note */
-.md-typeset .admonition.remarque {
+/* .md-typeset .admonition.remarque {
   border-color: #53cbc9;
 }
 
@@ -190,7 +190,7 @@ a:hover {
 
 .md-typeset .remarque>.admonition-title::before {
   background-color: #53cbc9;
-}
+} */
 
 /* Styling for custom Admonition notes used for challenges */
 .md-typeset .admonition.challenge,
