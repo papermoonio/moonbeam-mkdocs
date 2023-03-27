@@ -128,29 +128,53 @@ a:hover {
 }
 
 /* Styling for the Admonition modules (recolors the "note" field to Moonbeam blue */
-.md-typeset .admonition.note {
+.md-typeset .admonition.note, .md-typeset .admonition.注意事项 {
   border-color: #53cbc9;
 }
 
-.md-typeset .note>.admonition-title {
+.md-typeset .note>.admonition-title, .md-typeset .注意事项>.admonition-title {
   background-color: rgba(83, 203, 201, 0.2);
 }
 
-.md-typeset .note>.admonition-title::before {
+.md-typeset .note>.admonition-title::before, .md-typeset .注意事项>.admonition-title::before {
   background-color: #53cbc9;
 }
 
-/* Chinese note */
-.md-typeset .admonition.注意事项 {
-  border-color: #53cbc9;
+/* Styling for custom Admonition notes used for challenges */
+.md-typeset .admonition.challenge,
+.md-typeset details.challenge {
+  border-color: rgb(79, 51, 106);
 }
 
-.md-typeset .注意事项>.admonition-title {
-  background-color: rgba(83, 203, 201, 0.2);
+.md-typeset .challenge>.admonition-title,
+.md-typeset .challenge>summary {
+  background-color: rgba(79, 51, 106, 0.1);
 }
 
-.md-typeset .注意事项>.admonition-title::before {
-  background-color: #53cbc9;
+.md-typeset .challenge>.admonition-title::before,
+.md-typeset .challenge>summary::before {
+  background-color: rgb(79, 51, 106);
+  -webkit-mask-image: var(--md-admonition-icon--challenge);
+  mask-image: var(--md-admonition-icon--challenge);
+}
+
+/* Styling for custom Admonition notes used for remember */
+.md-typeset .admonition.remember,
+.md-typeset details.remember, .md-typeset .admonition.请记住,
+.md-typeset details.请记住 {
+  border-color: rgb(242, 160, 7);
+}
+.md-typeset .remember > .admonition-title,
+.md-typeset .remember > summary, .md-typeset .请记住 > .admonition-title,
+.md-typeset .请记住 > summary {
+  background-color: rgba(242, 160, 7, 0.1);
+}
+.md-typeset .remember > .admonition-title::before,
+.md-typeset .remember > summary::before, .md-typeset .请记住 > .admonition-title::before,
+.md-typeset .请记住 > summary::before {
+  background-color: rgb(242, 160, 7);
+  -webkit-mask-image: var(--md-admonition-icon--remember);
+          mask-image: var(--md-admonition-icon--remember);
 }
 
 /* Russian note */
@@ -191,40 +215,6 @@ a:hover {
 .md-typeset .remarque>.admonition-title::before {
   background-color: #53cbc9;
 } */
-
-/* Styling for custom Admonition notes used for challenges */
-.md-typeset .admonition.challenge,
-.md-typeset details.challenge {
-  border-color: rgb(79, 51, 106);
-}
-
-.md-typeset .challenge>.admonition-title,
-.md-typeset .challenge>summary {
-  background-color: rgba(79, 51, 106, 0.1);
-}
-
-.md-typeset .challenge>.admonition-title::before,
-.md-typeset .challenge>summary::before {
-  background-color: rgb(79, 51, 106);
-  -webkit-mask-image: var(--md-admonition-icon--challenge);
-  mask-image: var(--md-admonition-icon--challenge);
-}
-
-/* Styling for custom Admonition notes used for remember */
-.md-typeset .admonition.remember,
-.md-typeset details.remember {
-  border-color: rgb(242, 160, 7);
-}
-.md-typeset .remember > .admonition-title,
-.md-typeset .remember > summary {
-  background-color: rgba(242, 160, 7, 0.1);
-}
-.md-typeset .remember > .admonition-title::before,
-.md-typeset .remember > summary::before {
-  background-color: rgb(242, 160, 7);
-  -webkit-mask-image: var(--md-admonition-icon--remember);
-          mask-image: var(--md-admonition-icon--remember);
-}
 
 /* Styling for the Copy to Clipboard message */
 .md-dialog {
