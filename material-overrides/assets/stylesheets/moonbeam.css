@@ -41,10 +41,6 @@ h4 {
 }
 
 /* General styling adjustments */
-body {
-  min-width: fit-content;
-}
-
 [data-md-toggle='search']:checked~.md-header .md-search__input {
   color: #000000;
 }
@@ -991,8 +987,17 @@ p.quick-ref-title {
 }
 
 @media screen and (max-width: 30em) {
-  .md-header-nav__ellipsis.md-ellipsis {
-    display: none;
+  nav .md-header__title[data-md-component=header-title] {
+    margin-left: 0;
+  }
+
+  .md-header__title {
+    position: relative;
+  }
+
+  .md-header__ellipsis.md-ellipsis {
+    display: flex;
+    position: absolute;
   }
 }
 
