@@ -1154,6 +1154,7 @@ li>nav.md-nav[data-md-level="4"] {
 
   .md-source-file small {
     display: block;
+    text-align: center;
   }
   
   .disclaimer {
