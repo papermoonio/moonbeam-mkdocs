@@ -9,7 +9,6 @@
     - 'js/errorModal.js'
     - 'js/networkModal.js'
     - 'js/handleLanguageChange.js'
-    - 'js/renderSubsections.js'
     - 'js/fixCreatedDate.js'
     - 'js/externalLinkModal.js'
 'theme':
