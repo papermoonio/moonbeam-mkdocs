@@ -23,16 +23,15 @@
             <!-- for pages that point to sections within other pages -->
             {% if '#' in subsection_path %} 
               <!-- remove the section from the path -->
-              {% set subsection_path = subsection_path.split('#')[0][1:] %}
+              {% set subsection_path = subsection_path.split('#')[0] %}
             {% endif %}
-            <!-- for pages that point to other directories -->
-            {% if page.url not in subsection_path %}
+            {% if subsection_path.startswith('/') %}
               <!-- remove initial '/' from relative path -->
               {% set subsection_path = subsection_path[1:] %}
-              {% if not subsection_path.endswith('/') %}
-                <!-- add '/' to end of path to match all of the other urls -->
-                {% set subsection_path = subsection_path + '/' %}
-              {% endif %}
+            {% endif %}
+            {% if not subsection_path.endswith('/') %}
+              <!-- add '/' to end of path to match all of the other urls -->
+              {% set subsection_path = subsection_path + '/' %}
             {% endif %}
             {% set image_path = '/images/index-pages/' + subsection_path[:-1] + '.png' %}
             <div class="card">
