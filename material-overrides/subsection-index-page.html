@@ -3,7 +3,6 @@
 {% block content %}
 
 {% macro find_active_page(element) %}
-
   {% for nav_item in element %}
     {% if nav_item.active %}
       {% if nav_item.is_section %}
@@ -54,9 +53,7 @@
   {% endif %}
 
   {% if element.active and element.children %}
-    Hei
     {% for child in element.children %}
-      Here
       {% set nested_active_element = find_active_page(child) %}
       {% if nested_active_element != none %}
         {% set most_nested_active_element = nested_active_element %}
