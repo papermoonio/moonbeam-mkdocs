@@ -1072,16 +1072,17 @@ li>nav.md-nav[data-md-level="4"] {
 
 /* Disclaimer styling */
 .md-content__inner .main-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 73vh;
+  min-height: 75vh;
   margin-bottom: .5rem;
+  position: relative;
 }
 
 .disclaimer, .page-disclaimer {
   margin-top: auto;
   font-size: x-small;
   font-style: italic;
+  position: absolute;
+  bottom: 0;
 }
 
 .page-disclaimer {
@@ -1091,18 +1092,21 @@ li>nav.md-nav[data-md-level="4"] {
 @media screen and (max-width: 719px) {
   .md-content__inner .main-page {
     min-height: 71vh;
+    position: relative;
   }
 }
 
 @media screen and (max-width: 1219px) and (min-width: 720px) {
   .md-content__inner .main-page {
     min-height: 79vh;
+    position: relative;
   }
 }
 
 @media screen and (max-width: 1599px) and (min-width: 1220px) {
   .md-content__inner .main-page {
     min-height: 73vh;
+    position: relative;
   }
 }
 
