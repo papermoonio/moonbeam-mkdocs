@@ -620,7 +620,7 @@ p.md-footer-connect,
 h1.hero-title {
   font-weight: 400;
   font-size: 1.75em;
-  margin-top: 1em;
+  margin-top: .5em;
 }
 
 h3.hero-info {
@@ -1071,7 +1071,7 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 /* Disclaimer styling */
-.md-content__inner {
+.md-content__inner .main-page {
   display: flex;
   flex-direction: column;
   min-height: 75vh;
@@ -1089,20 +1089,20 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 @media screen and (max-width: 719px) {
-  .md-content__inner {
-    min-height: 73vh;
+  .md-content__inner .main-page {
+    min-height: 71vh;
   }
 }
 
 @media screen and (max-width: 1219px) and (min-width: 720px) {
-  .md-content__inner {
-    min-height: 81vh;
+  .md-content__inner .main-page {
+    min-height: 79vh;
   }
 }
 
 @media screen and (max-width: 1599px) and (min-width: 1220px) {
-  .md-content__inner {
-    min-height: 77vh;
+  .md-content__inner .main-page {
+    min-height: 73vh;
   }
 }
 
