@@ -38,7 +38,7 @@
             <div class="card">
               <a href="{{ subsection_path|replace(page.url, '') }}">
                 <h2 class="title">{{ nav_item.title }}</h2> 
-                <img class="icon" src="{{ image_path }}">
+                <img class="icon" alt="{{ nav_item.title }}" src="{{ image_path }}">
               </a>    
             </div>
           {% endfor %}
