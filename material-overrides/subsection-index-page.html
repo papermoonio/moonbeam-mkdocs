@@ -19,24 +19,26 @@
             {% else %}
               {% set subsection_path = nav_item.url %}
             {% endif %}
-            <!-- for pages that point to sections within other pages -->
-            {% if '#' in subsection_path %} 
-              <!-- remove the section from the path -->
-              {% set subsection_path = subsection_path.split('#')[0] %}
-            {% endif %}
-            {% if subsection_path.startswith('/') %}
+            <!-- make modifications necessary for section index page icons -->
+            {% set image_path = subsection_path %}
+            {% if image_path.startswith('/') %}
               <!-- remove initial '/' from relative path -->
-              {% set subsection_path = subsection_path[1:] %}
+              {% set image_path = image_path[1:] %}
             {% endif %}
-            {% if not subsection_path.endswith('/') %}
+            {% if '#' in image_path %} 
+              <!-- for pages that point to sections within other pages
+                remove the section from the path -->
+              {% set image_path = image_path.split('#')[0] %}
+            {% endif %}
+            {% if not image_path.endswith('/') %}
               <!-- add '/' to end of path to match all of the other urls -->
-              {% set subsection_path = subsection_path + '/' %}
+              {% set image_path = image_path + '/' %}
             {% endif %}
-            {% set image_path = '/images/index-pages/' + subsection_path[:-1] + '.png' %}
+            {% set image_path = '/images/index-pages/' + image_path[:-1] + '.png' %}
             <div class="card">
               <a href="{{ subsection_path|replace(page.url, '') }}">
                 <h2 class="title">{{ nav_item.title }}</h2> 
-                <img class="icon" src="{{ image_path }}">
+                <img class="icon" alt="{{ nav_item.title }}" src="{{ image_path }}">
               </a>    
             </div>
           {% endfor %}
