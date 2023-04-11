@@ -38,6 +38,7 @@ h4 {
   --md-admonition-icon--note: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0iTTkgMzloMi4ybDIyLjE1LTIyLjE1LTIuMi0yLjJMOSAzNi44Wm0zMC43LTI0LjMtNi40LTYuNCAyLjEtMi4xcS44NS0uODUgMi4xMjUtLjgyNSAxLjI3NS4wMjUgMi4xMjUuODc1TDQxLjggOC40cS44NS44NS44NSAyLjF0LS44NSAyLjFaTTcuNSA0MnEtLjY1IDAtMS4wNzUtLjQyNVE2IDQxLjE1IDYgNDAuNXYtNC4zcTAtLjMuMS0uNTUuMS0uMjUuMzUtLjVMMzEuMiAxMC40bDYuNCA2LjQtMjQuNzUgMjQuNzVxLS4yNS4yNS0uNS4zNS0uMjUuMS0uNTUuMVptMjQuNzUtMjYuMjUtMS4xLTEuMSAyLjIgMi4yWiIvPjwvc3ZnPg==');
   --md-admonition-icon--challenge: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0ibTkuMzUgMjAuNDUgNS4zIDIuMjVxLjktMS44IDEuOTI1LTMuNTVRMTcuNiAxNy40IDE4Ljc1IDE1LjhMMTQuOCAxNVptNy43IDQuMDUgNi42NSA2LjY1cTIuODUtMS4zIDUuMzUtMi45NSAyLjUtMS42NSA0LjA1LTMuMiA0LjA1LTQuMDUgNS45NS04LjMgMS45LTQuMjUgMi4wNS05LjYtNS4zNS4xNS05LjYgMi4wNXQtOC4zIDUuOTVxLTEuNTUgMS41NS0zLjIgNC4wNS0xLjY1IDIuNS0yLjk1IDUuMzVabTExLjQ1LTQuOHEtMS0xLTEtMi40NzV0MS0yLjQ3NXExLTEgMi40NzUtMXQyLjQ3NSAxcTEgMSAxIDIuNDc1dC0xIDIuNDc1cS0xIDEtMi40NzUgMXQtMi40NzUtMVptLS43NSAxOS4xNSA1LjQ1LTUuNDUtLjgtMy45NXEtMS42IDEuMTUtMy4zNSAyLjE3NVQyNS41IDMzLjU1Wm0xNi4zLTM0LjdxLjQ1IDYuOC0xLjcgMTIuNC0yLjE1IDUuNi03LjEgMTAuNTVsLS4xLjEtLjEuMSAxLjEgNS41cS4xNS43NS0uMDc1IDEuNDUtLjIyNS43LS43NzUgMS4yNWwtOC41NSA4LjYtNC4yNS05LjktOC41LTguNS05LjktNC4yNSA4LjYtOC41NXEuNTUtLjU1IDEuMjUtLjc3NS43LS4yMjUgMS40NS0uMDc1bDUuNSAxLjFxLjA1LS4wNS4xLS4wNzUuMDUtLjAyNS4xLS4wNzUgNC45NS00Ljk1IDEwLjU1LTcuMTI1IDUuNi0yLjE3NSAxMi40LTEuNzI1Wm0tMzYuNiAyNy42UTkuMiAzMCAxMS43MjUgMjkuOTc1IDE0LjI1IDI5Ljk1IDE2IDMxLjdxMS43NSAxLjc1IDEuNzI1IDQuMjc1UTE3LjcgMzguNSAxNS45NSA0MC4yNXEtMS4zIDEuMy00LjAyNSAyLjE1UTkuMiA0My4yNSAzLjc1IDQ0cS43NS01LjQ1IDEuNTc1LTguMi44MjUtMi43NSAyLjEyNS00LjA1Wm0yLjEgMi4xNXEtLjcuNzUtMS4yNSAyLjM1dC0uOTUgNC4xcTIuNS0uNCA0LjEtLjk1IDEuNi0uNTUgMi4zNS0xLjI1Ljk1LS44NS45NzUtMi4xMjUuMDI1LTEuMjc1LS44NzUtMi4yMjUtLjk1LS45LTIuMjI1LS44NzUtMS4yNzUuMDI1LTIuMTI1Ljk3NVoiLz48L3N2Zz4=');
   --md-admonition-icon--remember: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0iTTI0LjA1IDI0LjQ1Wk00LjYgNDJxLS44NSAwLTEuMy0uNzUtLjQ1LS43NSAwLTEuNWwxOS40LTMzLjVxLjQ1LS43NSAxLjMtLjc1Ljg1IDAgMS4zLjc1bDE5LjQgMzMuNXEuNDUuNzUgMCAxLjV0LTEuMy43NVptMTkuNi0yMi42cS0uNjUgMC0xLjA3NS40MjUtLjQyNS40MjUtLjQyNSAxLjA3NXY4LjJxMCAuNjUuNDI1IDEuMDc1LjQyNS40MjUgMS4wNzUuNDI1LjY1IDAgMS4wNzUtLjQyNS40MjUtLjQyNS40MjUtMS4wNzV2LTguMnEwLS42NS0uNDI1LTEuMDc1LS40MjUtLjQyNS0xLjA3NS0uNDI1Wm0wIDE2Ljc1cS42NSAwIDEuMDc1LS40MjUuNDI1LS40MjUuNDI1LTEuMDc1IDAtLjY1LS40MjUtMS4wNzUtLjQyNS0uNDI1LTEuMDc1LS40MjUtLjY1IDAtMS4wNzUuNDI1UTIyLjcgMzQgMjIuNyAzNC42NXEwIC42NS40MjUgMS4wNzUuNDI1LjQyNSAxLjA3NS40MjVaTTcuMiAzOWgzMy42TDI0IDEwWiIvPjwvc3ZnPg==');
+  --md-admonition-icon--code: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE0LjYsMTYuNkwxOS4yLDEyTDE0LjYsNy40TDE2LDZMMjIsMTJMMTYsMThMMTQuNiwxNi42TTkuNCwxNi42TDQuOCwxMkw5LjQsNy40TDgsNkwyLDEyTDgsMThMOS40LDE2LjZaIiAvPjwvc3ZnPg==')
 }
 
 /* General styling adjustments */
@@ -187,6 +188,28 @@ a:hover {
   background-color: rgb(242, 160, 7);
   -webkit-mask-image: var(--md-admonition-icon--remember);
           mask-image: var(--md-admonition-icon--remember);
+}
+
+/* Styling for custom Admonition notes used for code */
+.md-typeset .admonition.code,
+.md-typeset details.code,
+.md-typeset .admonition.码,
+.md-typeset details.码 {
+  border-color: rgb(234, 90, 162);
+}
+.md-typeset .code > .admonition-title,
+.md-typeset .code > summary,
+.md-typeset .码 > .admonition-title,
+.md-typeset .码 > summary {
+  background-color: rgba(234, 90, 162, 0.1);
+}
+.md-typeset .code > .admonition-title::before,
+.md-typeset .code > summary::before,
+.md-typeset .码 > .admonition-title::before,
+.md-typeset .码 > summary::before {
+  background-color: rgb(234, 90, 162);
+  -webkit-mask-image: var(--md-admonition-icon--code);
+          mask-image: var(--md-admonition-icon--code);
 }
 
 /* Russian note */
