@@ -131,7 +131,7 @@ a:hover {
 /* Styling for the Admonition modules (recolors the "note" field to Moonbeam blue */
 .md-typeset .admonition.note,
 .md-typeset details.note,
-.md-typeset .admonition.注意事项
+.md-typeset .admonition.注意事项,
 .md-typeset details.注意事项 {
   border-color: #53cbc9;
 }
