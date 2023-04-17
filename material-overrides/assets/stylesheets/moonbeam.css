@@ -130,18 +130,26 @@ a:hover {
 
 /* Styling for the Admonition modules (recolors the "note" field to Moonbeam blue */
 .md-typeset .admonition.note,
-.md-typeset .admonition.注意事项 {
+.md-typeset details.note,
+.md-typeset .admonition.注意事项
+.md-typeset details.注意事项 {
   border-color: #53cbc9;
 }
 
 .md-typeset .note>.admonition-title,
-.md-typeset .注意事项>.admonition-title {
+.md-typeset .note>summary,
+.md-typeset .注意事项>.admonition-title,
+.md-typeset .注意事项>summary {
   background-color: rgba(83, 203, 201, 0.2);
 }
 
 .md-typeset .note>.admonition-title::before,
-.md-typeset .注意事项>.admonition-title::before {
+.md-typeset .note>summary::before,
+.md-typeset .注意事项>.admonition-title::before,
+.md-typeset .注意事项>summary::before {
   background-color: #53cbc9;
+  -webkit-mask-image: var(--md-admonition-icon--note);
+  mask-image: var(--md-admonition-icon--note);
 }
 
 /* Styling for custom Admonition notes used for challenges */
