@@ -38,6 +38,7 @@ h4 {
   --md-admonition-icon--note: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0iTTkgMzloMi4ybDIyLjE1LTIyLjE1LTIuMi0yLjJMOSAzNi44Wm0zMC43LTI0LjMtNi40LTYuNCAyLjEtMi4xcS44NS0uODUgMi4xMjUtLjgyNSAxLjI3NS4wMjUgMi4xMjUuODc1TDQxLjggOC40cS44NS44NS44NSAyLjF0LS44NSAyLjFaTTcuNSA0MnEtLjY1IDAtMS4wNzUtLjQyNVE2IDQxLjE1IDYgNDAuNXYtNC4zcTAtLjMuMS0uNTUuMS0uMjUuMzUtLjVMMzEuMiAxMC40bDYuNCA2LjQtMjQuNzUgMjQuNzVxLS4yNS4yNS0uNS4zNS0uMjUuMS0uNTUuMVptMjQuNzUtMjYuMjUtMS4xLTEuMSAyLjIgMi4yWiIvPjwvc3ZnPg==');
   --md-admonition-icon--challenge: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0ibTkuMzUgMjAuNDUgNS4zIDIuMjVxLjktMS44IDEuOTI1LTMuNTVRMTcuNiAxNy40IDE4Ljc1IDE1LjhMMTQuOCAxNVptNy43IDQuMDUgNi42NSA2LjY1cTIuODUtMS4zIDUuMzUtMi45NSAyLjUtMS42NSA0LjA1LTMuMiA0LjA1LTQuMDUgNS45NS04LjMgMS45LTQuMjUgMi4wNS05LjYtNS4zNS4xNS05LjYgMi4wNXQtOC4zIDUuOTVxLTEuNTUgMS41NS0zLjIgNC4wNS0xLjY1IDIuNS0yLjk1IDUuMzVabTExLjQ1LTQuOHEtMS0xLTEtMi40NzV0MS0yLjQ3NXExLTEgMi40NzUtMXQyLjQ3NSAxcTEgMSAxIDIuNDc1dC0xIDIuNDc1cS0xIDEtMi40NzUgMXQtMi40NzUtMVptLS43NSAxOS4xNSA1LjQ1LTUuNDUtLjgtMy45NXEtMS42IDEuMTUtMy4zNSAyLjE3NVQyNS41IDMzLjU1Wm0xNi4zLTM0LjdxLjQ1IDYuOC0xLjcgMTIuNC0yLjE1IDUuNi03LjEgMTAuNTVsLS4xLjEtLjEuMSAxLjEgNS41cS4xNS43NS0uMDc1IDEuNDUtLjIyNS43LS43NzUgMS4yNWwtOC41NSA4LjYtNC4yNS05LjktOC41LTguNS05LjktNC4yNSA4LjYtOC41NXEuNTUtLjU1IDEuMjUtLjc3NS43LS4yMjUgMS40NS0uMDc1bDUuNSAxLjFxLjA1LS4wNS4xLS4wNzUuMDUtLjAyNS4xLS4wNzUgNC45NS00Ljk1IDEwLjU1LTcuMTI1IDUuNi0yLjE3NSAxMi40LTEuNzI1Wm0tMzYuNiAyNy42UTkuMiAzMCAxMS43MjUgMjkuOTc1IDE0LjI1IDI5Ljk1IDE2IDMxLjdxMS43NSAxLjc1IDEuNzI1IDQuMjc1UTE3LjcgMzguNSAxNS45NSA0MC4yNXEtMS4zIDEuMy00LjAyNSAyLjE1UTkuMiA0My4yNSAzLjc1IDQ0cS43NS01LjQ1IDEuNTc1LTguMi44MjUtMi43NSAyLjEyNS00LjA1Wm0yLjEgMi4xNXEtLjcuNzUtMS4yNSAyLjM1dC0uOTUgNC4xcTIuNS0uNCA0LjEtLjk1IDEuNi0uNTUgMi4zNS0xLjI1Ljk1LS44NS45NzUtMi4xMjUuMDI1LTEuMjc1LS44NzUtMi4yMjUtLjk1LS45LTIuMjI1LS44NzUtMS4yNzUuMDI1LTIuMTI1Ljk3NVoiLz48L3N2Zz4=');
   --md-admonition-icon--remember: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0iTTI0LjA1IDI0LjQ1Wk00LjYgNDJxLS44NSAwLTEuMy0uNzUtLjQ1LS43NSAwLTEuNWwxOS40LTMzLjVxLjQ1LS43NSAxLjMtLjc1Ljg1IDAgMS4zLjc1bDE5LjQgMzMuNXEuNDUuNzUgMCAxLjV0LTEuMy43NVptMTkuNi0yMi42cS0uNjUgMC0xLjA3NS40MjUtLjQyNS40MjUtLjQyNSAxLjA3NXY4LjJxMCAuNjUuNDI1IDEuMDc1LjQyNS40MjUgMS4wNzUuNDI1LjY1IDAgMS4wNzUtLjQyNS40MjUtLjQyNS40MjUtMS4wNzV2LTguMnEwLS42NS0uNDI1LTEuMDc1LS40MjUtLjQyNS0xLjA3NS0uNDI1Wm0wIDE2Ljc1cS42NSAwIDEuMDc1LS40MjUuNDI1LS40MjUuNDI1LTEuMDc1IDAtLjY1LS40MjUtMS4wNzUtLjQyNS0uNDI1LTEuMDc1LS40MjUtLjY1IDAtMS4wNzUuNDI1UTIyLjcgMzQgMjIuNyAzNC42NXEwIC42NS40MjUgMS4wNzUuNDI1LjQyNSAxLjA3NS40MjVaTTcuMiAzOWgzMy42TDI0IDEwWiIvPjwvc3ZnPg==');
+  --md-admonition-icon--code: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE0LjYsMTYuNkwxOS4yLDEyTDE0LjYsNy40TDE2LDZMMjIsMTJMMTYsMThMMTQuNiwxNi42TTkuNCwxNi42TDQuOCwxMkw5LjQsNy40TDgsNkwyLDEyTDgsMThMOS40LDE2LjZaIiAvPjwvc3ZnPg==')
 }
 
 /* General styling adjustments */
@@ -45,11 +46,7 @@ h4 {
   color: #000000;
 }
 
-.md-search-result {
-  background-color: #ffffff;
-}
-
-.md-nav {
+.md-search-result, .md-nav, .md-sidebar {
   background-color: #ffffff;
 }
 
@@ -99,10 +96,6 @@ a:hover {
   visibility: hidden;
 }
 
-.md-sidebar {
-  background-color: #ffffff;
-}
-
 /* Adjust Nav Bar styling for smaller screens*/
 @media screen and (max-width: 76.1875em) {
 
@@ -136,33 +129,99 @@ a:hover {
 }
 
 /* Styling for the Admonition modules (recolors the "note" field to Moonbeam blue */
-.md-typeset .admonition.note {
+.md-typeset .admonition.note,
+.md-typeset details.note,
+.md-typeset .admonition.注意事项,
+.md-typeset details.注意事项 {
   border-color: #53cbc9;
 }
 
-.md-typeset .note>.admonition-title {
+.md-typeset .note>.admonition-title,
+.md-typeset .note>summary,
+.md-typeset .注意事项>.admonition-title,
+.md-typeset .注意事项>summary {
   background-color: rgba(83, 203, 201, 0.2);
 }
 
-.md-typeset .note>.admonition-title::before {
+.md-typeset .note>.admonition-title::before,
+.md-typeset .note>summary::before,
+.md-typeset .注意事项>.admonition-title::before,
+.md-typeset .注意事项>summary::before {
   background-color: #53cbc9;
+  -webkit-mask-image: var(--md-admonition-icon--note);
+  mask-image: var(--md-admonition-icon--note);
 }
 
-/* Chinese note */
-.md-typeset .admonition.注意事项 {
-  border-color: #53cbc9;
+/* Styling for custom Admonition notes used for challenges */
+.md-typeset .admonition.challenge,
+.md-typeset details.challenge,
+.md-typeset .admonition.挑战,
+.md-typeset details.挑战 {
+  border-color: rgb(79, 51, 106);
 }
 
-.md-typeset .注意事项>.admonition-title {
-  background-color: rgba(83, 203, 201, 0.2);
+.md-typeset .challenge>.admonition-title,
+.md-typeset .challenge>summary,
+.md-typeset .挑战>.admonition-title,
+.md-typeset .挑战>summary {
+  background-color: rgba(79, 51, 106, 0.1);
 }
 
-.md-typeset .注意事项>.admonition-title::before {
-  background-color: #53cbc9;
+.md-typeset .challenge>.admonition-title::before,
+.md-typeset .challenge>summary::before,
+.md-typeset .挑战>.admonition-title::before,
+.md-typeset .挑战>summary::before {
+  background-color: rgb(79, 51, 106);
+  -webkit-mask-image: var(--md-admonition-icon--challenge);
+  mask-image: var(--md-admonition-icon--challenge);
+}
+
+/* Styling for custom Admonition notes used for remember */
+.md-typeset .admonition.remember,
+.md-typeset details.remember,
+.md-typeset .admonition.请记住,
+.md-typeset details.请记住 {
+  border-color: rgb(242, 160, 7);
+}
+.md-typeset .remember > .admonition-title,
+.md-typeset .remember > summary,
+.md-typeset .请记住 > .admonition-title,
+.md-typeset .请记住 > summary {
+  background-color: rgba(242, 160, 7, 0.1);
+}
+.md-typeset .remember > .admonition-title::before,
+.md-typeset .remember > summary::before,
+.md-typeset .请记住 > .admonition-title::before,
+.md-typeset .请记住 > summary::before {
+  background-color: rgb(242, 160, 7);
+  -webkit-mask-image: var(--md-admonition-icon--remember);
+          mask-image: var(--md-admonition-icon--remember);
+}
+
+/* Styling for custom Admonition notes used for code */
+.md-typeset .admonition.code,
+.md-typeset details.code,
+.md-typeset .admonition.码,
+.md-typeset details.码 {
+  border-color: rgb(234, 90, 162);
+}
+.md-typeset .code > .admonition-title,
+.md-typeset .code > summary,
+.md-typeset .码 > .admonition-title,
+.md-typeset .码 > summary {
+  background-color: rgba(234, 90, 162, 0.1);
+}
+.md-typeset .code > .admonition-title::before,
+.md-typeset .code > summary::before,
+.md-typeset .码 > .admonition-title::before,
+.md-typeset .码 > summary::before {
+  background-color: rgb(234, 90, 162);
+  -webkit-mask-image: var(--md-admonition-icon--code);
+          mask-image: var(--md-admonition-icon--code);
 }
 
 /* Russian note */
-.md-typeset .admonition.примечание {
+/* .md-typeset .admonition.примечание {
   border-color: #53cbc9;
 }
 
@@ -172,10 +231,10 @@ a:hover {
 
 .md-typeset .примечание>.admonition-title::before {
   background-color: #53cbc9;
-}
+} */
 
 /* Spanish note */
-.md-typeset .admonition.nota {
+/* .md-typeset .admonition.nota {
   border-color: #53cbc9;
 }
 
@@ -185,10 +244,10 @@ a:hover {
 
 .md-typeset .nota>.admonition-title::before {
   background-color: #53cbc9;
-}
+} */
 
 /* French note */
-.md-typeset .admonition.remarque {
+/* .md-typeset .admonition.remarque {
   border-color: #53cbc9;
 }
 
@@ -198,41 +257,7 @@ a:hover {
 
 .md-typeset .remarque>.admonition-title::before {
   background-color: #53cbc9;
-}
-
-/* Styling for custom Admonition notes used for challenges */
-.md-typeset .admonition.challenge,
-.md-typeset details.challenge {
-  border-color: rgb(79, 51, 106);
-}
-
-.md-typeset .challenge>.admonition-title,
-.md-typeset .challenge>summary {
-  background-color: rgba(79, 51, 106, 0.1);
-}
-
-.md-typeset .challenge>.admonition-title::before,
-.md-typeset .challenge>summary::before {
-  background-color: rgb(79, 51, 106);
-  -webkit-mask-image: var(--md-admonition-icon--challenge);
-  mask-image: var(--md-admonition-icon--challenge);
-}
-
-/* Styling for custom Admonition notes used for remember */
-.md-typeset .admonition.remember,
-.md-typeset details.remember {
-  border-color: rgb(242, 160, 7);
-}
-.md-typeset .remember > .admonition-title,
-.md-typeset .remember > summary {
-  background-color: rgba(242, 160, 7, 0.1);
-}
-.md-typeset .remember > .admonition-title::before,
-.md-typeset .remember > summary::before {
-  background-color: rgb(242, 160, 7);
-  -webkit-mask-image: var(--md-admonition-icon--remember);
-          mask-image: var(--md-admonition-icon--remember);
-}
+} */
 
 /* Styling for the Copy to Clipboard message */
 .md-dialog {
@@ -309,7 +334,8 @@ a:hover {
   margin: .5em;
 }
 
-/* MetaMask Error Modal Styling */
+/* Modal Styling */
+.external-link-modal-container,
 .error-modal-container,
 .network-modal-container {
   position: fixed;
@@ -322,6 +348,11 @@ a:hover {
   width: 33%;
 }
 
+.external-link-modal-container {
+  width: 40%;
+}
+
+.external-link-modal,
 .error-modal,
 .network-modal {
   background-color: #171e43;
@@ -333,31 +364,41 @@ a:hover {
   overflow: auto;
 }
 
+.close-external-link-modal,
 .close-modal {
   font-size: 2em;
   float: right;
   cursor: pointer;
-  margin-left: 0.2em;
+  margin-left: 0.5em;
+}
+
+.external-link-message {
+  font-size: .8em;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .error-modal-container,
+  .network-modal-container {
+    width: 50%;
+  }
+
+  .external-link-modal-container {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 46.1875em) {
-
   .error-modal-container,
   .network-modal-container {
     width: 80%;
   }
-
   .error-modal,
   .network-modal {
     margin: 25% auto;
   }
-}
 
-@media screen and (max-width: 76.1875em) {
-
-  .error-modal-container,
-  .network-modal-container {
-    width: 50%;
+  .external-link-modal-container {
+    width: 90%;
   }
 }
 
@@ -380,12 +421,17 @@ a:hover {
   text-decoration: none;
 }
 
+.external-link-modal-header,
 .network-modal-header,
 .error-modal-header {
   margin-bottom: 1em;
   font-family: 'Open Sans';
   font-size: .9em;
   font-weight: normal;
+}
+
+.external-link-modal-header {
+  font-weight: 600;
 }
 
 /* Footer Styling */
@@ -572,6 +618,7 @@ p.md-footer-connect,
 .home {
   font-family: "Open Sans";
   margin: auto;
+  max-width: 100%;
 }
 
 .row {
@@ -597,10 +644,14 @@ p.md-footer-connect,
   width: 100%;
 }
 
+.row.quick-refs-medium, .row.hero-buttons-small {
+  display: none;
+}
+
 h1.hero-title {
   font-weight: 400;
   font-size: 1.75em;
-  margin-top: 1em;
+  margin-top: .5em;
 }
 
 h3.hero-info {
@@ -617,13 +668,16 @@ h3.hero-info {
   margin-bottom: 2em;
 }
 
-.row.hero-buttons {
+.row.hero-buttons, .row.modal-buttons, .row.modal-buttons button {
   justify-content: start;
   transition: all .2s ease-in-out;
   display: flex;
   flex-wrap: wrap;
+  font-weight: 700;
 }
 
+.row.modal-buttons button,
+.row.modal-buttons button:hover,
 .row.hero-buttons button,
 .row.hero-buttons button:hover {
   display: flex;
@@ -637,6 +691,16 @@ h3.hero-info {
   margin-bottom: .5em;
 }
 
+.row.modal-buttons {
+  margin-top: 1em;
+  justify-content: end;
+}
+
+.row.modal-buttons button {
+  font-size: .75em;
+}
+
+.row.modal-buttons a:hover,
 .row.hero-buttons a:hover {
   text-decoration: none;
 }
@@ -683,7 +747,7 @@ button.pink-secondary-button.md-button:focus {
 }
 
 h2.card-title {
-  font-family: "Open Sans";
+  font-family: 'Varela Round', sans-serif;
   margin: 0;
   font-size: 1.2em;
   font-weight: 500;
@@ -703,7 +767,6 @@ h2.card-title {
 }
 
 .card-info {
-  font-family: "Open Sans";
   font-size: .8em;
 }
 
@@ -783,6 +846,10 @@ p.quick-ref-title {
   transform: scale(1.05);
 }
 
+.subsection-wrapper + .md-source-file {
+  margin-top: auto;
+}
+
 /* Section index page styles */
 .subsection-title {
   display: flex;
@@ -847,7 +914,7 @@ p.quick-ref-title {
 
   .card {
     width: unset;
-    flex: 40%
+    flex: 40%;
   }
 
   .card>div:first-child,
@@ -877,6 +944,49 @@ p.quick-ref-title {
   h1.hero-title {
     margin-top: 0;
   }
+
+  .row.quick-refs {
+    display: none;
+  }
+
+  .row.quick-refs-medium {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+
+  .row.quick-refs-medium .quick-ref-title {
+    margin-top: 0;
+  }
+
+}
+
+@media screen and (max-width: 62em) {
+  .hero-img {
+    padding: 0;
+    width: 60em;
+  }
+
+  .hero-info ~ .row.hero-buttons {
+    display: none;
+  }
+
+  .row.hero ~ .row.hero-buttons-small {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+
+  .row.quick-refs-medium .quick-ref-title {
+    margin-top: 1.3em;
+  }
+}
+
+@media screen and (max-width: 57.325em) {
+  .hero-img {
+    padding: 0;
+    width: 60em;
+  }
 }
 
 @media screen and (max-width: 48.125em) {
@@ -891,7 +1001,7 @@ p.quick-ref-title {
   .card {
     width: unset;
     margin: .5em 0;
-    flex: 100%
+    flex: 100%;
   }
 
   .hero-column {
@@ -910,8 +1020,17 @@ p.quick-ref-title {
 }
 
 @media screen and (max-width: 30em) {
-  .md-header-nav__ellipsis.md-ellipsis {
-    display: none;
+  nav .md-header__title[data-md-component=header-title] {
+    margin-left: 0;
+  }
+
+  .md-header__title {
+    position: relative;
+  }
+
+  .md-header__ellipsis.md-ellipsis {
+    display: flex;
+    position: absolute;
   }
 }
 
@@ -963,6 +1082,12 @@ li>nav.md-nav[data-md-level="4"] {
   }
 }
 
+@media screen and (max-width: 30em) {
+  .md-button.connectMetaMask-nav {
+    display: none;
+  }
+}
+
 /* General nav styling */
 .md-tabs__item {
   height: 2rem;
@@ -977,7 +1102,7 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 /* Disclaimer styling */
-.md-content__inner.main-page {
+.md-content__inner .main-page {
   display: flex;
   flex-direction: column;
   min-height: 75vh;
@@ -995,20 +1120,20 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 @media screen and (max-width: 719px) {
-  .md-content__inner.main-page {
-    min-height: 73vh;
+  .md-content__inner .main-page {
+    min-height: 71vh;
   }
 }
 
 @media screen and (max-width: 1219px) and (min-width: 720px) {
-  .md-content__inner.main-page {
-    min-height: 81vh;
+  .md-content__inner .main-page {
+    min-height: 79vh;
   }
 }
 
 @media screen and (max-width: 1599px) and (min-width: 1220px) {
-  .md-content__inner.main-page {
-    min-height: 77vh;
+  .md-content__inner .main-page {
+    min-height: 73vh;
   }
 }
 
@@ -1029,4 +1154,43 @@ li>nav.md-nav[data-md-level="4"] {
 
 .md-feedback__icon:not(:disabled).md-icon:hover {
   color: #53cbc9;
+}
+
+/* Document date styling */
+.md-source-file {
+  display: flex;
+  justify-content: center;
+  margin-top: .5em;
+}
+
+.md-source-file small {
+  display: flex;
+  align-items: end;
+}
+
+.source-file-label {
+  margin-right: .5em;
+}
+
+.source-file-seperator {
+  margin: 0 .5em;
+}
+
+@media screen and (max-width: 30em) {
+  .source-file-seperator {
+    display: none;
+  }
+
+  .md-source-file {
+    margin: auto;
+  }
+
+  .md-source-file small {
+    display: block;
+    text-align: center;
+  }
+  
+  .disclaimer {
+    margin: 2em auto;
+  }
 }

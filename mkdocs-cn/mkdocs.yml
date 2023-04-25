@@ -9,7 +9,8 @@ docs_dir: moonbeam-docs-cn
   - 'js/errorModal.js'
   - 'js/networkModal.js'
   - 'js/handleLanguageChange.js'
-  - 'js/renderSubsections.js'
+  - 'js/fixCreatedDate.js'
+  - 'js/externalLinkModal.js'
 'theme':
   'name': 'material'
   'custom_dir': 'material-overrides'
@@ -45,6 +46,8 @@ docs_dir: moonbeam-docs-cn
 'plugins':
   - 'search'
   - 'awesome-pages'
+  - 'git-revision-date-localized':
+      'enable_creation_date': !!bool 'true'
   - 'redirects':
       'redirect_maps':
         'resources/networks.md': 'learn/platform/networks/overview.md'
@@ -73,8 +76,8 @@ docs_dir: moonbeam-docs-cn
         'integrations/jslibraries/web3js.md': 'builders/build/eth-api/libraries/web3js.md'
         'integrations/jslibraries/etherjs.md': 'builders/build/eth-api/libraries/ethersjs.md'
         'networks/testnet.md': 'learn/platform/networks/moonbase.md'
-        'governance/proposals.md': 'tokens/governance/proposals.md'
-        'governance/voting.md': 'tokens/governance/voting.md'
+        'governance/proposals.md': 'tokens/governance/proposals/proposals.md'
+        'governance/voting.md': 'tokens/governance/voting/voting.md'
         'integrations/indexers/covalent.md': 'builders/integrations/indexers/covalent.md'
         'integrations/indexers/thegraph.md': 'builders/integrations/indexers/thegraph.md'
         'integrations/openzeppelin/defender.md': 'builders/build/eth-api/dev-env/openzeppelin/defender.md'
@@ -260,7 +263,7 @@ docs_dir: moonbeam-docs-cn
       'name': 'GitHub'
   'analytics':
     'provider': 'google'
-    'property': 'UA-135971059-6'
+    'property': 'UA-135971059-6'  # TODO: remove the google.html override once we update this to GA4
     'feedback':
         'title': '此页面是否有帮助?'
         'ratings':
