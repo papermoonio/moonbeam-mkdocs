@@ -235,6 +235,9 @@ docs_dir: moonbeam-docs-cn
         'builders/xcm/xc-integration.md': 'builders/interoperability/xcm/xc-integration.md'
         'builders/xcm/xcm-transactor.md': 'builders/interoperability/xcm/xcm-transactor.md'
         'builders/xcm/remote-evm-calls.md': 'builders/interoperability/xcm/remote-evm-calls.md'
+        'builders/get-started/networks/layer2/index.md': 'builders/get-started/networks/index.md'
+        'builders/get-started/networks/layer2/bobabase.md': 'builders/get-started/networks/index.md'
+        'builders/get-started/networks/layer2/bobabeam.md': 'builders/get-started/networks/index.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs-cn/variables.yml'
