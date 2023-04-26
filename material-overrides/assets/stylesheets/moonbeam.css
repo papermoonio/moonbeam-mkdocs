@@ -1194,3 +1194,8 @@ li>nav.md-nav[data-md-level="4"] {
     margin: 2em auto;
   }
 }
+
+/* Kapa widget styling */
+.mantine-1w3gd0m, .mantine-os5qlk {
+  font-size: .6rem;
+}
