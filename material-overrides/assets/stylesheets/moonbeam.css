@@ -1199,3 +1199,18 @@ li>nav.md-nav[data-md-level="4"] {
 .mantine-1w3gd0m, .mantine-os5qlk {
   font-size: .6rem;
 }
+/* Removes gap between links at bottom of modal */
+.mantine-1emc9ft {
+  gap: 0;
+}
+@media screen and (max-width: 27.25em) {
+  /* Fix the positioning of the "X" close button */
+  .mantine-19s92y7 {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 48.125em) {
+  .mantine-Modal-body > .mantine-1emc9ft div {
+    margin: auto 1em;
+  }
+}
