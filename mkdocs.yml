@@ -11,6 +11,8 @@
     - 'js/handleLanguageChange.js'
     - 'js/fixCreatedDate.js'
     - 'js/externalLinkModal.js'
+    - 'https://widget.kapa.ai/kapa-widget.bundle.js'
+    - 'js/initKapaWidget.js'
 'theme':
     'name': 'material'
     'custom_dir': 'material-overrides'

@@ -1194,3 +1194,24 @@ li>nav.md-nav[data-md-level="4"] {
     margin: 2em auto;
   }
 }
+
+/* Kapa widget styling */
+.mantine-1w3gd0m, .mantine-os5qlk {
+  font-size: .6rem;
+}
+/* Removes vertical gap between links at bottom of modal */
+.mantine-1emc9ft {
+  gap: 0;
+}
+@media screen and (max-width: 27.25em) {
+  /* Make header font smaller */
+  .mantine-19s92y7 {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 48.125em) {
+  /* Add spacing around links at the bottom */
+  .mantine-Modal-body > .mantine-1emc9ft div {
+    margin: auto 1em;
+  }
+}
