@@ -1041,13 +1041,13 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 /* Connect MetaMask Nav Button Styling */
-.md-button.connectMetaMask-nav {
+.md-button.connectMetaMask-nav, .md-button.faucet {
   line-height: 0;
   display: flex;
   align-items: center;
   border: 2px solid #53cbc9;
   border-radius: .3em;
-  padding: 1em;
+  padding: .5em;
   margin: 0.3em 0.5em;
   text-decoration: none;
   color: #53cbc9;
@@ -1074,26 +1074,29 @@ li>nav.md-nav[data-md-level="4"] {
   cursor: default;
 }
 
-.faucet {
-  width: 60px;
-}
-.faucet > img {
+.connectMetaMask-nav > img, .faucet > img {
   display: flex;
+  width: 30px;
+  margin-right: .5em;
+}
+
+.connectMetaMask-nav > img {
+  width: 22px;
 }
 
 @media screen and (max-width: 76.1875em) {
   .md-button.connectMetaMask-nav {
     line-height: 0.8em;
-    padding: 0.25em 0.5em;
+    padding: 0.4em 0.5em;
     text-align: center;
   }
-  .faucet {
-    width: 50px;
+  .faucet > img {
+    width: 26px;
   }
 }
 
-@media screen and (max-width: 30em) {
-  .md-button.connectMetaMask-nav, .faucet > img {
+@media screen and (max-width: 38em) {
+  .md-button.connectMetaMask-nav, .md-button.faucet {
     display: none;
   }
 }
