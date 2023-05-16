@@ -1047,8 +1047,7 @@ li>nav.md-nav[data-md-level="4"] {
   align-items: center;
   border: 2px solid #53cbc9;
   border-radius: .3em;
-  padding: .5em;
-  margin: 0.3em 0.5em;
+  padding: 1em;
   text-decoration: none;
   color: #53cbc9;
   font-size: .7rem;
@@ -1074,29 +1073,17 @@ li>nav.md-nav[data-md-level="4"] {
   cursor: default;
 }
 
-.connectMetaMask-nav > img, .faucet > img {
-  display: flex;
-  width: 30px;
-  margin-right: .5em;
-}
-
-.connectMetaMask-nav > img {
-  width: 22px;
-}
-
 @media screen and (max-width: 76.1875em) {
-  .md-button.connectMetaMask-nav {
+  .md-button.connectMetaMask-nav, .md-button.faucet {
     line-height: 0.8em;
     padding: 0.4em 0.5em;
     text-align: center;
-  }
-  .faucet > img {
-    width: 26px;
+    font-size: 1.25em;
   }
 }
 
 @media screen and (max-width: 42em) {
-  .md-button.connectMetaMask-nav, .md-button.faucet {
+  .md-button.connectMetaMask-nav {
     display: none;
   }
 }
