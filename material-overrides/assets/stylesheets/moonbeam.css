@@ -1029,7 +1029,7 @@ p.quick-ref-title {
   }
 
   .md-header__ellipsis.md-ellipsis {
-    display: flex;
+    display: block;
     position: absolute;
   }
 }
@@ -1041,20 +1041,19 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 /* Connect MetaMask Nav Button Styling */
-.md-button.connectMetaMask-nav {
+.md-button.connectMetaMask-nav, .md-button.faucet {
   line-height: 0;
   display: flex;
   align-items: center;
   border: 2px solid #53cbc9;
   border-radius: .3em;
   padding: 1em;
-  margin: 0.3em 0.5em;
   text-decoration: none;
   color: #53cbc9;
   font-size: .7rem;
 }
 
-.md-button.connectMetaMask-nav:hover {
+.md-button.connectMetaMask-nav:hover, .faucet:hover {
   transform: scale(1.05);
 }
 
@@ -1075,14 +1074,15 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 @media screen and (max-width: 76.1875em) {
-  .md-button.connectMetaMask-nav {
+  .md-button.connectMetaMask-nav, .md-button.faucet {
     line-height: 0.8em;
-    padding: 0.25em 0.5em;
+    padding: 0.4em 0.5em;
     text-align: center;
+    font-size: 1.25em;
   }
 }
 
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 42em) {
   .md-button.connectMetaMask-nav {
     display: none;
   }
