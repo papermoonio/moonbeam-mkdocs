@@ -1029,7 +1029,7 @@ p.quick-ref-title {
   }
 
   .md-header__ellipsis.md-ellipsis {
-    display: flex;
+    display: block;
     position: absolute;
   }
 }
