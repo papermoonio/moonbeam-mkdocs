@@ -1215,3 +1215,9 @@ li>nav.md-nav[data-md-level="4"] {
     margin: auto 1em;
   }
 }
+
+/* 404 page */
+.not-found {
+  display: flex;
+  justify-content: center;
+}
