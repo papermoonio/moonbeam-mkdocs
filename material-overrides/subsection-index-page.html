@@ -2,12 +2,13 @@
 
 {% block content %}
 
-{% macro find_active_page(element) %}
+{% macro find_active_page(element, nav) %}
+  <!-- {% print(element) %} -->
   {% for nav_item in element %}
     {% if nav_item.active %}
       {% if nav_item.is_section %}
         <!-- continue to find active page -->
-        {{ find_active_page(nav_item.children) }}
+        {{ find_active_page(nav_item.children, nav) }}
       {% else %}
         <!-- render subsection content -->
         {% if nav_item.is_page %}
@@ -16,8 +17,12 @@
           {% for nav_item in element[1:] %}
             {% if nav_item.is_section %}
               {% set subsection_path = nav_item.children[0].url %}
+              {% set description = nav_item.children[0].meta.description %}
             {% else %}
               {% set subsection_path = nav_item.url %}
+              {% if nav_item.meta %}
+                {% set description = nav_item.meta.description %}
+              {% endif %}
             {% endif %}
             <!-- make modifications necessary for section index page icons -->
             {% set image_path = subsection_path %}
@@ -38,7 +43,8 @@
             <div class="card">
               <a href="{{ subsection_path|replace(page.url, '') }}">
                 <h2 class="title">{{ nav_item.title }}</h2> 
-                <img class="icon" alt="{{ nav_item.title }}" src="{{ image_path }}">
+                <p class="description">{{ description }}</p>
+                <!-- <img class="icon" alt="{{ nav_item.title }}" src="{{ image_path }}"> -->
               </a>    
             </div>
           {% endfor %}
@@ -68,7 +74,7 @@
     {% if nav|length>1 %}
       {% for nav_item in nav %}
         {% if nav_item.is_section and nav_item.active %}
-          {{ find_active_page(nav_item.children) }}
+          {{ find_active_page(nav_item.children, nav_item) }}
         {% endif %}
       {% endfor %}
     {% endif %}

@@ -2,19 +2,18 @@
   --header-font: 'Varela Round', sans-serif;
 
   /* Default color shades */
-  --md-default-fg-color--light: #FFFFFF; /* Modified */
+  --md-default-fg-color--light: #FFFFFF;
   --md-default-fg-color--lighter: #b6afaf;
-  --md-default-fg-color: #FFFFFF;   /* Modified */
+  --md-default-fg-color: #FFFFFF;
   --md-default-fg-color--lightest: #f0efef;
-
-  --md-default-bg-color: #18151C;   /* Modified */
+  --md-default-bg-color: #18151C;
 
   /* Primary color shades */
-  --md-primary-fg-color: #18151C; /* Modified */
+  --md-primary-fg-color: #18151C;
   --md-primary-fg-color--dark: #262233;
   --md-primary-fg-color--dark-50: rgba(38, 34, 51, 0.5); /* 50% transparency */
   --md-primary-fg-color--light: #514C65;
-  --md-primary-fg-color--bright: #7C71FF; /* New */
+  --md-primary-fg-color--bright: #7C71FF;
   --md-primary-fg-color--bright-dark: #524F9F;
   --md-primary-fg-color--bright-light: #A8A1FF;
   --md-primary-bg-color: #ffffff;
@@ -27,13 +26,18 @@
   --md-accent-fg-color--transparent: #262233; /* Hover on search results */
     
   /* Footer color */
-  --md-footer-fg-color--light: #ffffff; /* New */
+  --md-footer-fg-color--light: #ffffff;
   --md-footer-fg-color--lighter: #7C6E8D;
   --md-footer-fg-color--lightest: #8F93AA;
-  --md-footer-bg-color: #18151C; /* New */
-  --md-footer-bg-color--dark: #391F57;  /* New */
+  --md-footer-bg-color: #18151C;
+  --md-footer-bg-color--dark: #391F57; 
   --md-footer-primary-bg-color: #5A407A;
   --md-footer-primary-bg-color--hover: #7D5CA5;
+
+  /* Card color */
+  --md-card-fg-description-color: #C9CCE1;
+  --md-card-bg-border-color: #514C65;
+  --md-card-bg-border-color--hover: #e5e7f2;
 
   /* Button color */
   --md-button-bg-color: #C9CCE1;
@@ -41,11 +45,11 @@
   --md-button-bg-color--pressed: rgba(166, 236, 235, 0.05); /* 5% of A6ECEB */
 
   /* Link text color */
-  --md-typeset-a-color: #53cbc9; /* New */
+  --md-typeset-a-color: #53cbc9;
 
   /* Dropdown menu color */
-  --dropdown-bg-color: #241D2B; /* New */
-  --dropdown-hover-bg-color: #262233; /* New */
+  --dropdown-bg-color: #241D2B;
+  --dropdown-hover-bg-color: #262233;
 
   /* Code block color shades */
   --md-code-bg-color: rgba(38, 34, 51, 0.5);
@@ -1120,6 +1124,40 @@ li>nav.md-nav[data-md-level="4"] {
   display: table-caption;
   width: 300%;
   font-size: 0.9em;
+}
+
+/* Index page styling */
+.subsection-wrapper a {
+  text-decoration: none;
+}
+
+.subsection-wrapper .title {
+  color: var(--md-default-fg-color);
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.subsection-wrapper .description {
+  color: var(--md-card-fg-description-color);
+  margin: 0;
+  font-size: .9em;
+}
+
+.subsection-wrapper .card {
+  border: 1px solid var(--md-card-bg-border-color);
+  border-radius: 1.5em;
+  margin: 1em 0;
+  padding: 1.5em;
+  width: 75%;
+  text-decoration: none;
+}
+
+.subsection-wrapper .card:hover {
+  border-color: var(--md-card-bg-border-color--hover);
+}
+
+.subsection-wrapper .card:last-child {
+  margin-bottom: 1.25em;
 }
 
 /* TODO: update home page styling */
