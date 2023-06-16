@@ -75,9 +75,11 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       {% endif %}
-      <a href="{{ nav_item.url | url }}" class="md-nav__link md-nav__link--active">
-        {{ nav_item.title }}
-      </a>
+      <div class="md-nav__link-wrapper {{ class }}">
+        <a href="{{ nav_item.url | url }}" class="md-nav__link md-nav__link--active">
+          {{ nav_item.title }}
+        </a>
+      </div>
       {% if toc %}
         {% include "partials/toc.html" %}
       {% endif %}
