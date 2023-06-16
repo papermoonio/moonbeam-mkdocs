@@ -50,7 +50,7 @@
           <span class="md-nav__icon md-icon"></span>
           {{ nav_item.title }}
         </label>
-        {% if page %}
+        {% if page and indexes %}
         <ul class="md-nav__list {{ indexes[0].url.replace('/', '-') }}" data-md-scrollfix>
         {% endif %}
           {% for nav_item in nav_item.children %}

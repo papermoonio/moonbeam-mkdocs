@@ -17,11 +17,12 @@
     'name': 'material'
     'custom_dir': 'material-overrides'
     'favicon': '/assets/images/Moonbeam-Favicon-50.png'
-    'logo': '/assets/images/Moonbeam-Favicon-50.png'
+    'logo': '/assets/images/moonbeam-logo.png'
     'font':
         'text': 'Open Sans'
     'features':
         - 'navigation.tabs'
+        - 'navigation.tabs.sticky'
         - 'navigation.sections'
         - 'navigation.indexes'
         - 'content.code.copy'
