@@ -162,19 +162,19 @@ a:hover {
   opacity: 0;
 }
 
-@media screen and (min-width: 76.25em) {
+@media screen and (min-width: 60em) {
   [data-md-toggle=search]:checked~.md-header .md-search__form {
     border: 1px solid var(--md-header-button-bg-color);
     border-radius: 1.5em;
     background-color: transparent;
   }
-
+  
   [data-md-toggle=search]:checked~.md-header .md-search__output {
     margin-top: .5em;
     border-radius: 1.5em;
     border: 1px solid var(--md-header-button-bg-color);
   }
-
+  
   [data-md-toggle=search]:checked~.md-header .md-search__input:valid~.md-search__options>.md-icon,
   [data-md-toggle='search']:checked~.md-header .md-search__input,
   [data-md-toggle=search]:checked~.md-header .md-search__input+.md-search__icon {
@@ -182,14 +182,10 @@ a:hover {
   }
 }
 
-@media screen and (min-width: 60em) {
-  .md-search__form {
-    height: 1.645rem;
-  }
-
-  .md-search__icon[for=__search],
-  .md-search__options {
-    top: .2rem;
+@media screen and (min-width: 60em) and (max-width: 76.1875em) {
+  [data-md-toggle=search]:checked~.md-header .md-search__inner,
+  .md-search__scrollwrap {
+    width: 34.4rem;
   }
 }
 
@@ -218,6 +214,16 @@ a:hover {
   width: 1rem;
 }
 
+.md-icon.selector-open,
+.md-icon.selector-closed  {
+  display: none;
+}
+
+.md-icon.selector-open.active,
+.md-icon.selector-closed.active {
+  display: block;
+}
+
 .select-wrapper .select {
   display: none;
   position: absolute;
@@ -229,6 +235,7 @@ a:hover {
   padding-left: 0;
   z-index: 2;
   border: 1px solid var(--dropdown-bg-language-color);
+  background-color: var(--md-default-bg-color);
   border-radius: 1.5em;
   width: auto;
   margin-top: 0.5em;
@@ -264,7 +271,6 @@ a:hover {
   display: block;
   opacity: 1;
   pointer-events: auto;
-  opacity: 0.9;
 }
 
 /* Header buttons */
@@ -404,11 +410,14 @@ li>nav.md-nav[data-md-level="4"] {
 /* Scrollbar styling for left nav */
 /* For Chrome, Edge, and Safari */
 .md-sidebar__scrollwrap:focus-within::-webkit-scrollbar-thumb,
-.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb {
+.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb,
+.md-typeset pre>code::-webkit-scrollbar-thumb {
   background-color: var(--md-primary-fg-color--light); /* color of the tracking area */
 }
 
 /* For Firefox */
+.md-typeset pre>code:focus-within,
+.md-typeset pre>code:hover,
 .md-sidebar__scrollwrap:focus-within,
 .md-sidebar__scrollwrap:hover {
   scrollbar-color: var(--md-primary-fg-color--light); /* color of the tracking area */
@@ -438,7 +447,6 @@ li>nav.md-nav[data-md-level="4"] {
 
 /* Adjust Nav Bar styling for smaller screens*/
 @media screen and (max-width: 76.1875em) {
-
   /* Hide Nav Bar header label text - only show back arrow */
   .md-nav--primary .md-nav__title {
     height: 0;
@@ -446,6 +454,12 @@ li>nav.md-nav[data-md-level="4"] {
     background: unset;
   }
 
+  /* Increase Nav Bar header size for Moonbeam logo */
+  .md-nav--primary .md-nav__title[for='__drawer'] {
+    height: 4.6rem;
+  }
+
+  /* Remove lines between sidebar nav items*/
   .md-nav--primary .md-nav__title~.md-nav__list {
     box-shadow: none;
   }
@@ -458,39 +472,52 @@ li>nav.md-nav[data-md-level="4"] {
     display: none;
   }
 
-  /* Increase Nav Bar header size for Moonbeam logo */
-  .md-nav--primary .md-nav__title[for='__drawer'] {
-    height: 5.6rem;
-    padding-top: 3rem;
+  /* Adjust font of nav items */
+  .md-nav__link,
+  .md-nav__item--section>.md-nav__link {
+    font-size: 0.9em;
   }
 
-  /* Adjust nav link size for primary sections (i.e., Builders, Node Operators, etc.) */
-  /* These were specifically altered for larger screens, so they need to be specifically
-  changed here as well */
-  .md-nav__link.md-nav__link--index > a,
-  #__nav_2:first-child~.md-nav__link a,
-  #__nav_3:first-child~.md-nav__link a,
-  #__nav_4:first-child~.md-nav__link a,
-  #__nav_5:first-child~.md-nav__link a {
-    font-size: 1em;
+  .md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
+    text-transform: capitalize;
+    font-family: var(--md-text-font);
+    font-size: 0.9em;
   }
 
   .md-nav__link.md-nav__link--index,
   .md-nav__link {
     margin-top: unset;
+    padding: 0.6rem 0.8rem;
   }
-}
 
-/* Code block styling */
-.md-typeset code {
-  border: 1px solid var(--md-primary-fg-color--light);
-  border-radius: .3em;
-}
+  /* TOC icon */
+  .md-nav__link--active > .md-nav__icon {
+    margin-left: 0.5em;
+  }
 
-.md-typeset .tabbed-block>.highlight:first-child>pre>code,
-.md-typeset .tabbed-block>pre:first-child>code {
-  border-top-left-radius: .3em;
-  border-top-right-radius: .3em;
+  /* Nav hover styling active pages */
+  .md-nav__link:hover {
+    margin-left: unset;
+  }
+
+  /* Nav hover styling for sections */
+  div.md-nav__link:hover {
+    margin-left: 0;
+    padding-left: 0.1em;
+  }
+  
+  /* Nav hover styling for pages */
+  a.md-nav__link:hover {
+    margin-left: 0;
+    padding-left: 1.1em;
+  }
+  
+  /* Section lines */
+  li>nav.md-nav[data-md-level="3"],
+  li>nav.md-nav[data-md-level="4"] {
+    padding-left: 0;
+    border-left: none;
+  }
 }
 
 .md-typeset .admonition {
@@ -621,6 +648,7 @@ li>nav.md-nav[data-md-level="4"] {
   border: 1px solid var(--md-primary-fg-color--light);
   border-radius: 1.5em;
   display: inline-table;
+  overflow: hidden;
 }
 
 .md-typeset .md-typeset__table table th {
@@ -659,14 +687,38 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 /* Tabbed Styling */
-.md-typeset .tabbed-content {
-  width: auto;
-}
-
 .md-typeset .tabbed-labels {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   box-shadow: none;
+  width: 98%;
+  margin: auto;
+}
+
+.md-typeset .tabbed-content {
+  border: 1px solid var(--md-primary-fg-color--light);
+  border-radius: 1.5em;
+  overflow: hidden;
+}
+
+/* Styling for tables in tabs */
+.tabbed-content .tabbed-block .md-typeset__table table:not([class]) {
+  border: unset;
+  background-color: unset;
+}
+
+.tabbed-content .tabbed-block .md-typeset__table table:not([class]) th:first-child {
+  border-top-left-radius: 1.8em;
+}
+
+.tabbed-content .tabbed-block .md-typeset__table table:not([class]) th:last-child {
+  border-top-right-radius: 1.8em;
+}
+
+/* Set border radius on code elements in tabs */
+.md-typeset .tabbed-block>.highlight:first-child>pre>code,
+.md-typeset .tabbed-block>pre:first-child>code {
+  border-radius: 1.8em;
 }
 
 .md-typeset__scrollwrap {
@@ -700,6 +752,17 @@ li>nav.md-nav[data-md-level="4"] {
   border-radius: 1.5em;
   font-weight: 400;
   padding: 0.5em 1.5em;
+}
+
+@media screen and (max-width: 44.9375em) {
+  [dir=ltr] .md-content__inner>.tabbed-set .tabbed-labels {
+    margin: auto;
+    justify-content: flex-start;
+  }
+
+  .md-content__inner>.highlight {
+    margin: 1em 0;
+  }
 }
 
 /* Focus/Hover Button Styling */
@@ -831,8 +894,6 @@ li>nav.md-nav[data-md-level="4"] {
 
 /* Disclaimer styling */
 .md-content__inner .main-page {
-  display: flex;
-  flex-direction: column;
   margin-bottom: .5rem;
 }
 
@@ -845,26 +906,6 @@ li>nav.md-nav[data-md-level="4"] {
 .page-disclaimer {
   margin-top: 3em;
 }
-
-/* TODO: check index pages on smaller screens */
-/* 
-@media screen and (max-width: 719px) {
-  .md-content__inner .main-page {
-    min-height: 71vh;
-  }
-}
-
-@media screen and (max-width: 1219px) and (min-width: 720px) {
-  .md-content__inner .main-page {
-    min-height: 79vh;
-  }
-}
-
-@media screen and (max-width: 1599px) and (min-width: 1220px) {
-  .md-content__inner .main-page {
-    min-height: 73vh;
-  }
-} */
 
 /* Feedback widget styling */
 .md-feedback {
@@ -945,6 +986,7 @@ li>nav.md-nav[data-md-level="4"] {
   margin: 0 .5em;
 }
 
+/* TODO: look at this */
 @media screen and (max-width: 30em) {
   .source-file-seperator {
     display: none;
@@ -972,10 +1014,12 @@ li>nav.md-nav[data-md-level="4"] {
 .mantine-1w3gd0m, .mantine-os5qlk {
   font-size: .6rem;
 }
+
 /* Removes vertical gap between links at bottom of modal */
 .mantine-1emc9ft {
   gap: 0;
 }
+
 @media screen and (max-width: 27.25em) {
   /* Make header font smaller */
   .mantine-19s92y7 {
@@ -1165,7 +1209,7 @@ li>nav.md-nav[data-md-level="4"] {
   color: var(--md-card-fg-description-color);
   margin: 0;
   font-size: .9em;
-  padding: 0 1.5em 1.5em 1.5em;
+  padding: 0 1.5em 1.8em 1.5em;
 }
 
 .subsection-wrapper .card {
@@ -1383,14 +1427,16 @@ p.quick-ref-title {
   margin-bottom: .5em;
 }
 
-/* TODO: update mobile styling */
-/* @media screen and (max-width: 76.1875em) {
-  .select-wrapper {
-    font-size: 1.25em;
-  }
-
+/* Home page styling for smaller screens */
+@media screen and (max-width: 76.1875em) {
+  /* Show sidebar on home page */
   .md-sidebar.md-sidebar--primary.home {
     display: block;
+  }
+  
+  .subsection-wrapper .card {
+    margin: 1em auto;
+    width: 100%;
   }
 
   .row.cards {
@@ -1402,17 +1448,17 @@ p.quick-ref-title {
     width: unset;
   }
 
-  .card {
+  .home .card {
     width: unset;
     flex: 40%;
   }
 
-  .card>div:first-child,
-  .card>div:nth-child(2) {
+  .home .card>div:first-child,
+  .home .card>div:nth-child(2) {
     min-height: 1em;
   }
 
-  .card>div:nth-child(3) {
+  .home .card>div:nth-child(3) {
     min-height: 5em;
   }
 
@@ -1448,7 +1494,6 @@ p.quick-ref-title {
   .row.quick-refs-medium .quick-ref-title {
     margin-top: 0;
   }
-
 }
 
 @media screen and (max-width: 62em) {
@@ -1488,7 +1533,7 @@ p.quick-ref-title {
     flex-grow: 1;
   }
 
-  .card {
+  .home .card {
     width: unset;
     margin: .5em 0;
     flex: 100%;
@@ -1497,15 +1542,6 @@ p.quick-ref-title {
   .hero-column {
     margin-left: 0;
     margin-right: 0;
-  }
-
-  .subsection-wrapper .card {
-    flex: 100%;
-    max-width: 16em;
-  }
-
-  .subsection-wrapper .card {
-    margin: .25em;
   }
 }
 
@@ -1522,4 +1558,8 @@ p.quick-ref-title {
     display: block;
     position: absolute;
   }
-} */
+
+  .md-button.connectMetaMask-nav {
+    display: none;
+  }
+}

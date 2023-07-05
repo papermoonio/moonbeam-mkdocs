@@ -21,8 +21,10 @@
           <li class="en" value="en">Eng</li>
           <li class="cn" value="cn">中文</li>
         </ul>
-        <span class="md-icon">{% include
+        <span class="md-icon selector-closed active">{% include
           ".icons/material/chevron-down.svg" %}</span>
+        <span class="md-icon selector-open">{% include
+          ".icons/material/chevron-up.svg" %}</span>
       </div>
       {% if "search" in config["plugins"] %}
       <label class="md-header__button md-icon" for="__search">

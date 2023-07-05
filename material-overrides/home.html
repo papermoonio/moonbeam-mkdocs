@@ -1,9 +1,9 @@
 {% extends "main.html" %}
 
 {% block htmltitle %}
-{%- if page.is_homepage -%}
-<title>Moonbeam Docs</title>
-{%- endif -%}
+  {%- if page.is_homepage -%}
+    <title>Moonbeam Docs</title>
+  {%- endif -%}
 {% endblock %}
 
 {% block content %}
@@ -236,28 +236,28 @@
 {% endblock %}
 
 {% block site_nav %}
-{% if nav %}
-{% if page and page.meta and page.meta.hide %}
-{% set hidden = "hidden" if "navigation" in page.meta.hide %}
-{% endif %}
-<div class="md-sidebar md-sidebar--primary home" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
-  <div class="md-sidebar__scrollwrap">
-    <div class="md-sidebar__inner">
-      {% include "partials/nav.html" %}
+  {% if nav %}
+    {% if page and page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--primary home" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-{% endif %}
-{% if page.toc and not "toc.integrate" in config.theme.features %}
-{% if page and page.meta and page.meta.hide %}
-{% set hidden = "hidden" if "toc" in page.meta.hide %}
-{% endif %}
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
-  <div class="md-sidebar__scrollwrap">
-    <div class="md-sidebar__inner">
-      {% include "partials/toc.html" %}
+  {% endif %}
+  {% if page.toc and not "toc.integrate" in config.theme.features %}
+    {% if page and page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "toc" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/toc.html" %}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-{% endif %}
+  {% endif %}
 {% endblock %}
