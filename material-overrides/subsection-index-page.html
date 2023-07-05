@@ -3,7 +3,6 @@
 {% block content %}
 
 {% macro find_active_page(element, nav) %}
-  <!-- {% print(element) %} -->
   {% for nav_item in element %}
     {% if nav_item.active %}
       {% if nav_item.is_section %}
@@ -14,6 +13,7 @@
         {% if nav_item.is_page %}
           <h1 class="subsection-title">{{ nav_item.parent.title }}</h1>
           <div class="subsection-wrapper">
+          {% set description = "" %}
           {% for nav_item in element[1:] %}
             {% if nav_item.is_section %}
               {% set subsection_path = nav_item.children[0].url %}
@@ -40,11 +40,29 @@
               {% set image_path = image_path + '/' %}
             {% endif %}
             {% set image_path = '/images/index-pages/' + image_path[:-1] + '.png' %}
+
             <div class="card">
               <a href="{{ subsection_path|replace(page.url, '') }}">
                 <h2 class="title">{{ nav_item.title }}</h2> 
-                <p class="description">{{ description }}</p>
-                <!-- <img class="icon" alt="{{ nav_item.title }}" src="{{ image_path }}"> -->
+                {% if not description == "" %}
+                  <p class="description">{{ description }}</p>
+                {% else %}
+                  {% if nav_item.is_link %}
+                    {% if '#' in nav_item.url %}
+                      {% set nav_item_url = nav_item.url.split('#')[0] %}
+                    {% else %}
+                      {% set nav_item_url = nav_item.url %}
+                    {% endif %}
+
+                    {% if nav_item_url.startswith('/') %}
+                      {% set nav_item_url = nav_item_url[1:] %}
+                    {% endif %}
+
+                    {% for nav_child in nav.children %}
+                      {{ find_desc_for_linked_pages(nav_child, nav_item_url, description) }}
+                    {% endfor %}
+                  {% endif %}
+                {% endif %}
               </a>    
             </div>
           {% endfor %}
@@ -70,13 +88,29 @@
   {% endif %}
 {% endmacro %}
 
-<div class="subsection-page">
-    {% if nav|length>1 %}
-      {% for nav_item in nav %}
-        {% if nav_item.is_section and nav_item.active %}
-          {{ find_active_page(nav_item.children, nav_item) }}
+{% macro find_desc_for_linked_pages(nav, nav_item_url, description) %}
+    {% if nav.is_section %}
+      {% for nav_item in nav.children %}
+        {% if nav_item.is_page and nav_item.url in nav_item_url %}
+          {% if nav_item.url == nav_item_url %}
+            <p class="description">{{ nav_item.meta.description }}</p>
+            {% set description = nav_item.meta.description %}
+          {% endif %}
         {% endif %}
-      {% endfor %}
+        {% if description == "" %}
+          {{ find_desc_for_linked_pages(nav_item, nav_item_url, description) }}
+        {% endif %}
+      {% endfor %}     
     {% endif %}
+{% endmacro %}
+
+<div class="subsection-page">
+  {% if nav|length>1 %}
+    {% for nav_item in nav %}
+      {% if nav_item.is_section and nav_item.active %}
+        {{ find_active_page(nav_item.children, nav_item) }}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 </div>
 {% endblock %}

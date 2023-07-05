@@ -9,20 +9,18 @@
       <div class="subsection-wrapper">
         {% for nav_item in nav_item.children %}
           {% if nav_item.is_section %}
-            <div class="card">
-              <a href="{{ href_path }}">
-                {% set subsection_path = nav_item.children[0].url %}
-                {% set description = nav_item.children[0].meta.description %}
-                {% if subsection_path.startswith(page.url) %}
-                  {% set image_path = '/images/index-pages/' + subsection_path[:-1] + '.png' %}
-                  {% set href_path = subsection_path|replace(page.url, '') %}
+            {% set subsection_path = nav_item.children[0].url %}
+            {% set description = nav_item.children[0].meta.description %}
+            {% if subsection_path.startswith(page.url) %}
+              {% set image_path = '/images/index-pages/' + subsection_path[:-1] + '.png' %}
+              {% set href_path = subsection_path|replace(page.url, '') %}
+              <div class="card">
+                <a href="{{ href_path }}">
                   <h2 class="title">{{ nav_item.title }}</h2>
                   <p class="description">{{ description }}</p>
-                  <!-- <img class="icon" src="{{ image_path }}"
-                      onerror="this.src=/images/index-pages/blank.png; this.onerror = null"> -->
-                {% endif %}
-              </a>
-            </div>
+                </a>
+              </div>
+            {% endif %}
           {% endif %}
         {% endfor %}
       </div>
