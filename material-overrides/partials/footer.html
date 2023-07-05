@@ -47,17 +47,6 @@ This file was automatically generated - do not edit
         </div>
         {% include "partials/social.html" %}
       </div>
-      <div class="md-footer-copyright">
-        {% if config.copyright %}
-          <div class="md-footer-copyright__highlight">
-            {{ config.copyright }}
-          </div>
-        {% endif %}
-        <!-- Made with
-          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-            Material for MkDocs
-          </a-->
-      </div>
       <div class="column newsletter">
         <label class="newsletter-label">Moonbuilders newsletter signup</label>
         <form class="md-footer-newsletter">
@@ -71,6 +60,17 @@ This file was automatically generated - do not edit
             });
           </script>
         </form>
+        <div class="md-footer-copyright">
+          {% if config.copyright %}
+            <div class="md-footer-copyright__highlight">
+              {{ config.copyright }}
+            </div>
+          {% endif %}
+          <!-- Made with
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+              Material for MkDocs
+            </a-->
+        </div>
       </div>
     </div>
   </div>
