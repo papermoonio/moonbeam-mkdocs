@@ -24,22 +24,6 @@
                 {% set description = nav_item.meta.description %}
               {% endif %}
             {% endif %}
-            <!-- make modifications necessary for section index page icons -->
-            {% set image_path = subsection_path %}
-            {% if image_path.startswith('/') %}
-              <!-- remove initial '/' from relative path -->
-              {% set image_path = image_path[1:] %}
-            {% endif %}
-            {% if '#' in image_path %} 
-              <!-- for pages that point to sections within other pages
-                remove the section from the path -->
-              {% set image_path = image_path.split('#')[0] %}
-            {% endif %}
-            {% if not image_path.endswith('/') %}
-              <!-- add '/' to end of path to match all of the other urls -->
-              {% set image_path = image_path + '/' %}
-            {% endif %}
-            {% set image_path = '/images/index-pages/' + image_path[:-1] + '.png' %}
 
             <div class="card">
               <a href="{{ subsection_path|replace(page.url, '') }}">

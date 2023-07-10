@@ -12,7 +12,6 @@
             {% set subsection_path = nav_item.children[0].url %}
             {% set description = nav_item.children[0].meta.description %}
             {% if subsection_path.startswith(page.url) %}
-              {% set image_path = '/images/index-pages/' + subsection_path[:-1] + '.png' %}
               {% set href_path = subsection_path|replace(page.url, '') %}
               <div class="card">
                 <a href="{{ href_path }}">
