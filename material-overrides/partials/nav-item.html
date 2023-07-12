@@ -23,6 +23,9 @@
       {% set indexes = [] %}
       {% if "navigation.indexes" in features %}
         {% for nav_item in nav_item.children %}
+          {% if nav_item.is_page and nav_item.url.endswith(".index/") %}
+            {% set _ = indexes.append(nav_item) %}
+          {% endif %}
           {% if nav_item.is_index and not index is defined %}
             {% set _ = indexes.append(nav_item) %}
           {% endif %}
@@ -51,7 +54,9 @@
           {{ nav_item.title }}
         </label>
         {% if page %}
-        <ul class="md-nav__list {{ indexes[0].url.replace('/', '-') }}" data-md-scrollfix>
+          {% if indexes[0] %}
+            <ul class="md-nav__list {{ indexes[0].url.replace('/', '-') }}" data-md-scrollfix>
+          {% endif %}
         {% endif %}
           {% for nav_item in nav_item.children %}
             {% if not indexes or nav_item != indexes | first %}

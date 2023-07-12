@@ -24,9 +24,14 @@
                 {% set description = nav_item.meta.description %}
               {% endif %}
             {% endif %}
+            {% if ".index" in page.url %}
+              {% set subsection_path = "/" + subsection_path %}
+            {% else %}
+              {% set subsection_path = subsection_path|replace(page.url, '') %}
+            {% endif %}
 
             <div class="card">
-              <a href="{{ subsection_path|replace(page.url, '') }}">
+              <a href="{{ subsection_path }}">
                 <h2 class="title">{{ nav_item.title }}</h2> 
                 {% if not description == "" %}
                   <p class="description">{{ description }}</p>
