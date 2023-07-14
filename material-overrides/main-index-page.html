@@ -2,32 +2,31 @@
 
 {% block content %}
 <div class="main-page">
-    {% if nav|length>1 %}
+  {% if nav|length>1 %}
     {% for nav_item in nav %}
-    {% if nav_item.is_section and nav_item.active %}
-    <h1 class="subsection-title">{{ nav_item.title }}</h1>
-    <div class="subsection-wrapper">
+      {% if nav_item.is_section and nav_item.active %}
+      <h1 class="subsection-title">{{ nav_item.title }}</h1>
+      <div class="subsection-wrapper">
         {% for nav_item in nav_item.children %}
-        {% if nav_item.is_section %}
-        <div class="card">
+          {% if nav_item.is_section %}
             {% set subsection_path = nav_item.children[0].url %}
+            {% set description = nav_item.children[0].meta.description %}
             {% if subsection_path.startswith(page.url) %}
-            {% set image_path = '/images/index-pages/' + subsection_path[:-1] + '.png' %}
-            {% set href_path = subsection_path|replace(page.url, '') %}
-            <a href="{{ href_path }}">
-                <h2 class="title">{{ nav_item.title }}</h2>
-                <img class="icon" src="{{ image_path }}"
-                    onerror="this.src=/images/index-pages/blank.png; this.onerror = null">
-            </a>
+              {% set href_path = subsection_path|replace(page.url, '') %}
+              <div class="card">
+                <a href="{{ href_path }}">
+                  <h2 class="title">{{ nav_item.title }}</h2>
+                  <p class="description">{{ description }}</p>
+                </a>
+              </div>
             {% endif %}
-        </div>
-        {% endif %}
+          {% endif %}
         {% endfor %}
-    </div>
-    {% endif %}
+      </div>
+      {% endif %}
     {% endfor %}
-    {% endif %}
-    <div class="disclaimer">All information made available, including claims, content, designs, algorithms, estimates,
+  {% endif %}
+  <div class="disclaimer">All information made available, including claims, content, designs, algorithms, estimates,
         roadmaps, specifications, and performance measurements described in this project are provided for informational
         purposes only and Moonbeam does not endorse any project referenced here. It is up to the reader to check and
         validate the accuracy and truthfulness. Furthermore, nothing in this project information constitutes a
@@ -38,5 +37,4 @@
         punitive or consequential damages, or loss of profits, cryptocurrencies, tokens, or anything else of value. All
         information contained herein is subject to modification without notice.</div>
 </div>
-
 {% endblock %}
