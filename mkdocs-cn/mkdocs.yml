@@ -3,7 +3,7 @@ site_url: https://docs.moonbeam.network/cn/
 home_url: https://moonbeam.network/
 site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
 docs_dir: moonbeam-docs-cn
-'copyright': '© 2023 PureStake, Inc. All Rights Reserved.'
+'copyright': '© 2023 Moonbeam Foundation. All Rights Reserved.'
 'extra_javascript':
   - 'js/connectMetaMask.js'
   - 'js/errorModal.js'
@@ -261,7 +261,7 @@ docs_dir: moonbeam-docs-cn
       'link': 'https://www.youtube.com/c/MoonbeamNetwork'
       'name': 'YouTube'
     - 'icon': 'fontawesome/brands/github'
-      'link': 'https://github.com/PureStake/moonbeam'
+      'link': 'https://github.com/moonbeam-foundation/moonbeam'
       'name': 'GitHub'
   'analytics':
     'provider': 'google'
@@ -278,4 +278,4 @@ docs_dir: moonbeam-docs-cn
               'name': '此页面有待改进'
               'data': 0
               'note': >- 
-                感谢您的反馈意见! 您还可以通过提交<a href="https://github.com/purestake/moonbeam-docs-cn/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">其他反馈</a>帮助我们改进此页面。
+                感谢您的反馈意见! 您还可以通过提交<a href="https://github.com/moonbeam-foundation/moonbeam-docs-cn/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">其他反馈</a>帮助我们改进此页面。

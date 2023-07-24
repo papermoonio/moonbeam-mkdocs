@@ -532,7 +532,7 @@
           'link': 'https://www.youtube.com/c/MoonbeamNetwork'
           'name': 'YouTube'
         - 'icon': 'fontawesome/brands/github'
-          'link': 'https://github.com/PureStake/moonbeam'
+          'link': 'https://github.com/moonbeam-foundation/moonbeam'
           'name': 'GitHub'
     'analytics':
         'provider': 'google'
@@ -550,4 +550,4 @@
                   'data': 0
                   'note': >- 
                     Thanks for your feedback! Help us improve this page by submitting
-                    <a href="https://github.com/purestake/moonbeam-docs/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">additional feedback</a>.
+                    <a href="https://github.com/moonbeam-foundation/moonbeam-docs/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">additional feedback</a>.
