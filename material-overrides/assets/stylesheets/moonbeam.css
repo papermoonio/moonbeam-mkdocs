@@ -801,6 +801,7 @@ li>nav.md-nav[data-md-level="4"] {
   display: flex;
   justify-content: center;
   margin: 0.5em 0.2em;
+  max-width: 100%;
 }
 
 /* Modal Styling */
