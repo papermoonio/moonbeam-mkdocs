@@ -83,6 +83,10 @@ a:hover {
   color: var(--md-button-bg-color--hover);
 }
 
+.md-main {
+  min-height: 72vh;
+}
+
 .md-main__inner {
   margin-bottom: .25em;
   margin-top: .25em;
@@ -207,6 +211,7 @@ a:hover {
   position: relative;
 }
 
+.select-wrapper.active,
 .select-wrapper:hover,
 .select-wrapper:active {
   border-color: var(--md-header-button-bg-color--hover);
@@ -786,13 +791,16 @@ li>nav.md-nav[data-md-level="4"] {
   border-color: var(--md-button-bg-color--hover);
   color: var(--md-button-bg-color--hover);
   text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* Center Buttons */
 .button-wrapper {
   display: flex;
   justify-content: center;
-  margin: .5em;
+  margin: 0.5em 0.2em;
 }
 
 /* Modal Styling */
@@ -828,9 +836,15 @@ li>nav.md-nav[data-md-level="4"] {
   margin-left: 0.5em;
 }
 
+.network-message a,
 .error-message,
 .external-link-message {
   font-size: .8em;
+}
+
+.network-message {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 76.1875em) {
@@ -1130,6 +1144,8 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 .hs-email {
+  position: relative;
+  display: inline-block;
   margin: .3em 0;
 }
 
@@ -1149,7 +1165,7 @@ li>nav.md-nav[data-md-level="4"] {
   background-color: var(--md-footer-bg-color--dark);
   border-radius: .5em;
   border: 1px solid var(--md-footer-primary-bg-color);
-  color: #ffffff;
+  color: var(--md-default-fg-color);
   margin: .5em auto;
   width: 100%;
   height: 3em;
@@ -1163,8 +1179,64 @@ li>nav.md-nav[data-md-level="4"] {
 
 .hs-form-field .hs-error-msgs .hs-error-msg {
   display: table-caption;
-  width: 300%;
+  width: max-content;
   font-size: 0.9em;
+}
+
+.hs-error-msgs {
+  visibility: hidden;
+  background-color: var(--md-default-bg-color);
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+.md-typeset ul.hs-error-msgs:not([hidden]) {
+  /* Used to hide the tooltip after 5 seconds */
+  animation: hideAnimation 0s ease-in 5s;
+  animation-fill-mode: forwards;
+  /* --- */
+  visibility: visible;
+  margin: 0;
+  list-style: none;
+  padding: 0.5em;
+}
+
+/* Used to hide the tooltip after 5 seconds */
+@keyframes hideAnimation {
+  to {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+.md-typeset ul.hs-error-msgs:not([hidden])::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 10%;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent var(--md-default-bg-color) transparent;
+}
+
+[dir=ltr] .md-typeset ul.hs-error-msgs li{
+  margin-left: 0;
+  text-align: left;
+}
+
+.hs-error-msgs li label a {
+  font-size: .9em;
+}
+
+.hs-error-msgs li label a:hover {
+  cursor: pointer;
+}
+
+.hs_error_rollup {
+  display: none;
 }
 
 /* Mobile footer styling */
