@@ -36,14 +36,14 @@ moonbeam-mkdocs
 So first, lets clone this repository:
 
 ```
-git clone https://github.com/PureStake/moonbeam-mkdocs
+git clone https://github.com/papermoonio/moonbeam-mkdocs
 cd moonbeam-mkdocs
 ```
 
-Next, inside the folder just created, clone the [moonbeam-docs repository](https://github.com/PureStake/moonbeam-docs):
+Next, inside the folder just created, clone the [moonbeam-docs repository](https://github.com/moonbeam-foundation/moonbeam-docs):
 
 ```
-git clone https://github.com/PureStake/moonbeam-docs
+git clone https://github.com/moonbeam-foundation/moonbeam-docs
 ```
 
 Now in the `moonbeam-mkdocs` folder (which should be the current one) you can build the site by running:

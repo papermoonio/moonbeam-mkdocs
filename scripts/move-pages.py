@@ -20,7 +20,7 @@ import requests
 first_commit = sys.argv[1]
 last_commit = sys.argv[2]
 print("✅ Fetching updated files")
-files = requests.get("https://api.github.com/repos/PureStake/moonbeam-docs/compare/" + first_commit + "..." + last_commit).json().get("files")
+files = requests.get("https://api.github.com/repos/moonbeam-foundation/moonbeam-docs/compare/" + first_commit + "..." + last_commit).json().get("files")
 
 modified_files = []
 removed_files = []

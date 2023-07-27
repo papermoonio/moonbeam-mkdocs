@@ -56,10 +56,10 @@ def fetch_current_file_paths():
 def fetch_previous_file_paths():
   previous_file_paths = []
   # Get the sha of the `master` branch so it can be used in the following calls
-  sha = requests.get("https://api.github.com/repos/PureStake/moonbeam-docs/branches/master").json()["commit"]["sha"]
+  sha = requests.get("https://api.github.com/repos/moonbeam-foundation/moonbeam-docs/branches/master").json()["commit"]["sha"]
 
   # Get file structure from the `master` branch
-  rootTree = requests.get("https://api.github.com/repos/PureStake/moonbeam-docs/git/trees/" + sha + "?recursive=1").json()["tree"]
+  rootTree = requests.get("https://api.github.com/repos/moonbeam-foundation/moonbeam-docs/git/trees/" + sha + "?recursive=1").json()["tree"]
 
   for item in rootTree:
     omit_dirs = [".snippets", "js", "images", "dapps-list", ".", "README.md"]
