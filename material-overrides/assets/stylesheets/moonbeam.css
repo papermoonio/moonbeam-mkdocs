@@ -88,6 +88,10 @@ a:hover {
   margin-top: .25em;
 }
 
+.md-content__inner {
+  margin: 0 .8rem;
+}
+
 .md-typeset code {
   border-radius: .3em;
 }
@@ -154,6 +158,7 @@ a:hover {
   right: 0.4em;
   z-index: 100;
   padding-left: 2em;
+  background: var(--md-default-bg-color);
 }
 
 [data-md-toggle=search]:checked~.md-header .connectMetaMask-nav,
@@ -1565,4 +1570,256 @@ p.quick-ref-title {
   .md-button.connectMetaMask-nav {
     display: none;
   }
+}
+
+/* Dropdown menu styling */
+.md-tabs__list {
+  display: flex;
+  padding: 2em;
+  contain: none;
+}
+
+.md-tabs__item--custom {
+  padding: 1em 2em;
+  display: inline-block;
+}
+
+.md-tab__list {
+  position: absolute;
+  background: var(--dropdown-bg-color);
+  border-radius: 1em;
+  z-index: 1;
+  list-style: none;
+  display: none;
+  margin-top: 1em;
+  padding: 0;
+}
+
+.md-tabs__item--custom:hover .md-tab__list,
+.md-tab__list:hover {
+  display: block;
+}
+
+.md-tab__item {
+  font-size: 1.25em;
+  padding: 1em 1.5em;
+}
+
+.md-tab__item:hover,
+.md-tab__item:active {
+  color: var(--md-accent-fg-color);
+  background: var(--dropdown-bg-color--hover);
+}
+
+.md-tab__item:hover:first-child,
+.md-tab__item:active:first-child {
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.md-tab__item:hover:last-child,
+.md-tab__item:active:last-child {
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.md-tab__item:hover a,
+.md-tab__item:active a {
+  text-decoration: none;
+}
+
+.md-tabs__link {
+  opacity: unset;
+  text-transform: uppercase;
+}
+
+.md-tabs__item--custom:hover .md-tabs__link {
+  color: var(--md-accent-fg-color);
+}
+
+/***TODO: REVIEW****/
+/* Developer Portal Page Styling */
+.dev-portal .row {
+  justify-content: flex-start;
+}
+
+.dev-portal h1.hero-title {
+  font-size: 3em;
+  font-family: var(--header-font);
+  color: var(--md-default-fg-color);
+  margin-top: 0;
+}
+
+.dev-portal .hero-column {
+  align-self: center;
+}
+
+.hero-title-highlight {
+  color: #E1147b;
+}
+
+.dev-portal .row.hero-buttons .md-button .md-icon,
+.section-link .md-icon,
+.all-courses .md-icon {
+  padding-left: .5em;
+  align-self: center;
+}
+
+.dev-portal .row.hero-buttons .md-button .md-icon svg,
+.section-link .md-icon svg,
+.all-courses .md-icon svg {
+  width: .8rem;
+  height: .8rem;
+}
+
+.section-title {
+  justify-content: start;
+  text-transform: uppercase;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em 0;
+}
+
+.section-wrapper .row {
+  justify-content: space-between;
+  margin-bottom: 1%;
+}
+
+.section-card {
+  display: flex;
+  border: 1px solid var(--md-card-bg-border-color);
+  border-radius: 1.5em;
+  padding: 1em;
+  max-width: 49.5%;
+}
+
+.section-card:hover {
+  border-color: var(--md-card-bg-border-color--hover);
+}
+
+a.section-card:hover {
+  text-decoration: none;
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+}
+
+.section-card.full-width {
+  max-width: 82%;
+  width: 100%;
+}
+
+.md-typeset h3.section-header,
+.md-typeset h4.section-header {
+  margin: 0;
+}
+
+.md-typeset h4.section-header {
+  font-size: .9em;
+}
+
+.md-typeset p.section-text {
+  margin: .5em 0 0;
+}
+
+.section-logo {
+  margin-right: 1em;
+}
+
+.section-logo img {
+  max-width: 64px;
+}
+
+.get-started,
+.cross-chain,
+.moonbeam-difference,
+.moonbuilders {
+  padding: 2em 0;
+}
+
+.md-typeset .get-started .section-wrapper > h3.section-header {
+  text-transform: uppercase;
+  margin: .5em 0;
+}
+
+.get-started .deploy {
+  width: 75%;
+}
+
+.get-started .deploy,
+.get-started .interact,
+.get-started .new-web3 {
+  margin: 2em 0 3em 15%;
+}
+
+.get-started .deploy .section-card {
+  flex-direction: column;
+  min-width: 24%;
+  min-height: 17vh;
+}
+
+.get-started .deploy .section-content,
+.get-started .deploy .section-logo {
+  margin: auto;
+}
+
+.section-link {
+  display: flex;
+  margin-top: 1em;
+  margin-right: 2em;
+}
+
+.section-link:hover,
+.section-link:active {
+  text-decoration: none;
+  color: var(--md-button-bg-color--hover);
+  cursor: pointer;
+}
+
+.full-width-background {
+  background: #1F0D34;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  /* padding-top: 0.1em; */
+}
+
+.moonbuilders,
+.cross-chain {
+  max-width: 59.5rem;
+  margin: auto;
+  /* padding: 5em 0; */
+}
+
+.moonbeam-difference {
+  margin-left: 15%;
+}
+
+.moonbuilders > .row {
+  justify-content: space-between;
+  margin: 2em 0;
+}
+
+.moonbuilders .section-card {
+  flex-direction: column;
+  justify-content: center;
+  width: 32.5%;
+}
+
+.moonbuilders .section-card img {
+  width: 50%;
+  margin: auto;
+}
+
+.moonbuilders .all-courses {
+  margin: 1em 0;
+}
+
+.moonbuilders .all-courses:hover {
+  text-decoration: none;
+}
+
+.moonbuilders .all-courses .md-button {
+  display: flex;
 }

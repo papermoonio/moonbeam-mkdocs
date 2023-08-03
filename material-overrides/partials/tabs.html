@@ -1,16 +1,90 @@
 {#-
-    This file was automatically generated - do not edit
-  -#}
+  This file was automatically generated - do not edit
+-#}
 
-  {% set class = "" %}
-  <nav class="md-tabs" aria-label="{{ lang.t('tabs') }}" data-md-component="tabs">
-    <div class="md-grid">
-      <ul class="md-tabs__list">
-        {% for nav_item in nav %}
-          {% if nav_item.is_section %}
-            {% include "partials/tabs-item.html" %}
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-  </nav>
+{% set class = "" %}
+<nav class="md-tabs" aria-label="{{ lang.t('tabs') }}" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      <li class="md-tabs__item--custom" tabindex="0">
+        <span class="md-tabs__link">Builders</span>
+        <ul class="md-tab__list">
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}builders/">Developer Documentation</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}builders/get-started/endpoints/">RPC Endpoints</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}builders/get-started/explorers/">Block Explorers</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}tutorials/">Tutorials</a>
+          </li>
+        </ul>
+      </li>
+      <li class="md-tabs__item--custom" tabindex="0">
+        <span class="md-tabs__link">Node Operators</span>
+        <ul class="md-tab__list">
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}node-operators/">Node Operators Documentation</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}node-operators/networks/run-a-node/overview/">Run a Node</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}node-operators/networks/tracing-node/">Run a Tracing Node</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}node-operators/networks/collators/overview/">Become a Collator</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}node-operators/networks/collators/orbiter/">Moonbeam Orbiters Program</a>
+          </li>
+        </ul>
+      </li>
+      <li class="md-tabs__item--custom" tabindex="0">
+        <span class="md-tabs__link">Learn</span>
+        <ul class="md-tab__list">
+          <!-- TODO: update the link here -->
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}learn/platform/networks/">Networks</a>
+          </li>
+          <!-- TODO: rearrange these pages and update the links -->
+          <!-- <li class="md-tab__item">
+            <a href="{{config.site_url}}learn/eth-compatibility/">Ethereum Compatibility</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}learn/polkadot-features">Polkadot Features</a>
+          </li> -->
+          <li class="md-tab__item">
+            <a href="{{config.site_url}}learn/dapps-list/">DApps Lists</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="https://moonbeam.foundation/grants/">Grants</a>
+          </li>
+        </ul>
+      </li>
+      <li class="md-tabs__item--custom" tabindex="0">
+        <span class="md-tabs__link">Community</span>
+        <ul class="md-tab__list">
+          <li class="md-tab__item">
+            <a href="https://forum.moonbeam.foundation/">Community Forum</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="https://moonbeam.network/events/">Events</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="https://discord.com/invite/PfpUATX">Discord</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="https://t.me/Moonbeam_Official">Telegram</a>
+          </li>
+          <li class="md-tab__item">
+            <a href="https://www.youtube.com/c/MoonbeamNetwork">YouTube</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

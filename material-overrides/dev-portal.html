@@ -1,0 +1,312 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="dev-portal">
+  <div class="row hero">
+    <div class="column hero-column">
+      <h1 class="hero-title">MOONBEAM <span class="hero-title-highlight">DEV</span>ELOPER PORTAL</h1>
+      <div class="row hero-buttons">
+        <a href="/builders/">
+          <button class="md-button">Developer documentation
+            <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+          </button>
+        </a>
+        <a href="/builders/get-started/quick-start/">
+          <button class="md-button">Quick start 
+            <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+          </button>
+        </a>
+        <a href="/builders/get-started/endpoints/">
+          <button class="md-button">RPC endpoints 
+            <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+          </button>
+        </a>
+        <a href="/builders/get-started/explorers/">
+          <button class="md-button">Block explorers 
+            <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="column hero-column">
+      <img src="/assets/images/placeholder-dev-portal.png">
+    </div>
+  </div>
+  <div class="get-started">
+    <h2 class="section-title">Get started building on Moonbeam</h2>
+    <div class="section-wrapper deploy">
+      <h3 class="section-header">Develop and deploy smart contracts</h3>
+      <div class="row">
+        <a class="section-card" href="/builders/build/eth-api/dev-env/remix/">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Remix</h3>
+          </div>
+        </a>
+        <a class="section-card">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Hardhat</h3>
+          </div>
+        </a>
+        <a class="section-card">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Foundry</h3>
+          </div>
+        </a>
+        <a class="section-card">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">See more</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="section-wrapper interact">
+      <h3 class="section-header">Send transactions and interact with smart contracts on the network</h3>
+      <div class="row">
+        <div class="section-card full-width">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Using Ethereum libraries</h3>
+            <div class="row">
+              <a class="section-link">Ethers.js
+                <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+              </a>
+              <a class="section-link">Ethers.rs
+                <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+              </a>
+              <a class="section-link">Web3.js
+                <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+              </a>
+              <a class="section-link">Web3.py
+                <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="section-card full-width">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Using Polkadot libraries</h3>
+            <div class="row">
+              <a class="section-link">Polkadot.js
+                <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-wrapper new-web3">
+      <h3 class="section-header">New to Web3?</h3>
+      <div class="row">
+        <a class="section-card full-width">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Web2 vs Web3 Development Explained</h3>
+            <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          </div>
+        </a>
+      </div>
+      <div class="row">
+        <a class="section-card full-width">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">How to Build a DApp</h3>
+            <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="full-width-background">
+    <div class="cross-chain">
+      <h2 class="section-title">Build cross-chain connected contracts</h2>
+      <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+      <div class="section-wrapper">
+        <div class="row">
+          <a class="section-card">
+            <div class="section-logo">
+              <img src="/assets/images/dev-portal-home-icon.png">
+            </div>
+            <div class="section-content">
+              <h4 class="section-header">XCM</h3>
+              <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <h3 class="section-header">Cross-chain protocols</h3>
+      <div class="section-wrapper">
+        <div class="row">
+          <a class="section-card">
+            <div class="section-logo">
+              <img src="/assets/images/dev-portal-home-icon.png">
+            </div>
+            <div class="section-content">
+              <h4 class="section-header">Axelar</h3>
+              <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+            </div>
+          </a>
+          <a class="section-card">
+            <div class="section-logo">
+              <img src="/assets/images/dev-portal-home-icon.png">
+            </div>
+            <div class="section-content">
+              <h4 class="section-header">Wormhole</h3>
+              <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+            </div>
+          </a>
+        </div>
+        <div class="row">
+          <a class="section-card">
+            <div class="section-logo">
+              <img src="/assets/images/dev-portal-home-icon.png">
+            </div>
+            <div class="section-content">
+              <h4 class="section-header">Hyperlane</h3>
+              <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+            </div>
+          </a>
+          <a class="section-card">
+            <div class="section-logo">
+              <img src="/assets/images/dev-portal-home-icon.png">
+            </div>
+            <div class="section-content">
+              <h4 class="section-header">LayerZero</h3>
+              <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="moonbeam-difference">
+    <h2 class="section-title">What makes Moonbeam different</h2>
+    <div class="section-wrapper">
+      <div class="row">
+        <a class="section-card">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Ethereum compatibility</h3>
+            <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          </div>
+        </a>
+        <a class="section-card">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Interoperability</h3>
+            <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          </div>
+        </a>
+      </div>
+      <div class="row">
+        <a class="section-card">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Polkadot features</h3>
+            <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          </div>
+        </a>
+        <a class="section-card">
+          <div class="section-logo">
+            <img src="/assets/images/dev-portal-home-icon.png">
+          </div>
+          <div class="section-content">
+            <h4 class="section-header">Precompile contracts</h3>
+            <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="full-width-background">
+    <div class="moonbuilders">
+      <h2 class="section-title">Enroll in courses on Moonbuilders Academy</h2>
+      <div class="row">
+        <div class="section-card">
+          <img src="/assets/images/dev-portal-home-icon.png">
+          <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          <a class="section-link">Check out the curriculum
+            <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+          </a>
+        </div>
+        <div class="section-card">
+          <img src="/assets/images/dev-portal-home-icon.png">
+          <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          <a class="section-link">Check out the curriculum
+            <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+          </a>
+        </div>
+        <div class="section-card">
+          <img src="/assets/images/dev-portal-home-icon.png">
+          <p class="section-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          <a class="section-link">Check out the curriculum
+            <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <a href="" class="all-courses">
+          <button class="md-button">See all courses
+            <span class="md-icon">{% include ".icons/material/arrow-top-right.svg" %}</span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block site_nav %}
+  <!-- {% if nav %}
+    {% if page and page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--primary home" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if page.toc and not "toc.integrate" in config.theme.features %}
+    {% if page and page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "toc" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/toc.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %} -->
+{% endblock %}
