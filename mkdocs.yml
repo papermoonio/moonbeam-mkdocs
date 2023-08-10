@@ -542,7 +542,7 @@
           'name': 'GitHub'
     'analytics':
         'provider': 'google'
-        'property': 'UA-135971059-6' # TODO: remove the google.html override once we update this to GA4
+        'property': 'G-5ZBERCXWC3'
         'feedback':
             'title': 'Was this page helpful?'
             'ratings':
