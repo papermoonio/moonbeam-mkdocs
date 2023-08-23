@@ -55,7 +55,7 @@
   --dropdown-bg-language-color: #524B67;
 
   /* Code block color shades */
-  --md-code-bg-color: rgba(38, 34, 51, 0.5);
+  --md-code-bg-color: #262233D9;
   --md-code-fg-color: #ffffff;
 
   /* Admonition SVGs (base64 encoded) - use Material icons */
@@ -392,8 +392,8 @@ a.md-nav__link:hover,
 }
 
 a.md-nav__link:hover {
-  padding-left: 1em;
-  margin-left: -1em;
+  padding-left: 1.1em;
+  margin-left: -1.1em;
 }
 
 .md-nav__link:hover .md-nav__icon:after {
@@ -407,6 +407,17 @@ a.md-nav__link:hover {
 .md-nav__item .md-nav__link--index [href] {
   width: auto;
   padding-right: 0.5em;
+}
+
+/* Only show the active items on the sidebar */
+@media screen and (min-width: 76.25em) {
+  .md-nav > .md-nav__list .md-nav__item--section {
+    display: none;
+  }
+  
+  .md-nav > .md-nav__list .md-nav__item--section.md-nav__item--active {
+    display: block;
+  }
 }
 
 /* Section lines */
@@ -654,7 +665,7 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 .md-typeset table:not([class]) {
-  border: 1px solid var(--md-primary-fg-color--light);
+  border: 2px solid var(--md-primary-fg-color--light);
   border-radius: 1.5em;
   display: inline-table;
   overflow: hidden;
@@ -667,12 +678,14 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 .md-typeset table:not([class]) td {
-  border-top: 1px solid var(--md-primary-fg-color--light);
+  border-top: 2px solid var(--md-primary-fg-color--light);
 }
 
-.md-typeset table:not([class]) td {
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
   vertical-align: middle;
 }
+
 
 .md-typeset .md-typeset__table table th:first-child {
   border-top-left-radius: 1.5em;
@@ -705,7 +718,7 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 .md-typeset .tabbed-content {
-  border: 1px solid var(--md-primary-fg-color--light);
+  border: 2px solid var(--md-primary-fg-color--light);
   border-radius: 1.5em;
   overflow: hidden;
 }
@@ -892,7 +905,7 @@ li>nav.md-nav[data-md-level="4"] {
 .md-feedback {
   margin: 1em auto 2em;
   text-align: center;
-  border: 1px solid var(--md-primary-fg-color--bright-dark);
+  border: 2px solid var(--md-primary-fg-color--bright-dark);
   border-radius: 1.5em;
   padding: 1em 4em;
   width: fit-content;
@@ -1221,7 +1234,7 @@ li>nav.md-nav[data-md-level="4"] {
 }
 
 .subsection-wrapper .card {
-  border: 1px solid var(--md-card-bg-border-color);
+  border: 2px solid var(--md-card-bg-border-color);
   border-radius: 1.5em;
   margin: 1em 0;
   width: 75%;
@@ -1327,10 +1340,10 @@ h3.hero-info {
 .home .card {
   width: 25em;
   min-height: 10em;
-  border-radius: .5em;
-  border: 1px solid var(--md-card-bg-border-color);
+  border-radius: 1.5em;
+  border: 2px solid var(--md-card-bg-border-color);
   overflow: auto;
-  padding: .75em 1em;
+  padding: 1em;
   margin-right: .5em;
   margin-bottom: .75em;
 }
@@ -1600,6 +1613,10 @@ p.quick-ref-title {
   display: block;
 }
 
+.md-tabs__item--custom:hover {
+  cursor: pointer;
+}
+
 .md-tab__item {
   font-size: 1.25em;
   padding: 1em 1.5em;
@@ -1690,7 +1707,7 @@ p.quick-ref-title {
 
 .section-card {
   display: flex;
-  border: 1px solid var(--md-card-bg-border-color);
+  border: 2px solid var(--md-card-bg-border-color);
   border-radius: 1.5em;
   padding: 1em;
   max-width: 49.5%;
