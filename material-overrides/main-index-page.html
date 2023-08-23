@@ -5,8 +5,8 @@
   {% if nav|length>1 %}
     {% for nav_item in nav %}
       {% if nav_item.is_section and nav_item.active %}
-      <h1 class="subsection-title">{{ nav_item.title }}</h1>
-      <div class="subsection-wrapper">
+        <h1 class="subsection-title">{{ nav_item.title }}</h1>
+        <div class="subsection-wrapper">
         {% for nav_item in nav_item.children %}
           {% if nav_item.is_section %}
             {% set subsection_path = nav_item.children[0].url %}
@@ -22,7 +22,7 @@
             {% endif %}
           {% endif %}
         {% endfor %}
-      </div>
+        </div>
       {% endif %}
     {% endfor %}
   {% endif %}

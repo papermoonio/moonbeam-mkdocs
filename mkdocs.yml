@@ -22,7 +22,7 @@
         'text': 'Open Sans'
     'features':
         - 'navigation.tabs'
-        # - 'navigation.tabs.sticky'
+        - 'navigation.tabs.sticky'
         - 'navigation.sections'
         - 'navigation.indexes'
         - 'content.code.copy'
