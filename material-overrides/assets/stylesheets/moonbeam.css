@@ -1756,3 +1756,10 @@ p.quick-ref-title {
 .md-tabs__item--custom:hover .md-tabs__link {
   color: var(--md-accent-fg-color);
 }
+
+/* 404 page */
+.not-found {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
