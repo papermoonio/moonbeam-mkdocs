@@ -3,7 +3,7 @@ site_url: https://docs.moonbeam.network/cn/
 home_url: https://moonbeam.network/
 site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
 docs_dir: moonbeam-docs-cn
-'copyright': '© 2023 PureStake, Inc. All Rights Reserved.'
+'copyright': '© 2023 Moonbeam Foundation. All Rights Reserved.'
 'extra_javascript':
   - 'js/connectMetaMask.js'
   - 'js/errorModal.js'
@@ -80,8 +80,12 @@ docs_dir: moonbeam-docs-cn
         'integrations/jslibraries/web3js.md': 'builders/build/eth-api/libraries/web3js.md'
         'integrations/jslibraries/etherjs.md': 'builders/build/eth-api/libraries/ethersjs.md'
         'networks/testnet.md': 'learn/platform/networks/moonbase.md'
-        'governance/proposals.md': 'tokens/governance/proposals/proposals.md'
-        'governance/voting.md': 'tokens/governance/voting/voting.md'
+        'governance/proposals.md': 'tokens/governance/proposals.md'
+        'tokens/governance/proposals/opengov-proposals.md': 'tokens/governance/proposals.md'
+        'tokens/governance/proposals/proposals.md': 'tokens/governance/proposals.md'
+        'governance/voting.md': 'tokens/governance/voting.md'
+        'tokens/governance/voting/opengov-voting.md': 'tokens/governance/voting.md'
+        'tokens/governance/voting/voting.md': 'tokens/governance/voting.md'
         'integrations/indexers/covalent.md': 'builders/integrations/indexers/covalent.md'
         'integrations/indexers/thegraph.md': 'builders/integrations/indexers/thegraph.md'
         'integrations/openzeppelin/defender.md': 'builders/build/eth-api/dev-env/openzeppelin/defender.md'
@@ -180,7 +184,7 @@ docs_dir: moonbeam-docs-cn
         'tokens/staking/stakingprecompile.md': 'builders/pallets-precompiles/precompiles/staking.md'
         'node-operators/networks/collator.md': 'node-operators/networks/collators/index.md'
         'builders/interact/canonical-contracts.md': 'builders/build/canonical-contracts.md'
-        'builders/tools/precompiles/democracy.md': 'builders/pallets-precompiles/precompiles/democracy.md'
+        'builders/tools/precompiles/democracy.md': 'builders/pallets-precompiles/precompiles/index.md'
         'builders/tools/precompiles/erc20.md': 'builders/pallets-precompiles/precompiles/erc20.md'
         'builders/tools/precompiles/eth-mainnet.md': 'builders/pallets-precompiles/precompiles/eth-mainnet.md'
         'builders/tools/precompiles/staking.md': 'builders/pallets-precompiles/precompiles/staking.md'
@@ -219,10 +223,11 @@ docs_dir: moonbeam-docs-cn
         'builders/interact/scaffold-eth.md': 'builders/build/eth-api/dev-env/scaffold-eth.md'
         'builders/build/canonical-contracts/precompiles/index.md': 'builders/pallets-precompiles/precompiles/index.md'
         'builders/build/canonical-contracts/precompiles/staking.md': 'builders/pallets-precompiles/precompiles/staking.md'
-        'builders/build/canonical-contracts/precompiles/democracy.md': 'builders/pallets-precompiles/precompiles/democracy.md'
+        'builders/build/canonical-contracts/precompiles/democracy.md': 'builders/pallets-precompiles/precompiles/index.md'
         'builders/build/canonical-contracts/precompiles/erc20.md': 'builders/pallets-precompiles/precompiles/erc20.md'
         'builders/build/canonical-contracts/precompiles/eth-mainnet.md': 'builders/pallets-precompiles/precompiles/eth-mainnet.md'
         'builders/build/canonical-contracts/contracts.md': 'builders/build/canonical-contracts.md'
+        'builders/pallets-precompiles/precompiles/democracy.md': 'builders/pallets-precompiles/precompiles/index.md'
         'builders/integrations/bridges/axelar.md': 'builders/interoperability/protocols/axelar.md'
         'builders/integrations/bridges/index.md': 'builders/interoperability/protocols/index.md'
         'builders/xcm/fees.md': 'builders/interoperability/xcm/fees.md'
@@ -234,8 +239,10 @@ docs_dir: moonbeam-docs-cn
         'builders/xcm/xc20/xc20.md': 'builders/interoperability/xcm/xc20/xc20.md'
         'builders/xcm/xc20/xtokens.md': 'builders/interoperability/xcm/xc20/xtokens.md'
         'builders/xcm/xcm-sdk/index.md': 'builders/interoperability/xcm/xcm-sdk/index.md'
-        'builders/xcm/xcm-sdk/reference.md': 'builders/interoperability/xcm/xcm-sdk/reference.md'
-        'builders/xcm/xcm-sdk/xcm-sdk.md': 'builders/interoperability/xcm/xcm-sdk/xcm-sdk.md'
+        'builders/xcm/xcm-sdk/reference.md': 'builders/interoperability/xcm/xcm-sdk/v1/reference.md'
+        'builders/interoperability/xcm/xcm-sdk/reference.md': 'builders/interoperability/xcm/xcm-sdk/v1/reference.md'
+        'builders/xcm/xcm-sdk/xcm-sdk.md': 'builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk.md'
+        'builders/interoperability/xcm/xcm-sdk/xcm-sdk.md': 'builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk.md'
         'builders/xcm/xc-integration.md': 'builders/interoperability/xcm/xc-integration.md'
         'builders/xcm/xcm-transactor.md': 'builders/interoperability/xcm/xcm-transactor.md'
         'builders/xcm/remote-evm-calls.md': 'builders/interoperability/xcm/remote-evm-calls.md'
@@ -263,11 +270,11 @@ docs_dir: moonbeam-docs-cn
       'link': 'https://www.youtube.com/c/MoonbeamNetwork'
       'name': 'YouTube'
     - 'icon': 'fontawesome/brands/github'
-      'link': 'https://github.com/PureStake/moonbeam'
+      'link': 'https://github.com/moonbeam-foundation/moonbeam'
       'name': 'GitHub'
   'analytics':
     'provider': 'google'
-    'property': 'UA-135971059-6'  # TODO: remove the google.html override once we update this to GA4
+    'property': 'G-5ZBERCXWC3'
     'feedback':
         'title': '此页面是否有帮助?'
         'ratings':
@@ -280,4 +287,4 @@ docs_dir: moonbeam-docs-cn
               'name': '不'
               'data': 0
               'note': >- 
-                感谢您的反馈意见! 您还可以通过提交<a href="https://github.com/purestake/moonbeam-docs-cn/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">其他反馈</a>帮助我们改进此页面。
+                感谢您的反馈意见! 您还可以通过提交<a href="https://github.com/moonbeam-foundation/moonbeam-docs-cn/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">其他反馈</a>帮助我们改进此页面。
