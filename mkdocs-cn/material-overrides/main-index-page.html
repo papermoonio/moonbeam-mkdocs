@@ -2,36 +2,61 @@
 
 {% block content %}
 <div class="main-page">
-    {% if nav|length>1 %}
+  {% if nav|length>1 %}
     {% for nav_item in nav %}
-    {% if nav_item.is_section and nav_item.active %}
-    <h1 class="subsection-title">{{ nav_item.title }}</h1>
-    <div class="subsection-wrapper">
+      {% if nav_item.is_section and nav_item.active %}
+        <h1 class="subsection-title">{{ nav_item.title }}</h1>
+        <div class="subsection-wrapper">
         {% for nav_item in nav_item.children %}
-        {% if nav_item.is_section %}
-        <div class="card">
+          {% if nav_item.is_section %}
             {% set subsection_path = nav_item.children[0].url %}
+            {% set description = nav_item.children[0].meta.description %}
             {% if subsection_path.startswith(page.url) %}
-            {% set image_path = '/images/index-pages/' + subsection_path[:-1] + '.png' %}
-            {% set href_path = subsection_path|replace(page.url, '') %}
-            <a href="{{ href_path }}">
-                <h2 class="title">{{ nav_item.title }}</h2>
-                <img class="icon" src="{{ image_path }}"
-                    onerror="this.src=/images/index-pages/blank.png; this.onerror = null">
-            </a>
+              {% set href_path = subsection_path|replace(page.url, '') %}
+              <div class="card">
+                <a href="{{ href_path }}">
+                  <h2 class="title">{{ nav_item.title }}</h2>
+                  <p class="description">{{ description }}</p>
+                </a>
+              </div>
             {% endif %}
-        </div>
-        {% endif %}
+          {% endif %}
         {% endfor %}
-    </div>
-    {% endif %}
+        </div>
+      {% endif %}
     {% endfor %}
-    {% endif %}
-    <div class="disclaimer">
-        本项目所提供的所有信息，包括声明、内容、设计、算法、估计、路线图、规格和性能测量，仅供参考之用，与Moonbeam立场无关，概不构成任何投资建议，请自行研究和判断其准确性和真实性。任何参与创建Moonbeam
-        Network或Moonriver Network或撰写所有信息的开发人员或实体均不承担任何用户或人士就使用或未能使用或与Moonbeam Network或Moonriver
-        Network其他用户交互的本网站所提供的任何信息，包括任何直接、间接、附带、从属、特殊、惩戒性、惩罚性或后果性的损害赔偿，或利润、加密货币、Token或任何其他有价值的东西的损失。此处包含的信息如有变更，恕不另行通知。
-    </div>
+  {% endif %}
+  <div class="disclaimer">
+    本项目所提供的所有信息，包括声明、内容、设计、算法、估计、路线图、规格和性能测量，仅供参考之用，与Moonbeam立场无关，概不构成任何投资建议，请自行研究和判断其准确性和真实性。任何参与创建Moonbeam
+    Network或Moonriver Network或撰写所有信息的开发人员或实体均不承担任何用户或人士就使用或未能使用或与Moonbeam Network或Moonriver
+    Network其他用户交互的本网站所提供的任何信息，包括任何直接、间接、附带、从属、特殊、惩戒性、惩罚性或后果性的损害赔偿，或利润、加密货币、Token或任何其他有价值的东西的损失。此处包含的信息如有变更，恕不另行通知。
+  </div>
 </div>
+{% endblock %}
 
+{% block site_nav %}
+  {% if nav %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner main-page-sidebar">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if "toc.integrate" not in features %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "toc" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/toc.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
 {% endblock %}

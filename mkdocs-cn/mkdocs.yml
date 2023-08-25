@@ -17,14 +17,16 @@ docs_dir: moonbeam-docs-cn
   'name': 'material'
   'custom_dir': 'material-overrides'
   'favicon': '/assets/images/Moonbeam-Favicon-50.png'
-  'logo': '/assets/images/Moonbeam-Favicon-50.png'
+  'logo': '/assets/images/moonbeam-logo.png'
   'font':
     'text': 'Open Sans'
   'features':
     - 'navigation.tabs'
+    - 'navigation.tabs.sticky'
     - 'navigation.sections'
     - 'navigation.indexes'
     - 'content.code.copy'
+    - 'navigation.instant'
 'markdown_extensions':
   - 'codehilite'
   - 'meta'
@@ -269,13 +271,13 @@ docs_dir: moonbeam-docs-cn
     'feedback':
         'title': '此页面是否有帮助?'
         'ratings':
-            - 'icon': 'material/emoticon-happy-outline'
-              'name': '此页面很有帮助'
+            - 'icon': 'material/thumb-up'
+              'name': '是的'
               'data': 1
               'note': >-
                 感谢您的反馈意见!
-            - 'icon': 'material/emoticon-sad-outline'
-              'name': '此页面有待改进'
+            - 'icon': 'material/thumb-down'
+              'name': '不'
               'data': 0
               'note': >- 
                 感谢您的反馈意见! 您还可以通过提交<a href="https://github.com/purestake/moonbeam-docs-cn/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">其他反馈</a>帮助我们改进此页面。
