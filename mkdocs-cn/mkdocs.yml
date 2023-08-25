@@ -1,8 +1,8 @@
-site_name: Moonbeam Docs
-site_url: https://docs.moonbeam.network/cn/
-home_url: https://moonbeam.network/
-site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
-docs_dir: moonbeam-docs-cn
+'site_name': Moonbeam Docs
+'site_url': https://docs.moonbeam.network/cn/
+'home_url': https://moonbeam.network/
+'site_dir': /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
+'docs_dir': moonbeam-docs-cn
 'copyright': '© 2023 Moonbeam Foundation. All Rights Reserved.'
 'extra_javascript':
   - 'js/connectMetaMask.js'
@@ -279,12 +279,14 @@ docs_dir: moonbeam-docs-cn
         'title': '此页面是否有帮助?'
         'ratings':
             - 'icon': 'material/thumb-up'
-              'name': '是的'
+              'label': '是的'
+              'name': '此页面很有帮助'
               'data': 1
               'note': >-
                 感谢您的反馈意见!
             - 'icon': 'material/thumb-down'
-              'name': '不'
+              'label': '不'
+              'name': '此页面有待改进'
               'data': 0
               'note': >- 
                 感谢您的反馈意见! 您还可以通过提交<a href="https://github.com/moonbeam-foundation/moonbeam-docs-cn/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">其他反馈</a>帮助我们改进此页面。
