@@ -58,11 +58,11 @@
             <ul class="md-nav__list {{ indexes[0].url.replace('/', '-') }}" data-md-scrollfix>
           {% endif %}
         {% endif %}
-          {% for nav_item in nav_item.children %}
-            {% if not indexes or nav_item != indexes | first %}
-              {{ render(nav_item, path ~ "_" ~ loop.index, level + 1) }}
-            {% endif %}
-          {% endfor %}
+        {% for nav_item in nav_item.children %}
+          {% if not indexes or nav_item != indexes | first %}
+            {{ render(nav_item, path ~ "_" ~ loop.index, level + 1) }}
+          {% endif %}
+        {% endfor %}
         </ul>
       </nav>
     </li>
