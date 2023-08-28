@@ -13,7 +13,16 @@
                 {% for section_item in nav_item.children %}
                   {% if section_item.is_section %}
                     <li class="md-tab__item">
-                      <a href="{{ section_item.children[0].url | url }}">{{ section_item.title }}</a>
+                      <a href="{{ section_item.children[0].url | url }}">
+                        <div>
+                          {% set icon_url = "/assets/images/dropdown-icons/" + section_item.children[0].url.split('/')[1] + ".png" %}
+                          <img class="dropdown-icon" src="{{ icon_url }}" alt="{{ section_item.title }}">
+                        </div>
+                        <div class="text-col">
+                          <span class="dropdown-title">{{ section_item.title }}</span>
+                          <p class="dropdown-desc">{{ section_item.children[0].meta.dropdown_description }}</p>
+                        </div>
+                      </a>
                     </li>
                   {% endif %}
                 {% endfor %}

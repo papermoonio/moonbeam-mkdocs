@@ -53,6 +53,7 @@
   --dropdown-bg-color: #241D2B;
   --dropdown-bg-color--hover: #262233;
   --dropdown-bg-language-color: #524B67;
+  --dropdown-fg-color: #9D8EAC;
 
   /* Code block color shades */
   --md-code-bg-color: #262233D9;
@@ -1755,6 +1756,33 @@ p.quick-ref-title {
 
 .md-tabs__item--custom:hover .md-tabs__link {
   color: var(--md-accent-fg-color);
+}
+
+.md-tab__item a {
+  display: flex;
+  margin: .3em 0;
+}
+
+.dropdown-icon {
+  width: 2em;
+}
+
+.text-col {
+  margin-left: 1.5em
+}
+
+.dropdown-title {
+  font-size: 1.2em;
+}
+
+.dropdown-desc {
+  margin: .2em 0;
+  color: var(--dropdown-fg-color);
+}
+
+.md-tab__item:hover .dropdown-desc {
+  color: var(--md-accent-fg-color);
+  opacity: .6;
 }
 
 /* 404 page */
