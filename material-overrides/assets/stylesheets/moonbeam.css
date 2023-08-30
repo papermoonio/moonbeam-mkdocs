@@ -53,7 +53,7 @@
   --dropdown-bg-color: #241D2B;
   --dropdown-bg-color--hover: #262233;
   --dropdown-bg-language-color: #524B67;
-  --dropdown-fg-color: #9D8EAC;
+  --dropdown-fg-color: #b1b3c4;
 
   /* Code block color shades */
   --md-code-bg-color: #262233D9;
@@ -69,9 +69,9 @@
   /* Strings */
   --md-code-hl-string-color: #F089BD;
   /* Python print */
-  --md-code-hl-constant-color: #E1147B;
+  --md-code-hl-constant-color: #FFFFFF;
   /* Imports, const, let, var, async, await, function, etc. */
-  --md-code-hl-keyword-color: #E1147B;
+  --md-code-hl-keyword-color: #FFFFFF;
   /* Comments */
   --md-code-hl-comment-color: #9D8EAC;
 
@@ -374,7 +374,7 @@ a:hover {
 
 /* Make the primary section font larger on left nav (i.e., Build, Node Operators, etc.) */
 .md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.02em;
   font-size: 1.3em;
   font-family: var(--header-font);
@@ -758,6 +758,10 @@ li>nav.md-nav[data-md-level="4"] {
   width: 100%;
 }
 
+.md-typeset__scrollwrap {
+  margin: 0;
+}
+
 /* Styling for tables in tabs */
 .tabbed-content .md-typeset__table {
   width: 100%;
@@ -768,14 +772,15 @@ li>nav.md-nav[data-md-level="4"] {
 .tabbed-content .tabbed-block .md-typeset__table table:not([class]) {
   border: unset;
   background-color: unset;
+  border-radius: 0;
 }
 
 .tabbed-content .tabbed-block .md-typeset__table table:not([class]) th:first-child {
-  border-top-left-radius: 1.8em;
+  border-top-left-radius: 0;
 }
 
 .tabbed-content .tabbed-block .md-typeset__table table:not([class]) th:last-child {
-  border-top-right-radius: 1.8em;
+  border-top-right-radius: 0;
 }
 
 .md-typeset__scrollwrap {
@@ -1589,13 +1594,8 @@ p.quick-ref-title {
     flex: 40%;
   }
 
-  .home .card>div:first-child,
-  .home .card>div:nth-child(2) {
-    min-height: 1em;
-  }
-
   .home .card>div:nth-child(3) {
-    min-height: 5em;
+    min-height: 2em;
   }
 
   .row.hero,
@@ -1673,6 +1673,11 @@ p.quick-ref-title {
     width: unset;
     margin: .5em 0;
     flex: 100%;
+  }
+
+  .home .card>div:nth-child(2) {
+    min-height: 0;
+    margin: 0;
   }
 
   .hero-column {
@@ -1762,7 +1767,7 @@ p.quick-ref-title {
 
 .md-tabs__link {
   opacity: unset;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .md-tabs__item--custom:hover .md-tabs__link {
