@@ -692,7 +692,7 @@ li>nav.md-nav[data-md-level="4"] {
 
 .md-typeset .md-typeset__table table th {
   background-color: var(--md-primary-fg-color--dark);
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 400;
 }
 
@@ -1441,6 +1441,10 @@ h3.hero-info {
   text-decoration: none;
 }
 
+.row.cards {
+  margin-bottom: 2em;
+}
+
 .home .card {
   width: 25em;
   min-height: 10em;
@@ -1772,7 +1776,7 @@ p.quick-ref-title {
 }
 
 .dropdown-title {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .dropdown-desc {
