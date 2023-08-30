@@ -1464,16 +1464,23 @@ h3.hero-info {
   color: var(--md-default-fg-color);
 }
 
-.home .card>div:first-child {
+.home .card .card-header {
   min-height: 4em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home .card .card-header img {
+  height: fit-content;
 }
 
 .home .card>div:nth-child(2) {
-  min-height: 3.5em;
+  min-height: 5em;
+  margin: 1em 0;
 }
 
 .home .card>div:nth-child(3) {
-  min-height: 6em;
+  min-height: 2.5em;
 }
 
 .card-info {
