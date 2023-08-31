@@ -1,8 +1,8 @@
-site_name: Moonbeam Docs
-site_url: https://docs.moonbeam.network/cn/
-home_url: https://moonbeam.network/
-site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
-docs_dir: moonbeam-docs-cn
+'site_name': Moonbeam Docs
+'site_url': https://docs.moonbeam.network/cn/
+'home_url': https://moonbeam.network/
+'site_dir': /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
+'docs_dir': moonbeam-docs-cn
 'copyright': '© 2023 Moonbeam Foundation. All Rights Reserved.'
 'extra_javascript':
   - 'js/connectMetaMask.js'
@@ -17,11 +17,12 @@ docs_dir: moonbeam-docs-cn
   'name': 'material'
   'custom_dir': 'material-overrides'
   'favicon': '/assets/images/Moonbeam-Favicon-50.png'
-  'logo': '/assets/images/Moonbeam-Favicon-50.png'
+  'logo': '/assets/images/moonbeam-logo.png'
   'font':
     'text': 'Open Sans'
   'features':
     - 'navigation.tabs'
+    - 'navigation.tabs.sticky'
     - 'navigation.sections'
     - 'navigation.indexes'
     - 'content.code.copy'
@@ -278,12 +279,14 @@ docs_dir: moonbeam-docs-cn
     'feedback':
         'title': '此页面是否有帮助?'
         'ratings':
-            - 'icon': 'material/emoticon-happy-outline'
+            - 'icon': 'material/thumb-up'
+              'label': '是的'
               'name': '此页面很有帮助'
               'data': 1
               'note': >-
                 感谢您的反馈意见!
-            - 'icon': 'material/emoticon-sad-outline'
+            - 'icon': 'material/thumb-down'
+              'label': '不'
               'name': '此页面有待改进'
               'data': 0
               'note': >- 

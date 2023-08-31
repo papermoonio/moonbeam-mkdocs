@@ -1,9 +1,9 @@
 {% extends "main.html" %}
 
 {% block htmltitle %}
-{%- if page.is_homepage -%}
-<title>Moonbeam Docs</title>
-{%- endif -%}
+  {%- if page.is_homepage -%}
+    <title>Moonbeam Docs</title>
+  {%- endif -%}
 {% endblock %}
 
 {% block content %}
@@ -93,13 +93,11 @@
   </div>
   <div class="row cards">
     <div class="card">
-      <div>
-        <img src="{{ '/assets/images/builders.png' }}" alt="builders" />
-      </div>
-      <div>
+      <div class="card-header">
         <a href="/builders/">
           <h2 class="card-title">Building on Moonbeam</h2>
         </a>
+        <img src="{{ '/assets/images/builders.png' }}" alt="builders" />
       </div>
       <div>
         <p class="card-info">Learn how to build a new application or deploy existing Solidity/Vyper smart contracts to
@@ -112,13 +110,13 @@
       <div>
         <p class="card-info in-this-section">In this section</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.png' }}" alt="page content" />
+          {% include ".icons/moonbeam/page.svg" %}
           <a class="in-this-section-link" href="/builders/get-started/endpoints/">
             How to get your own API endpoint for Moonbeam-based networks
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.png' }}" alt="page content" />
+          {% include ".icons/moonbeam/page.svg" %}
           <a class="in-this-section-link" href="/builders/build/eth-api/">
             How to use Ethereum tools to send transactions & deploy contracts
           </a>
@@ -126,13 +124,11 @@
       </div>
     </div>
     <div class="card">
-      <div>
-        <img src="{{ '/assets/images/node-operators.png' }}" alt="node operators"/>
-      </div>
-      <div>
+      <div class="card-header">
         <a href="/node-operators/">        
           <h2 class="card-title">Operating a Node</h2>
         </a>
+        <img src="{{ '/assets/images/node-operators.png' }}" alt="node operators"/>
       </div>
       <div>
         <p class="card-info">Everything you need to know about running a node on Moonbeam and Moonriver, how to become a
@@ -145,13 +141,13 @@
       <div>
         <p class="card-info in-this-section">In this section</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.png' }}" alt="page content"/>
+          {% include ".icons/moonbeam/page.svg" %}
           <a class="in-this-section-link" href="/node-operators/networks/run-a-node/overview/">
             How to set up a Moonbeam-based node
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.png' }}" alt="page content" />
+          {% include ".icons/moonbeam/page.svg" %}
           <a class="in-this-section-link" href="/node-operators/networks/collators/">
             Learn about collator requirements and how to spin up a collator node
           </a>
@@ -159,13 +155,11 @@
       </div>
     </div>
     <div class="card">
-      <div>
-        <img src="{{ '/assets/images/tokens.png' }}" alt="tokens" />
-      </div>
-      <div>
+      <div class="card-header">
         <a href="/tokens/">
           <h2 class="card-title">Using Your MOVR & GLMR Tokens</h2>
         </a>
+        <img src="{{ '/assets/images/tokens.png' }}" alt="tokens" />
       </div>
       <div>
         <p class="card-info">A series of guides showing you how and where you can use your MOVR and GLMR tokens with
@@ -178,13 +172,13 @@
       <div>
         <p class="card-info in-this-section">In this section</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.png' }}" alt="page content" />
+          {% include ".icons/moonbeam/page.svg" %}
           <a class="in-this-section-link" href="/tokens/connect/metamask/">
             How to connect MetaMask to Moonbeam-based networks
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.png' }}" alt="page content" />
+          {% include ".icons/moonbeam/page.svg" %}
           <a class="in-this-section-link" href="/tokens/staking/stake/">
             How to stake (delegate) a collator
           </a>
@@ -192,13 +186,11 @@
       </div>
     </div>
     <div class="card">
-      <div>
-        <img src="{{ '/assets/images/learn.png' }}" alt="learn"/>
-      </div>
-      <div>
+      <div class="card-header">
         <a href="/learn/">
           <h2 class="card-title">Learning About Moonbeam</h2>
         </a>
+        <img src="{{ '/assets/images/learn.png' }}" alt="learn"/>
       </div>
       <div>
         <p class="card-info">Dive into the Moonbeam ecosystem and learn what makes this approach to Ethereum compatability
@@ -211,19 +203,19 @@
       <div>
         <p class="card-info in-this-section">In this section</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.png' }}" alt="page content" />
+          {% include ".icons/moonbeam/page.svg" %}
           <a class="in-this-section-link" href="/learn/platform/networks/overview/">
             Moonbeam network overview
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.png' }}" alt="page content" />
+          {% include ".icons/moonbeam/page.svg" %}
           <a class="in-this-section-link" href="/learn/dapps-list/">
             Explore the DApp directory
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.png' }}" alt="page content" />
+          {% include ".icons/moonbeam/page.svg" %}
           <a class="in-this-section-link" href="https://moonbeam.network/events" target="_blank">
             Moonbeam's upcoming events
           </a>
@@ -236,28 +228,28 @@
 {% endblock %}
 
 {% block site_nav %}
-{% if nav %}
-{% if page and page.meta and page.meta.hide %}
-{% set hidden = "hidden" if "navigation" in page.meta.hide %}
-{% endif %}
-<div class="md-sidebar md-sidebar--primary home" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
-  <div class="md-sidebar__scrollwrap">
-    <div class="md-sidebar__inner">
-      {% include "partials/nav.html" %}
+  {% if nav %}
+    {% if page and page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--primary home" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-{% endif %}
-{% if page.toc and not "toc.integrate" in config.theme.features %}
-{% if page and page.meta and page.meta.hide %}
-{% set hidden = "hidden" if "toc" in page.meta.hide %}
-{% endif %}
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
-  <div class="md-sidebar__scrollwrap">
-    <div class="md-sidebar__inner">
-      {% include "partials/toc.html" %}
+  {% endif %}
+  {% if page.toc and not "toc.integrate" in config.theme.features %}
+    {% if page and page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "toc" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/toc.html" %}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-{% endif %}
+  {% endif %}
 {% endblock %}

@@ -17,11 +17,12 @@
     'name': 'material'
     'custom_dir': 'material-overrides'
     'favicon': '/assets/images/Moonbeam-Favicon-50.png'
-    'logo': '/assets/images/Moonbeam-Favicon-50.png'
+    'logo': '/assets/images/moonbeam-logo.png'
     'font':
         'text': 'Open Sans'
     'features':
         - 'navigation.tabs'
+        - 'navigation.tabs.sticky'
         - 'navigation.sections'
         - 'navigation.indexes'
         - 'content.code.copy'
@@ -252,6 +253,11 @@
               'builders/get-started/networks/layer2/index.md': 'builders/get-started/networks/index.md'
               'builders/get-started/networks/layer2/bobabase.md': 'builders/get-started/networks/index.md'
               'builders/get-started/networks/layer2/bobabeam.md': 'builders/get-started/networks/index.md'
+              'tutorials/eth-api/get-started/index.md': 'tutorials/eth-api/get-started.index.md'
+              'tutorials/eth-api/precompiles/index.md': 'tutorials/eth-api/precompiles.index.md'
+              'tutorials/integrations/indexers/index.md': 'tutorials/integrations/indexers.index.md'
+              'tutorials/interoperability/protocols/index.md': 'tutorials/interoperability/protocols.index.md'
+              'tutorials/interoperability/xcm/index.md': 'tutorials/interoperability/xcm.index.md'
               ### Deprecated Language Site Redirects ###
               'es/index.md': 'index.md'
               'es/resources/networks.md': 'learn/platform/networks/overview.md'
@@ -546,12 +552,14 @@
         'feedback':
             'title': 'Was this page helpful?'
             'ratings':
-                - 'icon': 'material/emoticon-happy-outline'
+                - 'icon': 'material/thumb-up'
+                  'label': 'Yes'
                   'name': 'This page was helpful'
                   'data': 1
                   'note': >-
                     Thanks for your feedback!
-                - 'icon': 'material/emoticon-sad-outline'
+                - 'icon': 'material/thumb-down'
+                  'label': 'No'
                   'name': 'This page could be improved'
                   'data': 0
                   'note': >- 

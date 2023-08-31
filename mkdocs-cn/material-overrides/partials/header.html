@@ -1,71 +1,47 @@
 {#- This file was automatically generated - do not edit -#}
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header.title') }}">
-    <a href="{{ site_url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo"
-      aria-label="{{ config.site_name }}">
-      {% include "partials/logo.html" %}
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      {% include ".icons/material/menu" ~ ".svg" %}
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      {% if config.site_name == page.title or page.title == "Home" %}
-      <div class="md-header__ellipsis md-ellipsis">{{ config.site_name }}</div>
-      {% else %}
-      <div class="md-header__ellipsis">
-        <span class="md-header__topic md-ellipsis"> {{ config.site_name }} </span>
-        <span class="md-header__topic md-ellipsis">
-          {% if page and page.meta and page.meta.title %} {{ page.meta.title }} {% else %} {{
-          page.title }} {% endif %}
-        </span>
-      </div>
+    <div class="md-header__left-nav">
+      <a href="{{ config.site_url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo"
+        aria-label="{{ config.site_name }}">
+        {% include "partials/logo.html" %}
+      </a>
+      <label class="md-header__button md-icon" for="__drawer">
+        {% include ".icons/material/menu" ~ ".svg" %}
+      </label>
+      {% if "navigation.tabs.sticky" in features %}
+        {% if "navigation.tabs" in features %}
+          {% include "partials/tabs.html" %}
+        {% endif %}
       {% endif %}
     </div>
-    <div class="md-header__options">
-      {% if config.extra.alternate %}
-      <div class="md-select">
-        {% set icon = config.theme.icon.alternate or "material/translate" %}
-        <span class="md-header__button md-icon">
-          {% include ".icons/" ~ icon ~ ".svg" %}
-        </span>
-        <div class="md-select__inner">
-          <ul class="md-select__list">
-            {% for alt in config.extra.alternate %}
-            <li class="md-select__item">
-              <a href="{{ alt.link | url }}" class="md-select__link">
-                {{ alt.name }}
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+    <div class="md-header__buttons">
+      <a class="md-header__button md-button connectMetaMask-nav md-typeset">
+        Connect MetaMask
+      </a>
+      <a class="md-header__button md-button faucet md-typeset" href="https://faucet.moonbeam.network/" target="_blank">
+        Faucet
+      </a>
+      <div class="language-select-wrapper select-wrapper">
+        <span class="language-select-label select-label"></span>
+        <ul class="language-select select">
+          <li class="en" value="en">Eng</li>
+          <li class="cn" value="cn">中文</li>
+        </ul>
+        <span class="md-icon selector-closed active">{% include
+          ".icons/material/chevron-down.svg" %}</span>
+        <span class="md-icon selector-open">{% include
+          ".icons/material/chevron-up.svg" %}</span>
       </div>
+      {% if "material/search" in config["plugins"] %}
+      <label class="md-header__button md-icon" for="__search">
+        {% include ".icons/material/magnify.svg" %}
+      </label>
+        {% include "partials/search.html" %}
       {% endif %}
-    </div>
-    <a class="md-header__button md-button connectMetaMask-nav md-typeset">
-      Connect MetaMask
-    </a>
-    <a class="md-header__button md-button faucet md-typeset" href="https://faucet.moonbeam.network/" target="_blank">
-      Faucet
-    </a>
-    {% if "material/search" in config["plugins"] %}
-    <label class="md-header__button md-icon" for="__search">
-      {% include ".icons/material/magnify.svg" %}
-    </label>
-      {% include "partials/search.html" %}
-    {% endif %}
-    {% if config.repo_url %}
-    <div class="md-header__source">{% include "partials/source.html" %}</div>
-    {% endif %}
-    <div class="language-select-wrapper select-wrapper">
-      <span class="language-select-label select-label"></span>
-      <ul class="language-select select">
-        <li class="en" value="en">English</li>
-        <li class="cn" value="cn">中文</li>
-        <!-- <li class="es" value="es">Español</li>
-        <li class="fr" value="fr">Français</li>
-        <li class="ru" value="ru">Русский</li> -->
-      </ul>
+      {% if config.repo_url %}
+        <div class="md-header__source">{% include "partials/source.html" %}</div>
+      {% endif %}
     </div>
   </nav>
 </header>
