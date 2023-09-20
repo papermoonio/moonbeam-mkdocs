@@ -114,6 +114,10 @@ a:hover {
 }
 
 /* Header styling */
+.md-header {
+  position: initial; /* Needed for Safari */
+}
+
 .md-header__topic:first-child {
   font-weight: unset;
 }
@@ -1169,6 +1173,7 @@ li>nav.md-nav[data-md-level="4"] {
 
 .md-social .md-social__link svg {
   max-height: 1rem;
+  height: 1rem;
 }
 
 .newsletter-label {
@@ -1721,7 +1726,7 @@ p.quick-ref-title {
   position: absolute;
   background: var(--dropdown-bg-color);
   border-radius: 1em;
-  z-index: 1;
+  z-index: 3;
   list-style: none;
   display: none;
   margin-top: 1em;
