@@ -25,6 +25,7 @@
     - 'navigation.tabs.sticky'
     - 'navigation.sections'
     - 'navigation.indexes'
+    - 'navigation.instant'
     - 'content.code.copy'
 'markdown_extensions':
   - 'codehilite'
