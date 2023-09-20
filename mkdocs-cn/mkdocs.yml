@@ -283,17 +283,17 @@
     'provider': 'google'
     'property': 'G-5ZBERCXWC3'
     'feedback':
-        'title': '此页面是否有帮助?'
-        'ratings':
-            - 'icon': 'material/thumb-up'
-              'label': '是的'
-              'name': '此页面很有帮助'
-              'data': 1
-              'note': >-
-                感谢您的反馈意见!
-            - 'icon': 'material/thumb-down'
-              'label': '不'
-              'name': '此页面有待改进'
-              'data': 0
-              'note': >- 
-                感谢您的反馈意见! 您还可以通过提交<a href="https://github.com/moonbeam-foundation/moonbeam-docs-cn/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">其他反馈</a>帮助我们改进此页面。
+      'title': '此页面是否有帮助?'
+      'ratings':
+        - 'icon': 'material/thumb-up'
+          'label': '是的'
+          'name': '此页面很有帮助'
+          'data': 1
+          'note': >-
+            感谢您的反馈意见!
+        - 'icon': 'material/thumb-down'
+          'label': '不'
+          'name': '此页面有待改进'
+          'data': 0
+          'note': >-
+            感谢您的反馈意见! 您还可以通过提交<a href="https://github.com/moonbeam-foundation/moonbeam-docs-cn/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">其他反馈</a>帮助我们改进此页面。
