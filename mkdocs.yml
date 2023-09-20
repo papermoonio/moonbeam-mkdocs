@@ -46,11 +46,17 @@
     - 'pymdownx.superfences'
     - 'pymdownx.details'
     - 'attr_list'
+'validation':
+  'absolute_links': 'ignore'
+  'unrecognized_links': 'ignore'
+'exclude_docs': 'README.md'
 'plugins':
-    - 'search'
-    - 'awesome-pages'
-    - 'git-revision-date-localized':
-        'enable_creation_date': !!bool 'true'
+  - 'search'
+  - 'awesome-pages'
+  - 'git-revision-date-localized':
+      'exclude':
+        - '.snippets/*'
+      'enable_creation_date': !!bool 'true'
     - 'redirects':
           'redirect_maps':
               'resources/networks.md': 'learn/platform/networks/overview.md'
