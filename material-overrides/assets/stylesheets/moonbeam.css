@@ -734,7 +734,6 @@ li>nav.md-nav[data-md-level="4"] {
 .md-typeset .tabbed-set {
   border: 2px solid var(--md-primary-fg-color--light);
   border-radius: 1.5em;
-  /* background-color: var(--md-default-bg-color); */
 }
 
 .md-typeset .tabbed-labels {
@@ -746,7 +745,6 @@ li>nav.md-nav[data-md-level="4"] {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   box-shadow: none;
-  /* box-shadow: 0 0.05rem var(--md-card-bg-border-color); Alternative option */
 }
 
 .md-typeset .tabbed-content {
@@ -764,6 +762,12 @@ li>nav.md-nav[data-md-level="4"] {
 
 .md-typeset__scrollwrap {
   margin: 0;
+}
+
+.md-typeset .tabbed-block p,
+.md-typeset .tabbed-block ul,
+.md-typeset .tabbed-block ol {
+  margin: 1em;
 }
 
 /* Styling for tables in tabs */
