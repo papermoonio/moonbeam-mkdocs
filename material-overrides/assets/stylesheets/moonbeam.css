@@ -114,6 +114,10 @@ a:hover {
 }
 
 /* Header styling */
+.md-header {
+  position: initial; /* Needed for Safari */
+}
+
 .md-header__topic:first-child {
   font-weight: unset;
 }
@@ -742,7 +746,6 @@ li>nav.md-nav[data-md-level="4"] {
 .md-typeset .tabbed-set {
   border: 2px solid var(--md-primary-fg-color--light);
   border-radius: 1.5em;
-  /* background-color: var(--md-default-bg-color); */
 }
 
 .md-typeset .tabbed-labels {
@@ -754,7 +757,6 @@ li>nav.md-nav[data-md-level="4"] {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   box-shadow: none;
-  /* box-shadow: 0 0.05rem var(--md-card-bg-border-color); Alternative option */
 }
 
 .md-typeset .tabbed-content {
@@ -772,6 +774,12 @@ li>nav.md-nav[data-md-level="4"] {
 
 .md-typeset__scrollwrap {
   margin: 0;
+}
+
+.md-typeset .tabbed-block p,
+.md-typeset .tabbed-block ul,
+.md-typeset .tabbed-block ol {
+  margin: 1em;
 }
 
 /* Styling for tables in tabs */
@@ -1181,6 +1189,7 @@ li>nav.md-nav[data-md-level="4"] {
 
 .md-social .md-social__link svg {
   max-height: 1rem;
+  height: 1rem;
 }
 
 .newsletter-label {
@@ -1733,7 +1742,7 @@ p.quick-ref-title {
   position: fixed;
   background: var(--dropdown-bg-color);
   border-radius: 1em;
-  z-index: 1;
+  z-index: 3;
   list-style: none;
   display: none;
   margin-top: 1em;
