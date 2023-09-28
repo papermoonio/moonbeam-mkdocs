@@ -114,10 +114,6 @@ a:hover {
 }
 
 /* Header styling */
-.md-header {
-  position: initial; /* Needed for Safari */
-}
-
 .md-header__topic:first-child {
   font-weight: unset;
 }
