@@ -1743,6 +1743,7 @@ p.quick-ref-title {
   display: none;
   margin-top: 1em;
   padding: 0;
+  top: 5em; /* Needed for Safari */
 }
 
 .md-tabs__item--custom:hover .md-tab__list,
