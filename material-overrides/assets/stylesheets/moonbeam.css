@@ -1730,7 +1730,7 @@ p.quick-ref-title {
 }
 
 .md-tab__list {
-  position: absolute;
+  position: fixed;
   background: var(--dropdown-bg-color);
   border-radius: 1em;
   z-index: 1;
