@@ -248,3 +248,11 @@
     </div>
   {% endif %}
 {% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block container %}
+    {{ super() }}
+    {% include "partials/footer.html" %}
+{% endblock %}

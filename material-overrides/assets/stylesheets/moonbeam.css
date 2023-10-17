@@ -123,10 +123,6 @@ a:hover {
 }
 
 /* Header styling */
-.md-header {
-  position: initial; /* Needed for Safari */
-}
-
 .md-header__topic:first-child {
   font-weight: unset;
 }
@@ -450,6 +446,12 @@ a.md-nav__link:hover {
   .md-nav > .md-nav__list .md-nav__item--section.md-nav__item--active {
     display: block;
   }
+
+  /* Allow section headers to be clickable */
+  .md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link:not(.md-nav__container),
+  .md-nav__item--section>.md-nav__link:not(.md-nav__container) {
+    pointer-events: auto;
+  }
 }
 
 @media screen and (max-width: 76.1875em) {
@@ -463,6 +465,12 @@ li>nav.md-nav[data-md-level="3"],
 li>nav.md-nav[data-md-level="4"] {
   padding-left: .3em;
   border-left: 2px solid var(--md-accent-fg-color);
+}
+
+/* Render arrow next to expandable sections */
+.md-nav__link>* {
+  cursor: pointer;
+  display: flex;
 }
 
 /* Scrollbar styling for left nav */
@@ -1736,7 +1744,7 @@ p.quick-ref-title {
 }
 
 .md-tab__list {
-  position: absolute;
+  position: fixed;
   background: var(--dropdown-bg-color);
   border-radius: 1em;
   z-index: 3;
@@ -1744,6 +1752,7 @@ p.quick-ref-title {
   display: none;
   margin-top: 1em;
   padding: 0;
+  top: 5em; /* Needed for Safari */
 }
 
 .md-tabs__item--custom:hover .md-tab__list,

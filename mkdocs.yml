@@ -5,51 +5,58 @@
 'docs_dir': 'moonbeam-docs'
 'copyright': '© 2023 Moonbeam Foundation. All Rights Reserved.'
 'extra_javascript':
-    - 'js/connectMetaMask.js'
-    - 'js/errorModal.js'
-    - 'js/networkModal.js'
-    - 'js/handleLanguageChange.js'
-    - 'js/fixCreatedDate.js'
-    - 'js/externalLinkModal.js'
-    - 'https://widget.kapa.ai/kapa-widget.bundle.js'
-    - 'js/initKapaWidget.js'
+  - 'js/connectMetaMask.js'
+  - 'js/errorModal.js'
+  - 'js/networkModal.js'
+  - 'js/handleLanguageChange.js'
+  - 'js/fixCreatedDate.js'
+  - 'js/externalLinkModal.js'
+  - 'https://widget.kapa.ai/kapa-widget.bundle.js'
+  - 'js/initKapaWidget.js'
 'theme':
-    'name': 'material'
-    'custom_dir': 'material-overrides'
-    'favicon': '/assets/images/Moonbeam-Favicon-50.png'
-    'logo': '/assets/images/moonbeam-logo.png'
-    'font':
-        'text': 'Open Sans'
-    'features':
-        - 'navigation.tabs'
-        - 'navigation.tabs.sticky'
-        - 'navigation.sections'
-        - 'navigation.indexes'
-        - 'content.code.copy'
+  'name': 'material'
+  'custom_dir': 'material-overrides'
+  'favicon': '/assets/images/Moonbeam-Favicon-50.png'
+  'logo': '/assets/images/moonbeam-logo.png'
+  'font':
+    'text': 'Open Sans'
+  'features':
+    - 'navigation.tabs'
+    - 'navigation.tabs.sticky'
+    - 'navigation.sections'
+    - 'navigation.indexes'
+    - 'navigation.instant'
+    - 'content.code.copy'
 'markdown_extensions':
-    - 'codehilite'
-    - 'meta'
-    - 'toc':
-          'permalink': !!bool 'true'
-          'title': 'Sections'
-    - 'admonition'
-    - 'pymdownx.snippets':
-          'base_path': 'moonbeam-docs/.snippets'
-    - 'pymdownx.emoji':
-          'emoji_index': !!python/name:materialx.emoji.twemoji
-          'emoji_generator': !!python/name:materialx.emoji.to_svg
-          'options':
-              'custom_icons':
-                  - 'material-overrides/.icons'
-    - 'pymdownx.tabbed':
-        'alternate_style': !!bool 'true'
-    - 'pymdownx.superfences'
-    - 'pymdownx.details'
-    - 'attr_list'
+  - 'codehilite'
+  - 'meta'
+  - 'toc':
+      'permalink': !!bool 'true'
+      'title': 'Sections'
+  - 'admonition'
+  - 'pymdownx.snippets':
+      'base_path': 'moonbeam-docs/.snippets'
+  - 'pymdownx.emoji':
+      'emoji_index': !!python/name:materialx.emoji.twemoji
+      'emoji_generator': !!python/name:materialx.emoji.to_svg
+      'options':
+        'custom_icons':
+          - 'material-overrides/.icons'
+  - 'pymdownx.tabbed':
+      'alternate_style': !!bool 'true'
+  - 'pymdownx.superfences'
+  - 'pymdownx.details'
+  - 'attr_list'
+'validation':
+  'absolute_links': 'ignore'
+  'unrecognized_links': 'ignore'
+'exclude_docs': 'README.md'
 'plugins':
     - 'search'
     - 'awesome-pages'
     - 'git-revision-date-localized':
+        'exclude':
+          - '.snippets/*'
         'enabled': !ENV [ENABLED_GIT_REVISION_DATE, True]
         'enable_creation_date': !!bool 'true'
     - 'redirects':
@@ -90,41 +97,41 @@
           'include_yaml':
               - 'moonbeam-docs/variables.yml'
 'extra':
-    'social':
-        - 'icon': 'fontawesome/brands/discord'
-          'link': 'https://discord.gg/PfpUATX'
-          'name': 'Discord'
-        - 'icon': 'moonbeam/element'
-          'link': 'https://app.element.io/#/room/#moonbeam:matrix.org'
-          'name': 'Element (Riot)'
-        - 'icon': 'fontawesome/brands/telegram'
-          'link': 'https://t.me/Moonbeam_Official'
-          'name': 'Telegram'
-        - 'icon': 'fontawesome/brands/twitter'
-          'link': 'https://twitter.com/MoonbeamNetwork'
-          'name': 'Twitter'
-        - 'icon': 'fontawesome/brands/youtube'
-          'link': 'https://www.youtube.com/c/MoonbeamNetwork'
-          'name': 'YouTube'
-        - 'icon': 'fontawesome/brands/github'
-          'link': 'https://github.com/moonbeam-foundation/moonbeam'
-          'name': 'GitHub'
-    'analytics':
-        'provider': 'google'
-        'property': 'G-5ZBERCXWC3'
-        'feedback':
-            'title': 'Was this page helpful?'
-            'ratings':
-                - 'icon': 'material/thumb-up'
-                  'label': 'Yes'
-                  'name': 'This page was helpful'
-                  'data': 1
-                  'note': >-
-                    Thanks for your feedback!
-                - 'icon': 'material/thumb-down'
-                  'label': 'No'
-                  'name': 'This page could be improved'
-                  'data': 0
-                  'note': >- 
-                    Thanks for your feedback! Help us improve this page by submitting
-                    <a href="https://github.com/moonbeam-foundation/moonbeam-docs/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">additional feedback</a>.
+  'social':
+    - 'icon': 'fontawesome/brands/discord'
+      'link': 'https://discord.gg/PfpUATX'
+      'name': 'Discord'
+    - 'icon': 'moonbeam/element'
+      'link': 'https://app.element.io/#/room/#moonbeam:matrix.org'
+      'name': 'Element (Riot)'
+    - 'icon': 'fontawesome/brands/telegram'
+      'link': 'https://t.me/Moonbeam_Official'
+      'name': 'Telegram'
+    - 'icon': 'fontawesome/brands/twitter'
+      'link': 'https://twitter.com/MoonbeamNetwork'
+      'name': 'Twitter'
+    - 'icon': 'fontawesome/brands/youtube'
+      'link': 'https://www.youtube.com/c/MoonbeamNetwork'
+      'name': 'YouTube'
+    - 'icon': 'fontawesome/brands/github'
+      'link': 'https://github.com/moonbeam-foundation/moonbeam'
+      'name': 'GitHub'
+  'analytics':
+    'provider': 'google'
+    'property': 'G-5ZBERCXWC3'
+    'feedback':
+      'title': 'Was this page helpful?'
+      'ratings':
+        - 'icon': 'material/thumb-up'
+          'label': 'Yes'
+          'name': 'This page was helpful'
+          'data': 1
+          'note': >-
+            Thanks for your feedback!
+        - 'icon': 'material/thumb-down'
+          'label': 'No'
+          'name': 'This page could be improved'
+          'data': 0
+          'note': >-
+            Thanks for your feedback! Help us improve this page by submitting
+            <a href="https://github.com/moonbeam-foundation/moonbeam-docs/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">additional feedback</a>.
