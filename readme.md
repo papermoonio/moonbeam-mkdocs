@@ -55,6 +55,15 @@ mkdocs serve
 
 After a successful build, the site should be available at `http://127.0.0.1:8000`
 
+## Disable the Git Dates Plugin
+
+The `git-revision-date-localized` plugin pulls the date of the last git modification of a page. When developing locally, this can slow down your development process, as every time a change is made to a page, the plugin checks for the latest dates for all the pages. To avoid this, you can change your start-up command to disable the plugin by running:
+
+```bash
+export ENABLED_GIT_REVISION_DATE=false
+mkdocs serve
+```
+
 ## Other Notes
 
 https://www.mkdocs.org/

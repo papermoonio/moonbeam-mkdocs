@@ -50,6 +50,7 @@
     - 'search'
     - 'awesome-pages'
     - 'git-revision-date-localized':
+        'enabled': !ENV [ENABLED_GIT_REVISION_DATE, True]
         'enable_creation_date': !!bool 'true'
     - 'redirects':
           'redirect_maps':
