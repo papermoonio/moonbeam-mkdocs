@@ -60,6 +60,7 @@
       'enable_creation_date': !!bool 'true'
   - 'redirects':
       'redirect_maps':
+        'builders/build/eth-api/dev-env/truffle.md': 'builders/build/eth-api/dev-env/index.md'
         'builders/get-started/moonriver.md': 'builders/get-started/networks/moonriver.md'
         'builders/get-started/networks/layer2/bobabeam.md': 'builders/get-started/networks/index.md'
         'builders/interoperability/xcm/xc-integration.md': 'builders/interoperability/xcm/xc-registration/index.md'
@@ -70,6 +71,7 @@
         'builders/xcm/xc-integration.md': 'builders/interoperability/xcm/xc-registration/index.md'
         'getting-started/moonbase/faucet.md': 'builders/get-started/networks/moonbase.md'
         'networks/moonbase.md': 'learn/platform/networks/moonbase.md'
+        'tutorials/eth-api/truffle-start-to-end.md': 'tutorials/eth-api/get-started.index.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs-cn/variables.yml'

@@ -61,6 +61,7 @@
   - 'redirects':
       'redirect_maps':
         'builders/build/canonical-contracts/precompiles/eth-mainnet.md': 'builders/pallets-precompiles/precompiles/eth-mainnet.md'
+        'builders/build/eth-api/dev-env/truffle.md': 'builders/build/eth-api/dev-env/index.md'
         'builders/get-started/moonbase.md': 'builders/get-started/networks/moonbase.md'
         'builders/get-started/moonriver.md': 'builders/get-started/networks/moonriver.md'
         'builders/get-started/moonbeam.md': 'builders/get-started/networks/moonbeam.md'
@@ -90,6 +91,7 @@
         'learn/unified-accounts.md': 'learn/features/unified-accounts.md'
         'networks/moonriver.md': 'learn/platform/networks/moonriver.md'
         'node-operators/networks/full-node.md': 'node-operators/networks/run-a-node/overview.md'
+        'tutorials/eth-api/truffle-start-to-end.md': 'tutorials/eth-api/get-started.index.md'
   - 'macros':
       'include_yaml':
         - 'moonbeam-docs/variables.yml'
