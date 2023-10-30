@@ -629,21 +629,21 @@ li>nav.md-nav[data-md-level="4"] {
 .md-typeset details.challenge,
 .md-typeset .admonition.挑战,
 .md-typeset details.挑战 {
-  border-color: rgb(79, 51, 106);
+  border-color: #7D5CA5;
 }
 
 .md-typeset .challenge>.admonition-title,
 .md-typeset .challenge>summary,
 .md-typeset .挑战>.admonition-title,
 .md-typeset .挑战>summary {
-  background-color: rgba(79, 51, 106, 0.1);
+  background-color: rgba(125, 92, 165, 0.2);
 }
 
 .md-typeset .challenge>.admonition-title::before,
 .md-typeset .challenge>summary::before,
 .md-typeset .挑战>.admonition-title::before,
 .md-typeset .挑战>summary::before {
-  background-color: rgb(79, 51, 106);
+  background-color: #7D5CA5;
   -webkit-mask-image: var(--md-admonition-icon--challenge);
   mask-image: var(--md-admonition-icon--challenge);
 }
