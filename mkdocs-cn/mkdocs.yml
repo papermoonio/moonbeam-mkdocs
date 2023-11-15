@@ -64,6 +64,7 @@
         'builders/get-started/moonriver.md': 'builders/get-started/networks/moonriver.md'
         'builders/get-started/networks/layer2/bobabeam.md': 'builders/get-started/networks/index.md'
         'builders/interoperability/xcm/xc-integration.md': 'builders/interoperability/xcm/xc-registration/index.md'
+        'builders/interoperability/xcm/xc20/mintable-xc20.md': 'builders/interoperability/xcm/xc20/overview.md'
         'builders/xcm/index.md': 'builders/interoperability/xcm/index.md'
         'builders/xcm/overview.md': 'builders/interoperability/xcm/overview.md'
         'builders/xcm/xc20/index.md': 'builders/interoperability/xcm/xc20/index.md'
