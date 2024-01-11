@@ -29,6 +29,7 @@
     - 'navigation.sections'
     - 'navigation.indexes'
     - 'navigation.instant'
+    - 'navigation.prune'
     - 'content.code.copy'
 'markdown_extensions':
   - 'codehilite'
