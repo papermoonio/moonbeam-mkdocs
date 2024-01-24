@@ -60,6 +60,7 @@
       'exclude':
         - '.snippets/*'
       'enable_creation_date': !!bool 'true'
+  - 'privacy'
   - 'redirects':
       'redirect_maps':
         'builders/build/eth-api/dev-env/truffle.md': 'builders/build/eth-api/dev-env/index.md'
