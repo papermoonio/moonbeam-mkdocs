@@ -61,6 +61,7 @@
           - '.snippets/*'
         'enabled': !ENV [ENABLED_GIT_REVISION_DATE, True]
         'enable_creation_date': !!bool 'true'
+    - 'privacy'
     - 'redirects':
           'redirect_maps':
               'builders/build/canonical-contracts/precompiles/eth-mainnet.md': 'builders/pallets-precompiles/precompiles/eth-mainnet.md'
