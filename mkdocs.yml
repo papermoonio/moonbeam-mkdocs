@@ -13,7 +13,6 @@
   - 'js/externalLinkModal.js'
   - 'https://widget.kapa.ai/kapa-widget.bundle.js'
   - 'js/initKapaWidget.js'
-  - 'js/termynal.min.js'
 'extra_css':
   - '/assets/stylesheets/termynal.css'
 'theme':
