@@ -15,6 +15,7 @@
   - 'js/initKapaWidget.js'
   - 'js/termynal.min.js'
 'extra_css':
+  - '/assets/stylesheets/moonbeam.css'
   - '/assets/stylesheets/termynal.css'
 'theme':
   'name': 'material'
@@ -61,6 +62,21 @@
           - '.snippets/*'
         'enabled': !ENV [ENABLED_GIT_REVISION_DATE, True]
         'enable_creation_date': !!bool 'true'
+    - 'minify':
+        'minify_html': !!bool 'true'
+        'minify_js': !!bool 'true'
+        'minify_css': !!bool 'true'
+        'js_files':
+            - 'js/connectMetaMask.js'
+            - 'js/errorModal.js'
+            - 'js/networkModal.js'
+            - 'js/handleLanguageChange.js'
+            - 'js/fixCreatedDate.js'
+            - 'js/externalLinkModal.js'
+            - 'js/initKapaWidget.js'
+        'css_files': 
+            - '/assets/stylesheets/termynal.css'
+            - '/assets/stylesheets/moonbeam.css'
     - 'redirects':
           'redirect_maps':
               'builders/build/canonical-contracts/precompiles/eth-mainnet.md': 'builders/pallets-precompiles/precompiles/eth-mainnet.md'
