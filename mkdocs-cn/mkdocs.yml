@@ -19,8 +19,8 @@
 'theme':
   'name': 'material'
   'custom_dir': 'material-overrides'
-  'favicon': '/assets/images/Moonbeam-Favicon-50.png'
-  'logo': '/assets/images/moonbeam-logo.png'
+  'favicon': '/assets/images/Moonbeam-Favicon-50.webp'
+  'logo': '/assets/images/moonbeam-logo.webp'
   'font':
     'text': 'Open Sans'
   'features':
