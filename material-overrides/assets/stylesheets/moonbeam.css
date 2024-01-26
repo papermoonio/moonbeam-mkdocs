@@ -393,10 +393,12 @@ a:hover {
   color: var(--md-default-fg-color);
 }
 
+/* Make the secondary section font larger on left nav (i.e., Get Started, Build, etc.) */
 .md-nav__item--section>.md-nav__link {
   font-size: 1em;
 }
 
+/* Highlight current active nav item and nav items on hover */
 .md-nav__link:hover,
 .md-nav__link-wrapper.md-nav__item.md-nav__item--active, 
 .md-nav__item div.md-nav__link--active {
@@ -405,12 +407,14 @@ a:hover {
   border-radius: .5em;
 }
 
+/* For active sections, when on that section index page */
 .md-nav__item .md-nav__link-wrapper.md-nav__link--active a, 
 .md-nav__item .md-nav__link--active a {
   color: var(--md-typeset-a-color);
   margin-left: 1em;
 }
 
+/* For links on hover */
 a.md-nav__link:hover,
 .md-nav__link:hover a {
   color: var(--md-default-fg-color);
@@ -423,8 +427,23 @@ a.md-nav__link:hover {
   margin-left: -1.1em;
 }
 
-.md-nav__link:hover .md-nav__icon:after {
-  background: var(--md-default-fg-color);
+.md-nav__link.md-nav__link--index:hover a {
+  color: var(--md-typeset-a-color);
+}
+
+/* For active pages that are nested within sections */
+a.md-nav__link.md-nav__link--active {
+  margin-left: .7rem;
+}
+
+a.md-nav__link:hover.md-nav__link--active:hover {
+  margin-left: 0;
+}
+
+/* Styling of arrows on active sections */
+.md-nav__link:hover .md-nav__icon:after,
+.md-nav__item .md-nav__link--active label span.md-nav__icon.md-icon::after {
+  color: var(--md-accent-fg-color);
 }
 
 .md-nav__link {
@@ -452,6 +471,11 @@ a.md-nav__link:hover {
   .md-nav__item--section>.md-nav__link:not(.md-nav__container) {
     pointer-events: auto;
   }
+
+  /* Remove arrow (dropdown) icon next to the section header (i.e., Builders, Node Operators, etc.) */
+  .md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link label span.md-nav__icon:after {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 76.1875em) {
@@ -461,10 +485,15 @@ a.md-nav__link:hover {
 }
 
 /* Section lines */
-li>nav.md-nav[data-md-level="3"],
-li>nav.md-nav[data-md-level="4"] {
-  padding-left: .3em;
+li>nav.md-nav[data-md-level="3"] ul.md-nav__list,
+li>nav.md-nav[data-md-level="4"] ul.md-nav__list {
   border-left: 2px solid var(--md-accent-fg-color);
+}
+
+/* Add spacing below the section lines */
+.md-nav--primary .md-nav__list {
+  padding-bottom: 0;
+  margin-bottom: .5em;
 }
 
 /* Render arrow next to expandable sections */
@@ -579,9 +608,8 @@ li>nav.md-nav[data-md-level="4"] {
   }
   
   /* Section lines */
-  li>nav.md-nav[data-md-level="3"],
-  li>nav.md-nav[data-md-level="4"] {
-    padding-left: 0;
+  li>nav.md-nav[data-md-level="3"] ul.md-nav__list,
+  li>nav.md-nav[data-md-level="4"] ul.md-nav__list {
     border-left: none;
   }
 }
