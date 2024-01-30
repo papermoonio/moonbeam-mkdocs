@@ -534,6 +534,12 @@ li>nav.md-nav[data-md-level="4"] ul.md-nav__list {
   color: var(--md-primary-fg-color--bright);
 }
 
+.md-nav--secondary a.md-nav__link.md-nav__link--active,
+.md-nav--secondary a.md-nav__link.md-nav__link--active:hover  {
+  margin-left: 0;
+  padding-left: 0;
+}
+
 /* Hides paragraph mark at end of anchored text */
 .md-content .headerlink {
   display: none;
