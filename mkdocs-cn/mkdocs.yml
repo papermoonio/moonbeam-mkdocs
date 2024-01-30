@@ -40,6 +40,8 @@
   - 'pymdownx.snippets':
       'base_path': 'moonbeam-docs-cn/.snippets'
   - 'pymdownx.emoji':
+      'emoji_index': !!python/name:material.extensions.emoji.twemoji
+      'emoji_generator': !!python/name:material.extensions.emoji.to_svg
       'options':
         'custom_icons':
           - 'material-overrides/.icons'
