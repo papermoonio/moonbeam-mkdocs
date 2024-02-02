@@ -27,8 +27,8 @@
     
   /* Footer color */
   --md-footer-fg-color--light: #ffffff;
-  --md-footer-fg-color--lighter: #7C6E8D;
-  --md-footer-fg-color--lightest: #8F93AA;
+  --md-footer-fg-color--lighter: #8F93AA;
+  --md-footer-fg-color--lightest: #CAC0CE;
   --md-footer-bg-color: #18151C;
   --md-footer-bg-color--dark: #391F57; 
   --md-footer-primary-bg-color: #5A407A;
@@ -1286,7 +1286,7 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 .md-footer-copyright__highlight {
-  color: var(--md-footer-fg-color--lighter);
+  color: var(--md-footer-fg-color--lightest);
 }
 
 /* Newsletter Signup Styling */
@@ -1331,7 +1331,7 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 .hs-input::placeholder {
-  color: var(--md-footer-fg-color--lightest);
+  color: var(--md-footer-fg-color--lighter);
   font-size: .9em;
 }
 
@@ -1505,18 +1505,17 @@ h1.hero-title {
   margin-top: .5em;
 }
 
-h3.hero-info {
+h2.hero-info {
   font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  line-height: 1.5;
+  margin: 0 0 2em;
 }
 
 h1.hero-title,
-h3.hero-info {
+h2.hero-info {
   font-family: "Open Sans";
-}
-
-.md-typeset h3.hero-info {
-  margin-top: 0;
-  margin-bottom: 2em;
 }
 
 .row.hero-buttons, .row.modal-buttons, .row.modal-buttons button {
