@@ -63,6 +63,7 @@
       'enable_creation_date': !!bool 'true'
   - 'redirects':
       'redirect_maps':
+        'builders/build/eth-api/dev-env/brownie.md': 'builders/build/eth-api/dev-env/index.md'              
         'builders/build/eth-api/dev-env/truffle.md': 'builders/build/eth-api/dev-env/index.md'
         'builders/get-started/moonriver.md': 'builders/get-started/networks/moonriver.md'
         'builders/get-started/networks/layer2/bobabeam.md': 'builders/get-started/networks/index.md'

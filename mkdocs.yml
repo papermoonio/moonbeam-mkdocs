@@ -65,6 +65,7 @@
     - 'redirects':
           'redirect_maps':
               'builders/build/canonical-contracts/precompiles/eth-mainnet.md': 'builders/pallets-precompiles/precompiles/eth-mainnet.md'
+              'builders/build/eth-api/dev-env/brownie.md': 'builders/build/eth-api/dev-env/index.md'              
               'builders/build/eth-api/dev-env/truffle.md': 'builders/build/eth-api/dev-env/index.md'
               'builders/get-started/moonbase.md': 'builders/get-started/networks/moonbase.md'
               'builders/get-started/moonriver.md': 'builders/get-started/networks/moonriver.md'
