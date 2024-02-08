@@ -13,6 +13,7 @@ mkdocs-git-revision-date-localized-plugin==1.2.2
 mkdocs-macros-plugin==1.0.5
 mkdocs-macros-test==0.1.0 
 mkdocs-material==9.5.3
+mkdocs-minify-plugin==0.7.2
 mkdocs-redirects==1.2.1
 nltk==3.8.1
 Pillow==9.4.0
