@@ -9,7 +9,7 @@ LOGPATH=/var/log/s3_moonbeam_docs_sync.log
 DOCPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-stage
 STATICPATH=/var/www/mkdocs-multi-lang/moonbeam-docs-$lang-static
 # check/create symlinks
-[ ! -L $DOCPATH/material-overrides ] && cp -Rs /var/www/moonbeam-docs-stage/material-overrides $DOCPATH/material-overrides
+[ ! -L $DOCPATH/material-overrides ] && cp -Rs /var/www/moonbeam-docs-stage/material-overrides/ $DOCPATH
 # symlinks to specific mkdocs-$lang options to overwrite
 cp -Rsf /var/www/moonbeam-docs-stage/mkdocs-$lang/* $DOCPATH
 [ ! -L $DOCPATH/moonbeam-docs-$lang/variables.yml ] && ln -s /var/www/moonbeam-docs-stage/moonbeam-docs/variables.yml $DOCPATH/moonbeam-docs-$lang/variables.yml
