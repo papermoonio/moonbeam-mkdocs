@@ -16,7 +16,7 @@
                       <a href="{{ section_item.children[0].url | url }}">
                         <div>
                           {% set icon_url = "/assets/images/dropdown-icons/" + section_item.children[0].url.split('/')[1] + ".webp" %}
-                          <img class="dropdown-icon" src="{{ icon_url }}" alt="{{ section_item.title }}">
+                          <img class="dropdown-icon" src="{{ icon_url }}" alt="{{ section_item.title }}" loading="lazy">
                         </div>
                         <div class="text-col">
                           <span class="dropdown-title">{{ section_item.title }}</span>

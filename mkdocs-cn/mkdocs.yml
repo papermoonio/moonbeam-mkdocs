@@ -12,6 +12,7 @@
   - 'js/fixCreatedDate.js'
   - 'js/externalLinkModal.js'
 'extra_css':
+  - '/assets/stylesheets/moonbeam.css'
   - '/assets/stylesheets/termynal.css'
 'theme':
   'name': 'material'
@@ -38,6 +39,8 @@
   - 'pymdownx.snippets':
       'base_path': 'moonbeam-docs-cn/.snippets'
   - 'pymdownx.emoji':
+      'emoji_index': !!python/name:material.extensions.emoji.twemoji
+      'emoji_generator': !!python/name:material.extensions.emoji.to_svg
       'options':
         'custom_icons':
           - 'material-overrides/.icons'
@@ -57,6 +60,21 @@
       'exclude':
         - '.snippets/*'
       'enable_creation_date': !!bool 'true'
+  - 'minify':
+      'minify_html': !!bool 'true'
+      'minify_js': !!bool 'true'
+      'minify_css': !!bool 'true'
+      'js_files':
+        - 'js/connectMetaMask.js'
+        - 'js/errorModal.js'
+        - 'js/networkModal.js'
+        - 'js/handleLanguageChange.js'
+        - 'js/fixCreatedDate.js'
+        - 'js/externalLinkModal.js'
+        - 'js/initKapaWidget.js'
+      'css_files': 
+        - '/assets/stylesheets/termynal.css'
+        - '/assets/stylesheets/moonbeam.css'
   - 'redirects':
       'redirect_maps':
         'builders/build/eth-api/dev-env/truffle.md': 'builders/build/eth-api/dev-env/index.md'

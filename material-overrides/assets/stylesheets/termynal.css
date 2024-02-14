@@ -1,22 +1,8 @@
-/**
- * termynal.js
- *
- * @author Ines Montani <ines@ines.io>
- * @version 0.0.1
- * @license MIT
- */
-
- :root {
-    --color-bg: #101010;
-    --color-text: #eee;
-    --color-text-subtle: #a2a2a2;
-}
-
 [data-termynal] {
     width: 750px;
     max-width: 100%;
-    background: var(--color-bg);
-    color: var(--color-text);
+    background: #101010;
+    color: #eee;
     font-size: 13px;
     font-family: 'Fira Mono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;
     border-radius: 4px;
@@ -35,7 +21,6 @@
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    /* A little hack to display the window buttons in one pseudo element. */
     background: #d9515d;
     -webkit-box-shadow: 22.5px 0 0 #f4c025, 45px 0 0 #3ec930;
             box-shadow: 22.5px 0 0 #f4c025, 45px 0 0 #3ec930;
@@ -44,7 +29,7 @@
 [data-termynal]:after {
     content: 'bash';
     position: absolute;
-    color: var(--color-text-subtle);
+    color: #a2a2a2;
     top: 6px;
     left: 0;
     width: 100%;
@@ -57,7 +42,6 @@
 }
 
 [data-ty]:before {
-    /* Set up defaults and ensure empty lines are displayed. */
     content: '';
     display: inline-block;
     vertical-align: middle;
@@ -78,27 +62,4 @@
 
 [data-ty][data-ty-prompt]:before {
     content: attr(data-ty-prompt);
-}
-
-[data-ty-cursor]:after {
-    content: attr(data-ty-cursor);
-    font-family: monospace;
-    margin-left: 0.5em;
-    -webkit-animation: blink 1s infinite;
-            animation: blink 1s infinite;
-}
-
-
-/* Cursor animation */
-
-@-webkit-keyframes blink {
-    50% {
-        opacity: 0;
-    }
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
 }
