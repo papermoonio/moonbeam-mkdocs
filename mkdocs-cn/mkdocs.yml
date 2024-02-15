@@ -60,7 +60,7 @@
       'exclude':
         - '.snippets/*'
       'enable_creation_date': !!bool 'true'
-  - 'privacy'
+  # - 'privacy'
   - 'minify':
       'minify_html': !!bool 'true'
       'minify_js': !!bool 'true'
@@ -72,7 +72,6 @@
         - 'js/handleLanguageChange.js'
         - 'js/fixCreatedDate.js'
         - 'js/externalLinkModal.js'
-        - 'js/initKapaWidget.js'
       'css_files': 
         - '/assets/stylesheets/termynal.css'
         - '/assets/stylesheets/moonbeam.css'
