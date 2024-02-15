@@ -61,6 +61,7 @@
           - '.snippets/*'
         'enabled': !ENV [ENABLED_GIT_REVISION_DATE, True]
         'enable_creation_date': !!bool 'true'
+    - 'privacy'
     - 'minify':
         'minify_html': !!bool 'true'
         'minify_js': !!bool 'true'
