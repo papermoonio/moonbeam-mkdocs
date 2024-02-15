@@ -60,7 +60,7 @@
       'exclude':
         - '.snippets/*'
       'enable_creation_date': !!bool 'true'
-  - 'privacy'
+  # - 'privacy'
   - 'minify':
       'minify_html': !!bool 'true'
       'minify_js': !!bool 'true'
