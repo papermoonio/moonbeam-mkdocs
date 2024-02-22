@@ -111,6 +111,7 @@
               'getting-started/testnet/precompiles.md': 'builders/pallets-precompiles/precompiles/index.md'
               'getting-started/testnet/pubsub.md': 'builders/build/eth-api/pubsub.md'
               'integrations/openzeppelin/overview.md': 'builders/build/eth-api/dev-env/openzeppelin/overview.md'
+              'learn/dapps-list/dtmb.md': 'learn/dapps-list/index.md'
               'learn/platform/roadmap.md': 'index.md'
               'learn/unified-accounts.md': 'learn/features/unified-accounts.md'
               'networks/moonriver.md': 'learn/platform/networks/moonriver.md'
