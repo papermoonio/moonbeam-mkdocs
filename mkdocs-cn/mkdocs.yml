@@ -88,6 +88,7 @@
         'builders/xcm/xc20/overview.md': 'builders/interoperability/xcm/xc20/overview.md'
         'builders/xcm/xc-integration.md': 'builders/interoperability/xcm/xc-registration/index.md'
         'getting-started/moonbase/faucet.md': 'builders/get-started/networks/moonbase.md'
+        'learn/dapps-list/dtmb.md': 'learn/dapps-list/index.md'
         'networks/moonbase.md': 'learn/platform/networks/moonbase.md'
         'tutorials/eth-api/truffle-start-to-end.md': 'tutorials/eth-api/get-started.index.md'
   - 'macros':
