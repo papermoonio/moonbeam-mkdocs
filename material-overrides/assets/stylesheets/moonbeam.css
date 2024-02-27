@@ -765,6 +765,12 @@ html .md-typeset details.function div.tabbed-set,
   box-shadow: none;
 }
 
+/* Styling to prevent code blocks from overlapping the Copy to Clipboard button */
+.md-typeset pre>code {
+  white-space: break-spaces;
+  padding-right: 3em;
+} 
+
 /* Styling for the Copy to Clipboard message */
 .md-dialog {
   text-align: center;
