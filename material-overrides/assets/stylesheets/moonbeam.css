@@ -1030,6 +1030,11 @@ html .md-typeset details.function div.tabbed-set,
   margin-top: 3em;
 }
 
+.intro-disclaimer {
+  font-size: .8em;
+  font-style: italic;
+}
+
 /* Feedback widget styling */
 .md-feedback {
   margin: 1em auto 2em;
