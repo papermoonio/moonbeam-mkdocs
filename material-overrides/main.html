@@ -43,3 +43,8 @@
     <title>{{ config.site_name }}</title> 
   {%- endif -%} 
 {%- endblock -%} 
+
+{% block announce %}
+  <p>Block times are now 6 seconds on Moonbase Alpha thanks to asynchrounous backing!
+     Learn more about <a href="https://docs.moonbeam.network/builders/build/releases/runtime-2800/">async backing</a>.</p>
+{% endblock %}
