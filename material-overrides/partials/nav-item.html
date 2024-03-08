@@ -60,7 +60,13 @@
         {% endif %}
         {% for nav_item in nav_item.children %}
           {% if not indexes or nav_item != indexes | first %}
-            {{ render(nav_item, path ~ "_" ~ loop.index, level + 1) }}
+            {% if nav_item.is_section and nav_item.children[0].url == "builders/build/releases/" %}
+              {#-
+                NOTE: In this case, we want to hide the release section on the left nav
+              -#}
+            {% else %}
+              {{ render(nav_item, path ~ "_" ~ loop.index, level + 1) }}
+            {% endif %}
           {% endif %}
         {% endfor %}
         </ul>

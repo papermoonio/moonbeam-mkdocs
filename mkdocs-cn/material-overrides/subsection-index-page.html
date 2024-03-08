@@ -15,45 +15,51 @@
           <div class="subsection-wrapper">
           {% set description = "" %}
           {% for nav_item in element[1:] %}
-            {% if nav_item.is_section %}
-              {% set subsection_path = nav_item.children[0].url %}
-              {% set description = nav_item.children[0].meta.description %}
+            {% if nav_item.is_section and nav_item.children[0].url == "builders/build/releases/"%}
+              {#-
+                NOTE: In this case, we want to hide the release section from the "Build" index page
+              -#}
             {% else %}
-              {% set subsection_path = nav_item.url %}
-              {% if nav_item.meta %}
-                {% set description = nav_item.meta.description %}
-              {% endif %}
-            {% endif %}
-            {% if ".index" in page.url %}
-              {% set subsection_path = "/" + subsection_path %}
-            {% else %}
-              {% set subsection_path = subsection_path|replace(page.url, '') %}
-            {% endif %}
-
-            <div class="card">
-              <a href="{{ subsection_path }}">
-                <h2 class="title">{{ nav_item.title }}</h2> 
-                {% if not description == "" %}
-                  <p class="description">{{ description }}</p>
-                {% else %}
-                  {% if nav_item.is_link %}
-                    {% if '#' in nav_item.url %}
-                      {% set nav_item_url = nav_item.url.split('#')[0] %}
-                    {% else %}
-                      {% set nav_item_url = nav_item.url %}
-                    {% endif %}
-
-                    {% if nav_item_url.startswith('/') %}
-                      {% set nav_item_url = nav_item_url[1:] %}
-                    {% endif %}
-
-                    {% for nav_child in nav.children %}
-                      {{ find_desc_for_linked_pages(nav_child, nav_item_url, description) }}
-                    {% endfor %}
-                  {% endif %}
+              {% if nav_item.is_section %}
+                {% set subsection_path = nav_item.children[0].url %}
+                {% set description = nav_item.children[0].meta.description %}
+              {% else %}
+                {% set subsection_path = nav_item.url %}
+                {% if nav_item.meta %}
+                  {% set description = nav_item.meta.description %}
                 {% endif %}
-              </a>    
-            </div>
+              {% endif %}
+              {% if ".index" in page.url %}
+                {% set subsection_path = "/" + subsection_path %}
+              {% else %}
+                {% set subsection_path = subsection_path|replace(page.url, '') %}
+              {% endif %}
+
+              <div class="card">
+                <a href="{{ subsection_path }}">
+                  <h2 class="title">{{ nav_item.title }}</h2> 
+                  {% if not description == "" %}
+                    <p class="description">{{ description }}</p>
+                  {% else %}
+                    {% if nav_item.is_link %}
+                      {% if '#' in nav_item.url %}
+                        {% set nav_item_url = nav_item.url.split('#')[0] %}
+                      {% else %}
+                        {% set nav_item_url = nav_item.url %}
+                      {% endif %}
+
+                      {% if nav_item_url.startswith('/') %}
+                        {% set nav_item_url = nav_item_url[1:] %}
+                      {% endif %}
+
+                      {% for nav_child in nav.children %}
+                        {{ find_desc_for_linked_pages(nav_child, nav_item_url, description) }}
+                      {% endfor %}
+                    {% endif %}
+                  {% endif %}
+                </a>    
+              </div>
+            {% endif %}
           {% endfor %}
           </div>
         {% endif %}
