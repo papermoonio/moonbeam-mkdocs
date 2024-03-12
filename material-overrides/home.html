@@ -6,6 +6,10 @@
   {%- endif -%}
 {% endblock %}
 
+{% block extrahead %}
+  <link rel="preload" as="image" href="/assets/images/hero.webp">
+{% endblock %}
+
 {% block content %}
 <div class="home">
   <div class="row hero">
