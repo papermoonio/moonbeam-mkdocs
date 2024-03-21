@@ -81,6 +81,7 @@
           'redirect_maps':
               'builders/build/canonical-contracts/precompiles/eth-mainnet.md': 'builders/pallets-precompiles/precompiles/eth-mainnet.md'
               'builders/build/eth-api/dev-env/truffle.md': 'builders/build/eth-api/dev-env/index.md'
+              'builders/build/releases/runtime-2800.md': 'https://forum.moonbeam.network/t/runtime-rt2801-schedule/1616/4'
               'builders/get-started/moonbase.md': 'builders/get-started/networks/moonbase.md'
               'builders/get-started/moonriver.md': 'builders/get-started/networks/moonriver.md'
               'builders/get-started/moonbeam.md': 'builders/get-started/networks/moonbeam.md'
