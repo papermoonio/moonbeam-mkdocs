@@ -81,6 +81,14 @@ export ENABLED_GIT_REVISION_DATE=false
 mkdocs serve
 ```
 
+## Improve Reload Times with Dirty Builds
+
+To speed up reload times when running `mkdocs serve`, you can use the `--dirty` flag, which will only reload the pages that have been changed. This will take reload times from ~50 seconds to ~3 seconds.
+
+```bash
+mkdocs serve --dirty
+```
+
 ## Other Notes
 
 https://www.mkdocs.org/
