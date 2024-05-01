@@ -84,7 +84,7 @@
               'builders/build/eth-api/dev-env/truffle.md': 'builders/build/eth-api/dev-env/index.md'
               'builders/build/eth-api/pubsub.md': 'builders/json-rpc/pubsub.md'
               'builders/build/moonbeam-custom-api.md': 'builders/json-rpc/moonbeam-custom-api.md'
-              'builders/get-started/eth-compare/index.md': 
+              'builders/get-started/eth-compare/index.md': 'learn/core-concepts/index.md'
               'builders/get-started/eth-compare/balances.md': 'learn/core-concepts/balances.md'
               'builders/get-started/eth-compare/consensus-finality.md': 'learn/core-concepts/consensus-finality.md'
               'builders/get-started/eth-compare/rpc-support.md': 'builders/json-rpc/eth-rpc.md'
