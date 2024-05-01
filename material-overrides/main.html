@@ -14,11 +14,6 @@
   ></script>
 {% endblock %}
 
-{% block styles %}
-	{{ super() }}
-  <link rel="stylesheet" href="{{ '/assets/stylesheets/moonbeam.css' | url }}">
-{% endblock %}
-
 {% block fonts %}
   {{ super() }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +40,6 @@
 {%- endblock -%} 
 
 {% block announce %}
-  <p>Block times are now 6 seconds on Moonbase Alpha thanks to asynchrounous backing!
-     Learn more about <a href="https://docs.moonbeam.network/builders/build/releases/runtime-2800/">async backing</a>.</p>
+  <p>Block times are now 6 seconds on Moonbase Alpha thanks to asynchronous backing!
+     Learn more about <a href="https://forum.moonbeam.network/t/runtime-rt2801-schedule/1616/4">async backing</a>.</p>
 {% endblock %}
