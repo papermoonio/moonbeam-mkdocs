@@ -7,14 +7,14 @@
       <ul class="md-tabs__list">
         {% for nav_item in nav %}
           {% if nav_item.is_section %}
-            <li class="md-tabs__item--custom" tabindex="0">
+            <li class="md-tabs__item--custom" tabindex="0">    
               <span class="md-tabs__link">{{ nav_item.title }}</span>
               <ul class="md-tab__list">
                 {% for section_item in nav_item.children %}
                   {% if section_item.is_section %}
                     <li class="md-tab__item">
                       <a href="{{ section_item.children[0].url | url }}">
-                        <div>
+                        <div class="icon-col">
                           {% set icon_url = "/assets/images/dropdown-icons/" + section_item.children[0].url.split('/')[1] + ".webp" %}
                           <img class="dropdown-icon" src="{{ icon_url }}" alt="{{ section_item.title }}" loading="lazy">
                         </div>
