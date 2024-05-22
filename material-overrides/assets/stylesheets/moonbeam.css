@@ -1528,9 +1528,8 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 .hero-column {
-  margin-right: 3em;
   margin-left: 0;
-  width: 100%;
+  width: 110%;
 }
 
 .row.quick-refs-medium,
@@ -1765,13 +1764,17 @@ p.quick-ref-title {
   .row.hero-buttons > a {
     margin: 0.25em 0;
   }
+}
 
-  h1.hero-title {
-    margin-top: 0;
+@media screen and (max-width: 66.6875em) {
+  .hero-column {
+    width: 140%;
   }
+}
 
-  .row.quick-refs {
-    display: none;
+@media screen and (max-width: 62.1875em) {
+  .hero-column {
+    width: 180%;
   }
 
   .row.quick-refs-medium {
@@ -1780,15 +1783,14 @@ p.quick-ref-title {
     margin: auto;
   }
 
-  .row.quick-refs-medium .quick-ref-title {
-    margin-top: 0;
+  .row.quick-refs {
+    display: none;
   }
 }
 
-@media screen and (max-width: 62em) {
-  .hero-img {
-    padding: 0;
-    width: 60em;
+@media screen and (max-width: 56.1875em) {
+  .hero-column {
+    width: 200%;
   }
 
   .hero-info ~ .row.hero-buttons {
@@ -1799,17 +1801,6 @@ p.quick-ref-title {
     display: block;
     width: 90%;
     margin: auto;
-  }
-
-  .row.quick-refs-medium .quick-ref-title {
-    margin-top: 1.3em;
-  }
-}
-
-@media screen and (max-width: 57.325em) {
-  .hero-img {
-    padding: 0;
-    width: 60em;
   }
 }
 
