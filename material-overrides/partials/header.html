@@ -22,17 +22,53 @@
       <a class="md-header__button md-button faucet md-typeset" href="https://faucet.moonbeam.network/" target="_blank">
         Faucet
       </a>
-      <div class="language-select-wrapper select-wrapper">
-        <span class="language-select-label select-label"></span>
-        <ul class="language-select select">
-          <li class="en" value="en">Eng</li>
-          <li class="cn" value="cn">中文</li>
-        </ul>
-        <span class="md-icon selector-closed active">{% include
-          ".icons/material/chevron-down.svg" %}</span>
-        <span class="md-icon selector-open">{% include
-          ".icons/material/chevron-up.svg" %}</span>
-      </div>
+      {% set page_mappings = {
+        'builders/': 'cn/builders/',
+        'builders/build/eth-api/libraries/': 'cn/builders/libraries/',
+        'builders/build/eth-api/libraries/ethersjs/': 'cn/builders/libraries/ethersjs/',
+        'builders/build/eth-api/libraries/ethersrs/': 'cn/builders/libraries/ethersrs/',
+        'builders/build/eth-api/libraries/viem/': 'cn/builders/libraries/viem/',
+        'builders/build/eth-api/libraries/web3js/': 'cn/builders/libraries/web3js/',
+        'builders/build/eth-api/libraries/web3py/': 'cn/builders/libraries/web3py/',
+        'builders/build/eth-api/dev-env/': 'cn/builders/dev-env/',
+        'builders/build/eth-api/dev-env/hardhat/': 'cn/builders/dev-env/hardhat/',
+        'builders/build/eth-api/dev-env/foundry/': 'cn/builders/dev-env/foundry/',
+        'builders/build/eth-api/dev-env/remix/': 'cn/builders/dev-env/remix/',
+        'builders/build/eth-api/dev-env/tenderly/': 'cn/builders/dev-env/tenderly/',
+        'builders/build/eth-api/dev-env/thirdweb/': 'cn/builders/dev-env/thirdweb/',
+        'builders/build/eth-api/dev-env/openzeppelin/contracts/': 'cn/builders/dev-env/oz-contracts/',
+        'builders/integrations/': 'cn/builders/integrations/',
+        'builders/integrations/wallets/metamask/': 'cn/builders/integrations/metamask/',
+        'builders/integrations/wallets/particle-network/': 'cn/builders/integrations/particle-network/',
+        'builders/integrations/wallets/walletconnect/': 'cn/builders/integrations/walletconnect/',
+        'tutorials/': 'cn/tutorials/',
+        'tutorials/eth-api/how-to-build-a-dapp/': 'cn/tutorials/how-to-build-a-dapp/',
+        'tutorials/eth-api/batch-approve-swap/': 'cn/tutorials/batch-approve-swap/',
+        'tutorials/eth-api/call-permit-gasless-txs/': 'cn/tutorials/call-permit-gasless-txs/'
+      } %}
+      {% set ns = namespace(cn_page_exists=False, cn_url=None) %}
+      {% set current_url = page.url %}
+      
+      {% for en_path, cn_path in page_mappings.items() %}
+        {% if current_url == en_path %}
+          {% set ns.cn_url = cn_path %}
+          {% set ns.cn_page_exists = True %}
+        {% endif %}
+      {% endfor %}
+
+      {% if ns.cn_page_exists %}
+        <div class="language-select-wrapper select-wrapper">
+          <span class="language-select-label select-label">Eng</span>
+          <ul class="language-select select">
+            <li class="en" value="en"><a href="#">Eng</a></li>
+            <li class="cn" value="cn"><a href="{{ ns.cn_url | url }}">中文</a></li>
+          </ul>
+          <span class="md-icon selector-closed active">{% include
+            ".icons/material/chevron-down.svg" %}</span>
+            <span class="md-icon selector-open">{% include
+              ".icons/material/chevron-up.svg" %}</span>
+        </div>
+      {% endif %}
       {% if "material/search" in config["plugins"] %}
       <label class="md-header__button md-icon" for="__search">
         {% include ".icons/material/magnify.svg" %}
