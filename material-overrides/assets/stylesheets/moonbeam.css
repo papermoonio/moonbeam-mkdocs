@@ -1764,6 +1764,16 @@ p.quick-ref-title {
   .row.hero-buttons > a {
     margin: 0.25em 0;
   }
+
+  .hero-column {
+    width: 120%;
+  }
+}
+
+@media screen and (max-width: 72.1875em) {
+  .hero-column {
+    width: 130%;
+  }
 }
 
 @media screen and (max-width: 66.6875em) {
@@ -1788,9 +1798,9 @@ p.quick-ref-title {
   }
 }
 
-@media screen and (max-width: 56.1875em) {
+@media screen and (max-width: 55.6875em) {
   .hero-column {
-    width: 200%;
+    width: 220%;
   }
 
   .hero-info ~ .row.hero-buttons {
