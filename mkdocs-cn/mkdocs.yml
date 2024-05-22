@@ -29,6 +29,7 @@
     - 'navigation.instant'
     - 'navigation.prune'
     - 'content.code.copy'
+    - 'announce.dismiss'
 'markdown_extensions':
   - 'codehilite'
   - 'meta'

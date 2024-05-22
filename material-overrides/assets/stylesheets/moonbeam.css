@@ -1879,3 +1879,7 @@ p.quick-ref-title {
 .md-banner__inner.md-grid.md-typeset {
   text-align: center;
 }
+
+.cn-tabs .md-tabs__item {
+  height: unset;
+}

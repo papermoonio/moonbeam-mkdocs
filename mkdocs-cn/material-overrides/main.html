@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block libs %}
+  {{ super() }}
+  <link rel="preconnect" href="https://widget.kapa.ai/">
+  <style data-emotion="mantine" data-s=""></style>
+  <script defer
+    src="https://widget.kapa.ai/kapa-widget.bundle.js"
+    data-website-id="d902d9ae-b379-4a22-bb35-b78b4c601d3b"
+    data-project-name="Moonbeam"
+    data-project-color="#514C65"
+    data-project-logo="/images/moonbot.webp"
+    data-footer-tos-privacy-links='[{"title": "terms of service", "url": "https://moonbeam.network/terms-of-use/"}, {"title": "privacy policy", "url": "https://moonbeam.foundation/privacy-policy/"}]'
+  ></script>
+{% endblock %}
+
+{% block fonts %}
+  {{ super() }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block site_meta %}
+  {{ super() }}
+  {% if page and page.meta and page.meta.keywords %}
+    <meta name="keywords" content="{{ page.meta.keywords }}">
+  {% endif %}
+{% endblock %}
+
+{%- block htmltitle -%} 
+  {%- if page.is_homepage -%} 
+    <title>Documentation for the Moonbeam Smart Contract Platform</title> 
+  {%- elif page and page.meta and page.meta.title -%} 
+    <title>{{ page.meta.title }} | {{ config.site_name }}</title> 
+  {%- elif page and page.title and not page.is_homepage -%} 
+    <title>{{ page.title }} | {{ config.site_name }}</title> 
+  {%- else -%}
+    <title>{{ config.site_name }}</title> 
+  {%- endif -%} 
+{%- endblock -%} 
+
+{% block site_nav %}
+  {% if nav %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner main-page-sidebar">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if "toc.integrate" not in features %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "toc" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/toc.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block announce %}
+  <p>The complete documentation is available in English. Select "Eng" from the language dropdown to access it.</p>
+{% endblock %}
