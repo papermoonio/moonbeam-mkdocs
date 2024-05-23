@@ -23,28 +23,28 @@
         Faucet
       </a>
       {% set page_mappings = {
-        'builders/': 'cn/builders/',
-        'builders/build/eth-api/libraries/': 'cn/builders/libraries/',
-        'builders/build/eth-api/libraries/ethersjs/': 'cn/builders/libraries/ethersjs/',
-        'builders/build/eth-api/libraries/ethersrs/': 'cn/builders/libraries/ethersrs/',
-        'builders/build/eth-api/libraries/viem/': 'cn/builders/libraries/viem/',
-        'builders/build/eth-api/libraries/web3js/': 'cn/builders/libraries/web3js/',
-        'builders/build/eth-api/libraries/web3py/': 'cn/builders/libraries/web3py/',
-        'builders/build/eth-api/dev-env/': 'cn/builders/dev-env/',
-        'builders/build/eth-api/dev-env/hardhat/': 'cn/builders/dev-env/hardhat/',
-        'builders/build/eth-api/dev-env/foundry/': 'cn/builders/dev-env/foundry/',
-        'builders/build/eth-api/dev-env/remix/': 'cn/builders/dev-env/remix/',
-        'builders/build/eth-api/dev-env/tenderly/': 'cn/builders/dev-env/tenderly/',
-        'builders/build/eth-api/dev-env/thirdweb/': 'cn/builders/dev-env/thirdweb/',
-        'builders/build/eth-api/dev-env/openzeppelin/contracts/': 'cn/builders/dev-env/oz-contracts/',
-        'builders/integrations/': 'cn/builders/integrations/',
-        'builders/integrations/wallets/metamask/': 'cn/builders/integrations/metamask/',
-        'builders/integrations/wallets/particle-network/': 'cn/builders/integrations/particle-network/',
-        'builders/integrations/wallets/walletconnect/': 'cn/builders/integrations/walletconnect/',
-        'tutorials/': 'cn/tutorials/',
-        'tutorials/eth-api/how-to-build-a-dapp/': 'cn/tutorials/how-to-build-a-dapp/',
-        'tutorials/eth-api/batch-approve-swap/': 'cn/tutorials/batch-approve-swap/',
-        'tutorials/eth-api/call-permit-gasless-txs/': 'cn/tutorials/call-permit-gasless-txs/'
+        'builders/': 'builders/',
+        'builders/build/eth-api/libraries/': 'builders/libraries/',
+        'builders/build/eth-api/libraries/ethersjs/': 'builders/libraries/ethersjs/',
+        'builders/build/eth-api/libraries/ethersrs/': 'builders/libraries/ethersrs/',
+        'builders/build/eth-api/libraries/viem/': 'builders/libraries/viem/',
+        'builders/build/eth-api/libraries/web3js/': 'builders/libraries/web3js/',
+        'builders/build/eth-api/libraries/web3py/': 'builders/libraries/web3py/',
+        'builders/build/eth-api/dev-env/': 'builders/dev-env/',
+        'builders/build/eth-api/dev-env/hardhat/': 'builders/dev-env/hardhat/',
+        'builders/build/eth-api/dev-env/foundry/': 'builders/dev-env/foundry/',
+        'builders/build/eth-api/dev-env/remix/': 'builders/dev-env/remix/',
+        'builders/build/eth-api/dev-env/tenderly/': 'builders/dev-env/tenderly/',
+        'builders/build/eth-api/dev-env/thirdweb/': 'builders/dev-env/thirdweb/',
+        'builders/build/eth-api/dev-env/openzeppelin/contracts/': 'builders/dev-env/oz-contracts/',
+        'builders/integrations/': 'builders/integrations/',
+        'builders/integrations/wallets/metamask/': 'builders/integrations/metamask/',
+        'builders/integrations/wallets/particle-network/': 'builders/integrations/particle-network/',
+        'builders/integrations/wallets/walletconnect/': 'builders/integrations/walletconnect/',
+        'tutorials/': 'tutorials/',
+        'tutorials/eth-api/how-to-build-a-dapp/': 'tutorials/how-to-build-a-dapp/',
+        'tutorials/eth-api/batch-approve-swap/': 'tutorials/batch-approve-swap/',
+        'tutorials/eth-api/call-permit-gasless-txs/': 'tutorials/call-permit-gasless-txs/'
       } %}
       {% set ns = namespace(en_url=None) %}
       {% set current_url = page.url %}
@@ -58,7 +58,7 @@
       <div class="language-select-wrapper select-wrapper">
         <span class="language-select-label select-label">中文</span>
         <ul class="language-select select">
-          <li class="en" value="en"><a href="{{ ns.en_url | url }}">Eng</a></li>
+          <li class="en" value="en"><a href="{{ ns.en_url }}">Eng</a></li>
           <li class="cn" value="cn"><a href="#">中文</a></li>
         </ul>
         <span class="md-icon selector-closed active">{% include
