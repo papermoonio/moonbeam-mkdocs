@@ -51,7 +51,7 @@
       
       {% for en_path, cn_path in page_mappings.items() %}
         {% if current_url == cn_path %}
-          {% set ns.en_url = en_path %}
+          {% set ns.en_url = '/' + en_path %}
         {% endif %}
       {% endfor %}
 
