@@ -1,134 +1,135 @@
-'site_name': Moonbeam Docs
-'site_url': https://docs.moonbeam.network/cn/
-'home_url': https://moonbeam.network/
-'site_dir': /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
-'docs_dir': moonbeam-docs-cn
-'copyright': '© 2023 Moonbeam Foundation. All Rights Reserved.'
-'extra_javascript':
-  - 'js/connectMetaMask.js'
-  - 'js/errorModal.js'
-  - 'js/networkModal.js'
-  - 'js/handleLanguageChange.js'
-  - 'js/fixCreatedDate.js'
-  - 'js/externalLinkModal.js'
-'extra_css':
-  - '/assets/stylesheets/moonbeam.css'
-  - '/assets/stylesheets/termynal.css'
-'theme':
-  'name': 'material'
-  'custom_dir': 'material-overrides'
-  'favicon': '/assets/images/Moonbeam-Favicon-50.webp'
-  'logo': '/assets/images/moonbeam-logo.webp'
-  'font':
-    'text': 'Open Sans'
-  'features':
-    - 'navigation.tabs'
-    - 'navigation.tabs.sticky'
-    - 'navigation.sections'
-    - 'navigation.indexes'
-    - 'navigation.instant'
-    - 'navigation.prune'
-    - 'content.code.copy'
-'markdown_extensions':
-  - 'codehilite'
-  - 'meta'
-  - 'toc':
-      'permalink': !!bool 'true'
-      'title': 'Sections'
-  - 'admonition'
-  - 'pymdownx.snippets':
-      'base_path': 'moonbeam-docs-cn/.snippets'
-  - 'pymdownx.emoji':
-      'emoji_index': !!python/name:material.extensions.emoji.twemoji
-      'emoji_generator': !!python/name:material.extensions.emoji.to_svg
-      'options':
-        'custom_icons':
-          - 'material-overrides/.icons'
-  - 'pymdownx.tabbed':
-      'alternate_style': !!bool 'true'
-  - 'pymdownx.superfences'
-  - 'pymdownx.details'
-  - 'attr_list'
-'validation':
-  'absolute_links': 'ignore'
-  'unrecognized_links': 'ignore'
-'exclude_docs': 'README.md'
-'plugins':
-  - 'search'
-  - 'awesome-pages'
-  - 'git-revision-date-localized':
-      'exclude':
-        - '.snippets/*'
-      'enable_creation_date': !!bool 'true'
-  # - 'privacy'
-  - 'minify':
-      'minify_html': !!bool 'true'
-      'minify_js': !!bool 'true'
-      'minify_css': !!bool 'true'
-      'js_files':
-        - 'js/connectMetaMask.js'
-        - 'js/errorModal.js'
-        - 'js/networkModal.js'
-        - 'js/handleLanguageChange.js'
-        - 'js/fixCreatedDate.js'
-        - 'js/externalLinkModal.js'
-      'css_files': 
-        - '/assets/stylesheets/termynal.css'
-        - '/assets/stylesheets/moonbeam.css'
-  - 'redirects':
-      'redirect_maps':
-        'builders/build/eth-api/dev-env/truffle.md': 'builders/build/eth-api/dev-env/index.md'
-        'builders/get-started/moonriver.md': 'builders/get-started/networks/moonriver.md'
-        'builders/get-started/networks/layer2/bobabeam.md': 'builders/get-started/networks/index.md'
-        'builders/interoperability/xcm/xc-integration.md': 'builders/interoperability/xcm/xc-registration/index.md'
-        'builders/interoperability/xcm/xc20/mintable-xc20.md': 'builders/interoperability/xcm/xc20/overview.md'
-        'builders/xcm/index.md': 'builders/interoperability/xcm/index.md'
-        'builders/xcm/overview.md': 'builders/interoperability/xcm/overview.md'
-        'builders/xcm/xc20/index.md': 'builders/interoperability/xcm/xc20/index.md'
-        'builders/xcm/xc20/overview.md': 'builders/interoperability/xcm/xc20/overview.md'
-        'builders/xcm/xc-integration.md': 'builders/interoperability/xcm/xc-registration/index.md'
-        'getting-started/moonbase/faucet.md': 'builders/get-started/networks/moonbase.md'
-        'learn/dapps-list/dtmb.md': 'learn/dapps-list/index.md'
-        'networks/moonbase.md': 'learn/platform/networks/moonbase.md'
-        'tutorials/eth-api/truffle-start-to-end.md': 'tutorials/eth-api/get-started.index.md'
-  - 'macros':
-      'include_yaml':
-        - 'moonbeam-docs-cn/variables.yml'
-'extra':
-  'social':
-    - 'icon': 'fontawesome/brands/discord'
-      'link': 'https://discord.gg/PfpUATX'
-      'name': 'Discord'
-    - 'icon': 'moonbeam/element'
-      'link': 'https://app.element.io/#/room/#moonbeam:matrix.org'
-      'name': 'Element (Riot)'
-    - 'icon': 'fontawesome/brands/telegram'
-      'link': 'https://t.me/Moonbeam_Official'
-      'name': 'Telegram'
-    - 'icon': 'fontawesome/brands/twitter'
-      'link': 'https://twitter.com/MoonbeamNetwork'
-      'name': 'Twitter'
-    - 'icon': 'fontawesome/brands/youtube'
-      'link': 'https://www.youtube.com/c/MoonbeamNetwork'
-      'name': 'YouTube'
-    - 'icon': 'fontawesome/brands/github'
-      'link': 'https://github.com/moonbeam-foundation/moonbeam'
-      'name': 'GitHub'
-  'analytics':
-    'provider': 'google'
-    'property': 'G-5ZBERCXWC3'
-    'feedback':
-      'title': '此页面是否有帮助?'
-      'ratings':
-        - 'icon': 'material/thumb-up'
-          'label': '是的'
-          'name': '此页面很有帮助'
-          'data': 1
-          'note': >-
+site_name: Moonbeam Docs
+site_url: https://docs.moonbeam.network/cn/
+home_url: https://moonbeam.network/
+site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
+docs_dir: moonbeam-docs-cn
+copyright: © 2023 Moonbeam Foundation. All Rights Reserved.
+extra_javascript:
+  - js/connectMetaMask.js
+  - js/errorModal.js
+  - js/networkModal.js
+  - js/handleLanguageChange.js
+  - js/fixCreatedDate.js
+  - js/externalLinkModal.js
+extra_css:
+  - /assets/stylesheets/moonbeam.css
+  - /assets/stylesheets/termynal.css
+theme:
+  name: material
+  custom_dir: material-overrides
+  favicon: /assets/images/Moonbeam-Favicon-50.webp
+  logo: /assets/images/moonbeam-logo.webp
+  font:
+    text: Open Sans
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.instant
+    - navigation.prune
+    - content.code.copy
+    - announce.dismiss
+markdown_extensions:
+  - codehilite
+  - meta
+  - toc:
+      permalink: true
+      title: Sections
+  - admonition
+  - pymdownx.snippets:
+      base_path: moonbeam-docs-cn/.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - material-overrides/.icons
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - attr_list
+validation:
+  absolute_links: ignore
+  unrecognized_links: ignore
+exclude_docs: README.md
+plugins:
+  - search
+  - awesome-pages
+  - git-revision-date-localized:
+      exclude:
+        - .snippets/*
+      enable_creation_date: !ENV ENABLED_GIT_REVISION_DATE, True
+  # - privacy
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      js_files:
+        - js/connectMetaMask.js
+        - js/errorModal.js
+        - js/networkModal.js
+        - js/handleLanguageChange.js
+        - js/fixCreatedDate.js
+        - js/externalLinkModal.js
+      css_files:
+        - /assets/stylesheets/termynal.css
+        - /assets/stylesheets/moonbeam.css
+  - redirects:
+      redirect_maps:
+        builders/build/eth-api/dev-env/truffle.md: builders/build/eth-api/dev-env/index.md
+        builders/get-started/moonriver.md: builders/get-started/networks/moonriver.md
+        builders/get-started/networks/layer2/bobabeam.md: builders/get-started/networks/index.md
+        builders/interoperability/xcm/xc-integration.md: builders/interoperability/xcm/xc-registration/index.md
+        builders/interoperability/xcm/xc20/mintable-xc20.md: builders/interoperability/xcm/xc20/overview.md
+        builders/xcm/index.md: builders/interoperability/xcm/index.md
+        builders/xcm/overview.md: builders/interoperability/xcm/overview.md
+        builders/xcm/xc20/index.md: builders/interoperability/xcm/xc20/index.md
+        builders/xcm/xc20/overview.md: builders/interoperability/xcm/xc20/overview.md
+        builders/xcm/xc-integration.md: builders/interoperability/xcm/xc-registration/index.md
+        getting-started/moonbase/faucet.md: builders/get-started/networks/moonbase.md
+        learn/dapps-list/dtmb.md: learn/dapps-list/index.md
+        networks/moonbase.md: learn/platform/networks/moonbase.md
+        tutorials/eth-api/truffle-start-to-end.md: tutorials/eth-api/get-started.index.md
+  - macros:
+      include_yaml:
+        - moonbeam-docs-cn/variables.yml
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/PfpUATX
+      name: Discord
+    - icon: moonbeam/element
+      link: https://app.element.io/#/room/#moonbeam:matrix.org
+      name: Element (Riot)
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/Moonbeam_Official
+      name: Telegram
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/MoonbeamNetwork
+      name: Twitter
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/c/MoonbeamNetwork
+      name: YouTube
+    - icon: fontawesome/brands/github
+      link: https://github.com/moonbeam-foundation/moonbeam
+      name: GitHub
+  analytics:
+    provider: google
+    property: G-5ZBERCXWC3
+    feedback:
+      title: 此页面是否有帮助?
+      ratings:
+        - icon: material/thumb-up
+          label: 是的
+          name: 此页面很有帮助
+          data: 1
+          note: >-
             感谢您的反馈意见!
-        - 'icon': 'material/thumb-down'
-          'label': '不'
-          'name': '此页面有待改进'
-          'data': 0
-          'note': >-
+        - icon: material/thumb-down
+          label: 不
+          name: 此页面有待改进
+          data: 0
+          note: >-
             感谢您的反馈意见! 您还可以通过提交<a href="https://github.com/moonbeam-foundation/moonbeam-docs-cn/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">其他反馈</a>帮助我们改进此页面。
