@@ -227,11 +227,15 @@ a:hover {
   max-width: 300px;
   padding: 0.467em 1em;
   z-index: 1;
-  display: flex;
+  display: none;
   align-items: center;
   border: 2px solid var(--md-header-button-bg-color);
   border-radius: 1.5em;
   position: relative;
+}
+
+.select-wrapper.display {
+  display: flex; /* Only display the selector if it has the display class */
 }
 
 .select-wrapper.active,
