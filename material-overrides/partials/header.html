@@ -9,13 +9,13 @@
       <label class="md-header__button md-icon" for="__drawer">
         {% include ".icons/material/menu" ~ ".svg" %}
       </label>
+    </div>
+    <div class="md-header__buttons">
       {% if "navigation.tabs.sticky" in features %}
         {% if "navigation.tabs" in features %}
           {% include "partials/tabs.html" %}
         {% endif %}
       {% endif %}
-    </div>
-    <div class="md-header__buttons">
       <a href="#" class="md-header__button md-button connectMetaMask-nav md-typeset">
         Connect Wallet
       </a>

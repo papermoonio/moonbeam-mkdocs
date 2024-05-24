@@ -3,7 +3,7 @@ site_url: https://docs.moonbeam.network/cn/
 home_url: https://moonbeam.network/
 site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
 docs_dir: moonbeam-docs-cn
-copyright: © 2023 Moonbeam Foundation. All Rights Reserved.
+copyright: © 2024 Moonbeam Foundation. All Rights Reserved.
 extra_javascript:
   - js/connectMetaMask.js
   - js/errorModal.js
@@ -17,10 +17,10 @@ extra_css:
 theme:
   name: material
   custom_dir: material-overrides
-  favicon: /assets/images/Moonbeam-Favicon-50.webp
-  logo: /assets/images/moonbeam-logo.webp
+  favicon: /assets/images/favicon.webp
+  logo: /assets/images/logo.webp
   font:
-    text: Open Sans
+    text: Banana Grotesk
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -29,7 +29,6 @@ theme:
     - navigation.instant
     - navigation.prune
     - content.code.copy
-    - announce.dismiss
 markdown_extensions:
   - codehilite
   - meta
@@ -100,13 +99,10 @@ extra:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/PfpUATX
       name: Discord
-    - icon: moonbeam/element
-      link: https://app.element.io/#/room/#moonbeam:matrix.org
-      name: Element (Riot)
     - icon: fontawesome/brands/telegram
       link: https://t.me/Moonbeam_Official
       name: Telegram
-    - icon: fontawesome/brands/twitter
+    - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/MoonbeamNetwork
       name: Twitter
     - icon: fontawesome/brands/youtube

@@ -17,10 +17,10 @@ extra_css:
 theme:
   name: material
   custom_dir: material-overrides
-  favicon: /assets/images/Moonbeam-Favicon-50.webp
-  logo: /assets/images/moonbeam-logo.webp
+  favicon: /assets/images/favicon.webp
+  logo: /assets/images/logo.webp
   font:
-    text: Open Sans
+    text: Banana Grotesk
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -84,32 +84,35 @@ plugins:
         builders/build/eth-api/dev-env/truffle.md: builders/build/eth-api/dev-env/index.md
         builders/build/eth-api/pubsub.md: builders/json-rpc/pubsub.md
         builders/build/moonbeam-custom-api.md: builders/json-rpc/moonbeam-custom-api.md
+        builders/get-started/eth-compare/index.md: learn/core-concepts/index.md
         builders/get-started/eth-compare/balances.md: learn/core-concepts/balances.md
         builders/get-started/eth-compare/consensus-finality.md: learn/core-concepts/consensus-finality.md
-        builders/get-started/eth-compare/index.md: learn/core-concepts/index.md
         builders/get-started/eth-compare/rpc-support.md: builders/json-rpc/eth-rpc.md
         builders/get-started/eth-compare/security.md: learn/core-concepts/security.md
         builders/get-started/eth-compare/transfers-api.md: learn/core-concepts/transfers-api.md
         builders/get-started/eth-compare/tx-fees.md: learn/core-concepts/tx-fees.md
         builders/get-started/moonbase.md: builders/get-started/networks/moonbase.md
-        builders/get-started/moonbeam.md: builders/get-started/networks/moonbeam.md
         builders/get-started/moonriver.md: builders/get-started/networks/moonriver.md
+        builders/get-started/moonbeam.md: builders/get-started/networks/moonbeam.md
         builders/get-started/networks/layer2/bobabeam.md: builders/get-started/networks/index.md
         builders/interact/hardhat.md: builders/build/eth-api/dev-env/hardhat.md
+        builders/interoperability/xcm/xc20/xtokens.md: builders/interoperability/xcm/xc20/send-xc20s/index.md
         builders/interoperability/xcm/fees.md: builders/interoperability/xcm/core-concepts/weights-fees.md
         builders/interoperability/xcm/remote-evm-calls.md: builders/interoperability/xcm/remote-execution/remote-evm-calls.md
-        builders/interoperability/xcm/xc-integration.md: builders/interoperability/xcm/xc-registration/index.md
         builders/interoperability/xcm/xc20/mintable-xc20.md: builders/interoperability/xcm/xc20/overview.md
-        builders/interoperability/xcm/xc20/xtokens.md: builders/interoperability/xcm/xc20/send-xc20s/index.md
         builders/interoperability/xcm/xcm-transactor.md: builders/interoperability/xcm/remote-execution/substrate-calls/index.md
+        builders/interoperability/xcm/xc-integration.md: builders/interoperability/xcm/xc-registration/index.md
         builders/pallets-precompiles/precompiles/xcm-utils.md: builders/interoperability/xcm/xcm-utils.md
         builders/xcm/fees.md: builders/interoperability/xcm/core-concepts/weights-fees.md
-        builders/xcm/xc-integration.md: builders/interoperability/xcm/xc-registration/index.md
         builders/xcm/xc20/index.md: builders/interoperability/xcm/xc20/index.md
         builders/xcm/xc20/overview.md: builders/interoperability/xcm/xc20/overview.md
         builders/xcm/xc20/xtokens.md: builders/interoperability/xcm/xc20/send-xc20s/index.md
         builders/xcm/xcm-sdk/xcm-sdk.md: builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk.md
         builders/xcm/xcm-transactor.md: builders/interoperability/xcm/remote-execution/substrate-calls/index.md
+        builders/xcm/xc-integration.md: builders/interoperability/xcm/xc-registration/index.md
+        getting-started/using-metamask.md: tokens/connect/metamask.md
+        getting-started/using-remix.md: builders/build/eth-api/dev-env/remix.md
+        getting-started/using-truffle.md: builders/build/eth-api/dev-env/index.md
         getting-started/local-node/deploy-contract.md: builders/build/eth-api/libraries/index.md
         getting-started/local-node/using-remix.md: builders/build/eth-api/dev-env/remix.md
         getting-started/local-node/web3-transaction.md: builders/build/eth-api/libraries/web3py.md
@@ -118,9 +121,6 @@ plugins:
         getting-started/testnet/metamask.md: tokens/connect/metamask.md
         getting-started/testnet/precompiles.md: builders/pallets-precompiles/precompiles/index.md
         getting-started/testnet/pubsub.md: builders/json-rpc/pubsub.md
-        getting-started/using-metamask.md: tokens/connect/metamask.md
-        getting-started/using-remix.md: builders/build/eth-api/dev-env/remix.md
-        getting-started/using-truffle.md: builders/build/eth-api/dev-env/index.md
         integrations/openzeppelin/overview.md: builders/build/eth-api/dev-env/openzeppelin/overview.md
         learn/dapps-list/dtmb.md: learn/dapps-list/index.md
         learn/features/unified-accounts.md: learn/core-concepts/unified-accounts.md
@@ -137,13 +137,10 @@ extra:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/PfpUATX
       name: Discord
-    - icon: moonbeam/element
-      link: https://app.element.io/#/room/#moonbeam:matrix.org
-      name: Element (Riot)
     - icon: fontawesome/brands/telegram
       link: https://t.me/Moonbeam_Official
       name: Telegram
-    - icon: fontawesome/brands/twitter
+    - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/MoonbeamNetwork
       name: Twitter
     - icon: fontawesome/brands/youtube
