@@ -39,16 +39,8 @@ This file was automatically generated - do not edit
   {% endif %}
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-social">
-        <img class="moonbeam-foundation-logo" src="{{ '/assets/images/moonbeam-foundation-logo.webp' }}" alt="Moonbeam Foundation" width="192" height="75.65"/>
-        <div class="network-links">
-          <a href="https://moonbeam.foundation/privacy-policy/" target="_blank">Privacy policy</a>
-          <a href="https://moonbeam.network/terms-of-use/" target="_blank">Terms of use</a>
-        </div>
-        {% include "partials/social.html" %}
-      </div>
       <div class="column newsletter">
-        <label class="newsletter-label">Moonbuilders newsletter signup</label>
+        <label class="newsletter-label">Join our newsletter</label>
         <form class="md-footer-newsletter">
           <!-- These script tags are for the newsletter signup and must be here -->
           <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
@@ -58,19 +50,20 @@ This file was automatically generated - do not edit
               portalId: "6074164",
               formId: "e5b4a7bd-1d01-479a-ac4a-da1b38bb1acb"
             });
-          </script>
+            </script>
         </form>
-        <div class="md-footer-copyright">
-          {% if config.copyright %}
-            <div class="md-footer-copyright__highlight">
-              {{ config.copyright }}
-            </div>
-          {% endif %}
-          <!-- Made with
-            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-              Material for MkDocs
-            </a-->
-        </div>
+      </div>
+      {% include "partials/social.html" %}
+    </div>
+    <div class="md-footer-copyright">
+      {% if config.copyright %}
+      <div class="md-footer-copyright__highlight">
+        {{ config.copyright }}
+      </div>
+      {% endif %}
+      <div class="policy-links">
+        <a href="https://moonbeam.network/terms-of-use/" target="_blank">Terms of use</a>
+        <a href="https://moonbeam.foundation/privacy-policy/" target="_blank">Privacy policy</a>
       </div>
     </div>
   </div>
