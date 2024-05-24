@@ -85,7 +85,7 @@
   --border-width-thin: 0.5px;
   --border-width: 1px;
   --border-grid: var(--border-width-thin) solid var(--light-transparent-40);
-  --border-radius: 0.4em;
+  --border-radius: 0.3em;
   --border-purple-bright: #524f9f;
 
   /* Link hover opacity */
@@ -952,6 +952,7 @@ html .md-typeset details.function div.tabbed-set,
 .md-button,
 .md-typeset .md-button {
   border: var(--border-width-thin) solid var(--light-transparent-15);
+  border-radius: var(--border-radius);
   background: var(--teal-dark-transparent-15);
   color: var(--teal-light);
   font-weight: 400;
