@@ -1886,4 +1886,5 @@ p.quick-ref-title {
 
 .cn-tabs .md-tabs__item {
   height: unset;
+  padding: 1em 2em;
 }
