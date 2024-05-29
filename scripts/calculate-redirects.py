@@ -7,183 +7,203 @@
 # content and add it to the `redirect_maps` config in `mkdocs.yml`.                       #
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 # To use the script, ensure that the `moonbeam-docs` repo is nestled inside of the        #
-#  `moonbeam-mkdocs` repo and on your branch with the latest changes. Then simply run     #
-# `python scripts/calculate-redirects.py` in your terminal. There will be logs printed to #
-# the terminal. Please read through them as they will guide you on which redirects need   #
-# to be manually reviewed and any possible duplicates to be reviewed as well.             #
-# The `mkdocs.yml` will automatically be updated, so just open that file to see the new   #
-# redirects and make any updates!                                                         #
+# `moonbeam-mkdocs` repo and on your branch with the latest changes. Then simply run      #
+# `python scripts/calculate-redirects.py <github_repo> <base_branch> <compare_branch>     #
+# <language>` in your terminal.                                                           #
+#                                                                                         #
+# Command-line arguments:                                                                 #
+#   - `github_repo`: Repository name (default: moonbeam-foundation/moonbeam-docs)         #
+#   - `base_branch`: Base branch name (e.g., main)                                        #
+#   - `compare_branch`: Compare branch name (e.g., new_branch)                            #
+#   - `language`: Language choice for redirects YAML file (choices: en or cn, default: en)#
+#                                                                                         #
+# Example usage:                                                                          #
+#   python scripts/calculate-redirects.py moonbeam-foundation/moonbeam-docs main          #
+#   new_branch en                                                                         #
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
-import requests
 import os
 import yaml
+import argparse
+import requests
 
-# Function to filter root items to get rid of those including a "." (i.e. ".snippets"), "js", "images", and "dapps-list"
-def filter_root_directories(variable):
-    omit_dirs = ["js", "images", "dapps-list"]
-    if ((variable not in omit_dirs) and (variable.find(".") == -1)):
-        return variable
+def update_redirects(redirect_mappings, yaml_file):
+    # Open the YAML file and read its lines
+    with open(yaml_file, 'r') as file:
+        lines = file.readlines()
 
-# Function to walk the directory and get current file paths
-def fetch_current_file_paths():
-    root_items = os.listdir('moonbeam-docs')
-    filteredDirectories = list(filter(filter_root_directories, root_items))
-    current_file_paths = []
+    # Initialize a flag to track if the redirect_maps section is found
+    redirect_maps_found = False
+    redirect_maps_start = -1
+    redirect_maps_end = -1
 
-    for dir in filteredDirectories:
-        for root, dirs, files in os.walk('moonbeam-docs/' + dir):
-            # Ignore dapps-list for right now
-            if ("dapps-list" in root):
-                break
+    # Find the start and end indices of the redirect_maps section
+    for i, line in enumerate(lines):
+        if 'redirect_maps' in line:
+            redirect_maps_found = True
+            redirect_maps_start = i + 1  # Start after the redirect_maps line
+        elif redirect_maps_start != -1 and line.strip() == '- macros:':
+            redirect_maps_end = i
+            break
 
-            root_copy = root.split("/")
-            root_copy.pop(0)
-            root = "/".join(root_copy)
+    # If redirect_maps section is found, delete the old mappings
+    if redirect_maps_found:
+        del lines[redirect_maps_start:redirect_maps_end]
 
-            # Write files to json output file
-            for f in files:
-                # Ignore .pages and index.md files
-                if (f != ".pages") & (f != "index.md"):
-                    # Add file path to array of files
-                    current_file = root + "/" + os.path.basename(f)
-                    current_file_paths.append(current_file)
-                    # Write file path to JSON for future comparisons
-                    current_file = '"' + current_file + '"'
+    # Insert the new mappings
+    if redirect_mappings:
+        if not redirect_maps_found:
+            # Find the index of the last line before the plugins section
+            plugins_index = lines.index('plugins:\n') + 1
+            # Insert redirect_maps section before the plugins section
+            lines.insert(plugins_index, '  - redirects:\n')
+            lines.insert(plugins_index + 1, '      redirect_maps:\n')
 
-    return current_file_paths
+        # Find the index of the redirect_maps section
+        redirect_maps_index = lines.index('      redirect_maps:\n') + 1
 
-# Function to get the previous file paths from `master`
-def fetch_previous_file_paths():
-  previous_file_paths = []
-  # Get the sha of the `master` branch so it can be used in the following calls
-  sha = requests.get("https://api.github.com/repos/moonbeam-foundation/moonbeam-docs/branches/master").json()["commit"]["sha"]
+        # Insert the new redirect mappings
+        for source, destination in redirect_mappings.items():
+            mapping_line = f'        {source}: {destination}\n'
+            lines.insert(redirect_maps_index, mapping_line)
+            redirect_maps_index += 1
 
-  # Get file structure from the `master` branch
-  rootTree = requests.get("https://api.github.com/repos/moonbeam-foundation/moonbeam-docs/git/trees/" + sha + "?recursive=1").json()["tree"]
+    # Write the updated lines back to the file
+    with open(yaml_file, 'w') as file:
+        file.writelines(lines)
 
-  for item in rootTree:
-    omit_dirs = [".snippets", "js", "images", "dapps-list", ".", "README.md"]
-    path = item["path"]
-    if not path.startswith(tuple(omit_dirs)) and path.endswith(".md"):
-      previous_file_paths.append(path)
+    print("✅ Process complete! You can review the redirects in the mkdocs.yml file")
 
-  return previous_file_paths
 
-print("🗃 Fetching file structure for comparison...")
+# Function to check if a file name is a key or a value
+def check_file_in_redirects(file_name, redirects):
+    for key, value in redirects.items():
+        if file_name == value:
+            return key, value
+    return None
 
-# Arrays of previous and current file paths
-previous = fetch_previous_file_paths()
-current = fetch_current_file_paths()
-# Array for redirects
-redirect_map = []
-possible_dupes_map = []
 
-# Class defintion for redirects and the redirect_map
-class Redirect:
-    def __init__(self, previous_path, current_path):
-        self.previous_path = previous_path
-        self.current_path = current_path
+# Function to generate redirects
+def generate_redirects(github_repo, base_branch, compare_branch, language):
+    # Load existing redirects from mkdocs.yml
+    if language == "cn":
+        mkdocs_yaml_path = "mkdocs-cn/mkdocs.yml"
+    else:
+        mkdocs_yaml_path = "mkdocs.yml"
+    redirects = load_redirects_from_mkdocs(mkdocs_yaml_path)
 
-print("📁 Comparing files to find where content has moved...")
+    # Get list of changed files on the compare_branch compared to the base_branch
+    compare_commit = get_commit_sha(github_repo, compare_branch)
+    base_commit = get_commit_sha(github_repo, base_branch)
+    comparison = get_commit_comparison(github_repo, base_commit, compare_commit)
+    for file in comparison["files"]:
+        filename = file["filename"]
+        if filename.endswith(".md") and ".snippets" not in filename:
+            if file["status"] == "removed":
+                result = check_file_in_redirects(filename, redirects)
+                if result:
+                    key, value = result
+                    redirects[key] = "index.md"  # Set the original redirect to index.md
+                    redirects[value] = (
+                        "index.md"  # Set the redirected redirect to index.md
+                    )
+                else:
+                    # Create a new redirect
+                    redirects[filename] = "index.md"
+            elif file["status"] == "renamed":
+                prev_file = file["previous_filename"]
+                result = check_file_in_redirects(prev_file, redirects)
+                if result:
+                    key, value = result
+                    redirects[key] = (
+                        filename  # Set the original redirect to the new file name
+                    )
+                    redirects[value] = (
+                        filename  # Set the redirected redirect to the new file name
+                    )
+                else:
+                    # Create a new redirect
+                    redirects[prev_file] = filename
 
-# Filter out exact matches
-for previous_file in previous[:]:
-    for current_file in current[:]:
-        # Remove exact matches
-        if (previous_file == current_file):
-            previous.remove(previous_file)
-            current.remove(current_file)
+    # Save updated redirects to mkdocs.yml
+    update_redirects(redirects, mkdocs_yaml_path)
 
-# Find directories that have moved
-for previous_file in previous[:]:
-    for current_file in current[:]:
-        current_file_name = "/".join(current_file.split("/")[-2:]) # removes directory in root, keeps remainder of the path
 
-        if (current_file_name in previous_file):
-          match = Redirect(previous_file, current_file)
-          redirect_map.append(match)
+# Define custom constructor for !ENV tag
+def env_constructor(loader, node):
+    value = loader.construct_scalar(node)
+    return os.environ.get(value, "")
 
-          previous.remove(previous_file)
-          current.remove(current_file)
 
-# Find files that have moved
-for previous_file in previous[:]:
-    previous_file_name = "/".join(previous_file.split("/")[-1:]) # takes last item in path (the file name)
-    for current_file in current[:]:
-          current_file_name = "/".join(current_file.split("/")[-1:])
-          if (previous_file_name == current_file_name):
-              match = Redirect(previous_file, current_file)
-              redirect_map.append(match)
+# Add the custom constructor to the SafeLoader
+yaml.SafeLoader.add_constructor("!ENV", env_constructor)
 
-              try:
-                previous.remove(previous_file)
-              except:
-                possible_dupes_map.append(match)
 
-              current.remove(current_file)
+# Ignore unknown entries in the yaml file
+def ignore_unknown(loader, tag_suffix, node):
+    return None
 
-# Find files that have moved
-for previous_file in previous[:]:
-    previous_file_name = "/".join(previous_file.split("/")[-1:]).replace(".md", "") # takes last item in path (the file name without .md at the end)
-    for current_file in current[:]:
-          current_file_name = "/".join(current_file.split("/")[-1:]).replace(".md", "")
-          if (current_file_name in previous_file_name) or (previous_file_name in current_file_name):
-              match = Redirect(previous_file, current_file)
-              redirect_map.append(match)
 
-              try:
-                previous.remove(previous_file)
-              except:
-                possible_dupes_map.append(match)
+yaml.SafeLoader.add_multi_constructor("tag:yaml.org,2002:python/", ignore_unknown)
 
-              current.remove(current_file)
 
-print("")
-print("🥳 File comparison complete! Found {} matches!".format(len(redirect_map)))
-print("")
+# Function to load redirects from mkdocs.yml
+def load_redirects_from_mkdocs(mkdocs_yaml_file):
+    redirects = {}
+    if os.path.exists(mkdocs_yaml_file):
+        with open(mkdocs_yaml_file, "r") as file:
+            mkdocs_config = yaml.load(file, Loader=yaml.SafeLoader)
+            for plugin in mkdocs_config.get("plugins", []):
+                if isinstance(plugin, dict) and "redirects" in plugin:
+                    redirects = plugin["redirects"].get("redirect_maps", {})
+                    break
+    return redirects
 
-print("🔧 Modifying existing redirects...")
-print("➕ Creating new redirects...")
 
-mkdocs_yaml = yaml.unsafe_load(open("mkdocs.yml", "r"))
-prev_mapping = mkdocs_yaml["plugins"][3]["redirects"]["redirect_maps"]
-prev_values = list(prev_mapping.values())
-prev_keys = list(prev_mapping.keys())
+# Function to get commit SHA for a given branch
+def get_commit_sha(github_repo, branch):
+    url = f"https://api.github.com/repos/{github_repo}/commits/{branch}"
+    response = requests.get(url)
+    response.raise_for_status()
+    return response.json()["sha"]
 
-for i in range(len(prev_mapping)):
-  for item in redirect_map:
-    if (prev_values[i] == item.previous_path):
-      match = Redirect(prev_keys[i], item.current_path)
-      redirect_map.append(match)
 
-new_dict = {}
-for redirect in redirect_map:
-  new_dict[redirect.previous_path] = redirect.current_path
+# Function to get commit comparison between two commits
+def get_commit_comparison(github_repo, base_commit, compare_commit):
+    url = f"https://api.github.com/repos/{github_repo}/compare/{base_commit}...{compare_commit}"
+    response = requests.get(url)
+    response.raise_for_status()
+    return response.json()
 
-mkdocs_yaml["plugins"][3]["redirects"]["redirect_maps"] = new_dict
-with open("mkdocs.yml", "w") as f:
-    yaml.dump(mkdocs_yaml, f, sort_keys=False, allow_unicode=True, default_style="'", indent=2)
 
-print("✅ Successfully updated the mkdocs.yml file with new redirects")
+if __name__ == "__main__":
+    # Create argument parser
+    parser = argparse.ArgumentParser(
+        description="Generate redirects for changed files in a GitHub repository."
+    )
+    parser.add_argument(
+        "github_repo",
+        type=str,
+        default="moonbeam-foundation/moonbeam-docs",
+        help="Repository name (default: moonbeam-foundation/moonbeam-docs-cn)",
+    )
+    parser.add_argument("base_branch", type=str, help="Base branch name (e.g., main)")
+    parser.add_argument(
+        "compare_branch", type=str, help="Compare branch name (e.g., new_branch)"
+    )
+    parser.add_argument(
+        "language",
+        type=str,
+        choices=["en", "cn"],
+        default="en",
+        help="YAML file containing redirects (choices: en or cn, default: en)",
+    )
 
-print("")
-print("------------------------------------")
-print("")
+    # Parse arguments
+    args = parser.parse_args()
 
-print("Matches not found for the remaining previous items (have they been deleted or moved? We need to manually find a redirect for these files): ")
-print(previous)
-
-print("")
-print("------------------------------------")
-print("")
-
-print("Matches not found for the remaining current items (are these new pages? We need to manually look and see if any old files corresponds to these new files): ")
-print(current)
-
-print("")
-print("------------------------------------")
-print("")
-
-print("There are possible duplicates that need to be reviewed. Find these files in the 'redirect_maps' section of the mkdocs.yml file and verify any matches with these file names are correct: ")
-for dupe in possible_dupes_map:
-  print("Possible dupe: ", dupe.previous_path, dupe.current_path)
+    # Generate redirects
+    print("⏱️ Generating redirects... just a few moments...")
+    generate_redirects(
+        args.github_repo, args.base_branch, args.compare_branch, args.language
+    )

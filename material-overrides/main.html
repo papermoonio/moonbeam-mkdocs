@@ -8,8 +8,14 @@
     src="https://widget.kapa.ai/kapa-widget.bundle.js"
     data-website-id="d902d9ae-b379-4a22-bb35-b78b4c601d3b"
     data-project-name="Moonbeam"
-    data-project-color="#514C65"
+    data-project-color="rgb(48, 47, 83)"
     data-project-logo="/images/moonbot.webp"
+    data-button-position-right="40px"
+    data-button-position-bottom="40px"
+    data-button-border-radius="4px"
+    data-modal-border-radius="4px"
+    data-search-show-more-button-text-color="#000"
+    data-font-family="Banana Grotesk"
     data-footer-tos-privacy-links='[{"title": "terms of service", "url": "https://moonbeam.network/terms-of-use/"}, {"title": "privacy policy", "url": "https://moonbeam.foundation/privacy-policy/"}]'
   ></script>
 {% endblock %}
@@ -17,7 +23,7 @@
 {% block fonts %}
   {{ super() }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block site_meta %}
@@ -40,6 +46,6 @@
 {%- endblock -%} 
 
 {% block announce %}
-  <p>Block times are now 6 seconds on Moonbase Alpha thanks to asynchronous backing!
-     Learn more about <a href="https://forum.moonbeam.network/t/runtime-rt2801-schedule/1616/4">async backing</a>.</p>
+  <p>Thanks to asynchronous backing, 6-second block times are coming to Moonriver and Moonbeam in the next runtime upgrade!
+     Learn more about <a href="https://wiki.polkadot.network/docs/learn-async-backing">async backing</a>.</p>
 {% endblock %}
