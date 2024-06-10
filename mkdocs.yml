@@ -112,15 +112,15 @@ plugins:
         builders/xcm/xc-integration.md: builders/interoperability/xcm/xc-registration/index.md
         getting-started/using-metamask.md: tokens/connect/metamask.md
         getting-started/using-remix.md: builders/ethereum/dev-env/remix.md
-        getting-started/using-truffle.md: builders/build/eth-api/dev-env/index.md
+        getting-started/using-truffle.md: builders/ethereum/dev-env/index.md
         getting-started/local-node/deploy-contract.md: builders/ethereum/libraries/index.md
-        getting-started/local-node/using-remix.md: builders/build/eth-api/dev-env/remix.md
+        getting-started/local-node/using-remix.md: builders/ethereum/dev-env/remix.md
         getting-started/local-node/web3-transaction.md: builders/ethereum/libraries/web3py.md
         getting-started/moonriver/integrate-metamask.md: builders/get-started/networks/moonriver.md
         getting-started/testnet/faucet.md: builders/get-started/networks/moonbase.md
         getting-started/testnet/metamask.md: tokens/connect/metamask.md
         getting-started/testnet/precompiles.md: builders/ethereum/precompiles/index.md
-        getting-started/testnet/pubsub.md: builders/json-rpc/pubsub.md
+        getting-started/testnet/pubsub.md: builders/ethereum/json-rpc/pubsub.md
         integrations/openzeppelin/overview.md: builders/ethereum/dev-env/openzeppelin/overview.md
         learn/dapps-list/dtmb.md: learn/dapps-list/index.md
         learn/features/unified-accounts.md: learn/core-concepts/unified-accounts.md
