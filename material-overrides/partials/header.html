@@ -23,15 +23,15 @@
         Faucet
       </a>
       <div class="language-select-wrapper select-wrapper">
-        <span class="language-select-label select-label"></span>
+        <span class="language-select-label select-label">Eng</span>
         <ul class="language-select select">
-          <li class="en" value="en">Eng</li>
-          <li class="cn" value="cn">中文</li>
+          <li class="en" value="en"><a href="#">Eng</a></li>
+          <li class="cn" value="cn"><a href="">中文</a></li>
         </ul>
         <span class="md-icon selector-closed active">{% include
           ".icons/material/chevron-down.svg" %}</span>
-        <span class="md-icon selector-open">{% include
-          ".icons/material/chevron-up.svg" %}</span>
+          <span class="md-icon selector-open">{% include
+            ".icons/material/chevron-up.svg" %}</span>
       </div>
       {% if "material/search" in config["plugins"] %}
       <label class="md-header__button md-icon" for="__search">
