@@ -251,13 +251,17 @@ body {
   max-width: 300px;
   padding: 0.467em 1em;
   z-index: 1;
-  display: flex;
+  display: none;
   align-items: center;
   border-radius: var(--border-radius);
   border: var(--border-width-thin) solid var(--light-transparent-15);
   background: var(--teal-dark-transparent-15);
   color: var(--teal-light);
   position: relative;
+}
+
+.select-wrapper.display {
+  display: flex; /* Only display the selector if it has the display class */
 }
 
 .select-wrapper .md-icon svg {
@@ -293,23 +297,26 @@ body {
 }
 
 .select li {
-  display: block;
-  text-decoration: none;
-  cursor: pointer;
   border-top: var(--border-width-thin) solid var(--teal-light);
+}
+
+.select li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 1em 1.5em;
+  text-decoration: none;
 }
 
 .select li:first-child {
   border: none;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
-  padding: 1em 1.5em;
 }
 
 .select li:last-child {
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  padding: 1em 1.5em;
 }
 
 .select li:hover {
@@ -1971,4 +1978,9 @@ p.quick-ref-title {
 
 .md-banner__inner.md-grid.md-typeset {
   text-align: center;
+}
+
+.cn-tabs .md-tabs__item {
+  height: unset;
+  padding: 1em 2em;
 }
