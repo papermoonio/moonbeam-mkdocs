@@ -79,15 +79,15 @@ plugins:
         - /assets/stylesheets/moonbeam.css
   - redirects:
       redirect_maps:
-        builders/build/canonical-contracts/precompiles/eth-mainnet.md: builders/pallets-precompiles/precompiles/eth-mainnet.md
-        builders/build/eth-api/debug-trace.md: builders/json-rpc/debug-trace.md
-        builders/build/eth-api/dev-env/truffle.md: builders/build/eth-api/dev-env/index.md
-        builders/build/eth-api/pubsub.md: builders/json-rpc/pubsub.md
-        builders/build/moonbeam-custom-api.md: builders/json-rpc/moonbeam-custom-api.md
+        builders/build/canonical-contracts/precompiles/eth-mainnet.md: builders/ethereum/precompiles/utility/eth-mainnet.md
+        builders/build/eth-api/debug-trace.md: builders/ethereum/json-rpc/debug-trace.md
+        builders/build/eth-api/dev-env/truffle.md: builders/ethereum/dev-env/index.md
+        builders/build/eth-api/pubsub.md: builders/ethereum/json-rpc/pubsub.md
+        builders/build/moonbeam-custom-api.md: builders/ethereum/json-rpc/moonbeam-custom-api.md
         builders/get-started/eth-compare/index.md: learn/core-concepts/index.md
         builders/get-started/eth-compare/balances.md: learn/core-concepts/balances.md
         builders/get-started/eth-compare/consensus-finality.md: learn/core-concepts/consensus-finality.md
-        builders/get-started/eth-compare/rpc-support.md: builders/json-rpc/eth-rpc.md
+        builders/get-started/eth-compare/rpc-support.md: builders/ethereum/json-rpc/eth-rpc.md
         builders/get-started/eth-compare/security.md: learn/core-concepts/security.md
         builders/get-started/eth-compare/transfers-api.md: learn/core-concepts/transfers-api.md
         builders/get-started/eth-compare/tx-fees.md: learn/core-concepts/tx-fees.md
@@ -95,7 +95,7 @@ plugins:
         builders/get-started/moonriver.md: builders/get-started/networks/moonriver.md
         builders/get-started/moonbeam.md: builders/get-started/networks/moonbeam.md
         builders/get-started/networks/layer2/bobabeam.md: builders/get-started/networks/index.md
-        builders/interact/hardhat.md: builders/build/eth-api/dev-env/hardhat.md
+        builders/interact/hardhat.md: builders/ethereum/dev-env/hardhat.md
         builders/interoperability/xcm/xc20/xtokens.md: builders/interoperability/xcm/xc20/send-xc20s/index.md
         builders/interoperability/xcm/fees.md: builders/interoperability/xcm/core-concepts/weights-fees.md
         builders/interoperability/xcm/remote-evm-calls.md: builders/interoperability/xcm/remote-execution/remote-evm-calls.md
@@ -111,17 +111,17 @@ plugins:
         builders/xcm/xcm-transactor.md: builders/interoperability/xcm/remote-execution/substrate-calls/index.md
         builders/xcm/xc-integration.md: builders/interoperability/xcm/xc-registration/index.md
         getting-started/using-metamask.md: tokens/connect/metamask.md
-        getting-started/using-remix.md: builders/build/eth-api/dev-env/remix.md
-        getting-started/using-truffle.md: builders/build/eth-api/dev-env/index.md
-        getting-started/local-node/deploy-contract.md: builders/build/eth-api/libraries/index.md
-        getting-started/local-node/using-remix.md: builders/build/eth-api/dev-env/remix.md
-        getting-started/local-node/web3-transaction.md: builders/build/eth-api/libraries/web3py.md
+        getting-started/using-remix.md: builders/ethereum/dev-env/remix.md
+        getting-started/using-truffle.md: builders/ethereum/dev-env/index.md
+        getting-started/local-node/deploy-contract.md: builders/ethereum/libraries/index.md
+        getting-started/local-node/using-remix.md: builders/ethereum/dev-env/remix.md
+        getting-started/local-node/web3-transaction.md: builders/ethereum/libraries/web3py.md
         getting-started/moonriver/integrate-metamask.md: builders/get-started/networks/moonriver.md
         getting-started/testnet/faucet.md: builders/get-started/networks/moonbase.md
         getting-started/testnet/metamask.md: tokens/connect/metamask.md
-        getting-started/testnet/precompiles.md: builders/pallets-precompiles/precompiles/index.md
-        getting-started/testnet/pubsub.md: builders/json-rpc/pubsub.md
-        integrations/openzeppelin/overview.md: builders/build/eth-api/dev-env/openzeppelin/overview.md
+        getting-started/testnet/precompiles.md: builders/ethereum/precompiles/index.md
+        getting-started/testnet/pubsub.md: builders/ethereum/json-rpc/pubsub.md
+        integrations/openzeppelin/overview.md: builders/ethereum/dev-env/openzeppelin/overview.md
         learn/dapps-list/dtmb.md: learn/dapps-list/index.md
         learn/features/unified-accounts.md: learn/core-concepts/unified-accounts.md
         learn/platform/roadmap.md: index.md
@@ -129,6 +129,72 @@ plugins:
         networks/moonriver.md: learn/platform/networks/moonriver.md
         node-operators/networks/full-node.md: node-operators/networks/run-a-node/overview.md
         tutorials/eth-api/truffle-start-to-end.md: tutorials/eth-api/get-started.index.md
+        builders/build/index.md: builders/ethereum/index.md
+        builders/build/canonical-contracts.md: builders/ethereum/canonical-contracts.md
+        builders/build/eth-api/dev-env/ape.md: builders/ethereum/dev-env/ape.md
+        builders/build/eth-api/dev-env/brownie.md: builders/ethereum/dev-env/brownie.md
+        builders/build/eth-api/dev-env/foundry.md: builders/ethereum/dev-env/foundry.md
+        builders/build/eth-api/dev-env/hardhat.md: builders/ethereum/dev-env/hardhat.md
+        builders/build/eth-api/dev-env/index.md: builders/ethereum/dev-env/index.md
+        builders/build/eth-api/dev-env/openzeppelin/contracts.md: builders/ethereum/dev-env/openzeppelin/contracts.md
+        builders/build/eth-api/dev-env/openzeppelin/defender.md: builders/ethereum/dev-env/openzeppelin/defender.md
+        builders/build/eth-api/dev-env/openzeppelin/index.md: builders/ethereum/dev-env/openzeppelin/index.md
+        builders/build/eth-api/dev-env/openzeppelin/overview.md: builders/ethereum/dev-env/openzeppelin/overview.md
+        builders/build/eth-api/dev-env/remix.md: builders/ethereum/dev-env/remix.md
+        builders/build/eth-api/dev-env/scaffold-eth.md: builders/ethereum/dev-env/scaffold-eth.md
+        builders/build/eth-api/dev-env/tenderly.md: builders/ethereum/dev-env/tenderly.md
+        builders/build/eth-api/dev-env/thirdweb.md: builders/ethereum/dev-env/thirdweb.md
+        builders/build/eth-api/dev-env/waffle-mars.md: builders/ethereum/dev-env/waffle-mars.md
+        builders/build/eth-api/index.md: builders/ethereum/index.md
+        builders/json-rpc/debug-trace.md: builders/ethereum/json-rpc/debug-trace.md
+        builders/json-rpc/eth-rpc.md: builders/ethereum/json-rpc/eth-rpc.md
+        builders/json-rpc/index.md: builders/ethereum/json-rpc/index.md
+        builders/json-rpc/moonbeam-custom-api.md: builders/ethereum/json-rpc/moonbeam-custom-api.md
+        builders/json-rpc/pubsub.md: builders/ethereum/json-rpc/pubsub.md
+        builders/build/eth-api/libraries/ethersjs.md: builders/ethereum/libraries/ethersjs.md
+        builders/build/eth-api/libraries/ethersrs.md: builders/ethereum/libraries/ethersrs.md
+        builders/build/eth-api/libraries/index.md: builders/ethereum/libraries/index.md
+        builders/build/eth-api/libraries/viem.md: builders/ethereum/libraries/viem.md
+        builders/build/eth-api/libraries/web3js.md: builders/ethereum/libraries/web3js.md
+        builders/build/eth-api/libraries/web3py.md: builders/ethereum/libraries/web3py.md
+        builders/pallets-precompiles/precompiles/identity.md: builders/ethereum/precompiles/account/identity.md
+        builders/pallets-precompiles/precompiles/proxy.md: builders/ethereum/precompiles/account/proxy.md
+        builders/pallets-precompiles/precompiles/collective.md: builders/ethereum/precompiles/features/governance/collective.md
+        builders/pallets-precompiles/precompiles/conviction-voting.md: builders/ethereum/precompiles/features/governance/conviction-voting.md
+        builders/pallets-precompiles/precompiles/preimage.md: builders/ethereum/precompiles/features/governance/preimage.md
+        builders/pallets-precompiles/precompiles/referenda.md: builders/ethereum/precompiles/features/governance/referenda.md
+        builders/pallets-precompiles/precompiles/randomness.md: builders/ethereum/precompiles/features/randomness.md
+        builders/pallets-precompiles/precompiles/staking.md: builders/ethereum/precompiles/features/staking.md
+        builders/pallets-precompiles/precompiles/index.md: builders/ethereum/precompiles/index.md
+        builders/pallets-precompiles/precompiles/gmp.md: builders/ethereum/precompiles/interoperability/gmp.md
+        builders/pallets-precompiles/precompiles/overview.md: builders/ethereum/precompiles/overview.md
+        builders/pallets-precompiles/precompiles/eth-mainnet.md: builders/ethereum/precompiles/utility/eth-mainnet.md
+        builders/pallets-precompiles/precompiles/registry.md: builders/ethereum/precompiles/utility/registry.md
+        builders/pallets-precompiles/precompiles/relay-data-verifier.md: builders/ethereum/precompiles/utility/relay-data-verifier.md
+        builders/pallets-precompiles/precompiles/batch.md: builders/ethereum/precompiles/ux/batch.md
+        builders/pallets-precompiles/precompiles/call-permit.md: builders/ethereum/precompiles/ux/call-permit.md
+        builders/pallets-precompiles/precompiles/erc20.md: builders/ethereum/precompiles/ux/erc20.md
+        builders/build/eth-api/verify-contracts/api-verification.md: builders/ethereum/verify-contracts/api-verification.md
+        builders/build/eth-api/verify-contracts/block-explorers.md: builders/ethereum/verify-contracts/block-explorers.md
+        builders/build/eth-api/verify-contracts/etherscan-plugins.md: builders/ethereum/verify-contracts/etherscan-plugins.md
+        builders/build/eth-api/verify-contracts/index.md: builders/ethereum/verify-contracts/index.md
+        builders/pallets-precompiles/index.md: index.md
+        builders/build/substrate-api/chopsticks.md: builders/substrate/dev-env/chopsticks.md
+        builders/build/substrate-api/index.md: builders/substrate/index.md
+        builders/pallets-precompiles/pallets/identity.md: builders/substrate/interfaces/account/identity.md
+        builders/pallets-precompiles/pallets/multisig.md: builders/substrate/interfaces/account/multisig.md
+        builders/pallets-precompiles/pallets/proxy.md: builders/substrate/interfaces/account/proxy.md
+        builders/pallets-precompiles/pallets/conviction-voting.md: builders/substrate/interfaces/features/governance/conviction-voting.md
+        builders/pallets-precompiles/pallets/preimage.md: builders/substrate/interfaces/features/governance/preimage.md
+        builders/pallets-precompiles/pallets/referenda.md: builders/substrate/interfaces/features/governance/referenda.md
+        builders/pallets-precompiles/pallets/randomness.md: builders/substrate/interfaces/features/randomness.md
+        builders/pallets-precompiles/pallets/staking.md: builders/substrate/interfaces/features/staking.md
+        builders/pallets-precompiles/pallets/index.md: builders/substrate/interfaces/index.md
+        builders/pallets-precompiles/pallets/utility.md: builders/substrate/interfaces/utility/utility.md
+        builders/build/substrate-api/polkadot-js-api.md: builders/substrate/libraries/polkadot-js-api.md
+        builders/build/substrate-api/py-substrate-interface.md: builders/substrate/libraries/py-substrate-interface.md
+        builders/build/substrate-api/sidecar.md: builders/substrate/libraries/sidecar.md
+        builders/build/substrate-api/overview.md: builders/substrate/overview.md
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
