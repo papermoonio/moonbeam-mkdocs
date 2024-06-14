@@ -195,7 +195,7 @@ plugins:
         builders/build/substrate-api/py-substrate-interface.md: builders/substrate/libraries/py-substrate-interface.md
         builders/build/substrate-api/sidecar.md: builders/substrate/libraries/sidecar.md
         builders/build/substrate-api/overview.md: builders/substrate/overview.md
-        learn/dapps-list/state-of-the-dapps.md: learn/dapps-list/dapp-directory.md
+        learn/dapps-list/state-of-the-dapps.md: learn/dapps-list/index.md
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
