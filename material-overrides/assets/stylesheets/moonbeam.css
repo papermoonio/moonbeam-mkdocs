@@ -1338,6 +1338,12 @@ html .md-typeset details.function div.tabbed-set,
   margin-right: 2em;
 }
 
+.papermoon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* Newsletter Signup Styling */
 .hs-form.stacked {
   display: flex;
