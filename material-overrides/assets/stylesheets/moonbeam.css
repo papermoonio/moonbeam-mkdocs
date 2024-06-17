@@ -890,6 +890,7 @@ html .md-typeset details.function div.tabbed-set,
 
 .md-typeset__scrollwrap {
   margin: 0;
+  text-align: center;
 }
 
 .md-typeset .tabbed-block p,
@@ -908,11 +909,6 @@ html .md-typeset details.function div.tabbed-set,
 .tabbed-content .tabbed-block .md-typeset__table table:not([class]) {
   border: unset;
   border-radius: 0;
-}
-
-.md-typeset__scrollwrap {
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .md-typeset
@@ -1336,6 +1332,12 @@ html .md-typeset details.function div.tabbed-set,
 
 .policy-links a:first-child {
   margin-right: 2em;
+}
+
+.papermoon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Newsletter Signup Styling */
