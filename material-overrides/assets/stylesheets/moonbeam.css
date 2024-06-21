@@ -1453,6 +1453,18 @@ html .md-typeset details.function div.tabbed-set,
   }
 }
 
+@media screen and (max-width: 50.125em) {
+  .papermoon {
+    position: unset;
+    transform: none;
+  }
+
+  .md-footer-copyright {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media screen and (max-width: 48.125em) {
   .md-footer-meta__inner.md-grid {
     width: 94%;
@@ -1469,6 +1481,7 @@ html .md-typeset details.function div.tabbed-set,
   .md-footer-social .network-links {
     margin: 0 auto 1em;
   }
+
   .hs-button {
     display: flex;
   }
