@@ -12,8 +12,8 @@ extra_javascript:
   - js/fixCreatedDate.js
   - js/externalLinkModal.js
 extra_css:
-  - /assets/stylesheets/moonbeam.css
-  - /assets/stylesheets/termynal.css
+  - assets/stylesheets/moonbeam.css
+  - assets/stylesheets/termynal.css
 theme:
   name: material
   custom_dir: material-overrides
@@ -75,8 +75,8 @@ plugins:
         - js/fixCreatedDate.js
         - js/externalLinkModal.js
       css_files:
-        - /assets/stylesheets/termynal.css
-        - /assets/stylesheets/moonbeam.css
+        - assets/stylesheets/termynal.css
+        - assets/stylesheets/moonbeam.css
   - redirects:
       redirect_maps:
         builders/build/canonical-contracts/precompiles/eth-mainnet.md: builders/ethereum/precompiles/utility/eth-mainnet.md
