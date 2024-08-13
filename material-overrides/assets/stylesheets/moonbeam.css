@@ -807,6 +807,11 @@ html .md-typeset details.function div.tabbed-set,
   box-shadow: none;
 }
 
+/* Styling of code snippet titles */
+.highlight span.filename {
+  border-bottom: var(--border-grid);
+}
+
 /* Styling to prevent code blocks from overlapping the Copy to Clipboard button */
 .md-typeset pre > code {
   white-space: break-spaces;
