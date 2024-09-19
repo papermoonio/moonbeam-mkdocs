@@ -107,7 +107,7 @@ plugins:
         builders/xcm/xc20/index.md: builders/interoperability/xcm/xc20/index.md
         builders/xcm/xc20/overview.md: builders/interoperability/xcm/xc20/overview.md
         builders/xcm/xc20/xtokens.md: builders/interoperability/xcm/xc20/send-xc20s/index.md
-        builders/xcm/xcm-sdk/xcm-sdk.md: builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk.md
+        builders/xcm/xcm-sdk/xcm-sdk.md: https://moonbeam-foundation.github.io/xcm-sdk/latest/
         builders/xcm/xcm-transactor.md: builders/interoperability/xcm/remote-execution/substrate-calls/index.md
         builders/xcm/xc-integration.md: builders/interoperability/xcm/xc-registration/index.md
         getting-started/using-metamask.md: tokens/connect/metamask.md
@@ -196,6 +196,13 @@ plugins:
         builders/build/substrate-api/sidecar.md: builders/substrate/libraries/sidecar.md
         builders/build/substrate-api/overview.md: builders/substrate/overview.md
         learn/dapps-list/state-of-the-dapps.md: learn/dapps-list/index.md
+        builders/interoperability/xcm/xcm-sdk/index.md: https://moonbeam-foundation.github.io/xcm-sdk/latest/
+        builders/interoperability/xcm/xcm-sdk/v0/index.md: https://moonbeam-foundation.github.io/xcm-sdk/v0/
+        builders/interoperability/xcm/xcm-sdk/v0/reference.md: https://moonbeam-foundation.github.io/xcm-sdk/v0/reference/interfaces/
+        builders/interoperability/xcm/xcm-sdk/v0/xcm-sdk.md: https://moonbeam-foundation.github.io/xcm-sdk/v0/example-usage/
+        builders/interoperability/xcm/xcm-sdk/v1/index.md: https://moonbeam-foundation.github.io/xcm-sdk/v1/
+        builders/interoperability/xcm/xcm-sdk/v1/reference.md: https://moonbeam-foundation.github.io/xcm-sdk/v1/reference/interfaces/
+        builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk.md: https://moonbeam-foundation.github.io/xcm-sdk/v1/example-usage/
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml

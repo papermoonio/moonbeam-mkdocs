@@ -33,6 +33,9 @@
             <div class="card">
               <a href="{{ subsection_path }}">
                 <h2 class="title">{{ nav_item.title }}</h2> 
+                {% if nav_item.title == "XCM SDK" %}
+                  {% set description = "Guides on the available methods and interfaces provided by the Moonbeam XCM SDK and how to use the XCM SDK to easily transfer assets across chains." %}
+                {% endif %}
                 {% if not description == "" %}
                   <p class="description">{{ description }}</p>
                 {% else %}
