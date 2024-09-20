@@ -146,6 +146,8 @@ plugins:
         builders/build/eth-api/dev-env/thirdweb.md: builders/ethereum/dev-env/thirdweb.md
         builders/build/eth-api/dev-env/waffle-mars.md: builders/ethereum/dev-env/waffle-mars.md
         builders/build/eth-api/index.md: builders/ethereum/index.md
+        builders/ethereum/historical-updates.md: builders/build/historical-updates.md
+        builders/ethereum/runtime-upgrades.md: builders/build/runtime-upgrades.md
         builders/json-rpc/debug-trace.md: builders/ethereum/json-rpc/debug-trace.md
         builders/json-rpc/eth-rpc.md: builders/ethereum/json-rpc/eth-rpc.md
         builders/json-rpc/index.md: builders/ethereum/json-rpc/index.md
