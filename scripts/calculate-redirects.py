@@ -18,7 +18,7 @@
 #   - `language`: Language choice for redirects YAML file (choices: en or cn, default: en)#
 #                                                                                         #
 # Example usage:                                                                          #
-#   python scripts/calculate-redirects.py moonbeam-foundation/moonbeam-docs main          #
+#   python scripts/calculate-redirects.py moonbeam-foundation/moonbeam-docs master        #
 #   new_branch en                                                                         #
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
