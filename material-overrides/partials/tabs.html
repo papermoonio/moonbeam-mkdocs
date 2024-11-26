@@ -9,7 +9,7 @@
           {% if nav_item.is_section %}
             <li class="md-tabs__item--custom" tabindex="0">    
               <span class="md-tabs__link">
-                <a href="/{{ nav_item.children[0].url }}">{{ nav_item.title }}</a>
+                <a href="{{ nav_item.children[0].url | url }}">{{ nav_item.title }}</a>
               </span>
               <ul class="md-tab__list">
                 {% for section_item in nav_item.children %}
