@@ -205,6 +205,7 @@ plugins:
         builders/interoperability/xcm/xcm-sdk/v1/index.md: https://moonbeam-foundation.github.io/xcm-sdk/v1/
         builders/interoperability/xcm/xcm-sdk/v1/reference.md: https://moonbeam-foundation.github.io/xcm-sdk/v1/reference/interfaces/
         builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk.md: https://moonbeam-foundation.github.io/xcm-sdk/v1/example-usage/
+        builders/interoperability/xcm/xc20/send-xc20s/xtokens-pallet.md: builders/interoperability/xcm/xc20/send-xc20s/xcm-pallet.md
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
