@@ -251,17 +251,20 @@ body {
   max-width: 300px;
   padding: 0.467em 1em;
   z-index: 1;
-  display: none;
   align-items: center;
   border-radius: var(--border-radius);
   border: var(--border-width-thin) solid var(--light-transparent-15);
   background: var(--teal-dark-transparent-15);
   color: var(--teal-light);
   position: relative;
+  display: flex;
+  opacity: 0;
+  cursor: default;
 }
 
 .select-wrapper.display {
-  display: flex; /* Only display the selector if it has the display class */
+  opacity: 1;
+  cursor: pointer;
 }
 
 .select-wrapper .md-icon svg {
