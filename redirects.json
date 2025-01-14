@@ -503,6 +503,10 @@
 	{
 	  "key":"/builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk/",
 	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v1/example-usage/"
+	},
+	{
+	  "key": "/builders/integrations/gaming/metafab/",
+	  "value": "/builders/integrations/"
 	}
   ]
 }
