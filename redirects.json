@@ -114,7 +114,7 @@
 	},
 	{
 	  "key":"/builders/xcm/xcm-sdk/xcm-sdk/",
-	  "value":"/https:/moonbeam-foundation.github.io/xcm-sdk/latest/"
+	  "value":"https:/moonbeam-foundation.github.io/xcm-sdk/latest/"
 	},
 	{
 	  "key":"/builders/xcm/xcm-transactor/",
