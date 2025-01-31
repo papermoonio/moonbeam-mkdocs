@@ -1151,6 +1151,7 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 .md-feedback__list {
+  margin-top: 12px;
   display: flex;
   gap: 1em;
   justify-content: center;
@@ -1202,7 +1203,7 @@ html .md-typeset details.function div.tabbed-set,
   width: 90%;
   height: 1px;
   background-color: var(--border-purple-bright);
-  margin: 1em 0;
+  margin: 12px;
 }
 
 /*styles for the edit this page button*/
@@ -1214,6 +1215,7 @@ html .md-typeset details.function div.tabbed-set,
   color: var(--storm-gray);
   text-decoration: none;
   transition: color .3s ease;
+  margin: 0;
 }
 
 .md-content__button.md-icon:hover {
