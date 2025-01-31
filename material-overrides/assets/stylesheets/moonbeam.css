@@ -1138,7 +1138,7 @@ html .md-typeset details.function div.tabbed-set,
   width: 100%;
   margin: 1em 0 !important;
   text-align: center;
-  padding: 1em;
+  padding: 0;
 }
 
 .md-feedback__title {
