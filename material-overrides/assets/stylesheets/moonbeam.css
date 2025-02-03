@@ -1136,7 +1136,7 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 .md-feedback__title {
-  margin-bottom: .75em;
+  margin-bottom: 0.75em;
   font-family: var(--md-text-font);
   font-size: 12px;
   font-weight: 400;
@@ -1199,12 +1199,12 @@ html .md-typeset details.function div.tabbed-set,
 
 /*styles for the edit this page button*/
 .md-content__button {
-  margin: .75em auto 0 !important;
+  margin: 0.75em auto 0 !important;
   display: flex;
   align-items: center;
-  gap: .5em;
+  gap: 0.5em;
   font-size: 12px;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
 .md-content__button.md-icon:hover {
