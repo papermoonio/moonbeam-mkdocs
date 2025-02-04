@@ -20,12 +20,13 @@
   ></script>
     <script>
       document.body.addEventListener('click', (event) => {
-      if (event.target.id === 'kapa-widget-container') {
-        event.target.addEventListener('keydown', (event) => {
-          event.stopPropagation()
-        })
-      }
-    });
+        if (event.target.id === 'kapa-widget-container') {
+          event.target.addEventListener('keydown', (event) => {
+            event.stopPropagation()
+          })
+        }
+      });
+
     </script>
 {% endblock %}
 
