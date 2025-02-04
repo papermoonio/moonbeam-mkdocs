@@ -26,7 +26,6 @@ theme:
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
-    - navigation.instant
     - navigation.prune
     - content.code.copy
     - announce.dismiss
@@ -64,7 +63,7 @@ plugins:
   - git-revision-date-localized:
       exclude:
         - .snippets/*
-      enabled: !ENV ENABLED_GIT_REVISION_DATE, True
+      enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
       enable_creation_date: true
   # - privacy
   - minify:
