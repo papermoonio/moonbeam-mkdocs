@@ -18,6 +18,15 @@
     data-font-family="Banana Grotesk"
     data-footer-tos-privacy-links='[{"title": "terms of service", "url": "https://moonbeam.network/terms-of-use"}, {"title": "privacy policy", "url": "https://moonbeam.network/privacy-policy"}]'
   ></script>
+    <script>
+      document.body.addEventListener('click', (event) => {
+      if (event.target.id === 'kapa-widget-container') {
+        event.target.addEventListener('keydown', (event) => {
+          event.stopPropagation()
+        })
+      }
+    });
+    </script>
 {% endblock %}
 
 {% block fonts %}
