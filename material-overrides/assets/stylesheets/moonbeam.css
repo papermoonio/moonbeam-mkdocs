@@ -136,6 +136,13 @@ body {
   border-right: var(--border-grid);
 }
 
+body[data-scroll-locked] {
+  /* Need to use important here to override inline styling*/
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 1.5% !important;
+}
+
 .md-tabs .md-grid {
   border-right: none;
 }
