@@ -19,7 +19,7 @@
       data-footer-tos-privacy-links='[{"title": "terms of service", "url": "https://moonbeam.network/terms-of-use"}, {"title": "privacy policy", "url": "https://moonbeam.network/privacy-policy"}]'
     ></script>
     <script defer>
-      document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('DOMContentLoaded', () => {
         document.body.addEventListener('click', (event) => {
           if (event.target.id === 'kapa-widget-container') {
             event.target.addEventListener('keydown', (event) => {
