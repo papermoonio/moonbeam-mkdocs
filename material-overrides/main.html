@@ -4,27 +4,29 @@
   {{ super() }}
   <link rel="preconnect" href="https://widget.kapa.ai/">
   <style data-emotion="mantine" data-s=""></style>
-  <script defer
-    src="https://widget.kapa.ai/kapa-widget.bundle.js"
-    data-website-id="d902d9ae-b379-4a22-bb35-b78b4c601d3b"
-    data-project-name="Moonbeam"
-    data-project-color="rgb(48, 47, 83)"
-    data-project-logo="/images/moonbot.webp"
-    data-button-position-right="40px"
-    data-button-position-bottom="40px"
-    data-button-border-radius="4px"
-    data-modal-border-radius="4px"
-    data-search-show-more-button-text-color="#000"
-    data-font-family="Banana Grotesk"
-    data-footer-tos-privacy-links='[{"title": "terms of service", "url": "https://moonbeam.network/terms-of-use"}, {"title": "privacy policy", "url": "https://moonbeam.network/privacy-policy"}]'
-  ></script>
-    <script>
-      document.body.addEventListener('click', (event) => {
-        if (event.target.id === 'kapa-widget-container') {
-          event.target.addEventListener('keydown', (event) => {
-            event.stopPropagation()
-          })
-        }
+    <script defer
+      src="https://widget.kapa.ai/kapa-widget.bundle.js"
+      data-website-id="d902d9ae-b379-4a22-bb35-b78b4c601d3b"
+      data-project-name="Moonbeam"
+      data-project-color="rgb(48, 47, 83)"
+      data-project-logo="/images/moonbot.webp"
+      data-button-position-right="40px"
+      data-button-position-bottom="40px"
+      data-button-border-radius="4px"
+      data-modal-border-radius="4px"
+      data-search-show-more-button-text-color="#000"
+      data-font-family="Banana Grotesk"
+      data-footer-tos-privacy-links='[{"title": "terms of service", "url": "https://moonbeam.network/terms-of-use"}, {"title": "privacy policy", "url": "https://moonbeam.network/privacy-policy"}]'
+    ></script>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.body.addEventListener('click', (event) => {
+          if (event.target.id === 'kapa-widget-container') {
+            event.target.addEventListener('keydown', (event) => {
+              event.stopPropagation();
+            });
+          }
+        });
       });
     </script>
 {% endblock %}
