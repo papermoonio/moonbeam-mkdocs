@@ -1189,7 +1189,8 @@ html .md-typeset details.function div.tabbed-set,
 .md-feedback__icon:last-child:hover {
   background: rgba(226, 101, 96, 0.35);
 }
-/*divider between feedback and edit this button*/
+
+/* Divider between feedback and edit this button */
 .divider {
   width: 100%;
   height: 1px;
@@ -1197,7 +1198,7 @@ html .md-typeset details.function div.tabbed-set,
   margin: 0.75em;
 }
 
-/*styles for the edit this page button*/
+/* Styles for the edit this page button */
 .md-content__button {
   margin: 0.75em auto 0 !important;
   display: flex;
