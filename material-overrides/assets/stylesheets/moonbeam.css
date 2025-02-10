@@ -22,6 +22,7 @@
   --light-transparent-40: rgba(255, 255, 255, 0.4);
   --light-transparent-60: rgba(255, 255, 255, 0.6);
   --dark: #000000;
+  --reject-dark: #7e061e;
 
   /** Material theme overrides **/
   /* Fonts */
@@ -2020,78 +2021,48 @@ form.md-consent__form.md-grid.md-typeset {
   display: grid;
   grid-template-columns: 70% 30%;
   grid-template-rows: auto;
-  gap: 0;
+  gap: 0.5rem;
   align-items: center;
-  padding: 2rem;
-  height: auto;
+  padding: 2rem 1rem;
 }
 
-/* Text */
+/* Text For Cookie Consent */
 form.md-consent__form.md-grid.md-typeset p {
-  align-self: center;
   grid-column: 1;
-  border-bottom: 1px solid var(--light-transparent-40);
 }
 form.md-consent__form.md-grid.md-typeset h4 {
+  position: relative;
+  top: 3em;
   margin: 0;
-  align-self: center;
-  grid-column: 1;
-  padding-bottom: 0;
 }
 .md-consent__settings {
-  margin: 1em auto;
+  grid-row: 3;
+  margin: 0em auto;
+  border-top: 2px solid var(--light-transparent-15);
+  animation: consent 0.5s cubic-bezier(0.1, 0.7, 0.1, 1) both;
 }
 
-/* buttons */
+/* Buttons For Cookie Consent */
 .md-consent__controls {
-  align-items: stretch;
   border-left: 2px solid var(--light-transparent-15);
   padding-left: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
+  margin-left: 1.5rem;
 }
 .md-consent__controls .md-button {
   width: 80%;
   padding: 10px 15px;
   text-align: center;
-  font-size: 1rem;
   border-radius: 5px;
 }
-
-/* buttons tests
-.md-consent__controls .md-button--primary {
-  background-color: var(--teal-light);
-  color: var(--dark);
+.md-consent__controls button[type='reset'] {
+  background-color: var(--reject-dark);
+  color: var(--pink-light);
   border: none;
 }
-
-.md-consent__controls .md-button--primary:hover {
-  background-color: var(--teal-dark);
-  color: var(--light);
-}
-
-.md-consent__controls .md-button--reject {
+.md-consent__controls button[type='reset']:hover {
   background-color: var(--pink-dark);
-  color: var(--light);
-  opacity: var(--hover-opacity);
-  border: none;
-}
-
-.md-consent__controls .md-button--reject:hover {
-  background-color: var(--pink-light);
   color: var(--dark);
 }
-
-.md-consent__controls .md-button--settings {
-  background-color: var(--purple-dark);
-  color: var(--light);
-  border: none;
-}
-
-.md-consent__controls .md-button--settings:hover {
-  background-color: var(--purple-light);
-  color: var(--dark);
-}
-
-*/
