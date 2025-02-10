@@ -2014,3 +2014,84 @@ p.quick-ref-title {
   height: unset;
   padding: 1em 2em;
 }
+
+/* Cookie Consent Styling */
+form.md-consent__form.md-grid.md-typeset {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: auto;
+  gap: 0;
+  align-items: center;
+  padding: 2rem;
+  height: auto;
+}
+
+/* Text */
+form.md-consent__form.md-grid.md-typeset p {
+  align-self: center;
+  grid-column: 1;
+  border-bottom: 1px solid var(--light-transparent-40);
+}
+form.md-consent__form.md-grid.md-typeset h4 {
+  margin: 0;
+  align-self: center;
+  grid-column: 1;
+  padding-bottom: 0;
+}
+.md-consent__settings {
+  margin: 1em auto;
+}
+
+/* buttons */
+.md-consent__controls {
+  align-items: stretch;
+  border-left: 2px solid var(--light-transparent-15);
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.md-consent__controls .md-button {
+  width: 80%;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* buttons tests
+.md-consent__controls .md-button--primary {
+  background-color: var(--teal-light);
+  color: var(--dark);
+  border: none;
+}
+
+.md-consent__controls .md-button--primary:hover {
+  background-color: var(--teal-dark);
+  color: var(--light);
+}
+
+.md-consent__controls .md-button--reject {
+  background-color: var(--pink-dark);
+  color: var(--light);
+  opacity: var(--hover-opacity);
+  border: none;
+}
+
+.md-consent__controls .md-button--reject:hover {
+  background-color: var(--pink-light);
+  color: var(--dark);
+}
+
+.md-consent__controls .md-button--settings {
+  background-color: var(--purple-dark);
+  color: var(--light);
+  border: none;
+}
+
+.md-consent__controls .md-button--settings:hover {
+  background-color: var(--purple-light);
+  color: var(--dark);
+}
+
+*/
