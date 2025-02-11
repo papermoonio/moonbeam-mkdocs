@@ -1146,10 +1146,6 @@ html .md-typeset details.function div.tabbed-set,
   margin: 0.75em 0;
 }
 
-.md-icon svg {
-  height: 22px;
-  width: 22px;
-}
 .md-feedback__icon:first-child svg {
   fill: var(--md-accent-fg-color);
 }
