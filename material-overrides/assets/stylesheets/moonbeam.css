@@ -1132,7 +1132,7 @@ html .md-typeset details.function div.tabbed-set,
 
 .md-feedback {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.75em;
 }
 
 .md-feedback__title {
