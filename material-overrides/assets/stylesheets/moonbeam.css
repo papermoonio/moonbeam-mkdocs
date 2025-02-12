@@ -16,6 +16,7 @@
   --teal-light-transparent-15: rgba(7 211, 186, 0.15);
   --pink-dark: #d9254d;
   --pink-dark-transparent: rgba(217, 37, 77, 0.75);
+  --pink-dark-transparent-15: rgba(217, 37, 77, 0.15);
   --pink-light: #d5b8d3;
   --light: #ffffff;
   --light-transparent-15: rgba(255, 255, 255, 0.15);
@@ -2086,30 +2087,46 @@ form.md-consent__form.md-grid.md-typeset {
 }
 
 /* Button colors */
-.md-button--primary {
-  background-color: var(--teal-light);
-  color: var(--dark);
-}
 
-.md-button--primary:hover {
-  background-color: var(--teal-dark);
+button.md-button.md-button--primary {
+  background-color: var(--teal-light-transparent-15);
+  color: var(--light);
+  border: solid var(--border-width) var(--teal-light);
+  transition: background-color 0.3s ease-in-out;
+}
+button.md-button.md-button--primary:hover {
+  background-color: var(--teal-light);
   color: var(--light);
 }
 
-.md-button--secondary {
-  background-color: var(--reject-dark);
-  color: var(--pink-light);
-  border: none;
+button.md-button.md-button--secondary {
+  background-color: var(--pink-dark-transparent-15);
+  color: var(--light);;
+  border: solid var(--border-width) var(--pink-dark);
 }
 
-.md-button--secondary:hover {
+button.md-button.md-button--secondary:hover {
   background-color: var(--pink-dark);
-  color: var(--dark);
+  color: var(--light);
 }
 
-/* Manage settings toggle */
+.md-consent__controls label.md-button {
+  background-color: var(--teal-light-transparent-15);
+  color: var(--light);
+  border: solid var(--border-width) var(--teal-light);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.md-consent__controls label.md-button:hover{
+  background-color: var(--teal-light);
+  color: var(--light);
+}
+/* Manage Settings */
 .md-consent__settings {
-  display: none;
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin: 0 1em auto;
+  animation: consent .5s cubic-bezier(.1,.7,.1,1) both;
+}
+
+ul.task-list {
+  margin: 1.5em 0 auto;
 }
