@@ -1,4 +1,4 @@
-{-# Determine cookies logic #-}
+{#- Determine cookies logic -#}
 {% set cookies = config.extra.consent.cookies | d({}) %}
 {% if config.extra.analytics %}
   {% if "analytics" not in cookies %}
@@ -11,37 +11,37 @@
   {% endif %}
 {% endif %}
 
-{-# Determine actions #-}
+{#- Determine actions -#}
 {% set actions = config.extra.consent.actions %}
 {% if not actions %}
   {% set actions = ["accept", "manage"] %}
 {% endif %}
 
-{-# Determine initial settings state #-}
+{#- Determine initial settings state -#}
 {% if not "manage" in actions %}
   {% set checked = "checked" %}
 {% endif %}
 
-{-# Main container #-}
+{#- Main container -#}
 <form class="md-consent__form md-grid md-typeset">
   
-  {-# Left section: Logo #-}
+  {#- Left section: Logo -#}
   <div class="cookie-logo">
     <img src="{{ base_url }}/assets/images/Moonbeam_Icon_White.webp" alt="Moonbeam logo for Cookie consent">
   </div>
 
-  {-# Center section: Title and Description #-}
+  {#- Center section: Title and Description -#}
   <div class="cookie-content">
     <h4>{{ config.extra.consent.title }}</h4>
     <p>{{ config.extra.consent.description }}</p>
   
-    {-# Divider #-}
+    {#- Divider -#}
     <div class="divider-settings"></div>
     
-    {-# Manage Settings Toggle  #-}
+    {#- Manage Settings Toggle  -#}
     <input class="md-toggle" type="checkbox" id="__settings" {{ checked }} />
 
-    {-# Consent settings #-}
+    {#- Consent settings -#}
     <div class="md-consent__settings">
       <ul class="task-list">
         {% for type in cookies %}
@@ -67,25 +67,25 @@
     </div>
   </div>
   
-  {-# Right section: Buttons #-}
+  {#- Right section: Buttons -#}
   <div class="cookie-buttons md-consent__controls">
     {% for action in actions %}
 
-      {-# Accept cookies button #-}
+      {#- Accept cookies button -#}
       {% if action == "accept" %}
         <button class="md-button md-button--primary">
           {{- lang.t("consent.accept") -}}
         </button>
       {% endif %}
 
-      {-# Reject cookies button #-}
+      {#- Reject cookies button -#}
       {% if action == "reject" %}
         <button type="reset" class="md-button md-button--secondary">
           {{- lang.t("consent.reject") -}}
         </button>
       {% endif %}
 
-      {-# Manage settings button #-}
+      {#- Manage settings button -#}
       {% if action == "manage" %}
         <label class="md-button" for="__settings">
           {{- lang.t("consent.manage") -}}
