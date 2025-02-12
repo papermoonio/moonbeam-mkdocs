@@ -2016,53 +2016,100 @@ p.quick-ref-title {
   padding: 1em 2em;
 }
 
-/* Cookie Consent Styling */
+/* Main consent form layout */
+.md-consent__inner {
+  z-index: 999;
+}
+
+
 form.md-consent__form.md-grid.md-typeset {
-  display: grid;
-  grid-template-columns: 70% 30%;
-  grid-template-rows: auto;
-  gap: 0.5rem;
+  border: var(--border-width-thin) solid var(--light-transparent-15);
+  display: flex;
   align-items: center;
-  padding: 2rem 1rem;
+  justify-content: space-between;
+  background-color: var(--dark);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  margin: 2em auto;
 }
 
-/* Text For Cookie Consent */
-form.md-consent__form.md-grid.md-typeset p {
-  grid-column: 1;
-}
-form.md-consent__form.md-grid.md-typeset h4 {
-  position: relative;
-  top: 3em;
-  margin: 0;
-}
-.md-consent__settings {
-  grid-row: 3;
-  margin: 0em auto;
-  border-top: 2px solid var(--light-transparent-15);
-  animation: consent 0.5s cubic-bezier(0.1, 0.7, 0.1, 1) both;
+/* Logo section */
+.cookie-logo img {
+  display: flex;
+  margin: 2em;
+  width: 50px;
 }
 
-/* Buttons For Cookie Consent */
-.md-consent__controls {
-  border-left: 2px solid var(--light-transparent-15);
-  padding-left: 1.5rem;
+/* Content section */
+.cookie-content {
+  padding: 1em;
+  flex: 1;
+  text-align: left;
+  margin-right: 2em;
+}
+
+.cookie-content h4 {
+    margin: 1em 1em auto;
+    font-size: 15px;
+    color: var(--light);
+}
+
+.cookie-content p {
+  margin: 0 1em auto;
+  font-size: 15px;
+  color: var(--light-transparent-60);
+}
+
+/* Divider between text and buttons */
+.divider-settings {
+  margin: 1.5em 1em auto;
+  height: 2px;
+  background-color: var(--light-transparent-15);
+}
+
+/* Buttons section */
+.cookie-buttons {
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-left: 1.5rem;
+  align-items: center;
+  gap: .5rem;
 }
-.md-consent__controls .md-button {
-  width: 80%;
-  padding: 10px 15px;
+
+.cookie-buttons .md-button {
+  margin: 0 2em auto;
+  width: 100%;
+  padding: 10px 45px;
   text-align: center;
-  border-radius: 5px;
 }
-.md-consent__controls button[type='reset'] {
+
+/* Button colors */
+.md-button--primary {
+  background-color: var(--teal-light);
+  color: var(--dark);
+}
+
+.md-button--primary:hover {
+  background-color: var(--teal-dark);
+  color: var(--light);
+}
+
+.md-button--secondary {
   background-color: var(--reject-dark);
   color: var(--pink-light);
   border: none;
 }
-.md-consent__controls button[type='reset']:hover {
+
+.md-button--secondary:hover {
   background-color: var(--pink-dark);
   color: var(--dark);
+}
+
+/* Manage settings toggle */
+.md-consent__settings {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
 }
