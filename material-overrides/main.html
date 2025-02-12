@@ -60,3 +60,57 @@
   <p>As of Runtime 3400, the minimum gas price has been reduced by 4x to 31.25 Gwei. 
      Learn more about <a href="https://github.com/moonbeam-foundation/moonbeam/pull/3058">the new minimum gas price</a>.</p>
 {% endblock %}
+
+{% block site_nav %}
+  {#- Navigation (left menu) -#}
+  {% if nav %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+    <div
+      class="md-sidebar md-sidebar--primary"
+      data-md-component="sidebar"
+      data-md-type="navigation"
+      {{ hidden }}
+    >
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {#- Table of contents (TOC) -#}
+  {% if "toc.integrate" not in features %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "toc" in page.meta.hide %}
+    {% endif %}
+    <div
+      class="md-sidebar md-sidebar--secondary"
+      data-md-component="sidebar"
+      data-md-type="toc"
+      {{ hidden }}
+    >
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {#- TOC -#}
+          {% include "partials/toc.html" %}
+        </div>
+
+        {#- Feedback and Edit this page container -#}
+        <div class="feedback-actions-container">
+          {#- Feedback Section -#}
+          <div class="feedback-section">
+            {% include "partials/feedback.html" %}
+          </div>
+
+          {#- Edit this Page Section -#}
+          <div class="edit-section">
+            {% include "partials/actions.html" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

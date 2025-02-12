@@ -1125,44 +1125,32 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 /* Feedback widget styling */
-.md-feedback {
-  margin: 1em auto 2em;
-  text-align: center;
-  border: var(--border-width) solid var(--border-purple-bright);
+.feedback-actions-container {
+  margin-left: 0.75rem;
+  margin-top: 2rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  border: 1px solid var(--purple-dark-tint-20);
   border-radius: var(--border-radius);
-  padding: 1em 4em;
-  width: fit-content;
+}
+
+.md-feedback {
+  margin-top: 0;
+  margin-bottom: 0.75em;
 }
 
 .md-feedback__title {
-  font-family: var(--md-text-font);
-  font-size: 80%;
+  margin-bottom: 0.75em;
+  font-size: 12px;
   font-weight: 400;
 }
 
 .md-feedback__list {
-  justify-content: space-between;
-}
-
-.md-feedback__icon {
-  display: flex;
-  border-radius: var(--border-radius);
-  font-size: 80%;
-  padding: 0.5em 1em;
-  align-items: center;
-  color: var(--light);
-}
-
-.md-feedback__icon svg {
-  padding-left: 0.6em;
-}
-
-.md-feedback__icon:first-child {
-  background: var(--teal-dark-transparent-15);
-}
-
-.md-feedback__icon:last-child {
-  background: #e2656033;
+  gap: 1em;
+  margin: 0.75em 0;
 }
 
 .md-feedback__icon:first-child svg {
@@ -1179,11 +1167,49 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 .md-feedback__icon:first-child:hover {
-  background: var(--teal-dark);
+  opacity: var(--hover-opacity);
 }
 
 .md-feedback__icon:last-child:hover {
-  background: rgba(226, 101, 96, 0.35);
+  opacity: var(--hover-opacity);
+}
+.md-feedback__note > * {
+  font-size: 12px;
+}
+/* Divider between feedback and edit this button */
+.divider {
+  height: 1px;
+  background-color: var(--purple-dark-tint-20);
+  margin: 0.75em 0;
+}
+
+/* Styles for the edit this page button */
+.md-content__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.feedback-actions-container
+  .feedback-section
+  ~ .edit-section
+  a.md-content__button.md-icon {
+  margin: 0.75em auto 0;
+}
+
+.feedback-actions-container
+  .feedback-section:has(.md-feedback[hidden])
+  ~ .edit-section
+  a.md-content__button.md-icon {
+  margin: auto;
+}
+
+.md-content__button.md-icon:hover {
+  color: var(--teal-light);
+  opacity: var(--hover-opacity);
+  text-decoration: none;
 }
 
 /* Document date styling */
