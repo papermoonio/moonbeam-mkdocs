@@ -1,4 +1,4 @@
-<!-- Determine cookies -->
+<!-- Determine cookies logic -->
 {% set cookies = config.extra.consent.cookies | d({}) %}
 {% if config.extra.analytics %}
   {% if "analytics" not in cookies %}
@@ -22,8 +22,8 @@
   {% set checked = "checked" %}
 {% endif %}
 
-<!-- Main container for the consent banner -->
-<div class="cookie-banner">
+<!-- Main container -->
+<form class="md-consent__form md-grid md-typeset">
   
   <!-- Left section: Logo -->
   <div class="cookie-logo">
@@ -34,12 +34,40 @@
   <div class="cookie-content">
     <h4>{{ config.extra.consent.title }}</h4>
     <p>{{ config.extra.consent.description }}</p>
+  
+    <!-- Divider between content and buttons -->
+    <div class="divider-settings"></div>
+    
+    <!-- Manage Settings Toggle  -->
+    <input class="md-toggle" type="checkbox" id="__settings" {{ checked }} />
+
+    <!-- Consent settings -->
+    <div class="md-consent__settings">
+      <ul class="task-list">
+        {% for type in cookies %}
+          {% set checked = "" %}
+          {% if cookies[type] is string %}
+            {% set name = cookies[type] %}
+            {% set checked = "checked" %}
+          {% else %}
+            {% set name = cookies[type].name %}
+            {% if cookies[type].checked %}
+              {% set checked = "checked" %}
+            {% endif %}
+          {% endif %}
+          <li class="task-list-item">
+            <label class="task-list-control">
+              <input type="checkbox" name="{{ type }}" {{ checked }}>
+              <span class="task-list-indicator"></span>
+              {{ name }}
+            </label>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
-
-  <!-- Divider between content and buttons -->
-  <div class="cookie-divider"></div>
-
-  <!-- Right section: Buttons (with .md-consent__controls for consistency) -->
+  
+  <!-- Right section: Buttons -->
   <div class="cookie-buttons md-consent__controls">
     {% for action in actions %}
 
@@ -66,35 +94,5 @@
 
     {% endfor %}
   </div>
-</div>
 
-<!-- Manage Settings Toggle -->
-<input class="md-toggle" type="checkbox" id="__settings" {{ checked }} />
-
-<!-- Divider before settings section -->
-<div class="divider-settings"></div>
-
-<!-- Consent settings (only included once) -->
-<div class="md-consent__settings">
-  <ul class="task-list">
-    {% for type in cookies %}
-      {% set checked = "" %}
-      {% if cookies[type] is string %}
-        {% set name = cookies[type] %}
-        {% set checked = "checked" %}
-      {% else %}
-        {% set name = cookies[type].name %}
-        {% if cookies[type].checked %}
-          {% set checked = "checked" %}
-        {% endif %}
-      {% endif %}
-      <li class="task-list-item">
-        <label class="task-list-control">
-          <input type="checkbox" name="{{ type }}" {{ checked }}>
-          <span class="task-list-indicator"></span>
-          {{ name }}
-        </label>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+</form>
