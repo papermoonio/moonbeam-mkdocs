@@ -23,7 +23,6 @@
   --light-transparent-40: rgba(255, 255, 255, 0.4);
   --light-transparent-60: rgba(255, 255, 255, 0.6);
   --dark: #000000;
-  --reject-dark: #7e061e;
 
   /** Material theme overrides **/
   /* Fonts */
@@ -2028,7 +2027,6 @@ form.md-consent__form.md-grid.md-typeset {
   align-items: center;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   max-width: 90%;
   margin: 2em auto;
 }
