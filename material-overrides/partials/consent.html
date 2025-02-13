@@ -78,18 +78,18 @@
         </button>
       {% endif %}
 
-      {#- Reject cookies button -#}
-      {% if action == "reject" %}
-        <button type="reset" class="md-button md-button--secondary">
-          {{- lang.t("consent.reject") -}}
-        </button>
-      {% endif %}
-
       {#- Manage settings button -#}
       {% if action == "manage" %}
         <label class="md-button" for="__settings">
           {{- lang.t("consent.manage") -}}
         </label>
+      {% endif %}
+
+      {#- Reject cookies button -#}
+      {% if action == "reject" %}
+        <button type="reset" class="md-button md-button--secondary">
+          {{- lang.t("consent.reject") -}}
+        </button>
       {% endif %}
 
     {% endfor %}

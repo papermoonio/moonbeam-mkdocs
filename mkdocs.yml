@@ -86,8 +86,8 @@ extra:
       We use essential cookies to make the website work. We would also like to use cookies to understand how you use the website and how you interact with certain features. We may share this information with our analytics partners. For further details, please see our <a href="https://moonbeam.network/cookie-policy" target="_blank" rel="noopener">cookie policy</a>. 
     actions:
       - accept
-      - reject
       - manage
+      - reject
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/PfpUATX
