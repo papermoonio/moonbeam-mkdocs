@@ -2026,8 +2026,6 @@ form.md-consent__form.md-grid.md-typeset {
   border: var(--border-width-thin) solid var(--light-transparent-15);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: var(--dark);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -2046,14 +2044,12 @@ form.md-consent__form.md-grid.md-typeset {
 .cookie-content {
   padding: 1em;
   flex: 1;
-  text-align: left;
   margin-right: 2em;
 }
 
 .cookie-content h4 {
   margin: 1em 1em auto;
   font-size: 15px;
-  color: var(--light);
 }
 
 .cookie-content p {
@@ -2087,14 +2083,12 @@ form.md-consent__form.md-grid.md-typeset {
 
 /* Button Colors */
 button.md-button.md-button--primary {
-  background-color: var(--teal-light-transparent-15);
   color: var(--light);
   border: solid var(--border-width) var(--teal-light);
   transition: background-color 0.3s ease-in-out;
 }
 
 button.md-button.md-button--primary:hover {
-  background-color: var(--teal-light);
   color: var(--light);
 }
 
@@ -2111,14 +2105,12 @@ button.md-button.md-button--secondary:hover {
 }
 
 .md-consent__controls label.md-button {
-  background-color: var(--teal-light-transparent-15);
   color: var(--light);
   border: solid var(--border-width) var(--teal-light);
   transition: background-color 0.3s ease-in-out;
 }
 
 .md-consent__controls label.md-button:hover {
-  background-color: var(--teal-light);
   color: var(--light);
 }
 
