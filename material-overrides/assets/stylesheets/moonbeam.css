@@ -2022,7 +2022,7 @@ p.quick-ref-title {
 }
 
 form.md-consent__form.md-grid.md-typeset {
-  border: var(--border-width-thin) solid var(--light-transparent-15);
+  border: var(--border-grid);
   display: flex;
   align-items: center;
   padding: 1.5rem;
@@ -2031,14 +2031,12 @@ form.md-consent__form.md-grid.md-typeset {
   margin: 2em auto;
 }
 
-/* Logo Section */
 .cookie-logo img {
   display: flex;
   margin: 2em;
   width: 50px;
 }
 
-/* Content Section */
 .cookie-content {
   padding: 1em;
   flex: 1;
@@ -2063,7 +2061,6 @@ form.md-consent__form.md-grid.md-typeset {
   background-color: var(--light-transparent-15);
 }
 
-/* Buttons Section */
 .cookie-buttons {
   margin-bottom: 0;
   display: flex;
