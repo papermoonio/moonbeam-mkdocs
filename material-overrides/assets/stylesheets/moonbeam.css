@@ -2076,7 +2076,6 @@ form.md-consent__form.md-grid.md-typeset {
   text-align: center;
 }
 
-/* Button Colors */
 button.md-button.md-button--primary {
   color: var(--light);
   border: solid var(--border-width) var(--teal-light);
@@ -2109,7 +2108,6 @@ button.md-button.md-button--secondary:hover {
   color: var(--light);
 }
 
-/* Manage Settings */
 .md-consent__settings {
   margin: 0 1em auto;
   animation: consent 0.5s cubic-bezier(0.1, 0.7, 0.1, 1) both;
@@ -2121,7 +2119,6 @@ ul.task-list {
 
 /* Cookie Consent Styling for Smaller Screens  */
 @media screen and (max-width: 768px) {
-
   form.md-consent__form.md-grid.md-typeset {
     flex-direction: column;
     padding: 1rem;
@@ -2142,7 +2139,6 @@ ul.task-list {
     margin: 0 auto;
     padding-top: 0.5em;
   }
-
  
   .cookie-buttons {
     gap: 0.75rem;
