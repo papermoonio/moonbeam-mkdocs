@@ -2024,41 +2024,39 @@ p.quick-ref-title {
 form.md-consent__form.md-grid.md-typeset {
   border: var(--border-grid);
   display: flex;
-  align-items: center;
   padding: 1.5rem;
   border-radius: 8px;
   max-width: 90%;
   margin: 2em auto;
 }
 
-.cookie-logo img {
+.cookie-logo {
+  width: 210px;
   display: flex;
-  margin: 2em;
-  width: 50px;
+  justify-content: center;
+  margin: auto;
+}
+
+.cookie-logo img {
+  width: 4.5em;
 }
 
 .cookie-content {
-  padding: 1em;
   flex: 1;
-  margin-right: 2em;
+  margin: 0 1em auto;
 }
 
 .cookie-content h4 {
-  margin: 1em 1em auto;
+  margin-bottom: 0.5em;
   font-size: 15px;
 }
 
 .cookie-content p {
-  margin: 0 1em auto;
+  margin: 0;
   font-size: 15px;
   color: var(--light-transparent-60);
-}
-
-/* Divider */
-.divider-settings {
-  margin: 1.5em 1em auto;
-  height: 2px;
-  background-color: var(--light-transparent-15);
+  padding-bottom: 1em;
+  border-bottom: solid 2px var(--light-transparent-15);
 }
 
 .cookie-buttons {
@@ -2070,14 +2068,14 @@ form.md-consent__form.md-grid.md-typeset {
 }
 
 .cookie-buttons .md-button {
-  margin: 0 2em auto;
+  margin: 0 2em 0;
   width: 100%;
   padding: 10px 45px;
   text-align: center;
+  color: var(--light);
 }
 
 button.md-button.md-button--primary {
-  color: var(--light);
   border: solid var(--border-width) var(--teal-light);
   transition: background-color 0.3s ease-in-out;
 }
@@ -2088,7 +2086,6 @@ button.md-button.md-button--primary:hover {
 
 button.md-button.md-button--secondary {
   background-color: var(--pink-dark-transparent-15);
-  color: var(--light);
   border: solid var(--border-width) var(--pink-dark);
 }
 
@@ -2099,7 +2096,6 @@ button.md-button.md-button--secondary:hover {
 }
 
 .md-consent__controls label.md-button {
-  color: var(--light);
   border: solid var(--border-width) var(--teal-light);
   transition: background-color 0.3s ease-in-out;
 }
@@ -2113,8 +2109,9 @@ button.md-button.md-button--secondary:hover {
   animation: consent 0.5s cubic-bezier(0.1, 0.7, 0.1, 1) both;
 }
 
+
 ul.task-list {
-  margin: 1.5em 0 auto;
+  margin: 0
 }
 
 /* Cookie Consent Styling for Smaller Screens  */
@@ -2146,5 +2143,11 @@ ul.task-list {
 
   .cookie-buttons .md-button {
     max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cookie-logo {
+    display: none;
   }
 }
