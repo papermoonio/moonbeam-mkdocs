@@ -511,6 +511,14 @@
 	{
 	  "key": "/builders/interoperability/xcm/xc20/send-xc20s/xtokens-pallet/",
 	  "value": "/builders/interoperability/xcm/xc20/send-xc20s/xcm-pallet/"
+	},
+		{
+	  "key": "/learn/dapps-list/dapp-radar/",
+	  "value": "/learn/dapp-directory/"
+	},
+		{
+	  "key": "/learn/dapps-list/",
+	  "value": "/learn/dapp-directory/"
 	}
   ]
 }
