@@ -174,7 +174,7 @@
 	},
 	{
 	  "key":"/learn/dapps-list/dtmb/",
-	  "value":"/learn/dapps-list/"
+	  "value":"/learn/dapp-directory/"
 	},
 	{
 	  "key":"/learn/features/unified-accounts/",
@@ -474,7 +474,7 @@
 	},
 	{
 	  "key":"/learn/dapps-list/state-of-the-dapps/",
-	  "value":"/learn/dapps-list/"
+	  "value":"/learn/dapp-directory/"
 	},
 	{
 	  "key":"/builders/interoperability/xcm/xcm-sdk/index/",
