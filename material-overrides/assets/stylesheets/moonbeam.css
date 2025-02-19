@@ -1033,7 +1033,7 @@ html .md-typeset details.function div.tabbed-set,
   position: fixed;
   z-index: 1000;
   top: 0;
-  width: 100%;
+  width: calc(97% - 1px);
   height: 100%;
   backdrop-filter: blur(2px);
 }
@@ -2017,11 +2017,18 @@ p.quick-ref-title {
 }
 
 /* Cookie Consent Styling */
+.md-consent__overlay {
+  width: calc(97% - 1px);
+  z-index: 200;
+}
+
 .md-consent__inner {
   z-index: 999;
+  background-color: transparent;
 }
 
 form.md-consent__form.md-grid.md-typeset {
+  background-color: var(--md-default-bg-color);
   border: var(--border-grid);
   display: flex;
   padding: 1.5rem;
@@ -2044,9 +2051,11 @@ form.md-consent__form.md-grid.md-typeset {
 .cookie-content {
   flex: 1;
   margin: 0 1em auto;
+  padding-right: 1em;
 }
 
 .cookie-content h4 {
+  margin-top: 0;
   margin-bottom: 0.5em;
   font-size: 15px;
 }
@@ -2109,9 +2118,9 @@ button.md-button.md-button--secondary:hover {
   animation: consent 0.5s cubic-bezier(0.1, 0.7, 0.1, 1) both;
 }
 
-
 ul.task-list {
-  margin: 0
+  margin: 0;
+  padding-top: 1em;
 }
 
 /* Cookie Consent Styling for Smaller Screens  */
@@ -2136,7 +2145,7 @@ ul.task-list {
     margin: 0 auto;
     padding-top: 0.5em;
   }
- 
+
   .cookie-buttons {
     gap: 0.75rem;
   }
