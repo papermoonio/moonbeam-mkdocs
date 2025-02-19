@@ -2025,6 +2025,7 @@ p.quick-ref-title {
 .md-consent__inner {
   z-index: 999;
   background-color: transparent;
+  width: 97%;
 }
 
 form.md-consent__form.md-grid.md-typeset {
@@ -2148,6 +2149,7 @@ ul.task-list {
 
   .cookie-buttons {
     gap: 0.75rem;
+    margin-top: 1em;
   }
 
   .cookie-buttons .md-button {
