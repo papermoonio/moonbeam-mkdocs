@@ -500,6 +500,7 @@ a.md-nav__link:hover.md-nav__link--active:hover {
     > .md-nav__link:not(.md-nav__container),
   .md-nav__item--section > .md-nav__link:not(.md-nav__container) {
     pointer-events: auto;
+    box-shadow: none;
   }
 
   /* Remove arrow (dropdown) icon next to the section header (i.e., Builders, Node Operators, etc.) */
