@@ -26,6 +26,19 @@
                         </div>
                       </a>
                     </li>
+                  {% elif section_item.is_page and not section_item == nav_item.children[0] %}
+                    <li class="md-tab__item">
+                      <a href="{{ section_item.url | url }}">
+                        <div class="icon-col">
+                          {% set icon_url = "/assets/images/dropdown-icons/" + section_item.url.split('/')[1] + ".webp" %}
+                          <img class="dropdown-icon" src="{{ icon_url }}" alt="{{ section_item.title }}" loading="lazy">
+                        </div>
+                        <div class="text-col">
+                          <span class="dropdown-title">{{ section_item.title }}</span>
+                          <p class="dropdown-desc">{{ section_item.meta.dropdown_description }}</p>
+                        </div>
+                      </a>
+                    </li>
                   {% endif %}
                 {% endfor %}
               </ul>
