@@ -1257,24 +1257,6 @@ html .md-typeset details.function div.tabbed-set,
   margin-top: auto;
 }
 
-/* Kapa widget styling */
-/* Removes vertical gap between links at bottom of modal */
-.mantine-1emc9ft {
-  gap: 0;
-}
-
-.mantine-p28swd:disabled,
-.mantine-p28swd[data-disabled] {
-  background-color: unset !important;
-}
-
-@media screen and (max-width: 48.125em) {
-  /* Add spacing around links at the bottom */
-  .mantine-1bmcgse {
-    margin: auto 1em;
-  }
-}
-
 /* Footer Styling */
 .md-footer {
   border-top: var(--border-grid);
