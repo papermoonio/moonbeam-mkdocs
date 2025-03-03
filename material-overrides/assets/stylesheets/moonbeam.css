@@ -970,7 +970,6 @@ html .md-typeset details.function div.tabbed-set,
   padding-bottom: 0.2em;
 }
 
-::part(ask-cookbook-button),
 .md-button,
 .md-typeset .md-button {
   border: var(--border-width-thin) solid var(--light-transparent-15);
@@ -981,6 +980,10 @@ html .md-typeset details.function div.tabbed-set,
   padding: 0.5em 1.5em;
   font-family: var(--label-font);
   text-transform: uppercase;
+}
+
+::part(ask-cookbook-button) {
+  border: var(--border-width-thin) solid var(--purple-light);
 }
 
 @media screen and (max-width: 44.9375em) {
@@ -995,8 +998,6 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 /* Focus/Hover Button Styling */
-::part(ask-cookbook-button):focus,
-::part(ask-cookbook-button):hover,
 .select-wrapper.active,
 .select-wrapper:hover,
 .select-wrapper:active,
@@ -1260,51 +1261,6 @@ html .md-typeset details.function div.tabbed-set,
 .subsection-wrapper + .md-source-file {
   margin-top: auto;
 }
-
-/** Cookbook styling **/
-
-.cookbook-widget {
-  width: min-content;
-  height: fit-content;
-  background-color: var(--grey);
-  border: var(--md-border-width) solid var(--md-border-color);
-  border-right: none;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-  position: fixed;
-  right: 0;
-  top: 60%;
-  /* Set z-index to be the same value as the header */
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 24px 16px;
-  gap: 24px;
-}
-
-/* Set the z-index to be greater than .cookbook-widget when search is active */
-[data-md-toggle=search]:checked~.md-header {
-  z-index: 5;
-}
-
-.md-typeset .cookbook-widget__text {
-  gap: 4px;
-}
-
-.md-typeset .cookbook-widget__text h2 {
-  font-size: 1.5rem;
-  line-height: 1;
-  font-family: var(--md-header-font);
-  margin: 0;
-}
-
-.md-typeset .cookbook-widget__text p {
-  font-size: var(--body-m-size);
-  margin: 0;
-}
-
 
 /* Footer Styling */
 .md-footer {
