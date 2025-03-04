@@ -382,6 +382,7 @@ body[data-scroll-locked] {
   width: auto;
   z-index: 1;
   margin-right: 3em;
+  border-right: var(--border-grid);
 }
 
 .md-header__buttons > * {
@@ -979,6 +980,10 @@ html .md-typeset details.function div.tabbed-set,
   padding: 0.5em 1.5em;
   font-family: var(--label-font);
   text-transform: uppercase;
+}
+
+::part(ask-cookbook-button) {
+  border: var(--border-width-thin) solid var(--purple-light);
 }
 
 @media screen and (max-width: 44.9375em) {
