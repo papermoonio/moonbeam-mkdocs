@@ -2176,3 +2176,16 @@ ul.task-list {
     display: none;
   }
 }
+
+/*Responsive style for wide screen footer, header, consent*/
+@media screen and (min-width: 2560px) {
+  .md-header__inner.md-grid,
+  .md-footer__inner.md-grid{
+      max-width: 80rem; 
+
+  }
+  form.md-consent__form.md-grid.md-typeset {
+    max-width: 80rem; 
+    margin: 2em auto !important; 
+  }
+}
