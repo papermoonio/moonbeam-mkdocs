@@ -14,6 +14,7 @@ extra_javascript:
 extra_css:
   - /assets/stylesheets/moonbeam.css
   - /assets/stylesheets/termynal.css
+  - /assets/stylesheets/timeline-neoteroi.css
 theme:
   name: material
   custom_dir: material-overrides
@@ -32,6 +33,7 @@ theme:
 markdown_extensions:
   - codehilite
   - meta
+  - neoteroi.timeline
   - toc:
       permalink: true
       title: Sections
