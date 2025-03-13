@@ -2188,4 +2188,8 @@ ul.task-list {
     max-width: 80rem; 
     margin: 2em auto !important; 
   }
+  .md-banner__button {
+    right: 17em;
+    position: absolute;
+  }
 }
