@@ -987,17 +987,6 @@ html .md-typeset details.function div.tabbed-set,
   border: var(--border-width-thin) solid var(--purple-light);
 }
 
-.for-cookbook {
-  display: inline-block;
-  width: 6.7em;        
-  visibility: hidden;
-}
-
-.for-cookbook + div {
-  display: inline-block;
-  margin-left: -6.7em;
-}
-
 @media screen and (max-width: 44.9375em) {
   [dir='ltr'] .md-content__inner > .tabbed-set .tabbed-labels {
     margin: auto;
