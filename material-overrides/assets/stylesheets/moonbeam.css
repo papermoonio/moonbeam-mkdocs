@@ -982,6 +982,7 @@ html .md-typeset details.function div.tabbed-set,
   text-transform: uppercase;
 }
 
+/* Style for the AI button */
 ::part(ask-cookbook-button) {
   border: var(--border-width-thin) solid var(--purple-light);
 }
