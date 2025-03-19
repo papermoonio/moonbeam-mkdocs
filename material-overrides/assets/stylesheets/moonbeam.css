@@ -985,6 +985,20 @@ html .md-typeset details.function div.tabbed-set,
 /* Style for the AI button */
 ::part(ask-cookbook-button) {
   border: var(--border-width-thin) solid var(--purple-light);
+  border-radius: var(--border-radius);
+  font-size: .6rem;
+  padding: .35em 1.5em;
+}
+
+/* To avoid shifting after cookbook loads */
+.for-cookbook {
+  width: 10.05em;
+  position: relative;
+}
+
+div#ask-cookbook-container {
+  position: absolute;
+  right: .75em;
 }
 
 @media screen and (max-width: 44.9375em) {
