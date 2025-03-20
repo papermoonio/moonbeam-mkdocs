@@ -992,7 +992,7 @@ html .md-typeset details.function div.tabbed-set,
 
 /* To avoid shifting after cookbook loads */
 .for-cookbook {
-  width: 10.05em;
+  width: 8.05em;
   position: relative;
 }
 
