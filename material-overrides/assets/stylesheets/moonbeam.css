@@ -983,22 +983,15 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 /* Style for the AI button */
-::part(ask-cookbook-button) {
-  border: var(--border-width-thin) solid var(--purple-light);
-  border-radius: var(--border-radius);
-  font-size: .6rem;
-  margin: .2rem;
-}
-
 /* To avoid shifting after cookbook loads */
 .for-cookbook {
-  width: 10.05em;
+  width: 10.85em;
   position: relative;
 }
 
 div#ask-cookbook-container {
   position: absolute;
-  right: .75em;
+  right: 0;
 }
 
 @media screen and (max-width: 44.9375em) {
