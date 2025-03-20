@@ -987,19 +987,13 @@ html .md-typeset details.function div.tabbed-set,
   border: var(--border-width-thin) solid var(--purple-light);
   border-radius: var(--border-radius);
   font-size: .6rem;
-  padding: .35em 1.5em;
-  font-weight: 400;
-  text-transform: uppercase;
+  margin: .2rem;
 }
 
 /* To avoid shifting after cookbook loads */
 .for-cookbook {
   width: 10.05em;
   position: relative;
-}
-
-::part(ask-cookbook-button):hover {
-  opacity: var(--purple-light);
 }
 
 div#ask-cookbook-container {
