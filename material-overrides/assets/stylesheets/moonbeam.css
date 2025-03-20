@@ -381,7 +381,7 @@ body[data-scroll-locked] {
 .md-header .md-tabs {
   width: auto;
   z-index: 1;
-  margin-right: 3em;
+  margin-right: 1em;
   border-right: var(--border-grid);
 }
 
@@ -983,8 +983,15 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 /* Style for the AI button */
-::part(ask-cookbook-button) {
-  border: var(--border-width-thin) solid var(--purple-light);
+/* To avoid shifting after cookbook loads */
+.for-cookbook {
+  width: 10.85em;
+  position: relative;
+}
+
+div#ask-cookbook-container {
+  position: absolute;
+  right: 0;
 }
 
 @media screen and (max-width: 44.9375em) {
