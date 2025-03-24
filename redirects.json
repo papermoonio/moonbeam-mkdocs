@@ -519,6 +519,10 @@
 		{
 	  "key": "/learn/dapps-list/",
 	  "value": "/learn/dapp-directory/"
+	},
+		{
+	  "key": "/learn/dapps-list/dapp-directory/",
+	  "value": "/learn/dapp-directory/"
 	}
   ]
 }
