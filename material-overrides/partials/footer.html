@@ -53,7 +53,14 @@ This file was automatically generated - do not edit
             </script>
         </form>
       </div>
-      {% include "partials/social.html" %}
+      <div class="column social">
+        {% include "partials/social.html" %}
+      </div>
+      <div class="column llms-buttons">
+        <button class="md-clipboard--inline md-icon full-llms md-button" title="{{ lang.t('clipboard.copy') }}">
+          {% include ".icons/material/content-copy.svg" %} llms-full.txt
+        </button>
+      </div>
     </div>
     <div class="md-footer-copyright">
       {% if config.copyright %}

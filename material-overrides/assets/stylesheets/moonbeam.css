@@ -1279,6 +1279,7 @@ div#ask-cookbook-container {
   border-top: var(--border-grid);
 }
 
+/* Stacks "Previous" or "Next" on top of page title*/
 .md-footer__title,
 .md-footer__title .md-ellipsis {
   display: flex;
@@ -1327,8 +1328,12 @@ div#ask-cookbook-container {
 }
 
 .md-footer-meta__inner {
-  flex-direction: column;
-  align-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.column.social {
+  align-self: flex-end;
 }
 
 .md-social .md-social__link {
@@ -1349,8 +1354,20 @@ div#ask-cookbook-container {
   height: 1rem;
 }
 
+/* aligns content in column with newsletter signup */
 .column.newsletter {
   text-align: center;
+  margin: 1em;
+}
+
+/* targets the llms-full button*/
+.md-footer-meta__inner.md-grid .column.llms-buttons > button {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  gap: 1em;
+  margin: 1em;
+  max-width: fit-content;
 }
 
 .newsletter-label {
@@ -1491,6 +1508,34 @@ div#ask-cookbook-container {
   }
 }
 
+/* at 910px this was breaking to wrap the llms button under tne newsletter section*/
+@media screen and (max-width: 57.5em) {
+  .md-footer-meta__inner.md-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .md-footer-meta__inner.md-grid > .column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .column.social,
+  .column.llms-buttons {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .column.llms-buttons > button {
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 50.125em) {
   .papermoon {
     position: unset;
@@ -1514,6 +1559,16 @@ div#ask-cookbook-container {
   .md-footer-social,
   .md-footer-social * {
     margin: auto;
+  }
+
+  .column.social,
+  .column.llms-buttons {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .column.llms-buttons > button {
+    margin: 0 auto; 
   }
 
   .md-footer-social .network-links {
