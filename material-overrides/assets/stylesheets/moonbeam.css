@@ -1331,6 +1331,13 @@ div#ask-cookbook-container {
   align-items: center;
 }
 
+.md-social {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
 .column.social {
   align-self: flex-end;
 }
@@ -1362,8 +1369,6 @@ div#ask-cookbook-container {
 /* targets the llms-full button*/
 .md-button.full-llms {
   display: flex;
-  flex-direction: row;
-  align-content: center;
   gap: 1em;
   margin: 1em;
   max-width: fit-content;
@@ -1510,40 +1515,45 @@ div#ask-cookbook-container {
 /* at 910px this was breaking to wrap the llms button under tne newsletter section*/
 @media screen and (max-width: 57.5em) {
   .md-footer-meta__inner.md-grid {
-    flex-direction: column;
-    align-items: center;
     gap: 1em;
   }
 
   .md-footer-meta__inner.md-grid > .column {
-    width: 100%;
+    width: 60%;
+  }
+
+  .column.newsletter {
+    margin: 0 auto;
+  }
+
+  .column.social {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .md-social {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    width: 100%;
+  }
+
+  .column.llms-buttons {
+    margin: 0 auto;
     text-align: center;
   }
 
   .column.social,
   .column.llms-buttons {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0 auto 1.5em auto;
   }
 
   .column.llms-buttons > button {
     margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 50.125em) {
-  .papermoon {
-    position: unset;
-    transform: none;
-  }
-
-  .md-footer-copyright {
-    flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -1562,8 +1572,7 @@ div#ask-cookbook-container {
 
   .column.social,
   .column.llms-buttons {
-    margin: 0 auto;
-    text-align: center;
+    margin: 0 auto 1em auto;
   }
 
   .column.llms-buttons > button {
@@ -1691,6 +1700,7 @@ h2.hero-info {
 
 .row button .md-icon svg {
   height: 1.1em;
+  width: 1rem;
 }
 
 .row.modal-buttons {
