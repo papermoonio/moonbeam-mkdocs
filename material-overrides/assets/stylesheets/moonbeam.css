@@ -1362,8 +1362,10 @@ div#ask-cookbook-container {
 
 /* aligns content in column with newsletter signup */
 .column.newsletter {
+  width: 100%;
+  max-width: 320px;
+  margin: 1em auto;
   text-align: center;
-  margin: 1em;
 }
 
 /* targets the llms-full button*/
@@ -1446,9 +1448,12 @@ div#ask-cookbook-container {
 }
 
 .hs-error-msg {
-  display: table-caption;
-  width: max-content;
+  display: block; 
   font-size: 0.9em;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: left;
 }
 
 .hs-error-msgs {
