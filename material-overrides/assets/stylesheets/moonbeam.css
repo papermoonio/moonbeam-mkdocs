@@ -982,18 +982,6 @@ html .md-typeset details.function div.tabbed-set,
   text-transform: uppercase;
 }
 
-/* Style for the AI button */
-/* To avoid shifting after cookbook loads */
-.for-cookbook {
-  width: 10.85em;
-  position: relative;
-}
-
-div#ask-cookbook-container {
-  position: absolute;
-  right: 0;
-}
-
 @media screen and (max-width: 44.9375em) {
   [dir='ltr'] .md-content__inner > .tabbed-set .tabbed-labels {
     margin: auto;
