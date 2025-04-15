@@ -1331,15 +1331,18 @@ div#ask-cookbook-container {
   align-items: center;
 }
 
+.md-footer__inner .column {
+    max-width: 33%;
+    width: 30%;
+}
 .md-social {
-  margin: 0;
   padding: 0;
-  display: flex;
-  align-items: flex-end;
+  gap: 0.5em;
 }
 
 .column.social {
   align-self: flex-end;
+  align-items: center;
 }
 
 .md-social .md-social__link {
@@ -1362,20 +1365,28 @@ div#ask-cookbook-container {
 
 /* aligns content in column with newsletter signup */
 .column.newsletter {
-  width: 100%;
-  max-width: 320px;
-  margin: 1em auto;
   text-align: center;
+}
+
+.column.newsletter > * {
+  width: 20em;
+}
+
+.column.llms-buttons {
+  align-items: end;
 }
 
 /* targets the llms-full button*/
 .md-button.full-llms {
   display: flex;
   gap: 1em;
-  margin: 1em;
   max-width: fit-content;
+  font-size: 0.9em;
 }
 
+.md-button.full-llms svg {
+    width: 1rem;
+}
 .newsletter-label {
   font-family: var(--header-font);
   text-transform: uppercase;
@@ -1448,12 +1459,9 @@ div#ask-cookbook-container {
 }
 
 .hs-error-msg {
-  display: block; 
+  display: table-caption;
+  width: max-content; 
   font-size: 0.9em;
-  max-width: 100%;
-  white-space: normal;
-  word-wrap: break-word;
-  text-align: left;
 }
 
 .hs-error-msgs {
@@ -1705,7 +1713,6 @@ h2.hero-info {
 
 .row button .md-icon svg {
   height: 1.1em;
-  width: 1rem;
 }
 
 .row.modal-buttons {
