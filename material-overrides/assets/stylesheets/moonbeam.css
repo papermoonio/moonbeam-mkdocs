@@ -1345,13 +1345,12 @@ div#ask-cookbook-container {
   align-items: center;
 }
 
-.md-social .md-social__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 0.5em;
-  height: 2rem;
-  width: 2rem;
+.md-social .md-social__link {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  height: 2rem;  
+  width: 2rem;  
 }
 
 .md-social .md-social__link:hover {
@@ -1521,6 +1520,16 @@ div#ask-cookbook-container {
 /* Mobile footer styling */
 @media screen and (max-width: 76.1875em) {
   .md-footer-meta__inner.md-grid {
+    flex-direction: column;
+  }
+
+  .md-footer-meta__inner.md-grid > * {
+    align-items: center;
+    align-self: center;
+  }
+
+  .md-footer-meta__inner .column {
+    max-width: 90%;
     width: 90%;
   }
 }
@@ -1528,76 +1537,26 @@ div#ask-cookbook-container {
 /* at 910px this was breaking to wrap the llms button under tne newsletter section*/
 @media screen and (max-width: 57.5em) {
   .md-footer-meta__inner.md-grid {
-    gap: 1em;
+    gap: 0.5em;
   }
-
-  .md-footer-meta__inner.md-grid > .column {
-    width: 60%;
-  }
-
-  .column.newsletter {
-    margin: 0 auto;
-  }
-
+  
   .column.social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     margin: 0 auto;
-    text-align: center;
   }
 
   .md-social {
-    display: flex;
     justify-content: center;
     gap: 0.5em;
-    width: 100%;
   }
 
-  .column.llms-buttons {
-    margin: 0 auto;
-    text-align: center;
+  .md-footer-copyright {
+    flex-direction: column;
+    align-items: center;
   }
-
-  .column.social,
-  .column.llms-buttons {
-    margin: 0 auto 1.5em auto;
-  }
-
-  .column.llms-buttons > button {
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 48.125em) {
-  .md-footer-meta__inner.md-grid {
-    width: 94%;
-  }
-
-  .hs-button,
-  .column.newsletter,
-  .newsletter-label,
-  .md-footer-social,
-  .md-footer-social * {
-    margin: auto;
-  }
-
-  .column.social,
-  .column.llms-buttons {
-    margin: 0 auto 1em auto;
-  }
-
-  .column.llms-buttons > button {
-    margin: 0 auto; 
-  }
-
-  .md-footer-social .network-links {
-    margin: 0 auto 1em;
-  }
-
-  .hs-button {
-    display: flex;
+  
+  .papermoon {
+    position: unset;
+    transform: unset;;
   }
 }
 
