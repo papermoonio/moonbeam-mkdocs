@@ -2,7 +2,7 @@ site_name: Moonbeam Docs
 site_url: https://docs.moonbeam.network/
 home_url: https://moonbeam.network/
 edit_uri: https://github.com/moonbeam-foundation/moonbeam-docs/edit/master/
-site_dir: /var/www/moonbeam-docs-static
+site_dir: site #/var/www/moonbeam-docs-static
 docs_dir: moonbeam-docs
 copyright: © 2024 Moonbeam Foundation. All Rights Reserved.
 extra_javascript:
@@ -61,7 +61,7 @@ validation:
 exclude_docs: README.md
 plugins:
   - search
-  - awesome-pages
+  - awesome-nav
   - git-revision-date-localized:
       exclude:
         - .snippets/*
@@ -80,6 +80,7 @@ plugins:
         - js/fixCreatedDate.js
         - js/externalLinkModal.js
       css_files:
+        - /assets/stylesheets/timeline-neoteroi.css
         - /assets/stylesheets/termynal.css
         - /assets/stylesheets/moonbeam.css
   - macros:
