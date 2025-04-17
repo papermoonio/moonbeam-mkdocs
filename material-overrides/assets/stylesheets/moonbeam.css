@@ -1331,10 +1331,11 @@ div#ask-cookbook-container {
   align-items: center;
 }
 
-.md-footer__inner .column {
-    max-width: 33%;
-    width: 30%;
+.md-footer-meta__inner .column {
+  max-width: 33%;
+  width: 30%;
 }
+
 .md-social {
   padding: 0;
   gap: 0.5em;
@@ -1384,8 +1385,9 @@ div#ask-cookbook-container {
 }
 
 .md-button.full-llms svg {
-    width: 1rem;
+  width: 1rem;
 }
+
 .newsletter-label {
   font-family: var(--header-font);
   text-transform: uppercase;
@@ -1459,7 +1461,7 @@ div#ask-cookbook-container {
 
 .hs-error-msg {
   display: table-caption;
-  width: max-content; 
+  width: max-content;
   font-size: 0.9em;
 }
 
@@ -1556,7 +1558,7 @@ div#ask-cookbook-container {
   
   .papermoon {
     position: unset;
-    transform: unset;;
+    transform: unset;
   }
 }
 
