@@ -2209,3 +2209,20 @@ ul.task-list {
     display: none;
   }
 }
+
+/*Responsive style for wide screen footer, header, consent*/
+@media screen and (min-width: 2560px) {
+  .md-header__inner.md-grid{
+      max-width: 80rem; 
+  }
+  .md-banner__inner.md-grid.md-typeset {
+    max-width: 80rem;
+}
+
+  .md-footer-copyright__highlight,
+  .policy-links,
+  .papermoon{
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+}
