@@ -1267,6 +1267,7 @@ html .md-typeset details.function div.tabbed-set,
   border-top: var(--border-grid);
 }
 
+/* Stacks "Previous" or "Next" on top of page title*/
 .md-footer__title,
 .md-footer__title .md-ellipsis {
   display: flex;
@@ -1315,17 +1316,30 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 .md-footer-meta__inner {
-  flex-direction: column;
-  align-content: center;
+  align-items: center;
 }
 
-.md-social .md-social__link {
-  display: flex;
-  justify-content: center;
+.md-footer-meta__inner .column {
+  max-width: 33%;
+  width: 30%;
+}
+
+.md-social {
+  padding: 0;
+  gap: 0.5em;
+}
+
+.column.social {
+  align-self: flex-end;
   align-items: center;
-  margin-right: 0.5em;
-  height: 2rem;
-  width: 2rem;
+}
+
+.md-social .md-social__link {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  height: 2rem;  
+  width: 2rem;  
 }
 
 .md-social .md-social__link:hover {
@@ -1337,8 +1351,29 @@ html .md-typeset details.function div.tabbed-set,
   height: 1rem;
 }
 
+/* aligns content in column with newsletter signup */
 .column.newsletter {
   text-align: center;
+}
+
+.column.newsletter > * {
+  width: 20em;
+}
+
+.column.llms-buttons {
+  align-items: end;
+}
+
+/* targets the llms-full button*/
+.md-button.full-llms {
+  display: flex;
+  gap: 1em;
+  max-width: fit-content;
+  font-size: 0.9em;
+}
+
+.md-button.full-llms svg {
+  width: 1rem;
 }
 
 .newsletter-label {
@@ -1475,41 +1510,43 @@ html .md-typeset details.function div.tabbed-set,
 /* Mobile footer styling */
 @media screen and (max-width: 76.1875em) {
   .md-footer-meta__inner.md-grid {
+    flex-direction: column;
+  }
+
+  .md-footer-meta__inner.md-grid > * {
+    align-items: center;
+    align-self: center;
+  }
+
+  .md-footer-meta__inner .column {
+    max-width: 90%;
     width: 90%;
   }
 }
 
-@media screen and (max-width: 50.125em) {
-  .papermoon {
-    position: unset;
-    transform: none;
+/* at 910px this was breaking to wrap the llms button under tne newsletter section*/
+@media screen and (max-width: 57.5em) {
+  .md-footer-meta__inner.md-grid {
+    gap: 0.5em;
+  }
+  
+  .column.social {
+    margin: 0 auto;
+  }
+
+  .md-social {
+    justify-content: center;
+    gap: 0.5em;
   }
 
   .md-footer-copyright {
     flex-direction: column;
     align-items: center;
   }
-}
-
-@media screen and (max-width: 48.125em) {
-  .md-footer-meta__inner.md-grid {
-    width: 94%;
-  }
-
-  .hs-button,
-  .column.newsletter,
-  .newsletter-label,
-  .md-footer-social,
-  .md-footer-social * {
-    margin: auto;
-  }
-
-  .md-footer-social .network-links {
-    margin: 0 auto 1em;
-  }
-
-  .hs-button {
-    display: flex;
+  
+  .papermoon {
+    position: unset;
+    transform: unset;
   }
 }
 

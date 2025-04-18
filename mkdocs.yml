@@ -4,7 +4,7 @@ home_url: https://moonbeam.network/
 edit_uri: https://github.com/moonbeam-foundation/moonbeam-docs/edit/master/
 site_dir: /var/www/moonbeam-docs-static
 docs_dir: moonbeam-docs
-copyright: © 2024 Moonbeam Foundation. All Rights Reserved.
+copyright: © 2025 Moonbeam Foundation. All Rights Reserved.
 extra_javascript:
   - js/connectMetaMask.js
   - js/errorModal.js
