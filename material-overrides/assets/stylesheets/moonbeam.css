@@ -2191,5 +2191,9 @@ ul.task-list {
   .papermoon {
     max-width: 80rem;
     margin: 0 auto;
-  }
+}
+  form.md-consent__form.md-grid.md-typeset {
+    max-width: 80rem; 
+}
+
 }
