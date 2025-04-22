@@ -2179,7 +2179,7 @@ ul.task-list {
 
 /*Responsive style for wide screen footer, header, consent*/
 @media screen and (min-width: 2560px) {
-  .md-header__inner.md-grid{
+  .md-header__inner.md-grid {
       max-width: 80rem; 
   }
   .md-banner__inner.md-grid.md-typeset {
@@ -2188,7 +2188,7 @@ ul.task-list {
 
   .md-footer-copyright__highlight,
   .policy-links,
-  .papermoon{
+  .papermoon {
     max-width: 80rem;
     margin: 0 auto;
   }
