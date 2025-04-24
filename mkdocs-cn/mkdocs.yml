@@ -57,7 +57,7 @@ validation:
 exclude_docs: README.md
 plugins:
   - search
-  - awesome-pages
+  - awesome-nav
   - git-revision-date-localized:
       exclude:
         - .snippets/*
