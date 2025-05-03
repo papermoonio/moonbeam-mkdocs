@@ -1360,6 +1360,13 @@ html .md-typeset details.function div.tabbed-set,
   justify-content: space-between;
 }
 
+.copyright-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .policy-links a:first-child {
   margin-right: 2em;
 }
@@ -2181,12 +2188,7 @@ ul.task-list {
 @media screen and (min-width: 2560px) {
   .md-header__inner.md-grid,
   .md-banner__inner.md-grid.md-typeset,
-  form.md-consent__form.md-grid.md-typeset {
+  form.md-consent__form.md-grid.md-typeset,.copyright-wrapper {
     max-width: 80rem;
-  }
-
-  .md-footer-copyright > * {
-    max-width: 80rem;
-    margin: 0 auto;
   }
 }
