@@ -1496,7 +1496,7 @@ html .md-typeset details.function div.tabbed-set,
     transform: none;
   }
 
-  .md-footer-copyright {
+  .copyright-wrapper {
     flex-direction: column;
     align-items: center;
   }
