@@ -1391,6 +1391,13 @@ html .md-typeset details.function div.tabbed-set,
   justify-content: space-between;
 }
 
+.copyright-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .policy-links a:first-child {
   margin-right: 2em;
 }
@@ -1539,7 +1546,7 @@ html .md-typeset details.function div.tabbed-set,
     gap: 0.5em;
   }
 
-  .md-footer-copyright {
+  .copyright-wrapper {
     flex-direction: column;
     align-items: center;
   }
@@ -2207,5 +2214,15 @@ ul.task-list {
 @media screen and (max-width: 1000px) {
   .cookie-logo {
     display: none;
+  }
+}
+
+/*Responsive style for wide screen footer, header, consent*/
+@media screen and (min-width: 2560px) {
+  .md-header__inner.md-grid,
+  .md-banner__inner.md-grid.md-typeset,
+  form.md-consent__form.md-grid.md-typeset,
+  .copyright-wrapper {
+    max-width: 80rem;
   }
 }

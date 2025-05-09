@@ -63,18 +63,22 @@ This file was automatically generated - do not edit
       </div>
     </div>
     <div class="md-footer-copyright">
-      {% if config.copyright %}
-      <div class="md-footer-copyright__highlight">
-        {{ config.copyright }}
-      </div>
-      {% endif %}
-      <div class="papermoon">
-        <span>Made with 🩵 by <a href="https://papermoon.io/" target="_blank">PaperMoon</a></span>
-      </div>
-      <div class="policy-links">
-        <a href="https://moonbeam.network/terms-of-use" target="_blank">Terms of use</a>
-        <a href="https://moonbeam.network/privacy-policy" target="_blank">Privacy policy</a>
-      </div>
-    </div>
-  </div>
+      <div class="copyright-wrapper">
+        {% if config.copyright %}
+          <div class="md-footer-copyright__highlight">
+            {{ config.copyright }}
+          </div>
+        {% endif %}
+        <div class="papermoon">
+          <span>
+            Made with 🩵 by 
+            <a href="https://papermoon.io/" target="_blank">PaperMoon</a>
+          </span>
+        </div>
+        <div class="policy-links">
+          <a href="https://moonbeam.network/terms-of-use" target="_blank">Terms of use</a>
+          <a href="https://moonbeam.network/privacy-policy" target="_blank">Privacy policy</a>
+        </div>
+      </div>  
+    </div>    
 </footer>
