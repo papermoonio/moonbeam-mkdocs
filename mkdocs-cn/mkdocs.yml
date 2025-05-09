@@ -11,6 +11,9 @@ extra_javascript:
   - js/handleLanguageChange.js
   - js/fixCreatedDate.js
   - js/externalLinkModal.js
+  - js/cookbookInit.js
+  - js/clipboardCopyllms.js
+  - js/cookbookEventHandler.js
 extra_css:
   - /assets/stylesheets/moonbeam.css
   - /assets/stylesheets/termynal.css
