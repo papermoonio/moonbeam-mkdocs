@@ -2014,3 +2014,8 @@ p.quick-ref-title {
   height: unset;
   padding: 1em 2em;
 }
+
+div.mermaid { 
+    display: flex !important; 
+    justify-content: center !important;
+ }
