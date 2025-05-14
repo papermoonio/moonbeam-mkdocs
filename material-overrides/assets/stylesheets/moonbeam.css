@@ -16,6 +16,7 @@
   --teal-light-transparent-15: rgba(7 211, 186, 0.15);
   --pink-dark: #d9254d;
   --pink-dark-transparent: rgba(217, 37, 77, 0.75);
+  --pink-dark-transparent-15: rgba(217, 37, 77, 0.15);
   --pink-light: #d5b8d3;
   --light: #ffffff;
   --light-transparent-15: rgba(255, 255, 255, 0.15);
@@ -380,7 +381,8 @@ body[data-scroll-locked] {
 .md-header .md-tabs {
   width: auto;
   z-index: 1;
-  margin-right: 3em;
+  margin-right: 1em;
+  border-right: var(--border-grid);
 }
 
 .md-header__buttons > * {
@@ -499,6 +501,7 @@ a.md-nav__link:hover.md-nav__link--active:hover {
     > .md-nav__link:not(.md-nav__container),
   .md-nav__item--section > .md-nav__link:not(.md-nav__container) {
     pointer-events: auto;
+    box-shadow: none;
   }
 
   /* Remove arrow (dropdown) icon next to the section header (i.e., Builders, Node Operators, etc.) */
@@ -1032,7 +1035,7 @@ html .md-typeset details.function div.tabbed-set,
   position: fixed;
   z-index: 1000;
   top: 0;
-  width: 100%;
+  width: calc(97% - 1px);
   height: 100%;
   backdrop-filter: blur(2px);
 }
@@ -1125,44 +1128,32 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 /* Feedback widget styling */
-.md-feedback {
-  margin: 1em auto 2em;
-  text-align: center;
-  border: var(--border-width) solid var(--border-purple-bright);
+.feedback-actions-container {
+  margin-left: 0.75rem;
+  margin-top: 2rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  border: 1px solid var(--purple-dark-tint-20);
   border-radius: var(--border-radius);
-  padding: 1em 4em;
-  width: fit-content;
+}
+
+.md-feedback {
+  margin-top: 0;
+  margin-bottom: 0.75em;
 }
 
 .md-feedback__title {
-  font-family: var(--md-text-font);
-  font-size: 80%;
+  margin-bottom: 0.75em;
+  font-size: 12px;
   font-weight: 400;
 }
 
 .md-feedback__list {
-  justify-content: space-between;
-}
-
-.md-feedback__icon {
-  display: flex;
-  border-radius: var(--border-radius);
-  font-size: 80%;
-  padding: 0.5em 1em;
-  align-items: center;
-  color: var(--light);
-}
-
-.md-feedback__icon svg {
-  padding-left: 0.6em;
-}
-
-.md-feedback__icon:first-child {
-  background: var(--teal-dark-transparent-15);
-}
-
-.md-feedback__icon:last-child {
-  background: #e2656033;
+  gap: 1em;
+  margin: 0.75em 0;
 }
 
 .md-feedback__icon:first-child svg {
@@ -1179,11 +1170,49 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 .md-feedback__icon:first-child:hover {
-  background: var(--teal-dark);
+  opacity: var(--hover-opacity);
 }
 
 .md-feedback__icon:last-child:hover {
-  background: rgba(226, 101, 96, 0.35);
+  opacity: var(--hover-opacity);
+}
+.md-feedback__note > * {
+  font-size: 12px;
+}
+/* Divider between feedback and edit this button */
+.divider {
+  height: 1px;
+  background-color: var(--purple-dark-tint-20);
+  margin: 0.75em 0;
+}
+
+/* Styles for the edit this page button */
+.md-content__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.feedback-actions-container
+  .feedback-section
+  ~ .edit-section
+  a.md-content__button.md-icon {
+  margin: 0.75em auto 0;
+}
+
+.feedback-actions-container
+  .feedback-section:has(.md-feedback[hidden])
+  ~ .edit-section
+  a.md-content__button.md-icon {
+  margin: auto;
+}
+
+.md-content__button.md-icon:hover {
+  color: var(--teal-light);
+  opacity: var(--hover-opacity);
+  text-decoration: none;
 }
 
 /* Document date styling */
@@ -1229,24 +1258,6 @@ html .md-typeset details.function div.tabbed-set,
   margin-top: auto;
 }
 
-/* Kapa widget styling */
-/* Removes vertical gap between links at bottom of modal */
-.mantine-1emc9ft {
-  gap: 0;
-}
-
-.mantine-p28swd:disabled,
-.mantine-p28swd[data-disabled] {
-  background-color: unset !important;
-}
-
-@media screen and (max-width: 48.125em) {
-  /* Add spacing around links at the bottom */
-  .mantine-1bmcgse {
-    margin: auto 1em;
-  }
-}
-
 /* Footer Styling */
 .md-footer {
   border-top: var(--border-grid);
@@ -1256,6 +1267,7 @@ html .md-typeset details.function div.tabbed-set,
   border-top: var(--border-grid);
 }
 
+/* Stacks "Previous" or "Next" on top of page title*/
 .md-footer__title,
 .md-footer__title .md-ellipsis {
   display: flex;
@@ -1304,17 +1316,30 @@ html .md-typeset details.function div.tabbed-set,
 }
 
 .md-footer-meta__inner {
-  flex-direction: column;
-  align-content: center;
+  align-items: center;
 }
 
-.md-social .md-social__link {
-  display: flex;
-  justify-content: center;
+.md-footer-meta__inner .column {
+  max-width: 33%;
+  width: 30%;
+}
+
+.md-social {
+  padding: 0;
+  gap: 0.5em;
+}
+
+.column.social {
+  align-self: flex-end;
   align-items: center;
-  margin-right: 0.5em;
-  height: 2rem;
-  width: 2rem;
+}
+
+.md-social .md-social__link {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  height: 2rem;  
+  width: 2rem;  
 }
 
 .md-social .md-social__link:hover {
@@ -1326,8 +1351,29 @@ html .md-typeset details.function div.tabbed-set,
   height: 1rem;
 }
 
+/* aligns content in column with newsletter signup */
 .column.newsletter {
   text-align: center;
+}
+
+.column.newsletter > * {
+  width: 20em;
+}
+
+.column.llms-buttons {
+  align-items: end;
+}
+
+/* targets the llms-full button*/
+.md-button.full-llms {
+  display: flex;
+  gap: 1em;
+  max-width: fit-content;
+  font-size: 0.9em;
+}
+
+.md-button.full-llms svg {
+  width: 1rem;
 }
 
 .newsletter-label {
@@ -1343,6 +1389,13 @@ html .md-typeset details.function div.tabbed-set,
   padding: 0.3em 1em;
   border-top: var(--border-grid);
   justify-content: space-between;
+}
+
+.copyright-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .policy-links a:first-child {
@@ -1464,41 +1517,43 @@ html .md-typeset details.function div.tabbed-set,
 /* Mobile footer styling */
 @media screen and (max-width: 76.1875em) {
   .md-footer-meta__inner.md-grid {
+    flex-direction: column;
+  }
+
+  .md-footer-meta__inner.md-grid > * {
+    align-items: center;
+    align-self: center;
+  }
+
+  .md-footer-meta__inner .column {
+    max-width: 90%;
     width: 90%;
   }
 }
 
-@media screen and (max-width: 50.125em) {
-  .papermoon {
-    position: unset;
-    transform: none;
+/* at 910px this was breaking to wrap the llms button under tne newsletter section*/
+@media screen and (max-width: 57.5em) {
+  .md-footer-meta__inner.md-grid {
+    gap: 0.5em;
+  }
+  
+  .column.social {
+    margin: 0 auto;
   }
 
-  .md-footer-copyright {
+  .md-social {
+    justify-content: center;
+    gap: 0.5em;
+  }
+
+  .copyright-wrapper {
     flex-direction: column;
     align-items: center;
   }
-}
-
-@media screen and (max-width: 48.125em) {
-  .md-footer-meta__inner.md-grid {
-    width: 94%;
-  }
-
-  .hs-button,
-  .column.newsletter,
-  .newsletter-label,
-  .md-footer-social,
-  .md-footer-social * {
-    margin: auto;
-  }
-
-  .md-footer-social .network-links {
-    margin: 0 auto 1em;
-  }
-
-  .hs-button {
-    display: flex;
+  
+  .papermoon {
+    position: unset;
+    transform: unset;
   }
 }
 
@@ -2013,6 +2068,163 @@ p.quick-ref-title {
 .cn-tabs .md-tabs__item {
   height: unset;
   padding: 1em 2em;
+}
+
+/* Cookie Consent Styling */
+.md-consent__overlay {
+  width: calc(97% - 1px);
+  z-index: 200;
+}
+
+.md-consent__inner {
+  z-index: 999;
+  background-color: transparent;
+  width: 97%;
+}
+
+form.md-consent__form.md-grid.md-typeset {
+  background-color: var(--md-default-bg-color);
+  border: var(--border-grid);
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 90%;
+  margin: 2em auto;
+}
+
+.cookie-logo {
+  width: 11em;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.cookie-logo img {
+  width: 4.5em;
+}
+
+.cookie-content {
+  flex: 1;
+  margin: 0 1em auto;
+  padding-right: 1em;
+}
+
+.cookie-content h4 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 15px;
+}
+
+.cookie-content p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--light-transparent-60);
+  padding-bottom: 1em;
+  border-bottom: solid 2px var(--light-transparent-15);
+}
+
+.cookie-buttons {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cookie-buttons .md-button {
+  margin: 0 2em 0;
+  width: 100%;
+  padding: 10px 45px;
+  text-align: center;
+  color: var(--light);
+}
+
+button.md-button.md-button--primary {
+  border: solid var(--border-width) var(--teal-light);
+  transition: background-color 0.3s ease-in-out;
+}
+
+button.md-button.md-button--primary:hover {
+  color: var(--light);
+}
+
+button.md-button.md-button--secondary {
+  background-color: var(--pink-dark-transparent-15);
+  border: solid var(--border-width) var(--pink-dark);
+}
+
+button.md-button.md-button--secondary:hover {
+  border: solid var(--border-width) var(--pink-dark);
+  background-color: var(--pink-dark);
+  color: var(--light);
+}
+
+.md-consent__controls label.md-button {
+  border: solid var(--border-width) var(--teal-light);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.md-consent__controls label.md-button:hover {
+  color: var(--light);
+}
+
+.md-consent__settings {
+  margin: 0 1em auto;
+  animation: consent 0.5s cubic-bezier(0.1, 0.7, 0.1, 1) both;
+}
+
+ul.task-list {
+  margin: 0;
+  padding-top: 1em;
+}
+
+/* Cookie Consent Styling for Smaller Screens  */
+@media screen and (max-width: 768px) {
+  form.md-consent__form.md-grid.md-typeset {
+    flex-direction: column;
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .cookie-logo img {
+    width: 3em;
+    margin: 1em auto;
+  }
+
+  .cookie-content h4 {
+    margin: 0 1em auto;
+  }
+
+  .cookie-content {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 0.5em;
+  }
+
+  .cookie-buttons {
+    gap: 0.75rem;
+    margin-top: 1em;
+  }
+
+  .cookie-buttons .md-button {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cookie-logo {
+    display: none;
+  }
+}
+
+/*Responsive style for wide screen footer, header, consent*/
+@media screen and (min-width: 2560px) {
+  .md-header__inner.md-grid,
+  .md-banner__inner.md-grid.md-typeset,
+  form.md-consent__form.md-grid.md-typeset,
+  .copyright-wrapper {
+    max-width: 80rem;
+  }
 }
 
 div.mermaid { 
