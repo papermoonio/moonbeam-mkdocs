@@ -21,7 +21,7 @@
 	  "value":"/builders/ethereum/json-rpc/moonbeam-custom-api/"
 	},
 	{
-	  "key":"/builders/get-started/eth-compare/index/",
+	  "key":"/builders/get-started/eth-compare/",
 	  "value":"/learn/core-concepts/"
 	},
 	{
@@ -101,7 +101,7 @@
 	  "value":"/builders/interoperability/xcm/core-concepts/weights-fees/"
 	},
 	{
-	  "key":"/builders/xcm/xc20/index/",
+	  "key":"/builders/xcm/xc20/",
 	  "value":"/builders/interoperability/xcm/xc20/"
 	},
 	{
@@ -201,7 +201,7 @@
 	  "value":"/tutorials/eth-api/get-started/"
 	},
 	{
-	  "key":"/builders/build/index/",
+	  "key":"/builders/build/",
 	  "value":"/builders/ethereum/"
 	},
 	{
@@ -225,7 +225,7 @@
 	  "value":"/builders/ethereum/dev-env/hardhat/"
 	},
 	{
-	  "key":"/builders/build/eth-api/dev-env/index/",
+	  "key":"/builders/build/eth-api/dev-env/",
 	  "value":"/builders/ethereum/dev-env/"
 	},
 	{
@@ -237,7 +237,7 @@
 	  "value":"/builders/ethereum/dev-env/openzeppelin/defender/"
 	},
 	{
-	  "key":"/builders/build/eth-api/dev-env/openzeppelin/index/",
+	  "key":"/builders/build/eth-api/dev-env/openzeppelin/",
 	  "value":"/builders/ethereum/dev-env/openzeppelin/"
 	},
 	{
@@ -265,7 +265,7 @@
 	  "value":"/builders/ethereum/dev-env/waffle-mars/"
 	},
 	{
-	  "key":"/builders/build/eth-api/index/",
+	  "key":"/builders/build/eth-api/",
 	  "value":"/builders/ethereum/"
 	},
 	{
@@ -285,7 +285,7 @@
 	  "value":"/builders/ethereum/json-rpc/eth-rpc/"
 	},
 	{
-	  "key":"/builders/json-rpc/index/",
+	  "key":"/builders/json-rpc/",
 	  "value":"/builders/ethereum/json-rpc/"
 	},
 	{
@@ -305,7 +305,7 @@
 	  "value":"/builders/ethereum/libraries/ethersrs/"
 	},
 	{
-	  "key":"/builders/build/eth-api/libraries/index/",
+	  "key":"/builders/build/eth-api/libraries/",
 	  "value":"/builders/ethereum/libraries/"
 	},
 	{
@@ -353,7 +353,7 @@
 	  "value":"/builders/ethereum/precompiles/features/staking/"
 	},
 	{
-	  "key":"/builders/pallets-precompiles/precompiles/index/",
+	  "key":"/builders/pallets-precompiles/precompiles/",
 	  "value":"/builders/ethereum/precompiles/"
 	},
 	{
@@ -401,11 +401,11 @@
 	  "value":"/builders/ethereum/verify-contracts/etherscan-plugins/"
 	},
 	{
-	  "key":"/builders/build/eth-api/verify-contracts/index/",
+	  "key":"/builders/build/eth-api/verify-contracts/",
 	  "value":"/builders/ethereum/verify-contracts/"
 	},
 	{
-	  "key":"/builders/pallets-precompiles/index/",
+	  "key":"/builders/pallets-precompiles/",
 	  "value":"/"
 	},
 	{
@@ -413,7 +413,7 @@
 	  "value":"/builders/substrate/dev-env/chopsticks/"
 	},
 	{
-	  "key":"/builders/build/substrate-api/index/",
+	  "key":"/builders/build/substrate-api/",
 	  "value":"/builders/substrate/"
 	},
 	{
@@ -449,7 +449,7 @@
 	  "value":"/builders/substrate/interfaces/features/staking/"
 	},
 	{
-	  "key":"/builders/pallets-precompiles/pallets/index/",
+	  "key":"/builders/pallets-precompiles/pallets/",
 	  "value":"/builders/substrate/interfaces/"
 	},
 	{
@@ -477,11 +477,11 @@
 	  "value":"/learn/dapp-directory/"
 	},
 	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/index/",
+	  "key":"/builders/interoperability/xcm/xcm-sdk/",
 	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/latest/"
 	},
 	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/v0/index/",
+	  "key":"/builders/interoperability/xcm/xcm-sdk/v0/",
 	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v0/"
 	},
 	{
@@ -493,7 +493,7 @@
 	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v0/example-usage/"
 	},
 	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/v1/index/",
+	  "key":"/builders/interoperability/xcm/xcm-sdk/v1/",
 	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v1/"
 	},
 	{
