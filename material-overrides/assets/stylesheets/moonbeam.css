@@ -2226,3 +2226,8 @@ ul.task-list {
     max-width: 80rem;
   }
 }
+
+div.mermaid { 
+    display: flex !important; 
+    justify-content: center !important;
+ }
