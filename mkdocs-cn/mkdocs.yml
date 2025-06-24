@@ -303,7 +303,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/PfpUATX
+      link: https://discord.com/invite/PfpUATX
       name: Discord
     - icon: fontawesome/brands/telegram
       link: https://t.me/Moonbeam_Official
