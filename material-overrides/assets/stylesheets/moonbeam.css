@@ -1331,7 +1331,7 @@ html .md-typeset details.function div.tabbed-set,
 
 .column.social {
   align-self: flex-end;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .md-social .md-social__link {  
