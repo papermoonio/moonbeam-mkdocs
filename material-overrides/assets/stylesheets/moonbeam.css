@@ -1331,7 +1331,7 @@ html .md-typeset details.function div.tabbed-set,
 
 .column.social {
   align-self: flex-end;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .md-social .md-social__link {  
@@ -1351,19 +1351,6 @@ html .md-typeset details.function div.tabbed-set,
   height: 1rem;
 }
 
-/* aligns content in column with newsletter signup */
-.column.newsletter {
-  text-align: center;
-}
-
-.column.newsletter > * {
-  width: 20em;
-}
-
-.column.llms-buttons {
-  align-items: end;
-}
-
 /* targets the llms-full button*/
 .md-button.full-llms {
   display: flex;
@@ -1374,11 +1361,6 @@ html .md-typeset details.function div.tabbed-set,
 
 .md-button.full-llms svg {
   width: 1rem;
-}
-
-.newsletter-label {
-  font-family: var(--header-font);
-  text-transform: uppercase;
 }
 
 .md-footer-copyright {
@@ -1408,112 +1390,6 @@ html .md-typeset details.function div.tabbed-set,
   transform: translateX(-50%);
 }
 
-/* Newsletter Signup Styling */
-.hs-form.stacked {
-  display: flex;
-  flex-direction: column;
-}
-
-.hs-email {
-  position: relative;
-  display: inline-block;
-  margin: 0.3em 0;
-}
-
-.hs-button {
-  color: var(--purple-light);
-  background: var(--purple-dark-transparent-15); /* rgba(140,132,245,.40); */
-  border-radius: var(--border-radius);
-  font-size: 0.8em;
-  border: var(--border-width-thin) solid var(--purple-light);
-  padding: 0.5em 1.5em;
-  cursor: pointer;
-  font-family: var(--label-font);
-  text-transform: uppercase;
-}
-
-.hs-button:hover {
-  background-color: var(--purple-light);
-  color: var(--light);
-}
-
-.hs-input {
-  background-color: var(--purple-dark-transparent-10);
-  border-radius: var(--border-radius);
-  border: var(--border-width-thin) solid var(--purple-light);
-  color: var(--md-default-fg-color);
-  width: 100%;
-  height: 3em;
-  padding: 1.5em;
-}
-
-.hs-input::placeholder {
-  color: var(--light-transparent-40);
-  font-size: 0.9em;
-  font-family: var(--label-font);
-  text-transform: uppercase;
-}
-
-.hs-error-msg {
-  display: table-caption;
-  width: max-content;
-  font-size: 0.9em;
-}
-
-.hs-error-msgs {
-  visibility: hidden;
-  background-color: var(--purple-light);
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  border-radius: var(--border-radius);
-}
-
-.hs-error-msgs:not([hidden]) {
-  /* Used to hide the tooltip after 3 seconds */
-  animation: hideAnimation 0s ease-in 3s;
-  animation-fill-mode: forwards;
-  /* --- */
-  visibility: visible;
-  margin: 0;
-  list-style: none;
-  padding: 0.5em;
-}
-
-/* Used to hide the tooltip after 5 seconds */
-@keyframes hideAnimation {
-  to {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-}
-
-[dir='ltr'] .md-typeset ul.hs-error-msgs {
-  margin-left: 0;
-}
-
-.md-typeset ul.hs-error-msgs:not([hidden])::after {
-  display: none;
-}
-
-[dir='ltr'] .md-typeset ul.hs-error-msgs li {
-  margin-left: 0;
-  text-align: left;
-}
-
-.hs-error-msgs li label a {
-  font-size: 0.9em;
-}
-
-.hs-error-msgs li label a:hover {
-  cursor: pointer;
-}
-
-.hs_error_rollup {
-  display: none;
-}
-
 /* Mobile footer styling */
 @media screen and (max-width: 76.1875em) {
   .md-footer-meta__inner.md-grid {
@@ -1537,10 +1413,6 @@ html .md-typeset details.function div.tabbed-set,
     gap: 0.5em;
   }
   
-  .column.social {
-    margin: 0 auto;
-  }
-
   .md-social {
     justify-content: center;
     gap: 0.5em;
