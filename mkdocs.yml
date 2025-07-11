@@ -4,7 +4,7 @@ home_url: https://moonbeam.network/
 edit_uri: https://github.com/moonbeam-foundation/moonbeam-docs/edit/master/
 site_dir: /var/www/moonbeam-docs-static
 docs_dir: moonbeam-docs
-copyright: © 2024 Moonbeam Foundation. All Rights Reserved.
+copyright: © 2025 Moonbeam Foundation. All Rights Reserved.
 extra_javascript:
   - js/connectMetaMask.js
   - js/errorModal.js
@@ -12,6 +12,9 @@ extra_javascript:
   - js/handleLanguageChange.js
   - js/fixCreatedDate.js
   - js/externalLinkModal.js
+  - js/cookbookInit.js
+  - js/clipboardCopyllms.js
+  - js/cookbookEventHandler.js
 extra_css:
   - /assets/stylesheets/moonbeam.css
   - /assets/stylesheets/termynal.css
@@ -52,7 +55,11 @@ markdown_extensions:
           - material-overrides/.icons
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+     custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details
   - attr_list
 validation:
@@ -79,6 +86,8 @@ plugins:
         - js/handleLanguageChange.js
         - js/fixCreatedDate.js
         - js/externalLinkModal.js
+        - js/cookbookInit.js
+        - js/clipboardCopyllms.js
       css_files:
         - /assets/stylesheets/timeline-neoteroi.css
         - /assets/stylesheets/termynal.css
@@ -97,7 +106,7 @@ extra:
       - reject
   social:
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/PfpUATX
+      link: https://discord.com/invite/PfpUATX
       name: Discord
     - icon: fontawesome/brands/telegram
       link: https://t.me/Moonbeam_Official

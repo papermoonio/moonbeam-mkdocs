@@ -982,18 +982,6 @@ html .md-typeset details.function div.tabbed-set,
   text-transform: uppercase;
 }
 
-/* Style for the AI button */
-/* To avoid shifting after cookbook loads */
-.for-cookbook {
-  width: 10.85em;
-  position: relative;
-}
-
-div#ask-cookbook-container {
-  position: absolute;
-  right: 0;
-}
-
 @media screen and (max-width: 44.9375em) {
   [dir='ltr'] .md-content__inner > .tabbed-set .tabbed-labels {
     margin: auto;
@@ -1279,6 +1267,7 @@ div#ask-cookbook-container {
   border-top: var(--border-grid);
 }
 
+/* Stacks "Previous" or "Next" on top of page title*/
 .md-footer__title,
 .md-footer__title .md-ellipsis {
   display: flex;
@@ -1327,17 +1316,30 @@ div#ask-cookbook-container {
 }
 
 .md-footer-meta__inner {
-  flex-direction: column;
-  align-content: center;
+  align-items: center;
 }
 
-.md-social .md-social__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 0.5em;
-  height: 2rem;
-  width: 2rem;
+.md-footer-meta__inner .column {
+  max-width: 33%;
+  width: 30%;
+}
+
+.md-social {
+  padding: 0;
+  gap: 0.5em;
+}
+
+.column.social {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.md-social .md-social__link {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  height: 2rem;  
+  width: 2rem;  
 }
 
 .md-social .md-social__link:hover {
@@ -1349,13 +1351,16 @@ div#ask-cookbook-container {
   height: 1rem;
 }
 
-.column.newsletter {
-  text-align: center;
+/* targets the llms-full button*/
+.md-button.full-llms {
+  display: flex;
+  gap: 1em;
+  max-width: fit-content;
+  font-size: 0.9em;
 }
 
-.newsletter-label {
-  font-family: var(--header-font);
-  text-transform: uppercase;
+.md-button.full-llms svg {
+  width: 1rem;
 }
 
 .md-footer-copyright {
@@ -1368,6 +1373,13 @@ div#ask-cookbook-container {
   justify-content: space-between;
 }
 
+.copyright-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .policy-links a:first-child {
   margin-right: 2em;
 }
@@ -1378,150 +1390,42 @@ div#ask-cookbook-container {
   transform: translateX(-50%);
 }
 
-/* Newsletter Signup Styling */
-.hs-form.stacked {
-  display: flex;
-  flex-direction: column;
-}
-
-.hs-email {
-  position: relative;
-  display: inline-block;
-  margin: 0.3em 0;
-}
-
-.hs-button {
-  color: var(--purple-light);
-  background: var(--purple-dark-transparent-15); /* rgba(140,132,245,.40); */
-  border-radius: var(--border-radius);
-  font-size: 0.8em;
-  border: var(--border-width-thin) solid var(--purple-light);
-  padding: 0.5em 1.5em;
-  cursor: pointer;
-  font-family: var(--label-font);
-  text-transform: uppercase;
-}
-
-.hs-button:hover {
-  background-color: var(--purple-light);
-  color: var(--light);
-}
-
-.hs-input {
-  background-color: var(--purple-dark-transparent-10);
-  border-radius: var(--border-radius);
-  border: var(--border-width-thin) solid var(--purple-light);
-  color: var(--md-default-fg-color);
-  width: 100%;
-  height: 3em;
-  padding: 1.5em;
-}
-
-.hs-input::placeholder {
-  color: var(--light-transparent-40);
-  font-size: 0.9em;
-  font-family: var(--label-font);
-  text-transform: uppercase;
-}
-
-.hs-error-msg {
-  display: table-caption;
-  width: max-content;
-  font-size: 0.9em;
-}
-
-.hs-error-msgs {
-  visibility: hidden;
-  background-color: var(--purple-light);
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  border-radius: var(--border-radius);
-}
-
-.hs-error-msgs:not([hidden]) {
-  /* Used to hide the tooltip after 3 seconds */
-  animation: hideAnimation 0s ease-in 3s;
-  animation-fill-mode: forwards;
-  /* --- */
-  visibility: visible;
-  margin: 0;
-  list-style: none;
-  padding: 0.5em;
-}
-
-/* Used to hide the tooltip after 5 seconds */
-@keyframes hideAnimation {
-  to {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-}
-
-[dir='ltr'] .md-typeset ul.hs-error-msgs {
-  margin-left: 0;
-}
-
-.md-typeset ul.hs-error-msgs:not([hidden])::after {
-  display: none;
-}
-
-[dir='ltr'] .md-typeset ul.hs-error-msgs li {
-  margin-left: 0;
-  text-align: left;
-}
-
-.hs-error-msgs li label a {
-  font-size: 0.9em;
-}
-
-.hs-error-msgs li label a:hover {
-  cursor: pointer;
-}
-
-.hs_error_rollup {
-  display: none;
-}
-
 /* Mobile footer styling */
 @media screen and (max-width: 76.1875em) {
   .md-footer-meta__inner.md-grid {
+    flex-direction: column;
+  }
+
+  .md-footer-meta__inner.md-grid > * {
+    align-items: center;
+    align-self: center;
+  }
+
+  .md-footer-meta__inner .column {
+    max-width: 90%;
     width: 90%;
   }
 }
 
-@media screen and (max-width: 50.125em) {
-  .papermoon {
-    position: unset;
-    transform: none;
+/* at 910px this was breaking to wrap the llms button under tne newsletter section*/
+@media screen and (max-width: 57.5em) {
+  .md-footer-meta__inner.md-grid {
+    gap: 0.5em;
+  }
+  
+  .md-social {
+    justify-content: center;
+    gap: 0.5em;
   }
 
-  .md-footer-copyright {
+  .copyright-wrapper {
     flex-direction: column;
     align-items: center;
   }
-}
-
-@media screen and (max-width: 48.125em) {
-  .md-footer-meta__inner.md-grid {
-    width: 94%;
-  }
-
-  .hs-button,
-  .column.newsletter,
-  .newsletter-label,
-  .md-footer-social,
-  .md-footer-social * {
-    margin: auto;
-  }
-
-  .md-footer-social .network-links {
-    margin: 0 auto 1em;
-  }
-
-  .hs-button {
-    display: flex;
+  
+  .papermoon {
+    position: unset;
+    transform: unset;
   }
 }
 
@@ -2184,3 +2088,18 @@ ul.task-list {
     display: none;
   }
 }
+
+/*Responsive style for wide screen footer, header, consent*/
+@media screen and (min-width: 2560px) {
+  .md-header__inner.md-grid,
+  .md-banner__inner.md-grid.md-typeset,
+  form.md-consent__form.md-grid.md-typeset,
+  .copyright-wrapper {
+    max-width: 80rem;
+  }
+}
+
+div.mermaid { 
+    display: flex !important; 
+    justify-content: center !important;
+ }

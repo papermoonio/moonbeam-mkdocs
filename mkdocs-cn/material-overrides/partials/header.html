@@ -16,12 +16,6 @@
           {% include "partials/tabs.html" %}
         {% endif %}
       {% endif %}
-      <a href="#" class="md-header__button md-button connectMetaMask-nav md-typeset">
-        Connect Wallet
-      </a>
-      <a class="md-header__button md-button faucet md-typeset" href="https://faucet.moonbeam.network/" target="_blank">
-        Faucet
-      </a>
       <div class="language-select-wrapper select-wrapper">
         <span class="language-select-label select-label">中文</span>
         <ul class="language-select select">
@@ -33,6 +27,12 @@
           <span class="md-icon selector-open">{% include
             ".icons/material/chevron-up.svg" %}</span>
       </div>
+      <a href="#" class="md-header__button md-button connectMetaMask-nav md-typeset">
+        Connect Wallet
+      </a>
+      <a class="md-header__button md-button faucet md-typeset" href="https://faucet.moonbeam.network/" target="_blank">
+        Faucet
+      </a>
       {% if "material/search" in config["plugins"] %}
       <label class="md-header__button md-icon" for="__search">
         {% include ".icons/material/magnify.svg" %}
