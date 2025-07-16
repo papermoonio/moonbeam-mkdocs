@@ -89,3 +89,68 @@
     </div>
   {% endif %}
 {% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyTxtFile = async (url) => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const text = await response.text();
+            await navigator.clipboard.writeText(text);
+
+            const copiedToClipboard = document.querySelector('.md-dialog');
+            if (copiedToClipboard) {
+              copiedToClipboard.classList.add('md-dialog--active');
+
+              const copiedToClipboardMessage =
+                copiedToClipboard.querySelector('.md-dialog__inner');
+              if (
+                copiedToClipboardMessage &&
+                copiedToClipboardMessage.textContent !==
+                  "{{ lang.t('clipboard.copied') }}"
+              ) {
+                copiedToClipboardMessage.textContent =
+                  "{{ lang.t('clipboard.copied') }}";
+              }
+              // Set a timer to remove the after 2 seconds (2000ms)
+              setTimeout(() => {
+                copiedToClipboard.classList.remove('md-dialog--active');
+              }, 2000);
+            }
+          } catch (err) {
+            console.error('Failed to copy:', err);
+            const copiedToClipboard = document.querySelector('.md-dialog');
+            if (copiedToClipboard) {
+              copiedToClipboard.classList.remove('md-dialog--active');
+            }
+          }
+      }
+
+      document.querySelectorAll('.llms').forEach(button => {
+        button.addEventListener('click', (event) => {
+          event.preventDefault(); // Prevent default link behavior
+
+          const action = button.getAttribute('data-action');
+          const fileName = button.getAttribute('data-value');
+          if (!fileName) return; // Exit if no file name is found
+
+          // Add 'llms-files/' prefix except for root-level llms.txt and llms-full.txt
+          const filePath = (fileName === "llms.txt" || fileName === "llms-full.txt") 
+            ? fileName 
+            : `llms-files/${fileName}`;
+          // TODO: update URL for production
+          const url = `http://127.0.0.1:8000/${filePath}`;
+
+          if (action === 'copy') {
+            copyTxtFile(url, fileName);
+          }
+        })
+      })
+    });
+  </script>
+{% endblock %}
