@@ -69,6 +69,7 @@ exclude_docs: README.md
 plugins:
   - search
   - awesome-nav
+  - glightbox
   - git-revision-date-localized:
       exclude:
         - .snippets/*
