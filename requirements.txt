@@ -1,12 +1,12 @@
 click==8.1.8
-future==1.0.0 # python2 not supported anymore
+future==1.0.0
 importlib-metadata==8.6.1
 Jinja2==3.1.6
 joblib==1.4.2
 livereload==2.7.1
 lunr==0.8.0
 Markdown==3.8
-MarkupSafe==3.0.2 # requires python 3.9+
+MarkupSafe==3.0.2
 mkdocs==1.6.1
 mkdocs-awesome-nav==3.1.1
 mkdocs-git-revision-date-localized-plugin==1.4.5
