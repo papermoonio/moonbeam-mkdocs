@@ -1351,16 +1351,23 @@ html .md-typeset details.function div.tabbed-set,
   height: 1rem;
 }
 
-/* targets the llms-full button*/
-.md-button.full-llms {
-  display: flex;
-  gap: 1em;
-  max-width: fit-content;
-  font-size: 0.9em;
+.llms-wrapper {
+  font-family: var(--label-font);
+  font-size: .6rem;
+  text-transform: uppercase;
 }
 
-.md-button.full-llms svg {
-  width: 1rem;
+.llms-title {
+  margin: 0 0 0.5em 0;
+}
+
+.llms-options {
+  display: flex;
+  gap: 3em;
+}
+
+html .md-footer-meta.md-typeset a.llms-link {
+  color: var(--md-typeset-a-color);
 }
 
 .md-footer-copyright {
@@ -1407,7 +1414,6 @@ html .md-typeset details.function div.tabbed-set,
   }
 }
 
-/* at 910px this was breaking to wrap the llms button under tne newsletter section*/
 @media screen and (max-width: 57.5em) {
   .md-footer-meta__inner.md-grid {
     gap: 0.5em;
@@ -1426,6 +1432,15 @@ html .md-typeset details.function div.tabbed-set,
   .papermoon {
     position: unset;
     transform: unset;
+  }
+}
+
+@media screen and (max-width: 26em) {
+  .llms-options {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+    width: 100%;
   }
 }
 

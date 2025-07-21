@@ -39,10 +39,15 @@ This file was automatically generated - do not edit
   {% endif %}
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="column llms-buttons">
-        <button class="md-clipboard--inline md-icon full-llms md-button" title="{{ lang.t('clipboard.copy') }}">
-          {% include ".icons/material/content-copy.svg" %} llms-full.txt
-        </button>
+      <div class="column llms-wrapper">
+        <p class="llms-title">
+          AI-Compatible Docs
+        </p>
+        <div class="llms-options">
+          <a class="llms-link" href="/llms.txt">llms.txt</a>
+          <a class="llms-link" href="/llms-full.txt">llms-full.txt</a>
+          <a class="llms-link" href="/ai-resources/ai-resources/">LLMs By Topic</a>
+        </div>
       </div>
       <div class="column social">
         {% include "partials/social.html" %}
