@@ -10,5 +10,8 @@ https://polkadot.com/
 https://fonts.gstatic.com/
 https://fonts.googleapis.com/
 
-# Ignore Grove RPC
+# Ignore websites that redirect too many times
 https://portal.grove.city/
+
+# Ignore websites that don't allow scrapers
+https://metamask.io/
