@@ -3,9 +3,6 @@
 localhost
 127.0.0.1
 
-# Polkadot main site (404s - non-browser clients)
-https://polkadot.com/
-
 # Ignore Google Fonts service
 https://fonts.gstatic.com/
 https://fonts.googleapis.com/
@@ -15,3 +12,4 @@ https://portal.grove.city/
 
 # Ignore websites that don't allow scrapers
 https://metamask.io/
+https://polkadot.com/
