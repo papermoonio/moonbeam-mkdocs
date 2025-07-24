@@ -143,8 +143,7 @@
           const filePath = (fileName === "llms.txt" || fileName === "llms-full.txt") 
             ? fileName 
             : `llms-files/${fileName}`;
-          // TODO: update URL for production
-          const url = `http://127.0.0.1:8000/${filePath}`;
+          const url = `https://docs.moonbeam.network/${filePath}`;
 
           if (action === 'copy') {
             copyTxtFile(url, fileName);
