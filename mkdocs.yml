@@ -68,7 +68,8 @@ validation:
 exclude_docs: README.md
 plugins:
   - search
-  - awesome-pages
+  - awesome-nav
+  - glightbox
   - git-revision-date-localized:
       exclude:
         - .snippets/*
@@ -89,6 +90,7 @@ plugins:
         - js/cookbookInit.js
         - js/clipboardCopyllms.js
       css_files:
+        - /assets/stylesheets/timeline-neoteroi.css
         - /assets/stylesheets/termynal.css
         - /assets/stylesheets/moonbeam.css
   - macros:
