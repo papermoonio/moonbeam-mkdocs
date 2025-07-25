@@ -7,6 +7,9 @@ localhost
 https://fonts.gstatic.com/
 https://fonts.googleapis.com/
 
+# Ignore known working URLs
+https://geth.ethereum.org/docs/interacting-with-geth/rpc/pubsub#newheads
+
 # Ignore websites that redirect too many times
 https://portal.grove.city/
 
