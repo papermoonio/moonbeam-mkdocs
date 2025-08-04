@@ -17,3 +17,6 @@ https://x.com/
 
 # Ignore known working URLs
 https://ethereum.org/
+
+# 405 Method not Allowed
+https://apps.moonbeam.network/
