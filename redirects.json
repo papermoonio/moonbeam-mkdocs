@@ -531,6 +531,18 @@
 		{
 	  "key": "/learn/dapps-list/dapp-directory/",
 	  "value": "/learn/dapp-directory/"
+	},
+	{
+	  "key": "/builders/integrations/oracles/chainlink/",
+	  "value": "/builders/integrations/oracles/"
+	},
+	{
+	  "key": "/node-operators/oracle-nodes/node-chainlink/",
+	  "value": "/builders/integrations/oracles/"
+	},
+	{
+	  "key": "/node-operators/oracle-nodes/",
+	  "value": "/builders/integrations/oracles/"
 	}
   ]
 }
