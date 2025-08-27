@@ -531,6 +531,14 @@
 		{
 	  "key": "/learn/dapps-list/dapp-directory/",
 	  "value": "/learn/dapp-directory/"
+	},
+	{
+	  "key": "/node-operators/indexer-nodes/",
+	  "value": "/node-operators/"
+	},
+	{
+	  "key": "/node-operators/indexer-nodes/thegraph-node/",
+	  "value": "/node-operators/"
 	}
   ]
 }
