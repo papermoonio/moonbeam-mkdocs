@@ -1357,7 +1357,7 @@ html .md-typeset details.function div.tabbed-set,
 
 .llms-wrapper {
   font-family: var(--label-font);
-  font-size: .6rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
 }
 
