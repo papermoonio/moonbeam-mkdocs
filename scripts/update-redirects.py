@@ -17,7 +17,7 @@
 #     as `value`.                                                                   #
 #                                                                                   #
 # To use the script, simply run:                                                    #
-#   python scripts/update_redirects.py <PR_NUMBER> <OWNER> <REPO>                   #
+#   python scripts/update-redirects.py <PR_NUMBER> <OWNER> <REPO>                   #
 #                                                                                   #
 # Command-line arguments:                                                           #
 #   - `PR_NUMBER`: Pull request number to analyze                                   #
@@ -25,7 +25,7 @@
 #   - `REPO`: GitHub repository name                                                #
 #                                                                                   #
 # Example usage:                                                                    #
-#   python scripts/update_redirects.py 42 moonbeam-foundation moonbeam-docs         #
+#   python scripts/update-redirects.py 42 moonbeam-foundation moonbeam-docs         #
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
 
