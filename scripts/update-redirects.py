@@ -154,7 +154,7 @@ def process_pr(owner: str, repo: str, pr_number: str):
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: python update_redirects_api.py <PR_NUMBER> <OWNER> <REPO>")
+        print("Usage: python scripts/update-redirects.py <PR_NUMBER> <OWNER> <REPO>")
         sys.exit(1)
 
     pr_number = sys.argv[1]
