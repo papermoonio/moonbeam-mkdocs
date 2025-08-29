@@ -539,6 +539,18 @@
 	{
 	  "key": "/node-operators/indexer-nodes/thegraph-node/",
 	  "value": "/node-operators/"
+  },
+  { 
+	  "key": "/builders/integrations/oracles/chainlink/",
+	  "value": "/builders/integrations/oracles/"
+	},
+	{
+	  "key": "/node-operators/oracle-nodes/node-chainlink/",
+	  "value": "/builders/integrations/oracles/"
+	},
+	{
+	  "key": "/node-operators/oracle-nodes/",
+	  "value": "/builders/integrations/oracles/"
 	}
   ]
 }
