@@ -144,7 +144,7 @@ def process_pr(owner: str, repo: str, pr_number: str):
     print(f"Original redirects: {original_count}")
     print(f"Redirects modified: {modified_count}")
     print(f"Redirects added: {added_count}")
-    print(f"Total redirects now: {len(redirects["data"])}")
+    print(f"Total redirects now: {len(redirects['data'])}")
 
     if added_redirects:
         print("\n⚠️ Redirects that need attention:")
