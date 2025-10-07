@@ -551,6 +551,10 @@
 	{
 	  "key": "/node-operators/oracle-nodes/",
 	  "value": "/builders/integrations/oracles/"
+	},
+	{
+	  "key": "/builders/integrations/oracles/razor-network/",
+	  "value": "/builders/integrations/oracles/"
 	}
   ]
 }
