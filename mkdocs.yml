@@ -80,6 +80,7 @@ plugins:
       minify_html: true
       minify_js: true
       minify_css: true
+      cache_safe: true
       js_files:
         - js/connectMetaMask.js
         - js/errorModal.js
