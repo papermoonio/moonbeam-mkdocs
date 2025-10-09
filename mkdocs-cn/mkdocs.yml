@@ -3,7 +3,7 @@ site_url: https://docs.moonbeam.network/cn/
 home_url: https://moonbeam.network/
 site_dir: /var/www/mkdocs-multi-lang/moonbeam-docs-cn-static
 docs_dir: moonbeam-docs-cn
-copyright: © 2024 Moonbeam Foundation. All Rights Reserved.
+copyright: © 2025 Moonbeam Foundation. All Rights Reserved.
 extra_javascript:
   - js/connectMetaMask.js
   - js/errorModal.js
@@ -17,6 +17,7 @@ extra_javascript:
 extra_css:
   - /assets/stylesheets/moonbeam.css
   - /assets/stylesheets/termynal.css
+  - /assets/stylesheets/timeline-neoteroi.css
 theme:
   language: zh
   name: material
@@ -71,6 +72,7 @@ plugins:
       minify_html: true
       minify_js: true
       minify_css: true
+      cache_safe: false
       js_files:
         - js/connectMetaMask.js
         - js/errorModal.js
@@ -78,7 +80,10 @@ plugins:
         - js/handleLanguageChange.js
         - js/fixCreatedDate.js
         - js/externalLinkModal.js
+        - js/cookbookInit.js
+        - js/clipboardCopyllms.js
       css_files:
+        - /assets/stylesheets/timeline-neoteroi.css
         - /assets/stylesheets/termynal.css
         - /assets/stylesheets/moonbeam.css
   - redirects:
