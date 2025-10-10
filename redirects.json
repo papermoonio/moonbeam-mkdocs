@@ -1,560 +1,564 @@
 {
-  "data":[
-	{
-	  "key":"/builders/build/canonical-contracts/precompiles/eth-mainnet/",
-	  "value":"/builders/ethereum/precompiles/utility/eth-mainnet/"
-	},
-	{
-	  "key":"/builders/build/eth-api/debug-trace/",
-	  "value":"/builders/ethereum/json-rpc/debug-trace/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/truffle/",
-	  "value":"/builders/ethereum/dev-env/"
-	},
-	{
-	  "key":"/builders/build/eth-api/pubsub/",
-	  "value":"/builders/ethereum/json-rpc/pubsub/"
-	},
-	{
-	  "key":"/builders/build/moonbeam-custom-api/",
-	  "value":"/builders/ethereum/json-rpc/moonbeam-custom-api/"
-	},
-	{
-	  "key":"/builders/get-started/eth-compare/",
-	  "value":"/learn/core-concepts/"
-	},
-	{
-	  "key":"/builders/get-started/eth-compare/balances/",
-	  "value":"/learn/core-concepts/balances/"
-	},
-	{
-	  "key":"/builders/get-started/eth-compare/consensus-finality/",
-	  "value":"/learn/core-concepts/consensus-finality/"
-	},
-	{
-	  "key":"/builders/get-started/eth-compare/rpc-support/",
-	  "value":"/builders/ethereum/json-rpc/eth-rpc/"
-	},
-	{
-	  "key":"/builders/get-started/eth-compare/security/",
-	  "value":"/learn/core-concepts/security/"
-	},
-	{
-	  "key":"/builders/get-started/eth-compare/transfers-api/",
-	  "value":"/learn/core-concepts/transfers-api/"
-	},
-	{
-	  "key":"/builders/get-started/eth-compare/tx-fees/",
-	  "value":"/learn/core-concepts/tx-fees/"
-	},
-	{
-	  "key":"/builders/get-started/moonbase/",
-	  "value":"/builders/get-started/networks/moonbase/"
-	},
-	{
-	  "key":"/builders/get-started/moonriver/",
-	  "value":"/builders/get-started/networks/moonriver/"
-	},
-	{
-	  "key":"/builders/get-started/moonbeam/",
-	  "value":"/builders/get-started/networks/moonbeam/"
-	},
-	{
-	  "key":"/builders/get-started/networks/layer2/bobabeam/",
-	  "value":"/builders/get-started/networks/"
-	},
-	{
-	  "key":"/builders/interact/hardhat/",
-	  "value":"/builders/ethereum/dev-env/hardhat/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xc20/xtokens/",
-	  "value":"/builders/interoperability/xcm/xc20/send-xc20s/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/fees/",
-	  "value":"/builders/interoperability/xcm/core-concepts/weights-fees/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/remote-evm-calls/",
-	  "value":"/builders/interoperability/xcm/remote-execution/remote-evm-calls/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xc20/mintable-xc20/",
-	  "value":"/builders/interoperability/xcm/xc20/overview/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xcm-transactor/",
-	  "value":"/builders/interoperability/xcm/remote-execution/substrate-calls/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xc-integration/",
-	  "value":"/builders/interoperability/xcm/xc-registration/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/xcm-utils/",
-	  "value":"/builders/interoperability/xcm/xcm-utils/"
-	},
-	{
-	  "key":"/builders/xcm/fees/",
-	  "value":"/builders/interoperability/xcm/core-concepts/weights-fees/"
-	},
-	{
-	  "key":"/builders/xcm/xc20/",
-	  "value":"/builders/interoperability/xcm/xc20/"
-	},
-	{
-	  "key":"/builders/xcm/xc20/overview/",
-	  "value":"/builders/interoperability/xcm/xc20/overview/"
-	},
-	{
-	  "key":"/builders/xcm/xc20/xtokens/",
-	  "value":"/builders/interoperability/xcm/xc20/send-xc20s/"
-	},
-	{
-	  "key":"/builders/xcm/xcm-sdk/xcm-sdk/",
-	  "value":"https:/moonbeam-foundation.github.io/xcm-sdk/latest/"
-	},
-	{
-	  "key":"/builders/xcm/xcm-transactor/",
-	  "value":"/builders/interoperability/xcm/remote-execution/substrate-calls/"
-	},
-	{
-	  "key":"/builders/xcm/xc-integration/",
-	  "value":"/builders/interoperability/xcm/xc-registration/"
-	},
-	{
-	  "key":"/getting-started/using-metamask/",
-	  "value":"/tokens/connect/metamask/"
-	},
-	{
-	  "key":"/getting-started/using-remix/",
-	  "value":"/builders/ethereum/dev-env/remix/"
-	},
-	{
-	  "key":"/getting-started/using-truffle/",
-	  "value":"/builders/ethereum/dev-env/"
-	},
-	{
-	  "key":"/getting-started/local-node/deploy-contract/",
-	  "value":"/builders/ethereum/libraries/"
-	},
-	{
-	  "key":"/getting-started/local-node/using-remix/",
-	  "value":"/builders/ethereum/dev-env/remix/"
-	},
-	{
-	  "key":"/getting-started/local-node/web3-transaction/",
-	  "value":"/builders/ethereum/libraries/web3py/"
-	},
-	{
-	  "key":"/getting-started/moonriver/integrate-metamask/",
-	  "value":"/builders/get-started/networks/moonriver/"
-	},
-	{
-	  "key":"/getting-started/testnet/faucet/",
-	  "value":"/builders/get-started/networks/moonbase/"
-	},
-	{
-	  "key":"/getting-started/testnet/metamask/",
-	  "value":"/tokens/connect/metamask/"
-	},
-	{
-	  "key":"/getting-started/testnet/precompiles/",
-	  "value":"/builders/ethereum/precompiles/"
-	},
-	{
-	  "key":"/getting-started/testnet/pubsub/",
-	  "value":"/builders/ethereum/json-rpc/pubsub/"
-	},
-	{
-	  "key":"/integrations/openzeppelin/overview/",
-	  "value":"/builders/ethereum/dev-env/openzeppelin/overview/"
-	},
-	{
-	  "key":"/learn/dapps-list/dtmb/",
-	  "value":"/learn/dapp-directory/"
-	},
-	{
-	  "key":"/learn/features/unified-accounts/",
-	  "value":"/learn/core-concepts/unified-accounts/"
-	},
-	{
-	  "key":"/learn/platform/roadmap/",
-	  "value":"/"
-	},
-	{
-	  "key":"/learn/unified-accounts/",
-	  "value":"/learn/core-concepts/unified-accounts/"
-	},
-	{
-	  "key":"/networks/moonriver/",
-	  "value":"/learn/platform/networks/moonriver/"
-	},
-	{
-	  "key":"/node-operators/networks/full-node/",
-	  "value":"/node-operators/networks/run-a-node/overview/"
-	},
-	{
-	  "key":"/tutorials/eth-api/truffle-start-to-end/",
-	  "value":"/tutorials/eth-api/get-started/"
-	},
-	{
-	  "key":"/builders/build/",
-	  "value":"/builders/ethereum/"
-	},
-	{
-	  "key":"/builders/build/canonical-contracts/",
-	  "value":"/builders/ethereum/canonical-contracts/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/ape/",
-	  "value":"/builders/ethereum/dev-env/ape/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/brownie/",
-	  "value":"/builders/ethereum/dev-env/ape/"
-	},
-	{
-	  "key":"/builders/ethereum/dev-env/brownie/",
-	  "value":"/builders/ethereum/dev-env/ape/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/foundry/",
-	  "value":"/builders/ethereum/dev-env/foundry/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/hardhat/",
-	  "value":"/builders/ethereum/dev-env/hardhat/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/",
-	  "value":"/builders/ethereum/dev-env/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/openzeppelin/contracts/",
-	  "value":"/builders/ethereum/dev-env/openzeppelin/contracts/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/openzeppelin/defender/",
-	  "value":"/builders/ethereum/dev-env/openzeppelin/"
-	},
-	{
-	  "key":"/builders/ethereum/dev-env/openzeppelin/defender/",
-	  "value":"/builders/ethereum/dev-env/openzeppelin/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/openzeppelin/",
-	  "value":"/builders/ethereum/dev-env/openzeppelin/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/openzeppelin/overview/",
-	  "value":"/builders/ethereum/dev-env/openzeppelin/overview/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/remix/",
-	  "value":"/builders/ethereum/dev-env/remix/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/scaffold-eth/",
-	  "value":"/builders/ethereum/dev-env/scaffold-eth/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/tenderly/",
-	  "value":"/builders/ethereum/dev-env/tenderly/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/thirdweb/",
-	  "value":"/builders/ethereum/dev-env/thirdweb/"
-	},
-	{
-	  "key":"/builders/build/eth-api/dev-env/waffle-mars/",
-	  "value":"/builders/ethereum/dev-env/waffle-mars/"
-	},
-	{
-	  "key":"/builders/build/eth-api/",
-	  "value":"/builders/ethereum/"
-	},
-	{
-	  "key":"/builders/ethereum/historical-updates/",
-	  "value":"/builders/build/historical-updates/"
-	},
-	{
-	  "key":"/builders/ethereum/runtime-upgrades/",
-	  "value":"/builders/build/runtime-upgrades/"
-	},
-	{
-	  "key":"/builders/json-rpc/debug-trace/",
-	  "value":"/builders/ethereum/json-rpc/debug-trace/"
-	},
-	{
-	  "key":"/builders/json-rpc/eth-rpc/",
-	  "value":"/builders/ethereum/json-rpc/eth-rpc/"
-	},
-	{
-	  "key":"/builders/json-rpc/",
-	  "value":"/builders/ethereum/json-rpc/"
-	},
-	{
-	  "key":"/builders/json-rpc/moonbeam-custom-api/",
-	  "value":"/builders/ethereum/json-rpc/moonbeam-custom-api/"
-	},
-	{
-	  "key":"/builders/json-rpc/pubsub/",
-	  "value":"/builders/ethereum/json-rpc/pubsub/"
-	},
-	{
-	  "key":"/builders/build/eth-api/libraries/ethersjs/",
-	  "value":"/builders/ethereum/libraries/ethersjs/"
-	},
-	{
-	  "key":"/builders/build/eth-api/libraries/ethersrs/",
-	  "value":"/builders/ethereum/libraries/ethersrs/"
-	},
-	{
-	  "key":"/builders/build/eth-api/libraries/",
-	  "value":"/builders/ethereum/libraries/"
-	},
-	{
-	  "key":"/builders/build/eth-api/libraries/viem/",
-	  "value":"/builders/ethereum/libraries/viem/"
-	},
-	{
-	  "key":"/builders/build/eth-api/libraries/web3js/",
-	  "value":"/builders/ethereum/libraries/web3js/"
-	},
-	{
-	  "key":"/builders/build/eth-api/libraries/web3py/",
-	  "value":"/builders/ethereum/libraries/web3py/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/identity/",
-	  "value":"/builders/ethereum/precompiles/account/identity/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/proxy/",
-	  "value":"/builders/ethereum/precompiles/account/proxy/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/collective/",
-	  "value":"/builders/ethereum/precompiles/features/governance/collective/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/conviction-voting/",
-	  "value":"/builders/ethereum/precompiles/features/governance/conviction-voting/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/preimage/",
-	  "value":"/builders/ethereum/precompiles/features/governance/preimage/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/referenda/",
-	  "value":"/builders/ethereum/precompiles/features/governance/referenda/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/randomness/",
-	  "value":"/builders/ethereum/precompiles/features/randomness/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/staking/",
-	  "value":"/builders/ethereum/precompiles/features/staking/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/",
-	  "value":"/builders/ethereum/precompiles/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/gmp/",
-	  "value":"/builders/ethereum/precompiles/interoperability/gmp/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/overview/",
-	  "value":"/builders/ethereum/precompiles/overview/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/eth-mainnet/",
-	  "value":"/builders/ethereum/precompiles/utility/eth-mainnet/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/registry/",
-	  "value":"/builders/ethereum/precompiles/utility/registry/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/relay-data-verifier/",
-	  "value":"/builders/ethereum/precompiles/utility/relay-data-verifier/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/batch/",
-	  "value":"/builders/ethereum/precompiles/ux/batch/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/call-permit/",
-	  "value":"/builders/ethereum/precompiles/ux/call-permit/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/precompiles/erc20/",
-	  "value":"/builders/ethereum/precompiles/ux/erc20/"
-	},
-	{
-	  "key":"/builders/build/eth-api/verify-contracts/api-verification/",
-	  "value":"/builders/ethereum/verify-contracts/api-verification/"
-	},
-	{
-	  "key":"/builders/build/eth-api/verify-contracts/block-explorers/",
-	  "value":"/builders/ethereum/verify-contracts/block-explorers/"
-	},
-	{
-	  "key":"/builders/build/eth-api/verify-contracts/etherscan-plugins/",
-	  "value":"/builders/ethereum/verify-contracts/etherscan-plugins/"
-	},
-	{
-	  "key":"/builders/build/eth-api/verify-contracts/",
-	  "value":"/builders/ethereum/verify-contracts/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/",
-	  "value":"/"
-	},
-	{
-	  "key":"/builders/build/substrate-api/chopsticks/",
-	  "value":"/builders/substrate/dev-env/chopsticks/"
-	},
-	{
-	  "key":"/builders/build/substrate-api/",
-	  "value":"/builders/substrate/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/identity/",
-	  "value":"/builders/substrate/interfaces/account/identity/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/multisig/",
-	  "value":"/builders/substrate/interfaces/account/multisig/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/proxy/",
-	  "value":"/builders/substrate/interfaces/account/proxy/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/conviction-voting/",
-	  "value":"/builders/substrate/interfaces/features/governance/conviction-voting/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/preimage/",
-	  "value":"/builders/substrate/interfaces/features/governance/preimage/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/referenda/",
-	  "value":"/builders/substrate/interfaces/features/governance/referenda/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/randomness/",
-	  "value":"/builders/substrate/interfaces/features/randomness/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/staking/",
-	  "value":"/builders/substrate/interfaces/features/staking/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/",
-	  "value":"/builders/substrate/interfaces/"
-	},
-	{
-	  "key":"/builders/pallets-precompiles/pallets/utility/",
-	  "value":"/builders/substrate/interfaces/utility/utility/"
-	},
-	{
-	  "key":"/builders/build/substrate-api/polkadot-js-api/",
-	  "value":"/builders/substrate/libraries/polkadot-js-api/"
-	},
-	{
-	  "key":"/builders/build/substrate-api/py-substrate-interface/",
-	  "value":"/builders/substrate/libraries/py-substrate-interface/"
-	},
-	{
-	  "key":"/builders/build/substrate-api/sidecar/",
-	  "value":"/builders/substrate/libraries/sidecar/"
-	},
-	{
-	  "key":"/builders/build/substrate-api/overview/",
-	  "value":"/builders/substrate/overview/"
-	},
-	{
-	  "key":"/learn/dapps-list/state-of-the-dapps/",
-	  "value":"/learn/dapp-directory/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/",
-	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/latest/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/v0/",
-	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v0/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/v0/reference/",
-	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v0/reference/interfaces/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/v0/xcm-sdk/",
-	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v0/example-usage/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/v1/",
-	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v1/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/v1/reference/",
-	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v1/reference/interfaces/"
-	},
-	{
-	  "key":"/builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk/",
-	  "value":"https://moonbeam-foundation.github.io/xcm-sdk/v1/example-usage/"
-	},
-	{
-	  "key": "/builders/integrations/gaming/metafab/",
-	  "value": "/builders/integrations/"
-	},
-	{
-	  "key": "/builders/interoperability/xcm/xc20/send-xc20s/xtokens-pallet/",
-	  "value": "/builders/interoperability/xcm/xc20/send-xc20s/xcm-pallet/"
-	},
-		{
-	  "key": "/learn/dapps-list/dapp-radar/",
-	  "value": "/learn/dapp-directory/"
-	},
-		{
-	  "key": "/learn/dapps-list/",
-	  "value": "/learn/dapp-directory/"
-	},
-		{
-	  "key": "/learn/dapps-list/dapp-directory/",
-	  "value": "/learn/dapp-directory/"
-	},
-	{
-	  "key": "/node-operators/indexer-nodes/",
-	  "value": "/node-operators/"
-	},
-	{
-	  "key": "/node-operators/indexer-nodes/thegraph-node/",
-	  "value": "/node-operators/"
+  "data": [
+    {
+      "key": "/builders/build/",
+      "value": "/builders/ethereum/"
     },
-    { 
-	  "key": "/builders/integrations/oracles/chainlink/",
-	  "value": "/builders/integrations/oracles/"
-	},
-	{
-	  "key": "/node-operators/oracle-nodes/node-chainlink/",
-	  "value": "/builders/integrations/oracles/"
-	},
-	{
-	  "key": "/node-operators/oracle-nodes/",
-	  "value": "/builders/integrations/oracles/"
-	},
-	{
-	  "key": "/builders/integrations/oracles/razor-network/",
-	  "value": "/builders/integrations/oracles/"
-	}
+    {
+      "key": "/builders/build/canonical-contracts/",
+      "value": "/builders/ethereum/canonical-contracts/"
+    },
+    {
+      "key": "/builders/build/canonical-contracts/precompiles/eth-mainnet/",
+      "value": "/builders/ethereum/precompiles/utility/eth-mainnet/"
+    },
+    {
+      "key": "/builders/build/eth-api/",
+      "value": "/builders/ethereum/"
+    },
+    {
+      "key": "/builders/build/eth-api/debug-trace/",
+      "value": "/builders/ethereum/json-rpc/debug-trace/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/ape/",
+      "value": "/builders/ethereum/dev-env/ape/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/brownie/",
+      "value": "/builders/ethereum/dev-env/ape/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/foundry/",
+      "value": "/builders/ethereum/dev-env/foundry/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/hardhat/",
+      "value": "/builders/ethereum/dev-env/hardhat/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/openzeppelin/",
+      "value": "/builders/ethereum/dev-env/openzeppelin/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/openzeppelin/contracts/",
+      "value": "/builders/ethereum/dev-env/openzeppelin/contracts/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/openzeppelin/defender/",
+      "value": "/builders/ethereum/dev-env/openzeppelin/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/openzeppelin/overview/",
+      "value": "/builders/ethereum/dev-env/openzeppelin/overview/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/remix/",
+      "value": "/builders/ethereum/dev-env/remix/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/scaffold-eth/",
+      "value": "/builders/ethereum/dev-env/scaffold-eth/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/tenderly/",
+      "value": "/builders/ethereum/dev-env/tenderly/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/thirdweb/",
+      "value": "/builders/ethereum/dev-env/thirdweb/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/truffle/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/build/eth-api/dev-env/waffle-mars/",
+      "value": "/builders/ethereum/dev-env/waffle-mars/"
+    },
+    {
+      "key": "/builders/build/eth-api/libraries/",
+      "value": "/builders/ethereum/libraries/"
+    },
+    {
+      "key": "/builders/build/eth-api/libraries/ethersjs/",
+      "value": "/builders/ethereum/libraries/ethersjs/"
+    },
+    {
+      "key": "/builders/build/eth-api/libraries/ethersrs/",
+      "value": "/builders/ethereum/libraries/ethersrs/"
+    },
+    {
+      "key": "/builders/build/eth-api/libraries/viem/",
+      "value": "/builders/ethereum/libraries/viem/"
+    },
+    {
+      "key": "/builders/build/eth-api/libraries/web3js/",
+      "value": "/builders/ethereum/libraries/web3js/"
+    },
+    {
+      "key": "/builders/build/eth-api/libraries/web3py/",
+      "value": "/builders/ethereum/libraries/web3py/"
+    },
+    {
+      "key": "/builders/build/eth-api/pubsub/",
+      "value": "/builders/ethereum/json-rpc/pubsub/"
+    },
+    {
+      "key": "/builders/build/eth-api/verify-contracts/",
+      "value": "/builders/ethereum/verify-contracts/"
+    },
+    {
+      "key": "/builders/build/eth-api/verify-contracts/api-verification/",
+      "value": "/builders/ethereum/verify-contracts/api-verification/"
+    },
+    {
+      "key": "/builders/build/eth-api/verify-contracts/block-explorers/",
+      "value": "/builders/ethereum/verify-contracts/block-explorers/"
+    },
+    {
+      "key": "/builders/build/eth-api/verify-contracts/etherscan-plugins/",
+      "value": "/builders/ethereum/verify-contracts/etherscan-plugins/"
+    },
+    {
+      "key": "/builders/build/moonbeam-custom-api/",
+      "value": "/builders/ethereum/json-rpc/moonbeam-custom-api/"
+    },
+    {
+      "key": "/builders/build/substrate-api/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/build/substrate-api/chopsticks/",
+      "value": "/builders/substrate/dev-env/chopsticks/"
+    },
+    {
+      "key": "/builders/build/substrate-api/overview/",
+      "value": "/builders/substrate/overview/"
+    },
+    {
+      "key": "/builders/build/substrate-api/polkadot-js-api/",
+      "value": "/builders/substrate/libraries/polkadot-js-api/"
+    },
+    {
+      "key": "/builders/build/substrate-api/py-substrate-interface/",
+      "value": "/builders/substrate/libraries/py-substrate-interface/"
+    },
+    {
+      "key": "/builders/build/substrate-api/sidecar/",
+      "value": "/builders/substrate/libraries/sidecar/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/brownie/",
+      "value": "/builders/ethereum/dev-env/ape/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/openzeppelin/defender/",
+      "value": "/builders/ethereum/dev-env/openzeppelin/"
+    },
+    {
+      "key": "/builders/ethereum/historical-updates/",
+      "value": "/builders/build/historical-updates/"
+    },
+    {
+      "key": "/builders/ethereum/runtime-upgrades/",
+      "value": "/builders/build/runtime-upgrades/"
+    },
+    {
+      "key": "/builders/get-started/eth-compare/",
+      "value": "/learn/core-concepts/"
+    },
+    {
+      "key": "/builders/get-started/eth-compare/balances/",
+      "value": "/learn/core-concepts/balances/"
+    },
+    {
+      "key": "/builders/get-started/eth-compare/consensus-finality/",
+      "value": "/learn/core-concepts/consensus-finality/"
+    },
+    {
+      "key": "/builders/get-started/eth-compare/rpc-support/",
+      "value": "/builders/ethereum/json-rpc/eth-rpc/"
+    },
+    {
+      "key": "/builders/get-started/eth-compare/security/",
+      "value": "/learn/core-concepts/security/"
+    },
+    {
+      "key": "/builders/get-started/eth-compare/transfers-api/",
+      "value": "/learn/core-concepts/transfers-api/"
+    },
+    {
+      "key": "/builders/get-started/eth-compare/tx-fees/",
+      "value": "/learn/core-concepts/tx-fees/"
+    },
+    {
+      "key": "/builders/get-started/moonbase/",
+      "value": "/builders/get-started/networks/moonbase/"
+    },
+    {
+      "key": "/builders/get-started/moonbeam/",
+      "value": "/builders/get-started/networks/moonbeam/"
+    },
+    {
+      "key": "/builders/get-started/moonriver/",
+      "value": "/builders/get-started/networks/moonriver/"
+    },
+    {
+      "key": "/builders/get-started/networks/layer2/bobabeam/",
+      "value": "/builders/get-started/networks/"
+    },
+    {
+      "key": "/builders/integrations/gaming/metafab/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/oracles/chainlink/",
+      "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/builders/integrations/oracles/razor-network/",
+      "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/builders/integrations/oracles/razor-network/",
+      "value": "TODO: UPDATE_ME"
+    },
+    {
+      "key": "/builders/interact/hardhat/",
+      "value": "/builders/ethereum/dev-env/hardhat/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/fees/",
+      "value": "/builders/interoperability/xcm/core-concepts/weights-fees/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/remote-evm-calls/",
+      "value": "/builders/interoperability/xcm/remote-execution/remote-evm-calls/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xc-integration/",
+      "value": "/builders/interoperability/xcm/xc-registration/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xc20/mintable-xc20/",
+      "value": "/builders/interoperability/xcm/xc20/overview/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xc20/send-xc20s/xtokens-pallet/",
+      "value": "/builders/interoperability/xcm/xc20/send-xc20s/xcm-pallet/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xc20/xtokens/",
+      "value": "/builders/interoperability/xcm/xc20/send-xc20s/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xcm-sdk/",
+      "value": "https://moonbeam-foundation.github.io/xcm-sdk/latest/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xcm-sdk/v0/",
+      "value": "https://moonbeam-foundation.github.io/xcm-sdk/v0/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xcm-sdk/v0/reference/",
+      "value": "https://moonbeam-foundation.github.io/xcm-sdk/v0/reference/interfaces/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xcm-sdk/v0/xcm-sdk/",
+      "value": "https://moonbeam-foundation.github.io/xcm-sdk/v0/example-usage/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xcm-sdk/v1/",
+      "value": "https://moonbeam-foundation.github.io/xcm-sdk/v1/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xcm-sdk/v1/reference/",
+      "value": "https://moonbeam-foundation.github.io/xcm-sdk/v1/reference/interfaces/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk/",
+      "value": "https://moonbeam-foundation.github.io/xcm-sdk/v1/example-usage/"
+    },
+    {
+      "key": "/builders/interoperability/xcm/xcm-transactor/",
+      "value": "/builders/interoperability/xcm/remote-execution/substrate-calls/"
+    },
+    {
+      "key": "/builders/json-rpc/",
+      "value": "/builders/ethereum/json-rpc/"
+    },
+    {
+      "key": "/builders/json-rpc/debug-trace/",
+      "value": "/builders/ethereum/json-rpc/debug-trace/"
+    },
+    {
+      "key": "/builders/json-rpc/eth-rpc/",
+      "value": "/builders/ethereum/json-rpc/eth-rpc/"
+    },
+    {
+      "key": "/builders/json-rpc/moonbeam-custom-api/",
+      "value": "/builders/ethereum/json-rpc/moonbeam-custom-api/"
+    },
+    {
+      "key": "/builders/json-rpc/pubsub/",
+      "value": "/builders/ethereum/json-rpc/pubsub/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/",
+      "value": "/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/",
+      "value": "/builders/substrate/interfaces/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/conviction-voting/",
+      "value": "/builders/substrate/interfaces/features/governance/conviction-voting/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/identity/",
+      "value": "/builders/substrate/interfaces/account/identity/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/multisig/",
+      "value": "/builders/substrate/interfaces/account/multisig/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/preimage/",
+      "value": "/builders/substrate/interfaces/features/governance/preimage/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/proxy/",
+      "value": "/builders/substrate/interfaces/account/proxy/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/randomness/",
+      "value": "/builders/substrate/interfaces/features/randomness/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/referenda/",
+      "value": "/builders/substrate/interfaces/features/governance/referenda/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/staking/",
+      "value": "/builders/substrate/interfaces/features/staking/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/pallets/utility/",
+      "value": "/builders/substrate/interfaces/utility/utility/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/",
+      "value": "/builders/ethereum/precompiles/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/batch/",
+      "value": "/builders/ethereum/precompiles/ux/batch/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/call-permit/",
+      "value": "/builders/ethereum/precompiles/ux/call-permit/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/collective/",
+      "value": "/builders/ethereum/precompiles/features/governance/collective/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/conviction-voting/",
+      "value": "/builders/ethereum/precompiles/features/governance/conviction-voting/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/erc20/",
+      "value": "/builders/ethereum/precompiles/ux/erc20/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/eth-mainnet/",
+      "value": "/builders/ethereum/precompiles/utility/eth-mainnet/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/gmp/",
+      "value": "/builders/ethereum/precompiles/interoperability/gmp/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/identity/",
+      "value": "/builders/ethereum/precompiles/account/identity/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/overview/",
+      "value": "/builders/ethereum/precompiles/overview/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/preimage/",
+      "value": "/builders/ethereum/precompiles/features/governance/preimage/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/proxy/",
+      "value": "/builders/ethereum/precompiles/account/proxy/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/randomness/",
+      "value": "/builders/ethereum/precompiles/features/randomness/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/referenda/",
+      "value": "/builders/ethereum/precompiles/features/governance/referenda/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/registry/",
+      "value": "/builders/ethereum/precompiles/utility/registry/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/relay-data-verifier/",
+      "value": "/builders/ethereum/precompiles/utility/relay-data-verifier/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/staking/",
+      "value": "/builders/ethereum/precompiles/features/staking/"
+    },
+    {
+      "key": "/builders/pallets-precompiles/precompiles/xcm-utils/",
+      "value": "/builders/interoperability/xcm/xcm-utils/"
+    },
+    {
+      "key": "/builders/xcm/fees/",
+      "value": "/builders/interoperability/xcm/core-concepts/weights-fees/"
+    },
+    {
+      "key": "/builders/xcm/xc-integration/",
+      "value": "/builders/interoperability/xcm/xc-registration/"
+    },
+    {
+      "key": "/builders/xcm/xc20/",
+      "value": "/builders/interoperability/xcm/xc20/"
+    },
+    {
+      "key": "/builders/xcm/xc20/overview/",
+      "value": "/builders/interoperability/xcm/xc20/overview/"
+    },
+    {
+      "key": "/builders/xcm/xc20/xtokens/",
+      "value": "/builders/interoperability/xcm/xc20/send-xc20s/"
+    },
+    {
+      "key": "/builders/xcm/xcm-sdk/xcm-sdk/",
+      "value": "https:/moonbeam-foundation.github.io/xcm-sdk/latest/"
+    },
+    {
+      "key": "/builders/xcm/xcm-transactor/",
+      "value": "/builders/interoperability/xcm/remote-execution/substrate-calls/"
+    },
+    {
+      "key": "/getting-started/local-node/deploy-contract/",
+      "value": "/builders/ethereum/libraries/"
+    },
+    {
+      "key": "/getting-started/local-node/using-remix/",
+      "value": "/builders/ethereum/dev-env/remix/"
+    },
+    {
+      "key": "/getting-started/local-node/web3-transaction/",
+      "value": "/builders/ethereum/libraries/web3py/"
+    },
+    {
+      "key": "/getting-started/moonriver/integrate-metamask/",
+      "value": "/builders/get-started/networks/moonriver/"
+    },
+    {
+      "key": "/getting-started/testnet/faucet/",
+      "value": "/builders/get-started/networks/moonbase/"
+    },
+    {
+      "key": "/getting-started/testnet/metamask/",
+      "value": "/tokens/connect/metamask/"
+    },
+    {
+      "key": "/getting-started/testnet/precompiles/",
+      "value": "/builders/ethereum/precompiles/"
+    },
+    {
+      "key": "/getting-started/testnet/pubsub/",
+      "value": "/builders/ethereum/json-rpc/pubsub/"
+    },
+    {
+      "key": "/getting-started/using-metamask/",
+      "value": "/tokens/connect/metamask/"
+    },
+    {
+      "key": "/getting-started/using-remix/",
+      "value": "/builders/ethereum/dev-env/remix/"
+    },
+    {
+      "key": "/getting-started/using-truffle/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/integrations/openzeppelin/overview/",
+      "value": "/builders/ethereum/dev-env/openzeppelin/overview/"
+    },
+    {
+      "key": "/learn/dapps-list/",
+      "value": "/learn/dapp-directory/"
+    },
+    {
+      "key": "/learn/dapps-list/dapp-directory/",
+      "value": "/learn/dapp-directory/"
+    },
+    {
+      "key": "/learn/dapps-list/dapp-radar/",
+      "value": "/learn/dapp-directory/"
+    },
+    {
+      "key": "/learn/dapps-list/dtmb/",
+      "value": "/learn/dapp-directory/"
+    },
+    {
+      "key": "/learn/dapps-list/state-of-the-dapps/",
+      "value": "/learn/dapp-directory/"
+    },
+    {
+      "key": "/learn/features/unified-accounts/",
+      "value": "/learn/core-concepts/unified-accounts/"
+    },
+    {
+      "key": "/learn/platform/roadmap/",
+      "value": "/"
+    },
+    {
+      "key": "/learn/unified-accounts/",
+      "value": "/learn/core-concepts/unified-accounts/"
+    },
+    {
+      "key": "/networks/moonriver/",
+      "value": "/learn/platform/networks/moonriver/"
+    },
+    {
+      "key": "/node-operators/indexer-nodes/",
+      "value": "/node-operators/"
+    },
+    {
+      "key": "/node-operators/indexer-nodes/thegraph-node/",
+      "value": "/node-operators/"
+    },
+    {
+      "key": "/node-operators/networks/full-node/",
+      "value": "/node-operators/networks/run-a-node/overview/"
+    },
+    {
+      "key": "/node-operators/oracle-nodes/",
+      "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/node-operators/oracle-nodes/node-chainlink/",
+      "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/tutorials/eth-api/truffle-start-to-end/",
+      "value": "/tutorials/eth-api/get-started/"
+    }
   ]
 }
