@@ -225,10 +225,6 @@
       "value": "/builders/integrations/oracles/"
     },
     {
-      "key": "/builders/integrations/oracles/razor-network/",
-      "value": "TODO: UPDATE_ME"
-    },
-    {
       "key": "/builders/interact/hardhat/",
       "value": "/builders/ethereum/dev-env/hardhat/"
     },
