@@ -98,7 +98,11 @@
     },
     {
       "key": "/builders/build/eth-api/libraries/web3js/",
-      "value": "/builders/ethereum/libraries/web3js/"
+      "value": "/builders/ethereum/libraries/"
+    },
+    {
+      "key": "/builders/ethereum/libraries/web3js/",
+      "value": "/builders/ethereum/libraries/"
     },
     {
       "key": "/builders/build/eth-api/libraries/web3py/",
