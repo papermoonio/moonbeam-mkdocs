@@ -17,6 +17,7 @@ https://x.com/
 
 # Ignore known working URLs
 https://ethereum.org/
+https://moonbase-minterc20.netlify.app/
 
 # 405 Method not Allowed
 https://apps.moonbeam.network/
