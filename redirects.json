@@ -217,6 +217,10 @@
       "value": "/builders/integrations/"
     },
     {
+      "key": "/builders/integrations/oracles/band-protocol/",
+      "value": "/builders/integrations/oracles/"
+    },
+    {
       "key": "/builders/integrations/oracles/chainlink/",
       "value": "/builders/integrations/oracles/"
     },
