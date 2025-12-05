@@ -153,6 +153,26 @@
       "value": "/builders/substrate/libraries/sidecar/"
     },
     {
+      "key": "/builders/substrate/interfaces/features/governance/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/conviction-voting/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/parameters/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/preimage/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/referenda/",
+      "value": "/builders/substrate/"
+    },
+    {
       "key": "/builders/ethereum/dev-env/brownie/",
       "value": "/builders/ethereum/dev-env/ape/"
     },
@@ -318,7 +338,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/conviction-voting/",
-      "value": "/builders/substrate/interfaces/features/governance/conviction-voting/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/identity/",
@@ -330,7 +350,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/preimage/",
-      "value": "/builders/substrate/interfaces/features/governance/preimage/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/proxy/",
@@ -342,7 +362,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/referenda/",
-      "value": "/builders/substrate/interfaces/features/governance/referenda/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/staking/",
