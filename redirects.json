@@ -521,6 +521,26 @@
       "value": "/learn/dapp-directory/"
     },
     {
+      "key": "/learn/features/consensus/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/features/xchain-plans/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/code/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/glossary/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/links/",
+      "value": "/learn/"
+    },
+    {
       "key": "/learn/features/unified-accounts/",
       "value": "/learn/core-concepts/unified-accounts/"
     },
