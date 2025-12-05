@@ -153,6 +153,18 @@
       "value": "/builders/substrate/libraries/sidecar/"
     },
     {
+      "key": "/builders/substrate/interfaces/account/identity/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/account/multisig/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/account/proxy/",
+      "value": "/builders/substrate/"
+    },
+    {
       "key": "/builders/ethereum/dev-env/brownie/",
       "value": "/builders/ethereum/dev-env/ape/"
     },
@@ -322,11 +334,11 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/identity/",
-      "value": "/builders/substrate/interfaces/account/identity/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/multisig/",
-      "value": "/builders/substrate/interfaces/account/multisig/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/preimage/",
@@ -334,7 +346,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/proxy/",
-      "value": "/builders/substrate/interfaces/account/proxy/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/randomness/",
