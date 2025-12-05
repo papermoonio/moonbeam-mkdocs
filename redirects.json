@@ -26,11 +26,11 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/ape/",
-      "value": "/builders/ethereum/dev-env/ape/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/brownie/",
-      "value": "/builders/ethereum/dev-env/ape/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/foundry/",
@@ -70,7 +70,7 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/thirdweb/",
-      "value": "/builders/ethereum/dev-env/thirdweb/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/truffle/",
@@ -78,7 +78,7 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/waffle-mars/",
-      "value": "/builders/ethereum/dev-env/waffle-mars/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/libraries/",
@@ -154,7 +154,7 @@
     },
     {
       "key": "/builders/ethereum/dev-env/brownie/",
-      "value": "/builders/ethereum/dev-env/ape/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/ethereum/dev-env/openzeppelin/defender/",
