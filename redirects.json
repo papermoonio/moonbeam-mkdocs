@@ -338,7 +338,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/randomness/",
-      "value": "/builders/substrate/interfaces/features/randomness/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/referenda/",
@@ -346,11 +346,23 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/staking/",
-      "value": "/builders/substrate/interfaces/features/staking/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/utility/",
       "value": "/builders/substrate/interfaces/utility/utility/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/index/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/randomness/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/staking/",
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/precompiles/",
