@@ -213,6 +213,30 @@
       "value": "/builders/get-started/networks/"
     },
     {
+      "key": "/builders/integrations/wallets/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/index/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/metamask/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/particle-network/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/rainbowkit/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/walletconnect/",
+      "value": "/builders/integrations/"
+    },
+    {
       "key": "/builders/integrations/gaming/metafab/",
       "value": "/builders/integrations/"
     },
