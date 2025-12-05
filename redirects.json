@@ -529,12 +529,28 @@
       "value": "/"
     },
     {
+      "key": "/learn/platform/networks/moonbase/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/networks/moonbeam/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/networks/moonriver/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/networks/overview/",
+      "value": "/learn/"
+    },
+    {
       "key": "/learn/unified-accounts/",
       "value": "/learn/core-concepts/unified-accounts/"
     },
     {
       "key": "/networks/moonriver/",
-      "value": "/learn/platform/networks/moonriver/"
+      "value": "/learn/"
     },
     {
       "key": "/node-operators/indexer-nodes/",
