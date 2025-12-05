@@ -497,6 +497,22 @@
       "value": "/builders/ethereum/dev-env/"
     },
     {
+      "key": "/tokens/connect/coinbase-wallet/",
+      "value": "/tokens/connect/"
+    },
+    {
+      "key": "/tokens/connect/ledger/",
+      "value": "/tokens/connect/ledger/ethereum/"
+    },
+    {
+      "key": "/tokens/connect/ledger/moonbeam/",
+      "value": "/tokens/connect/ledger/ethereum/"
+    },
+    {
+      "key": "/tokens/connect/ledger/moonriver/",
+      "value": "/tokens/connect/ledger/ethereum/"
+    },
+    {
       "key": "/integrations/openzeppelin/overview/",
       "value": "/builders/ethereum/dev-env/openzeppelin/overview/"
     },
