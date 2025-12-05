@@ -350,7 +350,19 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/utility/",
-      "value": "/builders/substrate/interfaces/utility/utility/"
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/interoperability/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/utility/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/utility/utility/",
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/precompiles/",
