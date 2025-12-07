@@ -559,6 +559,98 @@
     {
       "key": "/tutorials/eth-api/truffle-start-to-end/",
       "value": "/tutorials/eth-api/get-started/"
+    },
+    {
+      "key": "/tutorials/eth-api/batch-approve-swap/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/call-permit-gasless-txs/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/chat-gpt/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/foundry-start-to-end/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/hardhat-start-to-end/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/how-to-build-a-dapp/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/precompiles/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/randomness-lottery/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/thirdweb/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/get-started/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/indexers/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/local-subsquid/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/nft-subsquid/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/oracles/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/supra/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/protocols/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/xcm/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/cross-chain-dao/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/using-axelar-sdk/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/remote-batched-evm-calls/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/remote-staking-xcm/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/uniswapv2-swap-xcm/",
+      "value": "/tutorials/"
     }
   ]
 }
