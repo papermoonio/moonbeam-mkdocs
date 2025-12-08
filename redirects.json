@@ -525,6 +525,10 @@
       "value": "/learn/core-concepts/unified-accounts/"
     },
     {
+      "key": "/learn/platform/roadmap/",
+      "value": "/"
+    },
+    {
       "key": "/learn/platform/technology/",
       "value": "/learn/"
     },
@@ -539,10 +543,6 @@
     {
       "key": "/learn/platform/why-polkadot/",
       "value": "/learn/"
-    },
-    {
-      "key": "/learn/platform/roadmap/",
-      "value": "/"
     },
     {
       "key": "/learn/unified-accounts/",
