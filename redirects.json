@@ -217,6 +217,10 @@
       "value": "/builders/integrations/"
     },
     {
+      "key": "/builders/integrations/indexers/thegraph/",
+      "value": "/builders/integrations/"
+    },
+    {
       "key": "/builders/integrations/oracles/band-protocol/",
       "value": "/builders/integrations/oracles/"
     },
@@ -495,6 +499,10 @@
     {
       "key": "/getting-started/using-truffle/",
       "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/tokens/connect/mathwallet/",
+      "value": "/tokens/connect/"
     },
     {
       "key": "/integrations/openzeppelin/overview/",
