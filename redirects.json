@@ -501,10 +501,6 @@
       "value": "/builders/ethereum/dev-env/"
     },
     {
-      "key": "/tokens/connect/mathwallet/",
-      "value": "/tokens/connect/"
-    },
-    {
       "key": "/integrations/openzeppelin/overview/",
       "value": "/builders/ethereum/dev-env/openzeppelin/overview/"
     },
@@ -563,6 +559,10 @@
     {
       "key": "/node-operators/oracle-nodes/node-chainlink/",
       "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/tokens/connect/mathwallet/",
+      "value": "/tokens/connect/"
     },
     {
       "key": "/tutorials/eth-api/truffle-start-to-end/",
