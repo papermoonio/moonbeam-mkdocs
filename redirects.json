@@ -157,6 +157,10 @@
       "value": "/builders/substrate/"
     },
     {
+      "key": "/builders/substrate/interfaces/account/",
+      "value": "/builders/substrate/"
+    },
+    {
       "key": "/builders/substrate/interfaces/account/multisig/",
       "value": "/builders/substrate/"
     },
