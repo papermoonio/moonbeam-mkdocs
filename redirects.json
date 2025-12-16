@@ -566,7 +566,23 @@
     },
     {
       "key": "/learn/platform/roadmap/",
-      "value": "/"
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/technology/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/tokens/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/vision/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/why-polkadot/",
+      "value": "/learn/"
     },
     {
       "key": "/learn/unified-accounts/",
