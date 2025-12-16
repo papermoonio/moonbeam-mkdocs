@@ -245,6 +245,10 @@
       "value": "/builders/integrations/"
     },
     {
+      "key": "/builders/integrations/indexers/thegraph/",
+      "value": "/builders/integrations/"
+    },
+    {
       "key": "/builders/integrations/oracles/band-protocol/",
       "value": "/builders/integrations/oracles/"
     },
@@ -611,6 +615,10 @@
     {
       "key": "/node-operators/oracle-nodes/node-chainlink/",
       "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/tokens/connect/mathwallet/",
+      "value": "/tokens/connect/"
     },
     {
       "key": "/tutorials/eth-api/truffle-start-to-end/",
