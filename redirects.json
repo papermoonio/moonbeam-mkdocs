@@ -90,7 +90,15 @@
     },
     {
       "key": "/builders/build/eth-api/libraries/ethersrs/",
-      "value": "/builders/ethereum/libraries/ethersrs/"
+      "value": "/builders/ethereum/libraries/"
+    },
+    {
+      "key": "/cn/builders/libraries/ethersrs/",
+      "value": "/cn/builders/libraries/"
+    },
+    {
+      "key": "/builders/ethereum/libraries/ethersrs/",
+      "value": "/builders/ethereum/libraries/"
     },
     {
       "key": "/builders/build/eth-api/libraries/viem/",
@@ -151,6 +159,26 @@
     {
       "key": "/builders/build/substrate-api/sidecar/",
       "value": "/builders/substrate/libraries/sidecar/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/conviction-voting/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/parameters/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/preimage/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/referenda/",
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/ethereum/dev-env/brownie/",
@@ -230,6 +258,10 @@
     },
     {
       "key": "/builders/integrations/indexers/moralis/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/indexers/thegraph/",
       "value": "/builders/integrations/"
     },
     {
@@ -334,7 +366,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/conviction-voting/",
-      "value": "/builders/substrate/interfaces/features/governance/conviction-voting/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/identity/",
@@ -346,7 +378,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/preimage/",
-      "value": "/builders/substrate/interfaces/features/governance/preimage/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/proxy/",
@@ -354,19 +386,43 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/randomness/",
-      "value": "/builders/substrate/interfaces/features/randomness/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/referenda/",
-      "value": "/builders/substrate/interfaces/features/governance/referenda/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/staking/",
-      "value": "/builders/substrate/interfaces/features/staking/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/utility/",
-      "value": "/builders/substrate/interfaces/utility/utility/"
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/interoperability/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/utility/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/utility/utility/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/randomness/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/staking/",
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/precompiles/",
@@ -513,6 +569,22 @@
       "value": "/builders/ethereum/dev-env/"
     },
     {
+      "key": "/tokens/connect/coinbase-wallet/",
+      "value": "/tokens/connect/"
+    },
+    {
+      "key": "/tokens/connect/ledger/ethereum/",
+      "value": "/tokens/connect/ledger/"
+    },
+    {
+      "key": "/tokens/connect/ledger/moonbeam/",
+      "value": "/tokens/connect/ledger/"
+    },
+    {
+      "key": "/tokens/connect/ledger/moonriver/",
+      "value": "/tokens/connect/ledger/"
+    },
+    {
       "key": "/integrations/openzeppelin/overview/",
       "value": "/builders/ethereum/dev-env/openzeppelin/overview/"
     },
@@ -542,7 +614,23 @@
     },
     {
       "key": "/learn/platform/roadmap/",
-      "value": "/"
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/technology/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/tokens/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/vision/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/why-polkadot/",
+      "value": "/learn/"
     },
     {
       "key": "/learn/unified-accounts/",
@@ -571,6 +659,10 @@
     {
       "key": "/node-operators/oracle-nodes/node-chainlink/",
       "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/tokens/connect/mathwallet/",
+      "value": "/tokens/connect/"
     },
     {
       "key": "/tutorials/eth-api/truffle-start-to-end/",
