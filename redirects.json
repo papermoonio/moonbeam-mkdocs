@@ -245,14 +245,6 @@
       "value": "/builders/integrations/"
     },
     {
-      "key": "/builders/integrations/analytics/dapplooker/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/analytics/zapper/",
-      "value": "/builders/integrations/"
-    },
-    {
       "key": "/builders/integrations/gaming/metafab/",
       "value": "/builders/integrations/"
     },
@@ -278,22 +270,6 @@
     },
     {
       "key": "/builders/integrations/wallets/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/metamask/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/particle-network/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/rainbowkit/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/walletconnect/",
       "value": "/builders/integrations/"
     },
     {
