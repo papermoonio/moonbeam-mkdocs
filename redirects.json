@@ -97,14 +97,6 @@
       "value": "/builders/ethereum/libraries/ethersrs/"
     },
     {
-      "key": "/cn/builders/libraries/ethersrs/",
-      "value": "/cn/builders/libraries/"
-    },
-    {
-      "key": "/builders/ethereum/libraries/ethersrs/",
-      "value": "/builders/ethereum/libraries/"
-    },
-    {
       "key": "/builders/build/eth-api/libraries/viem/",
       "value": "/builders/ethereum/libraries/viem/"
     },
@@ -199,6 +191,10 @@
     {
       "key": "/builders/ethereum/historical-updates/",
       "value": "/builders/build/historical-updates/"
+    },
+    {
+      "key": "/builders/ethereum/libraries/ethersrs/",
+      "value": "/builders/ethereum/libraries/"
     },
     {
       "key": "/builders/ethereum/runtime-upgrades/",
@@ -382,11 +378,11 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/identity/",
-      "value": "/builders/substrate/interfaces/account/identity/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/multisig/",
-      "value": "/builders/substrate/interfaces/account/multisig/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/preimage/",
@@ -394,7 +390,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/proxy/",
-      "value": "/builders/substrate/interfaces/account/proxy/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/randomness/",
@@ -411,30 +407,6 @@
     {
       "key": "/builders/pallets-precompiles/pallets/utility/",
       "value": "/builders/substrate/interfaces/utility/utility/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/interoperability/",
-      "value": "/builders/substrate/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/utility/",
-      "value": "/builders/substrate/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/utility/utility/",
-      "value": "/builders/substrate/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/features/",
-      "value": "/builders/substrate/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/features/randomness/",
-      "value": "/builders/substrate/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/features/staking/",
-      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/precompiles/",
@@ -509,6 +481,70 @@
       "value": "/builders/interoperability/xcm/xcm-utils/"
     },
     {
+      "key": "/builders/substrate/interfaces/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/account/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/account/identity/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/account/multisig/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/account/proxy/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/conviction-voting/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/parameters/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/preimage/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/referenda/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/randomness/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/staking/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/interoperability/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/utility/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/utility/utility/",
+      "value": "/builders/substrate/"
+    },
+    {
       "key": "/builders/xcm/fees/",
       "value": "/builders/interoperability/xcm/core-concepts/weights-fees/"
     },
@@ -535,6 +571,10 @@
     {
       "key": "/builders/xcm/xcm-transactor/",
       "value": "/builders/interoperability/xcm/remote-execution/substrate-calls/"
+    },
+    {
+      "key": "/cn/builders/libraries/ethersrs/",
+      "value": "/cn/builders/libraries/"
     },
     {
       "key": "/getting-started/local-node/deploy-contract/",
@@ -579,22 +619,6 @@
     {
       "key": "/getting-started/using-truffle/",
       "value": "/builders/ethereum/dev-env/"
-    },
-    {
-      "key": "/tokens/connect/coinbase-wallet/",
-      "value": "/tokens/connect/"
-    },
-    {
-      "key": "/tokens/connect/ledger/ethereum/",
-      "value": "/tokens/connect/ledger/"
-    },
-    {
-      "key": "/tokens/connect/ledger/moonbeam/",
-      "value": "/tokens/connect/ledger/"
-    },
-    {
-      "key": "/tokens/connect/ledger/moonriver/",
-      "value": "/tokens/connect/ledger/"
     },
     {
       "key": "/integrations/openzeppelin/overview/",
@@ -671,6 +695,22 @@
     {
       "key": "/node-operators/oracle-nodes/node-chainlink/",
       "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/tokens/connect/coinbase-wallet/",
+      "value": "/tokens/connect/"
+    },
+    {
+      "key": "/tokens/connect/ledger/ethereum/",
+      "value": "/tokens/connect/ledger/"
+    },
+    {
+      "key": "/tokens/connect/ledger/moonbeam/",
+      "value": "/tokens/connect/ledger/"
+    },
+    {
+      "key": "/tokens/connect/ledger/moonriver/",
+      "value": "/tokens/connect/ledger/"
     },
     {
       "key": "/tokens/connect/mathwallet/",
