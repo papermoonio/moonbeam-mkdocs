@@ -241,6 +241,18 @@
       "value": "/builders/get-started/networks/"
     },
     {
+      "key": "/builders/integrations/analytics/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/analytics/dapplooker/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/analytics/zapper/",
+      "value": "/builders/integrations/"
+    },
+    {
       "key": "/builders/integrations/wallets/",
       "value": "/builders/integrations/"
     },
@@ -262,6 +274,10 @@
     },
     {
       "key": "/builders/integrations/gaming/metafab/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/indexers/moralis/",
       "value": "/builders/integrations/"
     },
     {
