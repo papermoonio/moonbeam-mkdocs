@@ -433,6 +433,10 @@
       "value": "/builders/interoperability/xcm/xcm-utils/"
     },
     {
+      "key": "/builders/substrate/interfaces/",
+      "value": "/builders/substrate/"
+    },
+    {
       "key": "/builders/substrate/interfaces/account/",
       "value": "/builders/substrate/"
     },
