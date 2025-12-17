@@ -213,6 +213,10 @@
       "value": "/builders/get-started/networks/"
     },
     {
+      "key": "/builders/integrations/analytics/",
+      "value": "/builders/integrations/"
+    },
+    {
       "key": "/builders/integrations/analytics/dapplooker/",
       "value": "/builders/integrations/"
     },
@@ -221,11 +225,11 @@
       "value": "/builders/integrations/"
     },
     {
-      "key": "/builders/integrations/indexers/moralis/",
+      "key": "/builders/integrations/gaming/metafab/",
       "value": "/builders/integrations/"
     },
     {
-      "key": "/builders/integrations/gaming/metafab/",
+      "key": "/builders/integrations/indexers/moralis/",
       "value": "/builders/integrations/"
     },
     {
