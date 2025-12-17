@@ -217,10 +217,6 @@
       "value": "/builders/integrations/"
     },
     {
-      "key": "/builders/integrations/wallets/index/",
-      "value": "/builders/integrations/"
-    },
-    {
       "key": "/builders/integrations/wallets/metamask/",
       "value": "/builders/integrations/"
     },
