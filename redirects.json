@@ -157,6 +157,10 @@
       "value": "/builders/substrate/libraries/sidecar/"
     },
     {
+      "key": "/builders/ethereum/dev-env/ape/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
       "key": "/builders/ethereum/dev-env/brownie/",
       "value": "/builders/ethereum/dev-env/"
     },
