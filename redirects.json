@@ -241,6 +241,42 @@
       "value": "/builders/get-started/networks/"
     },
     {
+      "key": "/builders/integrations/analytics/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/analytics/dapplooker/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/analytics/zapper/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/gaming/metafab/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/indexers/moralis/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/indexers/thegraph/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/oracles/band-protocol/",
+      "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/builders/integrations/oracles/chainlink/",
+      "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/builders/integrations/oracles/razor-network/",
+      "value": "/builders/integrations/oracles/"
+    },
+    {
       "key": "/builders/integrations/wallets/",
       "value": "/builders/integrations/"
     },
@@ -259,26 +295,6 @@
     {
       "key": "/builders/integrations/wallets/walletconnect/",
       "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/gaming/metafab/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/indexers/thegraph/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/oracles/band-protocol/",
-      "value": "/builders/integrations/oracles/"
-    },
-    {
-      "key": "/builders/integrations/oracles/chainlink/",
-      "value": "/builders/integrations/oracles/"
-    },
-    {
-      "key": "/builders/integrations/oracles/razor-network/",
-      "value": "/builders/integrations/oracles/"
     },
     {
       "key": "/builders/interact/hardhat/",
