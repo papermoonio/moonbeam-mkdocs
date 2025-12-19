@@ -26,11 +26,11 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/ape/",
-      "value": "/builders/ethereum/dev-env/ape/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/brownie/",
-      "value": "/builders/ethereum/dev-env/ape/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/foundry/",
@@ -74,7 +74,11 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/thirdweb/",
-      "value": "/builders/ethereum/dev-env/thirdweb/"
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/cn/builders/dev-env/thirdweb/",
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/truffle/",
@@ -82,7 +86,7 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/waffle-mars/",
-      "value": "/builders/ethereum/dev-env/waffle-mars/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/libraries/",
@@ -94,7 +98,7 @@
     },
     {
       "key": "/builders/build/eth-api/libraries/ethersrs/",
-      "value": "/builders/ethereum/libraries/"
+      "value": "/builders/ethereum/libraries/ethersrs/"
     },
     {
       "key": "/builders/build/eth-api/libraries/viem/",
@@ -157,8 +161,32 @@
       "value": "/builders/substrate/libraries/sidecar/"
     },
     {
+      "key": "/builders/substrate/interfaces/features/governance/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/conviction-voting/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/parameters/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/preimage/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/substrate/interfaces/features/governance/referenda/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/ape/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
       "key": "/builders/ethereum/dev-env/brownie/",
-      "value": "/builders/ethereum/dev-env/ape/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/ethereum/dev-env/openzeppelin/defender/",
@@ -354,7 +382,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/conviction-voting/",
-      "value": "/builders/substrate/"
+      "value": "/builders/substrate/interfaces/features/governance/conviction-voting/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/identity/",
@@ -366,7 +394,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/preimage/",
-      "value": "/builders/substrate/"
+      "value": "/builders/substrate/interfaces/features/governance/preimage/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/proxy/",
@@ -374,19 +402,19 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/randomness/",
-      "value": "/builders/substrate/"
+      "value": "/builders/substrate/interfaces/features/randomness/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/referenda/",
-      "value": "/builders/substrate/"
+      "value": "/builders/substrate/interfaces/features/governance/referenda/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/staking/",
-      "value": "/builders/substrate/"
+      "value": "/builders/substrate/interfaces/features/staking/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/utility/",
-      "value": "/builders/substrate/"
+      "value": "/builders/substrate/interfaces/utility/utility/"
     },
     {
       "key": "/builders/pallets-precompiles/precompiles/",
@@ -630,7 +658,7 @@
     },
     {
       "key": "/learn/platform/roadmap/",
-      "value": "/learn/"
+      "value": "/"
     },
     {
       "key": "/learn/platform/technology/",
