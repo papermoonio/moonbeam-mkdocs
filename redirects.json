@@ -225,27 +225,15 @@
       "value": "/builders/get-started/networks/"
     },
     {
-      "key": "/builders/integrations/wallets/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/metamask/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/particle-network/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/rainbowkit/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/walletconnect/",
+      "key": "/builders/integrations/analytics/",
       "value": "/builders/integrations/"
     },
     {
       "key": "/builders/integrations/gaming/metafab/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/indexers/moralis/",
       "value": "/builders/integrations/"
     },
     {
@@ -263,6 +251,10 @@
     {
       "key": "/builders/integrations/oracles/razor-network/",
       "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/builders/integrations/wallets/",
+      "value": "/builders/integrations/"
     },
     {
       "key": "/builders/interact/hardhat/",
