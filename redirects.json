@@ -529,6 +529,14 @@
       "value": "/learn/"
     },
     {
+      "key": "/learn/platform/networks/moonriver/",
+      "value": "/builders/get-started/networks/moonriver/"
+    },
+    {
+      "key": "/learn/platform/networks/",
+      "value": "/builders/get-started/networks/"
+    },
+    {
       "key": "/learn/platform/",
       "value": "/learn/"
     },
@@ -558,7 +566,7 @@
     },
     {
       "key": "/networks/moonriver/",
-      "value": "/learn/platform/networks/moonriver/"
+      "value": "/builders/get-started/networks/moonriver/"
     },
     {
       "key": "/node-operators/indexer-nodes/",
