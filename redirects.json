@@ -265,6 +265,14 @@
       "value": "/builders/integrations/"
     },
     {
+      "key": "/builders/integrations/wallets/rainbowkit/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/walletconnect/",
+      "value": "/builders/integrations/"
+    },
+    {
       "key": "/builders/interact/hardhat/",
       "value": "/builders/ethereum/dev-env/hardhat/"
     },
@@ -350,7 +358,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/",
-      "value": "/builders/substrate/interfaces/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/conviction-voting/",
@@ -546,7 +554,7 @@
     },
     {
       "key": "/builders/xcm/xcm-sdk/xcm-sdk/",
-      "value": "https:/moonbeam-foundation.github.io/xcm-sdk/latest/"
+      "value": "https://moonbeam-foundation.github.io/xcm-sdk/latest/"
     },
     {
       "key": "/builders/xcm/xcm-transactor/",
