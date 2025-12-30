@@ -709,6 +709,14 @@
       "value": "/tutorials/"
     },
     {
+      "key": "/cn/tutorials/eth-api/call-permit-gasless-txs/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/cn/tutorials/eth-api/batch-approve-swap/",
+      "value": "/cn/"
+    },
+    {
       "key": "/tutorials/eth-api/chat-gpt/",
       "value": "/tutorials/"
     },
