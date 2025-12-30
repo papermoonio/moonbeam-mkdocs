@@ -189,6 +189,10 @@
       "value": "/builders/ethereum/dev-env/openzeppelin/"
     },
     {
+      "key": "/builders/ethereum/dev-env/thirdweb/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
       "key": "/builders/ethereum/historical-updates/",
       "value": "/builders/build/historical-updates/"
     },
