@@ -62,7 +62,11 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/scaffold-eth/",
-      "value": "/builders/ethereum/dev-env/scaffold-eth/"
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/scaffold-eth/",
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/tenderly/",
@@ -231,6 +235,10 @@
     {
       "key": "/builders/get-started/eth-compare/tx-fees/",
       "value": "/learn/core-concepts/tx-fees/"
+    },
+    {
+      "key": "/builders/get-started/create-account/",
+      "value": "/builders/get-started/"
     },
     {
       "key": "/builders/get-started/moonbase/",
