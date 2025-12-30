@@ -366,7 +366,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/",
-      "value": "/builders/substrate/interfaces/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/conviction-voting/",
