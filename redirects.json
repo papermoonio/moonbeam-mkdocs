@@ -245,6 +245,14 @@
       "value": "/builders/integrations/"
     },
     {
+      "key": "/builders/integrations/analytics/dapplooker/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/analytics/zapper/",
+      "value": "/builders/integrations/"
+    },
+    {
       "key": "/builders/integrations/gaming/metafab/",
       "value": "/builders/integrations/"
     },
