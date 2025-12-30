@@ -98,7 +98,7 @@
     },
     {
       "key": "/builders/build/eth-api/libraries/ethersrs/",
-      "value": "/builders/ethereum/libraries/ethersrs/"
+      "value": "/builders/ethereum/libraries/"
     },
     {
       "key": "/builders/build/eth-api/libraries/viem/",
@@ -166,18 +166,6 @@
     },
     {
       "key": "/builders/substrate/interfaces/features/governance/conviction-voting/",
-      "value": "/builders/substrate/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/features/governance/parameters/",
-      "value": "/builders/substrate/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/features/governance/preimage/",
-      "value": "/builders/substrate/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/features/governance/referenda/",
       "value": "/builders/substrate/"
     },
     {
@@ -398,7 +386,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/preimage/",
-      "value": "/builders/substrate/interfaces/features/governance/preimage/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/proxy/",
@@ -406,19 +394,19 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/randomness/",
-      "value": "/builders/substrate/interfaces/features/randomness/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/referenda/",
-      "value": "/builders/substrate/interfaces/features/governance/referenda/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/staking/",
-      "value": "/builders/substrate/interfaces/features/staking/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/utility/",
-      "value": "/builders/substrate/interfaces/utility/utility/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/precompiles/",
@@ -514,10 +502,6 @@
     },
     {
       "key": "/builders/substrate/interfaces/features/",
-      "value": "/builders/substrate/"
-    },
-    {
-      "key": "/builders/substrate/interfaces/features/governance/",
       "value": "/builders/substrate/"
     },
     {
