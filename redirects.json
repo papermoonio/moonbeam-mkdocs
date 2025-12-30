@@ -725,7 +725,7 @@
       "value": "/tutorials/"
     },
     {
-      "key": "/tutorials/eth-api/precompiles/",
+      "key": "/tutorials/eth-api/precompiles.index/",
       "value": "/tutorials/"
     },
     {
@@ -737,11 +737,11 @@
       "value": "/tutorials/"
     },
     {
-      "key": "/tutorials/eth-api/get-started/",
+      "key": "/tutorials/eth-api/get-started.index/",
       "value": "/tutorials/"
     },
     {
-      "key": "/tutorials/integrations/indexers/",
+      "key": "/tutorials/integrations/indexers.index/",
       "value": "/tutorials/"
     },
     {
@@ -753,7 +753,7 @@
       "value": "/tutorials/"
     },
     {
-      "key": "/tutorials/integrations/oracles/",
+      "key": "/tutorials/integrations/oracles.index/",
       "value": "/tutorials/"
     },
     {
@@ -765,11 +765,11 @@
       "value": "/tutorials/"
     },
     {
-      "key": "/tutorials/interoperability/protocols/",
+      "key": "/tutorials/interoperability/protocols.index/",
       "value": "/tutorials/"
     },
     {
-      "key": "/tutorials/interoperability/xcm/",
+      "key": "/tutorials/interoperability/xcm.index/",
       "value": "/tutorials/"
     },
     {
