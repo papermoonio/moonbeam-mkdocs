@@ -165,10 +165,6 @@
       "value": "/builders/substrate/"
     },
     {
-      "key": "/builders/substrate/interfaces/features/governance/conviction-voting/",
-      "value": "/builders/substrate/"
-    },
-    {
       "key": "/builders/ethereum/dev-env/ape/",
       "value": "/builders/ethereum/dev-env/"
     },
@@ -374,7 +370,7 @@
     },
     {
       "key": "/builders/pallets-precompiles/pallets/conviction-voting/",
-      "value": "/builders/substrate/interfaces/features/governance/conviction-voting/"
+      "value": "/builders/substrate/"
     },
     {
       "key": "/builders/pallets-precompiles/pallets/identity/",
