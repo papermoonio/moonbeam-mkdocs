@@ -101,6 +101,10 @@
       "value": "/builders/ethereum/libraries/"
     },
     {
+      "key": "/cn/builders/libraries/web3js/",
+      "value": "/cn/builders/libraries/"
+    },
+    {
       "key": "/builders/ethereum/libraries/web3js/",
       "value": "/builders/ethereum/libraries/"
     },
