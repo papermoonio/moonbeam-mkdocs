@@ -78,7 +78,7 @@
     },
     {
       "key": "/cn/builders/dev-env/thirdweb/",
-      "value": "/builders/ethereum/dev-env/"
+      "value": "/cn/builders/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/truffle/",
