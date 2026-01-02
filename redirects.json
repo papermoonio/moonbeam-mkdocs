@@ -42,19 +42,35 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/openzeppelin/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/openzeppelin/contracts/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/contracts/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/openzeppelin/defender/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/openzeppelin/overview/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/overview/"
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/openzeppelin/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/openzeppelin/contracts/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/cn/builders/dev-env/oz-contracts/",
+      "value": "/cn/builders/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/openzeppelin/overview/",
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/remix/",
@@ -170,7 +186,7 @@
     },
     {
       "key": "/builders/ethereum/dev-env/openzeppelin/defender/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/ethereum/historical-updates/",
@@ -610,7 +626,7 @@
     },
     {
       "key": "/integrations/openzeppelin/overview/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/overview/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/learn/dapps-list/",
