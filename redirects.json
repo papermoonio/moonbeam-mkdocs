@@ -709,6 +709,26 @@
       "value": "/learn/"
     },
     {
+      "key": "/learn/platform/networks/",
+      "value": "/builders/get-started/networks/"
+    },
+    {
+      "key": "/learn/platform/networks/moonbase/",
+      "value": "/builders/get-started/networks/moonbase/"
+    },
+    {
+      "key": "/learn/platform/networks/moonbeam/",
+      "value": "/builders/get-started/networks/moonbeam/"
+    },
+    {
+      "key": "/learn/platform/networks/moonriver/",
+      "value": "/builders/get-started/networks/moonriver/"
+    },
+    {
+      "key": "/learn/platform/networks/overview/",
+      "value": "/builders/get-started/networks/"
+    },
+    {
       "key": "/learn/unified-accounts/",
       "value": "/learn/core-concepts/unified-accounts/"
     },
