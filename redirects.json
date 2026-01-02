@@ -65,8 +65,8 @@
       "value": "/builders/ethereum/dev-env/"
     },
     {
-      "key": "/builders/ethereum/dev-env/openzeppelin/index/",
-      "value": "/builders/ethereum/dev-env/"
+      "key": "/cn/builders/dev-env/oz-contracts/",
+      "value": "/cn/builders/dev-env/"
     },
     {
       "key": "/builders/ethereum/dev-env/openzeppelin/overview/",
