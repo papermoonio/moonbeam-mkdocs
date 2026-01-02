@@ -26,11 +26,11 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/ape/",
-      "value": "/builders/ethereum/dev-env/ape/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/brownie/",
-      "value": "/builders/ethereum/dev-env/ape/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/foundry/",
@@ -42,19 +42,35 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/openzeppelin/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/openzeppelin/contracts/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/contracts/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/openzeppelin/defender/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/openzeppelin/overview/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/overview/"
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/openzeppelin/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/openzeppelin/contracts/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/cn/builders/dev-env/oz-contracts/",
+      "value": "/cn/builders/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/openzeppelin/overview/",
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/remix/",
@@ -74,7 +90,11 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/thirdweb/",
-      "value": "/builders/ethereum/dev-env/thirdweb/"
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/cn/builders/dev-env/thirdweb/",
+      "value": "/cn/builders/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/truffle/",
@@ -82,7 +102,7 @@
     },
     {
       "key": "/builders/build/eth-api/dev-env/waffle-mars/",
-      "value": "/builders/ethereum/dev-env/waffle-mars/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/libraries/",
@@ -102,7 +122,15 @@
     },
     {
       "key": "/builders/build/eth-api/libraries/web3js/",
-      "value": "/builders/ethereum/libraries/web3js/"
+      "value": "/builders/ethereum/libraries/"
+    },
+    {
+      "key": "/cn/builders/libraries/web3js/",
+      "value": "/cn/builders/libraries/"
+    },
+    {
+      "key": "/builders/ethereum/libraries/web3js/",
+      "value": "/builders/ethereum/libraries/"
     },
     {
       "key": "/builders/build/eth-api/libraries/web3py/",
@@ -157,12 +185,24 @@
       "value": "/builders/substrate/libraries/sidecar/"
     },
     {
+      "key": "/builders/substrate/interfaces/features/governance/",
+      "value": "/builders/substrate/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/ape/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
       "key": "/builders/ethereum/dev-env/brownie/",
-      "value": "/builders/ethereum/dev-env/ape/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/ethereum/dev-env/openzeppelin/defender/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/"
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/thirdweb/",
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/builders/ethereum/historical-updates/",
@@ -493,10 +533,6 @@
       "value": "/builders/substrate/"
     },
     {
-      "key": "/builders/substrate/interfaces/features/governance/",
-      "value": "/builders/substrate/"
-    },
-    {
       "key": "/builders/substrate/interfaces/features/governance/conviction-voting/",
       "value": "/builders/substrate/"
     },
@@ -610,7 +646,7 @@
     },
     {
       "key": "/integrations/openzeppelin/overview/",
-      "value": "/builders/ethereum/dev-env/openzeppelin/overview/"
+      "value": "/builders/ethereum/dev-env/"
     },
     {
       "key": "/learn/dapps-list/",
@@ -631,6 +667,30 @@
     {
       "key": "/learn/dapps-list/state-of-the-dapps/",
       "value": "/learn/dapp-directory/"
+    },
+    {
+      "key": "/learn/features/consensus/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/features/xchain-plans/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/code/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/glossary/",
+      "value": "/learn/features/glossary/"
+    },
+    {
+      "key": "/learn/platform/links/",
+      "value": "/learn/"
     },
     {
       "key": "/learn/features/unified-accounts/",
@@ -657,12 +717,32 @@
       "value": "/learn/"
     },
     {
+      "key": "/learn/platform/networks/",
+      "value": "/builders/get-started/networks/"
+    },
+    {
+      "key": "/learn/platform/networks/moonbase/",
+      "value": "/builders/get-started/networks/moonbase/"
+    },
+    {
+      "key": "/learn/platform/networks/moonbeam/",
+      "value": "/builders/get-started/networks/moonbeam/"
+    },
+    {
+      "key": "/learn/platform/networks/moonriver/",
+      "value": "/builders/get-started/networks/moonriver/"
+    },
+    {
+      "key": "/learn/platform/networks/overview/",
+      "value": "/builders/get-started/networks/"
+    },
+    {
       "key": "/learn/unified-accounts/",
       "value": "/learn/core-concepts/unified-accounts/"
     },
     {
       "key": "/networks/moonriver/",
-      "value": "/learn/platform/networks/moonriver/"
+      "value": "/builders/get-started/networks/moonriver/"
     },
     {
       "key": "/node-operators/indexer-nodes/",
@@ -706,7 +786,119 @@
     },
     {
       "key": "/tutorials/eth-api/truffle-start-to-end/",
-      "value": "/tutorials/eth-api/get-started/"
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/batch-approve-swap/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/call-permit-gasless-txs/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/cn/tutorials/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/cn/tutorials/eth-api/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/cn/tutorials/eth-api/call-permit-gasless-txs/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/cn/tutorials/eth-api/batch-approve-swap/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/tutorials/eth-api/chat-gpt/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/foundry-start-to-end/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/hardhat-start-to-end/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/how-to-build-a-dapp/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/cn/tutorials/eth-api/how-to-build-a-dapp/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/tutorials/eth-api/precompiles.index/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/randomness-lottery/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/thirdweb/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/eth-api/get-started.index/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/indexers.index/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/local-subsquid/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/nft-subsquid/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/oracles.index/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/integrations/supra/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/protocols.index/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/xcm.index/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/cross-chain-dao/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/using-axelar-sdk/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/remote-batched-evm-calls/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/remote-staking-xcm/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/uniswapv2-swap-xcm/",
+      "value": "/tutorials/"
     }
   ]
 }
