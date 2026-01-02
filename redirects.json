@@ -650,23 +650,23 @@
     },
     {
       "key": "/learn/platform/networks/",
-      "value": "/learn/"
+      "value": "/builders/get-started/networks/"
     },
     {
       "key": "/learn/platform/networks/moonbase/",
-      "value": "/learn/"
+      "value": "/builders/get-started/networks/moonbase/"
     },
     {
       "key": "/learn/platform/networks/moonbeam/",
-      "value": "/learn/"
+      "value": "/builders/get-started/networks/moonbeam/"
     },
     {
       "key": "/learn/platform/networks/moonriver/",
-      "value": "/learn/"
+      "value": "/builders/get-started/networks/moonriver/"
     },
     {
       "key": "/learn/platform/networks/overview/",
-      "value": "/learn/"
+      "value": "/builders/get-started/networks/"
     },
     {
       "key": "/learn/unified-accounts/",
@@ -674,7 +674,7 @@
     },
     {
       "key": "/networks/moonriver/",
-      "value": "/learn/"
+      "value": "/builders/get-started/networks/moonriver/"
     },
     {
       "key": "/node-operators/indexer-nodes/",
