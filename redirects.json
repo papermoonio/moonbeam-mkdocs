@@ -510,67 +510,67 @@
     },
     {
       "key": "/builders/substrate/interfaces/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/"
     },
     {
       "key": "/builders/substrate/interfaces/account/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/account/"
     },
     {
       "key": "/builders/substrate/interfaces/account/identity/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/account/identity/"
     },
     {
       "key": "/builders/substrate/interfaces/account/multisig/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/account/"
     },
     {
       "key": "/builders/substrate/interfaces/account/proxy/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/account/proxy/"
     },
     {
       "key": "/builders/substrate/interfaces/features/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/features/"
     },
     {
       "key": "/builders/substrate/interfaces/features/governance/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/features/governance/"
     },
     {
       "key": "/builders/substrate/interfaces/features/governance/conviction-voting/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/features/governance/conviction-voting/"
     },
     {
       "key": "/builders/substrate/interfaces/features/governance/parameters/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/features/governance/"
     },
     {
       "key": "/builders/substrate/interfaces/features/governance/preimage/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/features/governance/preimage/"
     },
     {
       "key": "/builders/substrate/interfaces/features/governance/referenda/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/features/governance/referenda/"
     },
     {
       "key": "/builders/substrate/interfaces/features/randomness/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/features/randomness/"
     },
     {
       "key": "/builders/substrate/interfaces/features/staking/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/features/staking/"
     },
     {
       "key": "/builders/substrate/interfaces/interoperability/",
-      "value": "/builders/substrate/"
+      "value": "/builders/interoperability/"
     },
     {
       "key": "/builders/substrate/interfaces/utility/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/utility/"
     },
     {
       "key": "/builders/substrate/interfaces/utility/utility/",
-      "value": "/builders/substrate/"
+      "value": "/builders/ethereum/precompiles/utility/"
     },
     {
       "key": "/builders/xcm/fees/",
