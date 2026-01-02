@@ -57,31 +57,11 @@
       "value": "/builders/ethereum/dev-env/"
     },
     {
-      "key": "/builders/ethereum/dev-env/openzeppelin/",
-      "value": "/builders/ethereum/dev-env/"
-    },
-    {
-      "key": "/builders/ethereum/dev-env/openzeppelin/contracts/",
-      "value": "/builders/ethereum/dev-env/"
-    },
-    {
-      "key": "/cn/builders/dev-env/oz-contracts/",
-      "value": "/cn/builders/dev-env/"
-    },
-    {
-      "key": "/builders/ethereum/dev-env/openzeppelin/overview/",
-      "value": "/builders/ethereum/dev-env/"
-    },
-    {
       "key": "/builders/build/eth-api/dev-env/remix/",
       "value": "/builders/ethereum/dev-env/remix/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/scaffold-eth/",
-      "value": "/builders/ethereum/dev-env/"
-    },
-    {
-      "key": "/builders/ethereum/dev-env/scaffold-eth/",
       "value": "/builders/ethereum/dev-env/"
     },
     {
@@ -91,10 +71,6 @@
     {
       "key": "/builders/build/eth-api/dev-env/thirdweb/",
       "value": "/builders/ethereum/dev-env/"
-    },
-    {
-      "key": "/cn/builders/dev-env/thirdweb/",
-      "value": "/cn/builders/dev-env/"
     },
     {
       "key": "/builders/build/eth-api/dev-env/truffle/",
@@ -122,14 +98,6 @@
     },
     {
       "key": "/builders/build/eth-api/libraries/web3js/",
-      "value": "/builders/ethereum/libraries/"
-    },
-    {
-      "key": "/cn/builders/libraries/web3js/",
-      "value": "/cn/builders/libraries/"
-    },
-    {
-      "key": "/builders/ethereum/libraries/web3js/",
       "value": "/builders/ethereum/libraries/"
     },
     {
@@ -185,10 +153,6 @@
       "value": "/builders/substrate/libraries/sidecar/"
     },
     {
-      "key": "/builders/substrate/interfaces/features/governance/",
-      "value": "/builders/substrate/"
-    },
-    {
       "key": "/builders/ethereum/dev-env/ape/",
       "value": "/builders/ethereum/dev-env/"
     },
@@ -197,7 +161,23 @@
       "value": "/builders/ethereum/dev-env/"
     },
     {
+      "key": "/builders/ethereum/dev-env/openzeppelin/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/openzeppelin/contracts/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
       "key": "/builders/ethereum/dev-env/openzeppelin/defender/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/openzeppelin/overview/",
+      "value": "/builders/ethereum/dev-env/"
+    },
+    {
+      "key": "/builders/ethereum/dev-env/scaffold-eth/",
       "value": "/builders/ethereum/dev-env/"
     },
     {
@@ -213,8 +193,16 @@
       "value": "/builders/ethereum/libraries/"
     },
     {
+      "key": "/builders/ethereum/libraries/web3js/",
+      "value": "/builders/ethereum/libraries/"
+    },
+    {
       "key": "/builders/ethereum/runtime-upgrades/",
       "value": "/builders/build/runtime-upgrades/"
+    },
+    {
+      "key": "/builders/get-started/create-account/",
+      "value": "/builders/get-started/"
     },
     {
       "key": "/builders/get-started/eth-compare/",
@@ -243,10 +231,6 @@
     {
       "key": "/builders/get-started/eth-compare/tx-fees/",
       "value": "/learn/core-concepts/tx-fees/"
-    },
-    {
-      "key": "/builders/get-started/create-account/",
-      "value": "/builders/get-started/"
     },
     {
       "key": "/builders/get-started/moonbase/",
@@ -309,11 +293,7 @@
       "value": "/builders/integrations/"
     },
     {
-      "key": "/builders/integrations/wallets/rainbowkit/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/walletconnect/",
+      "key": "/builders/integrations/wallets/metamask/",
       "value": "/builders/integrations/"
     },
     {
@@ -321,24 +301,12 @@
       "value": "/builders/integrations/"
     },
     {
-      "key": "/builders/integrations/wallets/metamask/",
+      "key": "/builders/integrations/wallets/rainbowkit/",
       "value": "/builders/integrations/"
     },
     {
-      "key": "/cn/builders/integrations/walletconnect/",
-      "value": "/cn/builders/"
-    },
-    {
-      "key": "/cn/builders/integrations/particle-network/",
-      "value": "/cn/builders/"
-    },
-    {
-      "key": "/cn/builders/integrations/metamask/",
-      "value": "/cn/builders/"
-    },
-    {
-      "key": "/cn/builders/integrations/",
-      "value": "/cn/builders/"
+      "key": "/builders/integrations/wallets/walletconnect/",
+      "value": "/builders/integrations/"
     },
     {
       "key": "/builders/interact/hardhat/",
@@ -561,6 +529,10 @@
       "value": "/builders/substrate/"
     },
     {
+      "key": "/builders/substrate/interfaces/features/governance/",
+      "value": "/builders/substrate/"
+    },
+    {
       "key": "/builders/substrate/interfaces/features/governance/conviction-voting/",
       "value": "/builders/substrate/"
     },
@@ -625,8 +597,56 @@
       "value": "/builders/interoperability/xcm/remote-execution/substrate-calls/"
     },
     {
+      "key": "/cn/builders/dev-env/oz-contracts/",
+      "value": "/cn/builders/dev-env/"
+    },
+    {
+      "key": "/cn/builders/dev-env/thirdweb/",
+      "value": "/cn/builders/dev-env/"
+    },
+    {
+      "key": "/cn/builders/integrations/",
+      "value": "/cn/builders/"
+    },
+    {
+      "key": "/cn/builders/integrations/metamask/",
+      "value": "/cn/builders/"
+    },
+    {
+      "key": "/cn/builders/integrations/particle-network/",
+      "value": "/cn/builders/"
+    },
+    {
+      "key": "/cn/builders/integrations/walletconnect/",
+      "value": "/cn/builders/"
+    },
+    {
       "key": "/cn/builders/libraries/ethersrs/",
       "value": "/cn/builders/libraries/"
+    },
+    {
+      "key": "/cn/builders/libraries/web3js/",
+      "value": "/cn/builders/libraries/"
+    },
+    {
+      "key": "/cn/tutorials/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/cn/tutorials/eth-api/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/cn/tutorials/eth-api/batch-approve-swap/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/cn/tutorials/eth-api/call-permit-gasless-txs/",
+      "value": "/cn/"
+    },
+    {
+      "key": "/cn/tutorials/eth-api/how-to-build-a-dapp/",
+      "value": "/cn/"
     },
     {
       "key": "/getting-started/local-node/deploy-contract/",
@@ -701,6 +721,10 @@
       "value": "/learn/"
     },
     {
+      "key": "/learn/features/unified-accounts/",
+      "value": "/learn/core-concepts/unified-accounts/"
+    },
+    {
       "key": "/learn/features/xchain-plans/",
       "value": "/learn/"
     },
@@ -718,30 +742,6 @@
     },
     {
       "key": "/learn/platform/links/",
-      "value": "/learn/"
-    },
-    {
-      "key": "/learn/features/unified-accounts/",
-      "value": "/learn/core-concepts/unified-accounts/"
-    },
-    {
-      "key": "/learn/platform/roadmap/",
-      "value": "/learn/"
-    },
-    {
-      "key": "/learn/platform/technology/",
-      "value": "/learn/"
-    },
-    {
-      "key": "/learn/platform/tokens/",
-      "value": "/learn/"
-    },
-    {
-      "key": "/learn/platform/vision/",
-      "value": "/learn/"
-    },
-    {
-      "key": "/learn/platform/why-polkadot/",
       "value": "/learn/"
     },
     {
@@ -763,6 +763,26 @@
     {
       "key": "/learn/platform/networks/overview/",
       "value": "/builders/get-started/networks/"
+    },
+    {
+      "key": "/learn/platform/roadmap/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/technology/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/tokens/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/vision/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/why-polkadot/",
+      "value": "/learn/"
     },
     {
       "key": "/learn/unified-accounts/",
@@ -813,32 +833,12 @@
       "value": "/tokens/connect/"
     },
     {
-      "key": "/tutorials/eth-api/truffle-start-to-end/",
-      "value": "/tutorials/"
-    },
-    {
       "key": "/tutorials/eth-api/batch-approve-swap/",
       "value": "/tutorials/"
     },
     {
       "key": "/tutorials/eth-api/call-permit-gasless-txs/",
       "value": "/tutorials/"
-    },
-    {
-      "key": "/cn/tutorials/",
-      "value": "/cn/"
-    },
-    {
-      "key": "/cn/tutorials/eth-api/",
-      "value": "/cn/"
-    },
-    {
-      "key": "/cn/tutorials/eth-api/call-permit-gasless-txs/",
-      "value": "/cn/"
-    },
-    {
-      "key": "/cn/tutorials/eth-api/batch-approve-swap/",
-      "value": "/cn/"
     },
     {
       "key": "/tutorials/eth-api/chat-gpt/",
@@ -849,16 +849,16 @@
       "value": "/tutorials/"
     },
     {
+      "key": "/tutorials/eth-api/get-started.index/",
+      "value": "/tutorials/"
+    },
+    {
       "key": "/tutorials/eth-api/hardhat-start-to-end/",
       "value": "/tutorials/"
     },
     {
       "key": "/tutorials/eth-api/how-to-build-a-dapp/",
       "value": "/tutorials/"
-    },
-    {
-      "key": "/cn/tutorials/eth-api/how-to-build-a-dapp/",
-      "value": "/cn/"
     },
     {
       "key": "/tutorials/eth-api/precompiles.index/",
@@ -873,7 +873,7 @@
       "value": "/tutorials/"
     },
     {
-      "key": "/tutorials/eth-api/get-started.index/",
+      "key": "/tutorials/eth-api/truffle-start-to-end/",
       "value": "/tutorials/"
     },
     {
@@ -901,19 +901,11 @@
       "value": "/tutorials/"
     },
     {
-      "key": "/tutorials/interoperability/protocols.index/",
-      "value": "/tutorials/"
-    },
-    {
-      "key": "/tutorials/interoperability/xcm.index/",
-      "value": "/tutorials/"
-    },
-    {
       "key": "/tutorials/interoperability/cross-chain-dao/",
       "value": "/tutorials/"
     },
     {
-      "key": "/tutorials/interoperability/using-axelar-sdk/",
+      "key": "/tutorials/interoperability/protocols.index/",
       "value": "/tutorials/"
     },
     {
@@ -926,6 +918,14 @@
     },
     {
       "key": "/tutorials/interoperability/uniswapv2-swap-xcm/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/using-axelar-sdk/",
+      "value": "/tutorials/"
+    },
+    {
+      "key": "/tutorials/interoperability/xcm.index/",
       "value": "/tutorials/"
     }
   ]
