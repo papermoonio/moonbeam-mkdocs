@@ -265,27 +265,27 @@
       "value": "/builders/get-started/networks/"
     },
     {
-      "key": "/builders/integrations/wallets/",
+      "key": "/builders/integrations/analytics/",
       "value": "/builders/integrations/"
     },
     {
-      "key": "/builders/integrations/wallets/metamask/",
+      "key": "/builders/integrations/analytics/dapplooker/",
       "value": "/builders/integrations/"
     },
     {
-      "key": "/builders/integrations/wallets/particle-network/",
+      "key": "/builders/integrations/analytics/zapper/",
       "value": "/builders/integrations/"
     },
     {
-      "key": "/builders/integrations/wallets/rainbowkit/",
-      "value": "/builders/integrations/"
-    },
-    {
-      "key": "/builders/integrations/wallets/walletconnect/",
+      "key": "/builders/integrations/gaming/",
       "value": "/builders/integrations/"
     },
     {
       "key": "/builders/integrations/gaming/metafab/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/indexers/moralis/",
       "value": "/builders/integrations/"
     },
     {
@@ -303,6 +303,42 @@
     {
       "key": "/builders/integrations/oracles/razor-network/",
       "value": "/builders/integrations/oracles/"
+    },
+    {
+      "key": "/builders/integrations/wallets/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/rainbowkit/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/walletconnect/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/particle-network/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/metamask/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/cn/builders/integrations/walletconnect/",
+      "value": "/cn/builders/"
+    },
+    {
+      "key": "/cn/builders/integrations/particle-network/",
+      "value": "/cn/builders/"
+    },
+    {
+      "key": "/cn/builders/integrations/metamask/",
+      "value": "/cn/builders/"
+    },
+    {
+      "key": "/cn/builders/integrations/",
+      "value": "/cn/builders/"
     },
     {
       "key": "/builders/interact/hardhat/",
@@ -582,7 +618,7 @@
     },
     {
       "key": "/builders/xcm/xcm-sdk/xcm-sdk/",
-      "value": "https:/moonbeam-foundation.github.io/xcm-sdk/latest/"
+      "value": "https://moonbeam-foundation.github.io/xcm-sdk/latest/"
     },
     {
       "key": "/builders/xcm/xcm-transactor/",
