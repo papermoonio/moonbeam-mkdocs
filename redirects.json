@@ -725,6 +725,10 @@
       "value": "/learn/core-concepts/consensus-finality/"
     },
     {
+      "key": "/learn/features/glossary/",
+      "value": "/learn/core-concepts/glossary/"
+    },
+    {
       "key": "/learn/features/unified-accounts/",
       "value": "/learn/core-concepts/unified-accounts/"
     },
