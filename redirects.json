@@ -313,6 +313,14 @@
       "value": "/builders/integrations/"
     },
     {
+      "key": "/builders/integrations/wallets/particle-network/",
+      "value": "/builders/integrations/"
+    },
+    {
+      "key": "/builders/integrations/wallets/metamask/",
+      "value": "/builders/integrations/"
+    },
+    {
       "key": "/builders/interact/hardhat/",
       "value": "/builders/ethereum/dev-env/hardhat/"
     },
