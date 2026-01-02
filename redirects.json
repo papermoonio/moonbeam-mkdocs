@@ -661,6 +661,30 @@
       "value": "/learn/dapp-directory/"
     },
     {
+      "key": "/learn/features/consensus/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/features/xchain-plans/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/code/",
+      "value": "/learn/"
+    },
+    {
+      "key": "/learn/platform/glossary/",
+      "value": "/learn/features/glossary/"
+    },
+    {
+      "key": "/learn/platform/links/",
+      "value": "/learn/"
+    },
+    {
       "key": "/learn/features/unified-accounts/",
       "value": "/learn/core-concepts/unified-accounts/"
     },
@@ -690,7 +714,7 @@
     },
     {
       "key": "/networks/moonriver/",
-      "value": "/learn/platform/networks/moonriver/"
+      "value": "/builders/get-started/networks/moonriver/"
     },
     {
       "key": "/node-operators/indexer-nodes/",
