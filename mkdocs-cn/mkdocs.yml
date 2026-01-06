@@ -128,10 +128,10 @@ plugins:
         builders/build/eth-api/dev-env/foundry.md: builders/dev-env/foundry.md
         builders/build/eth-api/dev-env/hardhat.md: builders/dev-env/hardhat.md
         builders/build/eth-api/dev-env/index.md: builders/dev-env/index.md
-        builders/build/eth-api/dev-env/openzeppelin/contracts.md: builders/dev-env/oz-contracts.md
+        builders/build/eth-api/dev-env/openzeppelin/contracts.md: builders/dev-env/index.md
         builders/build/eth-api/dev-env/remix.md: builders/dev-env/remix.md
         builders/build/eth-api/dev-env/tenderly.md: builders/dev-env/tenderly.md
-        builders/build/eth-api/dev-env/thirdweb.md: builders/dev-env/thirdweb.md
+        builders/build/eth-api/dev-env/thirdweb.md: builders/dev-env/index.md
         builders/get-started/endpoints.md: index.md
         builders/get-started/eth-compare/balances.md: index.md
         builders/get-started/eth-compare/consensus-finality.md: index.md
@@ -158,14 +158,14 @@ plugins:
         builders/integrations/indexers/subquery.md: index.md
         builders/integrations/indexers/subsquid.md: index.md
         builders/integrations/indexers/thegraph.md: index.md
-        builders/integrations/wallets/metamask.md: builders/integrations/metamask.md
+        builders/integrations/wallets/metamask.md: builders/index.md
         builders/integrations/oracles/api3.md: index.md
         builders/integrations/oracles/band-protocol.md: index.md
         builders/integrations/oracles/chainlink.md: index.md
         builders/integrations/oracles/index.md: index.md
         builders/integrations/oracles/razor-network.md: index.md
-        builders/integrations/wallets/particle-network.md: builders/integrations/particle-network.md
-        builders/integrations/wallets/walletconnect.md: builders/integrations/walletconnect.md
+        builders/integrations/wallets/particle-network.md: builders/index.md
+        builders/integrations/wallets/walletconnect.md: builders/index.md
         builders/integrations/wallets/index.md: index.md
         builders/interoperability/index.md: index.md
         builders/interoperability/mrl.md: index.md
@@ -196,10 +196,10 @@ plugins:
         builders/interoperability/xcm/xcm-sdk/v1/xcm-sdk.md: index.md
         builders/interoperability/xcm/xcm-transactor.md: index.md
         builders/build/eth-api/libraries/ethersjs.md: builders/libraries/ethersjs.md
-        builders/build/eth-api/libraries/ethersrs.md: builders/libraries/ethersrs.md
+        builders/build/eth-api/libraries/ethersrs.md: builders/libraries/index.md
         builders/build/eth-api/libraries/index.md: builders/libraries/index.md
         builders/build/eth-api/libraries/viem.md: builders/libraries/viem.md
-        builders/build/eth-api/libraries/web3js.md: builders/libraries/web3js.md
+        builders/build/eth-api/libraries/web3js.md: builders/libraries/index.md
         builders/build/eth-api/libraries/web3py.md: builders/libraries/web3py.md
         builders/pallets-precompiles/index.md: index.md
         builders/pallets-precompiles/pallets/conviction-voting.md: index.md
