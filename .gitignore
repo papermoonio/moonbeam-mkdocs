@@ -3,3 +3,7 @@ venv
 .DS_Store
 s3_website.yml
 .cache
+
+.github/instructions/kluster-code-verify.instructions.md
+.kluster
+venv-test

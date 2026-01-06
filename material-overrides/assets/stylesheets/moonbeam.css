@@ -833,6 +833,20 @@ html .md-typeset details.function div.tabbed-set,
   padding-right: 3em;
 }
 
+/* Styling for clipboard button */
+.md-code__button:focus,
+.md-code__button:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.md-code__nav {
+  background-color: transparent;
+}
+
+pre:hover > .md-code__nav {
+  background: transparent;
+}
+
 /* Styling for the Copy to Clipboard message */
 .md-dialog {
   text-align: center;
