@@ -7,9 +7,6 @@ localhost
 https://fonts.gstatic.com/
 https://fonts.googleapis.com/
 
-# Ignore websites that redirect too many times
-
-
 # Ignore websites that don't allow scrapers
 https://metamask.io/
 https://polkadot.com/
