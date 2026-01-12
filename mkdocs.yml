@@ -5,6 +5,8 @@ edit_uri: https://github.com/moonbeam-foundation/moonbeam-docs/edit/master/
 site_dir: /var/www/moonbeam-docs-static
 docs_dir: moonbeam-docs
 copyright: © 2026 Moonbeam Foundation. All Rights Reserved.
+hooks:
+  - hooks.py
 extra_javascript:
   - js/connectMetaMask.js
   - js/errorModal.js
@@ -22,6 +24,7 @@ extra_css:
 theme:
   name: material
   custom_dir: material-overrides
+  language: en
   favicon: /assets/images/favicon.webp
   logo: /assets/images/logo.webp
   icon:
@@ -67,7 +70,22 @@ validation:
   unrecognized_links: ignore
 exclude_docs: README.md
 plugins:
+  - i18n:
+        docs_structure: folder
+        fallback_to_default: true
+        languages:
+          - locale: cn
+            name: Chinese
+            build: true
+          - locale: en
+            name: English
+            default: true
+            build: true
   - search
+  - macros:
+      include_yaml:
+        - moonbeam-docs/variables.yml
+        - moonbeam-docs/locale/cn.yml 
   - awesome-nav
   - glightbox
   - git-revision-date-localized:
@@ -85,7 +103,7 @@ plugins:
         - js/connectMetaMask.js
         - js/errorModal.js
         - js/networkModal.js
-        - js/handleLanguageChange.js
+        - js/lang-toggle.js
         - js/fixCreatedDate.js
         - js/externalLinkModal.js
         - js/cookbookInit.js
