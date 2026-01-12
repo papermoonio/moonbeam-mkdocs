@@ -2,6 +2,7 @@
 import argparse
 import json
 import re
+import hashlib
 from pathlib import Path
 
 import yaml
@@ -11,10 +12,15 @@ ATTR_RE = re.compile(
     r"\b(alt|title|placeholder|aria-label|aria-labelledby|value)\s*=\s*(\"[^\"]*\"|'[^']*')",
     re.I,
 )
+HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
 DISCLAIMER_BLOCK_RE = re.compile(
     r"<(?P<tag>[a-z0-9]+)\b(?P<attrs>[^>]*)>(?P<content>.*?)</(?P=tag)>",
     re.I | re.S,
 )
+TRANSLATION_CALL_RE = re.compile(
+    r"\{\{\s*(?:lang\.)?(?:t|trans)\(\s*['\"]([^'\"]+)['\"]\s*\)\s*\}\}"
+)
+MAX_KEY_WORDS = 4
 
 
 class _Dumper(yaml.SafeDumper):
@@ -56,6 +62,34 @@ def _load_flat_json(json_path):
     }
 
 
+def _load_docs_dir(root):
+    mkdocs_path = root / "mkdocs.yml"
+    if not mkdocs_path.exists():
+        return "docs"
+    contents = mkdocs_path.read_text(encoding="utf-8")
+    try:
+        config = yaml.safe_load(contents) or {}
+    except Exception:
+        config = None
+    if isinstance(config, dict):
+        docs_dir = config.get("docs_dir")
+        if isinstance(docs_dir, str) and docs_dir.strip():
+            return docs_dir
+    for line in contents.splitlines():
+        if line.lstrip().startswith("#"):
+            continue
+        match = re.match(r"^\s*docs_dir:\s*(.+?)\s*$", line)
+        if not match:
+            continue
+        raw = match.group(1).split("#", 1)[0].strip()
+        if not raw:
+            continue
+        if raw[0] in "\"'" and raw[-1:] in "\"'":
+            raw = raw[1:-1]
+        return raw
+    return "docs"
+
+
 def _ensure_key(data, key, value):
     parts = key.split(".")
     current = data
@@ -89,6 +123,26 @@ def _slugify(text):
     return text or "text"
 
 
+def _short_key_slug(value, max_words):
+    full_slug = _slugify(value)
+    words = [w for w in full_slug.split("_") if w]
+    if len(words) <= max_words:
+        return full_slug
+    truncated = "_".join(words[:max_words]) or "text"
+    digest = hashlib.sha1(full_slug.encode("utf-8")).hexdigest()[:6]
+    return f"{truncated}__{digest}"
+
+
+def _humanize_key(key):
+    tail = key.split(".")[-1]
+    if "__" in tail:
+        tail = tail.split("__", 1)[0]
+    text = tail.replace("_", " ").strip()
+    if not text:
+        return key
+    return text[:1].upper() + text[1:]
+
+
 def _clean_text(text):
     text = re.sub(JINJA_TAG_RE, "", text)
     text = re.sub(r"<[^>]+>", "", text)
@@ -120,6 +174,8 @@ def _collect_template_replacements(
     script_ranges = _find_block_ranges(content, "script")
     style_ranges = _find_block_ranges(content, "style")
     blocked_ranges = script_ranges + style_ranges
+    for match in HTML_COMMENT_RE.finditer(content):
+        blocked_ranges.append(match.span())
 
     for match in DISCLAIMER_BLOCK_RE.finditer(content):
         attrs = match.group("attrs") or ""
@@ -146,7 +202,8 @@ def _collect_template_replacements(
     def get_key(value):
         if not allow_duplicates and value in value_to_key:
             return value_to_key[value]
-        base = f"{prefix}.{_slugify(value)}" if prefix else _slugify(value)
+        slug = _short_key_slug(value, MAX_KEY_WORDS)
+        base = f"{prefix}.{slug}" if prefix else slug
         key = base
         counter = 2
         while key in used_keys:
@@ -161,7 +218,9 @@ def _collect_template_replacements(
         span = match.span(2)
         if _in_ranges(span, blocked_ranges):
             continue
-        if "{{" in value or "{%" in value or "}}" in value:
+        if "{{" in value or "{%" in value or "}}" in value or "{#" in value or "#}" in value:
+            continue
+        if JINJA_TAG_RE.search(value):
             continue
         if len(value.strip()) < min_length:
             continue
@@ -174,7 +233,9 @@ def _collect_template_replacements(
         span = match.span(1)
         if _in_ranges(span, blocked_ranges):
             continue
-        if "{{" in value or "{%" in value or "}}" in value:
+        if "{{" in value or "{%" in value or "}}" in value or "{#" in value or "#}" in value:
+            continue
+        if JINJA_TAG_RE.search(value):
             continue
         stripped = value.strip()
         if len(stripped) < min_length:
@@ -187,6 +248,12 @@ def _collect_template_replacements(
 
     replacements.sort(key=lambda item: item[0][0], reverse=True)
     return replacements
+
+
+def _extract_translation_keys(content):
+    stripped = HTML_COMMENT_RE.sub("", content)
+    stripped = re.sub(r"{#.*?#}", "", stripped, flags=re.S)
+    return {match.group(1) for match in TRANSLATION_CALL_RE.finditer(stripped)}
 
 
 def _standardize_calls(text):
@@ -237,8 +304,8 @@ def main():
     parser.add_argument(
         "--root",
         type=Path,
-        default=Path(__file__).resolve().parents[1],
-        help="Path to the tanssi-mkdocs repo root.",
+        default=None,
+        help="Path to the repo root (defaults to cwd if mkdocs.yml exists).",
     )
     parser.add_argument(
         "--locale-file",
@@ -290,8 +357,22 @@ def main():
     )
     args = parser.parse_args()
 
-    root = args.root
-    locale_path = args.locale_file or root / "tanssi-docs" / "locale" / "en.yml"
+    if args.root:
+        root = args.root
+    else:
+        cwd = Path.cwd()
+        root = cwd if (cwd / "mkdocs.yml").exists() else Path(__file__).resolve().parents[1]
+    if args.locale_file:
+        locale_path = args.locale_file
+    else:
+        docs_dir = _load_docs_dir(root)
+        docs_path = Path(docs_dir)
+        if not docs_path.is_absolute():
+            docs_path = root / docs_path
+        if str(docs_dir).strip() in {"", "."}:
+            locale_path = root / "locale" / "en.yml"
+        else:
+            locale_path = docs_path / "locale" / "en.yml"
 
     targets = [Path(path) for path in args.paths] or [root / "material-overrides"]
     extensions = {
@@ -320,6 +401,7 @@ def main():
 
     changed_files = []
     scanned_files = 0
+    tagged_keys = set()
     for path in _iter_template_files(targets, extensions):
         scanned_files += 1
         original = path.read_text(encoding="utf-8")
@@ -343,10 +425,16 @@ def main():
                     updated = updated[: span[0]] + replacement + updated[span[1] :]
 
         updated = _apply_transforms(updated, do_standardize=not args.skip_standardize)
+        tagged_keys.update(_extract_translation_keys(updated))
         if updated != original:
             changed_files.append(path)
             if not args.dry_run:
                 path.write_text(updated, encoding="utf-8")
+
+    for key in sorted(tagged_keys):
+        if key not in used_keys:
+            _ensure_key(locale_data, key, _humanize_key(key))
+            used_keys.add(key)
 
     locale_written = False
     if not args.skip_locale_write and locale_data and not args.dry_run:

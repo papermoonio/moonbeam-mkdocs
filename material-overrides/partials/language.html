@@ -1,0 +1,73 @@
+{%- import "partials/languages/" ~ config.theme.language ~ ".html" as language_pack -%}
+{%- import "partials/languages/en.html" as fallback_language -%}
+{%- macro translate(key) -%}
+  {{ language_pack.t(key) or fallback_language.t(key) or key }}
+{%- endmacro -%}
+{%- macro t(key) -%}
+  {{ translate(key) }}
+{%- endmacro -%}
+
+{% if config.extra.alternate %}
+  {% set base_lang = config.theme.language | default("en") %}
+  {% if page is defined and page.lang %}
+    {% set base_lang = page.lang %}
+  {% endif %}
+  {% set current_lang = base_lang %}
+  {% set labels = namespace(current_label=current_lang[:2] | upper) %}
+  {% if config.extra.alternate %}
+    {% for alt in config.extra.alternate %}
+      {% if alt.lang == current_lang or current_lang.startswith(alt.lang) or alt.lang.startswith(current_lang) %}
+        {% if alt.lang[:2] | lower == "zh" %}
+          {% set labels.current_label = "中文" %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  <div class="language-picker" data-md-component="language">
+    <button
+      class="language-picker__toggle"
+      type="button"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-label="{{ translate('select.language') }}"
+    >
+      <span class="language-picker__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path fill="currentColor" d="M12.87 15.07L10.33 12.5l.03-.03A19.79 19.79 0 0013.5 7h3V5h-7V3H8v2H1v2h11.17a17.77 17.77 0 01-2.64 4.49 17.91 17.91 0 01-3.11-4.49H3.62a19.91 19.91 0 003.95 5.61L2.1 19.37 3.5 20.8l4.9-4.9 3.57 3.55zM18.5 10h-2L12 22h2l1-2h6l1 2h2zm-2.62 8l2.12-4.67L20.12 18z"/>
+        </svg>
+      </span>
+      <span class="language-picker__label">{{ labels.current_label }}</span>
+      <span class="language-picker__chevron" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+        </svg>
+      </span>
+    </button>
+    <div class="language-picker__menu" role="menu">
+      <ul>
+        {% for alt in config.extra.alternate %}
+          {% if page is defined %}
+            {% set lang_href = alt.link | url %}
+          {% else %}
+            {% set lang_href = alt.link %}
+          {% endif %}
+          <li>
+            <a
+              href="{{ lang_href }}"
+              hreflang="{{ alt.lang }}"
+              role="menuitem"
+              aria-label="{{ alt.name }}"
+              class="{% if alt.lang == current_lang %}is-active{% endif %}"
+            >
+              {% set label = alt.lang[:2] | upper %}
+              {% if alt.lang[:2] | lower == "zh" %}
+                {% set label = "中文" %}
+              {% endif %}
+              <span class="language-picker__code">{{ label }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}

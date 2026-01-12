@@ -111,7 +111,10 @@ def _sync_theme_translations(config):
     if not yaml_translations:
         return
 
-    custom_dir = config.get("theme", {}).get("custom_dir")
+    theme = config.get("theme", {})
+    custom_dir = getattr(theme, "custom_dir", None)
+    if not custom_dir and hasattr(theme, "get"):
+        custom_dir = theme.get("custom_dir")
     if not custom_dir:
         return
 
@@ -123,16 +126,44 @@ def _sync_theme_translations(config):
     translations_dir = custom_path / ".translations"
     translations_dir.mkdir(parents=True, exist_ok=True)
 
+    project_name = config.get("site_name", "Tanssi Docs")
     for locale, data in yaml_translations.items():
         target = translations_dir / f"{locale}.json"
         target.write_text(
             json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
         )
-        _write_po_translations(docs_dir, locale, data)
+        _write_po_translations(docs_dir, locale, data, project_name)
 
 
-def _write_po_translations(docs_dir, locale, data):
+def _get_catalog_metadata(catalog):
+    metadata = getattr(catalog, "metadata", None)
+    if metadata is not None:
+        return dict(metadata)
+    headers = getattr(catalog, "mime_headers", None)
+    if headers is None:
+        return {}
+    return {key: value for key, value in headers}
+
+
+def _set_catalog_metadata(catalog, metadata):
+    if hasattr(catalog, "metadata"):
+        catalog.metadata.update(metadata)
+        return
+    headers = list(getattr(catalog, "mime_headers", []) or [])
+    if not headers:
+        catalog.mime_headers = list(metadata.items())
+        return
+    index = {key: idx for idx, (key, _value) in enumerate(headers)}
+    for key, value in metadata.items():
+        if key in index:
+            headers[index[key]] = (key, value)
+        else:
+            headers.append((key, value))
+    catalog.mime_headers = headers
+
+
+def _write_po_translations(docs_dir, locale, data, project_name):
     i18n_dir = docs_dir / "i18n" / locale / "LC_MESSAGES"
     i18n_dir.mkdir(parents=True, exist_ok=True)
     po_path = i18n_dir / "messages.po"
@@ -141,24 +172,24 @@ def _write_po_translations(docs_dir, locale, data):
     if po_path.exists():
         with po_path.open("r", encoding="utf-8") as po_file:
             existing_catalog = read_po(po_file)
-        existing_metadata = dict(existing_catalog.metadata)
+        existing_metadata = _get_catalog_metadata(existing_catalog)
 
     catalog = Catalog(
         locale=locale,
-        project=existing_metadata.get("Project-Id-Version", "Tanssi Docs"),
+        project=existing_metadata.get("Project-Id-Version", project_name),
     )
-    if existing_metadata:
-        catalog.metadata.update(existing_metadata)
-    catalog.metadata.setdefault("Project-Id-Version", "Tanssi Docs")
-    catalog.metadata.setdefault("POT-Creation-Date", "2025-01-01 00:00+0000")
-    catalog.metadata.setdefault("Language", locale)
-    catalog.metadata.setdefault("Content-Type", "text/plain; charset=UTF-8")
-    catalog.metadata.setdefault("Content-Transfer-Encoding", "8bit")
+    metadata = dict(existing_metadata)
+    metadata.setdefault("Project-Id-Version", project_name)
+    metadata.setdefault("POT-Creation-Date", "2025-01-01 00:00+0000")
+    metadata.setdefault("Language", locale)
+    metadata.setdefault("Content-Type", "text/plain; charset=UTF-8")
+    metadata.setdefault("Content-Transfer-Encoding", "8bit")
+    _set_catalog_metadata(catalog, metadata)
 
     for key in sorted(data):
         catalog.add(key, data[key] if data[key] is not None else "")
 
-    with po_path.open("w", encoding="utf-8") as po_file:
+    with po_path.open("wb") as po_file:
         write_po(po_file, catalog, width=0)
 
 

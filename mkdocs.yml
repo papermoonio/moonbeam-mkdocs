@@ -74,7 +74,7 @@ plugins:
         docs_structure: folder
         fallback_to_default: true
         languages:
-          - locale: cn
+          - locale: zh
             name: Chinese
             build: true
           - locale: en
@@ -85,7 +85,7 @@ plugins:
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
-        - moonbeam-docs/locale/cn.yml 
+        - moonbeam-docs/locale/zh.yml 
   - awesome-nav
   - glightbox
   - git-revision-date-localized:
@@ -96,7 +96,7 @@ plugins:
   # - privacy
   - minify:
       minify_html: true
-      minify_js: true
+      minify_js: false
       minify_css: true
       cache_safe: false
       js_files:

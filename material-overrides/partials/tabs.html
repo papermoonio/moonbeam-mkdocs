@@ -1,6 +1,7 @@
 {#-
     This file was automatically generated - do not edit
   -#}
+{% set current_lang = page.lang | default(config.theme.language) | default("en") %}
   
   <nav class="md-tabs" aria-label="{{ t('tabs') }}" data-md-component="tabs">
     <div class="md-grid">
@@ -17,7 +18,18 @@
                     <li class="md-tab__item">
                       <a href="{{ section_item.children[0].url | url }}">
                         <div class="icon-col">
-                          {% set icon_url = "/assets/images/dropdown-icons/" + section_item.children[0].url.split('/')[1] + ".webp" %}
+                          {% set path_parts = section_item.children[0].url.split('/') | reject('equalto', '') | list %}
+                          {% set lang_key = current_lang | replace('_', '-') %}
+                          {% set lang_short = lang_key.split('-')[0] %}
+                          {% if path_parts and (path_parts[0] == lang_key or path_parts[0] == lang_short) %}
+                            {% set path_parts = path_parts[1:] %}
+                          {% endif %}
+                          {% if path_parts|length > 1 %}
+                            {% set icon_key = path_parts[1] %}
+                          {% else %}
+                            {% set icon_key = path_parts[0] %}
+                          {% endif %}
+                          {% set icon_url = "/assets/images/dropdown-icons/" + icon_key + ".webp" %}
                           <img class="dropdown-icon" src="{{ icon_url }}" alt="{{ section_item.title }}" loading="lazy">
                         </div>
                         <div class="text-col">
@@ -30,7 +42,18 @@
                     <li class="md-tab__item">
                       <a href="{{ section_item.url | url }}">
                         <div class="icon-col">
-                          {% set icon_url = "/assets/images/dropdown-icons/" + section_item.url.split('/')[1] + ".webp" %}
+                          {% set path_parts = section_item.url.split('/') | reject('equalto', '') | list %}
+                          {% set lang_key = current_lang | replace('_', '-') %}
+                          {% set lang_short = lang_key.split('-')[0] %}
+                          {% if path_parts and (path_parts[0] == lang_key or path_parts[0] == lang_short) %}
+                            {% set path_parts = path_parts[1:] %}
+                          {% endif %}
+                          {% if path_parts|length > 1 %}
+                            {% set icon_key = path_parts[1] %}
+                          {% else %}
+                            {% set icon_key = path_parts[0] %}
+                          {% endif %}
+                          {% set icon_url = "/assets/images/dropdown-icons/" + icon_key + ".webp" %}
                           <img class="dropdown-icon" src="{{ icon_url }}" alt="{{ section_item.title }}" loading="lazy">
                         </div>
                         <div class="text-col">
