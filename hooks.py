@@ -4,7 +4,9 @@ from pathlib import Path
 import yaml
 import json
 import re
-from babel.messages.pofile import read_po
+from jinja2 import pass_context
+from babel.messages.catalog import Catalog
+from babel.messages.pofile import read_po, write_po
 from babel.messages.mofile import write_mo
 from babel.support import Translations
 from mkdocs.plugins import event_priority
@@ -85,6 +87,24 @@ def _build_translator(config):
     return translate
 
 
+def _has_custom_translation(yaml_translations, gettext_translations, key, lang, default_lang):
+    if key in yaml_translations.get(lang, {}):
+        return True
+    if key in yaml_translations.get(default_lang, {}):
+        return True
+    translator = gettext_translations.get(lang)
+    if translator:
+        value = translator.gettext(key)
+        if value and value != key:
+            return True
+    fallback_translator = gettext_translations.get(default_lang)
+    if fallback_translator:
+        value = fallback_translator.gettext(key)
+        if value and value != key:
+            return True
+    return False
+
+
 def _sync_theme_translations(config):
     docs_dir = Path(config.get("docs_dir", "docs"))
     yaml_translations = _load_yaml_translations(docs_dir / "locale")
@@ -109,6 +129,37 @@ def _sync_theme_translations(config):
             json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
         )
+        _write_po_translations(docs_dir, locale, data)
+
+
+def _write_po_translations(docs_dir, locale, data):
+    i18n_dir = docs_dir / "i18n" / locale / "LC_MESSAGES"
+    i18n_dir.mkdir(parents=True, exist_ok=True)
+    po_path = i18n_dir / "messages.po"
+
+    existing_metadata = {}
+    if po_path.exists():
+        with po_path.open("r", encoding="utf-8") as po_file:
+            existing_catalog = read_po(po_file)
+        existing_metadata = dict(existing_catalog.metadata)
+
+    catalog = Catalog(
+        locale=locale,
+        project=existing_metadata.get("Project-Id-Version", "Tanssi Docs"),
+    )
+    if existing_metadata:
+        catalog.metadata.update(existing_metadata)
+    catalog.metadata.setdefault("Project-Id-Version", "Tanssi Docs")
+    catalog.metadata.setdefault("POT-Creation-Date", "2025-01-01 00:00+0000")
+    catalog.metadata.setdefault("Language", locale)
+    catalog.metadata.setdefault("Content-Type", "text/plain; charset=UTF-8")
+    catalog.metadata.setdefault("Content-Transfer-Encoding", "8bit")
+
+    for key in sorted(data):
+        catalog.add(key, data[key] if data[key] is not None else "")
+
+    with po_path.open("w", encoding="utf-8") as po_file:
+        write_po(po_file, catalog, width=0)
 
 
 def on_config(config):
@@ -118,7 +169,37 @@ def on_config(config):
 
 def on_env(env, config, files):
     translator = _build_translator(config)
+    docs_dir = Path(config.get("docs_dir", "docs"))
+    yaml_translations = _load_yaml_translations(docs_dir / "locale")
+    gettext_translations = _load_gettext_translations(docs_dir / "i18n")
+    default_lang = config.get("theme", {}).get("language", "en")
+
+    @pass_context
+    def t(context, key):
+        lang_code = None
+        page = context.get("page")
+        if page is not None:
+            lang_code = getattr(page, "lang", None)
+            if not lang_code:
+                lang_code = getattr(getattr(page, "file", None), "locale", None)
+        if not lang_code:
+            cfg = context.get("config", {}) or {}
+            lang_code = cfg.get("theme", {}).get("language")
+        lang_code = lang_code or default_lang
+
+        if _has_custom_translation(
+            yaml_translations, gettext_translations, key, lang_code, default_lang
+        ):
+            return translator(key, lang=lang_code)
+
+        lang_obj = context.get("lang")
+        if lang_obj is not None and hasattr(lang_obj, "t"):
+            return lang_obj.t(key)
+
+        return translator(key, lang=lang_code)
+
     env.globals["trans"] = translator
+    env.globals["t"] = t
     env.filters["trans"] = translator
     return env
 
@@ -189,12 +270,16 @@ def on_post_page(output, page, config):
         translator = _build_translator(config)
         lang = page_locale
 
-        def replace_trans(match):
+        def replace_translation(match):
             key = match.group(1).strip()
             return translator(key, lang=lang)
 
-        # match {{ trans("key") }} including cases where quotes are escaped
-        output = re.sub(r"{{\s*trans\(\s*\\?['\"]([^'\"]+)\\?['\"]\s*\)\s*}}", replace_trans, output)
+        # match {{ t("key") }} or {{ trans("key") }} including cases where quotes are escaped
+        output = re.sub(
+            r"{{\s*(?:trans|t)\(\s*\\?['\"]([^'\"]+)\\?['\"]\s*\)\s*}}",
+            replace_translation,
+            output,
+        )
 
         # normalize html lang attribute to the resolved locale
         output = re.sub(

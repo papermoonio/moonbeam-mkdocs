@@ -3,6 +3,8 @@ venv
 .DS_Store
 s3_website.yml
 .cache
+__pycache__/
+*.pyc
 
 .github/instructions/kluster-code-verify.instructions.md
 .kluster

@@ -1,27 +1,10 @@
 <!--
   Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
+  {{ t('material_overrides.partials.toc.permission_is_hereby_granted_free_of_charge_to_any_person_obtaining_a_copy_of_this_software_and_associated_documentation_files_the_software_to_deal_in_the_software_without_restriction_including_without_limitation_the_rights_to_use_copy_modify_merge_publish_distribute_sublicense_and_or_sell_copies_of_the_software_and_to_permit_persons_to_whom_the_software_is_furnished_to_do_so_subject_to_the_following_conditions_the_above_copyright_notice_and_this_permission_notice_shall_be_included_in_all_copies_or_substantial_portions_of_the_software_the_software_is_provided_as_is_without_warranty_of_any_kind_express_or_implied_including_but_not_limited_to_the_warranties_of_merchantability_fitness_for_a_particular_purpose_and_non_infringement_in_no_event_shall_the_authors_or_copyright_holders_be_liable_for_any_claim_damages_or_other_liability_whether_in_an_action_of_contract_tort_or_otherwise_arising_from_out_of_or_in_connection_with_the_software_or_the_use_or_other_dealings_in_the_software') }}
 
 <!-- Determine title -->
-{% set title = lang.t("toc") %}
+{% set title = t("toc") %}
 {% if config.mdx_configs.toc and config.mdx_configs.toc.title %}
   {% set title = config.mdx_configs.toc.title %}
 {% endif %}

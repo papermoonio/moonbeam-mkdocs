@@ -25,20 +25,20 @@
 {#- Main container -#}
 <form class="md-consent__form md-grid md-typeset">
   
-  {#- Left section: Logo -#}
+  {{ t('material_overrides.partials.consent.left_section_logo') }}
   <div class="cookie-logo">
-    <img src="{{ base_url }}/assets/images/Moonbeam_Icon_White.webp" alt="Moonbeam logo for Cookie consent">
+    <img src="{{ base_url }}/assets/images/Moonbeam_Icon_White.webp" alt="{{ t('material_overrides.partials.consent.moonbeam_logo_for_cookie_consent') }}">
   </div>
 
-  {#- Center section: Title and Description -#}
+  {{ t('material_overrides.partials.consent.center_section_title_and_description') }}
   <div class="cookie-content">
     <h4>{{ config.extra.consent.title }}</h4>
     <p>{{ config.extra.consent.description }}</p>
   
-    {#- Manage Settings Toggle  -#}
+    {{ t('material_overrides.partials.consent.manage_settings_toggle') }}
     <input class="md-toggle" type="checkbox" id="__settings" {{ checked }} />
 
-    {#- Consent settings -#}
+    {{ t('material_overrides.partials.consent.consent_settings') }}
     <div class="md-consent__settings">
       <ul class="task-list">
         {% for type in cookies %}
@@ -64,28 +64,28 @@
     </div>
   </div>
   
-  {#- Right section: Buttons -#}
+  {{ t('material_overrides.partials.consent.right_section_buttons') }}
   <div class="cookie-buttons md-consent__controls">
     {% for action in actions %}
 
       {#- Accept cookies button -#}
       {% if action == "accept" %}
         <button class="md-button md-button--primary">
-          {{- lang.t("consent.accept") -}}
+          {{- t("consent.accept") -}}
         </button>
       {% endif %}
 
       {#- Manage settings button -#}
       {% if action == "manage" %}
         <label class="md-button" for="__settings">
-          {{- lang.t("consent.manage") -}}
+          {{- t("consent.manage") -}}
         </label>
       {% endif %}
 
       {#- Reject cookies button -#}
       {% if action == "reject" %}
         <button type="reset" class="md-button md-button--secondary">
-          {{- lang.t("consent.reject") -}}
+          {{- t("consent.reject") -}}
         </button>
       {% endif %}
 

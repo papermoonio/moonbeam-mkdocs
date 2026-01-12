@@ -7,7 +7,7 @@
         type="text"
         class="md-search__input"
         name="query"
-        aria-label="{{ lang.t('search.placeholder') }}"
+        aria-label="{{ t('search.placeholder') }}"
         autocapitalize="off"
         autocorrect="off"
         autocomplete="off"
@@ -19,13 +19,13 @@
         {% include ".icons/material/magnify.svg" %} {% include
         ".icons/material/arrow-left.svg" %}
       </label>
-      <nav class="md-search__options" aria-label="{{ lang.t('search') }}">
+      <nav class="md-search__options" aria-label="{{ t('search') }}">
         {% if "search.share" in features %}
         <a
           href="javascript:void(0)"
           class="md-search__icon md-icon"
-          title="{{ lang.t('search.share') }}"
-          aria-label="{{ lang.t('search.share') }}"
+          title="{{ t('search.share') }}"
+          aria-label="{{ t('search.share') }}"
           data-clipboard
           data-clipboard-text=""
           data-md-component="search-share"
@@ -37,8 +37,8 @@
         <button
           type="reset"
           class="md-search__icon md-icon"
-          title="{{ lang.t('search.reset') }}"
-          aria-label="{{ lang.t('search.reset') }}"
+          title="{{ t('search.reset') }}"
+          aria-label="{{ t('search.reset') }}"
           tabindex="-1"
         >
           {% include ".icons/material/close.svg" %}
@@ -52,7 +52,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            {{ lang.t("search.result.initializer") }}
+            {{ t("search.result.initializer") }}
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>

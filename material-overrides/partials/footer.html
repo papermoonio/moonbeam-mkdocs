@@ -4,7 +4,7 @@ This file was automatically generated - do not edit
 {% import "partials/language.html" as lang with context %}
 <footer class="md-footer">
   {% if page.previous_page or page.next_page and page.meta.title != "Home" %}
-  <nav class="md-footer__inner md-grid" aria-label="{{ lang.t('footer.title') }}">
+  <nav class="md-footer__inner md-grid" aria-label="{{ t('footer.title') }}">
     {% if page.previous_page %}
     <a href="{{ page.previous_page.url | url }}" class="md-footer__link md-footer__link--prev" rel="prev">
       <div class="md-footer__button md-icon">
@@ -12,7 +12,7 @@ This file was automatically generated - do not edit
       </div>
       <div class="md-footer__title">
         <span class="md-footer__direction">
-          {{ lang.t("footer.previous") }}
+          {{ t("footer.previous") }}
         </span>
         <span class="md-footer__page-name">
         {{ page.previous_page.title }}
@@ -24,7 +24,7 @@ This file was automatically generated - do not edit
     <a href="{{ page.next_page.url | url }}" class="md-footer__link md-footer__link--next" rel="next">
       <div class="md-footer__title">
         <span class="md-footer__direction">
-          {{ lang.t("footer.next") }}
+          {{ t("footer.next") }}
         </span>
         <span class="md-footer__page-name">
         {{ page.next_page.title }}
@@ -41,12 +41,12 @@ This file was automatically generated - do not edit
     <div class="md-footer-meta__inner md-grid">
       <div class="column llms-wrapper">
         <p class="llms-title">
-          AI-Compatible Docs
+          {{ t('material_overrides.home.ai_compatible_docs') }}
         </p>
         <div class="llms-options">
-          <a class="llms-link" href="/llms.txt">llms.txt</a>
-          <a class="llms-link" href="/llms-full.txt">llms-full.txt</a>
-          <a class="llms-link" href="/ai-resources/ai-resources/">LLMs By Topic</a>
+          <a class="llms-link" href="/llms.txt">{{ t('material_overrides.partials.footer.llms_txt') }}</a>
+          <a class="llms-link" href="/llms-full.txt">{{ t('material_overrides.partials.footer.llms_full_txt') }}</a>
+          <a class="llms-link" href="/ai-resources/ai-resources/">{{ t('material_overrides.partials.footer.llms_by_topic') }}</a>
         </div>
       </div>
       <div class="column social">
@@ -62,13 +62,13 @@ This file was automatically generated - do not edit
         {% endif %}
         <div class="papermoon">
           <span>
-            Made with 🩵 by 
-            <a href="https://papermoon.io/" target="_blank">PaperMoon</a>
+            {{ t('material_overrides.partials.footer.made_with_by') }} 
+            <a href="https://papermoon.io/" target="_blank">{{ t('material_overrides.partials.footer.papermoon') }}</a>
           </span>
         </div>
         <div class="policy-links">
-          <a href="https://moonbeam.network/terms-of-use" target="_blank">Terms of use</a>
-          <a href="https://moonbeam.network/privacy-policy" target="_blank">Privacy policy</a>
+          <a href="https://moonbeam.network/terms-of-use" target="_blank">{{ t('material_overrides.partials.footer.terms_of_use') }}</a>
+          <a href="https://moonbeam.network/privacy-policy" target="_blank">{{ t('material_overrides.partials.footer.privacy_policy') }}</a>
         </div>
       </div>  
     </div>    

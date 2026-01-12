@@ -21,7 +21,7 @@
 
 {%- block htmltitle -%} 
   {%- if page.is_homepage -%} 
-    <title>Documentation for the Moonbeam Smart Contract Platform</title> 
+    <title>{{ t('material_overrides.main.documentation_for_the_moonbeam_smart_contract_platform') }}</title> 
   {%- elif page and page.meta and page.meta.title -%} 
     <title>{{ page.meta.title }} | {{ config.site_name }}</title> 
   {%- elif page and page.title and not page.is_homepage -%} 
@@ -34,8 +34,7 @@
 {#- Uncomment the block below to add an announcement banner back to the site -#}
 {#
 {% block announce %}
-  <p>As of Runtime 3400, the minimum gas price has been reduced by 4x to 31.25 Gwei. 
-     Learn more about <a href="https://github.com/moonbeam-foundation/moonbeam/pull/3058">the new minimum gas price</a>.</p>
+  <p>{{ t('material_overrides.main.as_of_runtime_3400_the_minimum_gas_price_has_been_reduced_by_4x_to_31_25_gwei_learn_more_about') }} <a href="https://github.com/moonbeam-foundation/moonbeam/pull/3058">{{ t('material_overrides.main.the_new_minimum_gas_price') }}</a>.</p>
 {% endblock %}
 #}
 
@@ -76,14 +75,14 @@
           {% include "partials/toc.html" %}
         </div>
 
-        {#- Feedback and Edit this page container -#}
+        {{ t('material_overrides.main.feedback_and_edit_this_page_container') }}
         <div class="feedback-actions-container">
-          {#- Feedback Section -#}
+          {{ t('material_overrides.main.feedback_section') }}
           <div class="feedback-section">
             {% include "partials/feedback.html" %}
           </div>
 
-          {#- Edit this Page Section -#}
+          {{ t('material_overrides.main.edit_this_page_section') }}
           <div class="edit-section">
             {% include "partials/actions.html" %}
           </div>
@@ -115,10 +114,10 @@
               if (
                 copiedToClipboardMessage &&
                 copiedToClipboardMessage.textContent !==
-                  "{{ lang.t('clipboard.copied') }}"
+                  "{{ t('clipboard.copied') }}"
               ) {
                 copiedToClipboardMessage.textContent =
-                  "{{ lang.t('clipboard.copied') }}";
+                  "{{ t('clipboard.copied') }}";
               }
               // Set a timer to remove the after 2 seconds (2000ms)
               setTimeout(() => {

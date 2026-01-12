@@ -2,7 +2,7 @@
 
 {% block htmltitle %}
   {%- if page.is_homepage -%}
-    <title>Moonbeam Docs</title>
+    <title>{{ t('material_overrides.home.moonbeam_docs') }}</title>
   {%- endif -%}
 {% endblock %}
 
@@ -14,87 +14,86 @@
 <div class="home">
   <div class="row hero">
     <div class="column hero-column">
-      <h1 class="hero-title">Moonbeam Network Resources & Documentation</h1>
-      <h2 class="hero-info">Moonbeam combines the best of both worlds: the familiar and easy-to-use tooling of Ethereum
-        and the scalable, interoperable architecture of Polkadot.
+      <h1 class="hero-title">{{ t('material_overrides.home.moonbeam_network_resources_documentation') }}</h1>
+      <h2 class="hero-info">{{ t('material_overrides.home.moonbeam_combines_the_best_of_both_worlds_the_familiar_and_easy_to_use_tooling_of_ethereum_and_the_scalable_interoperable_architecture_of_polkadot') }}
         <br><br>
-        Dive into the tools, integrations, and comprehensive tutorials to start using and building on Moonbeam.
+        {{ t('material_overrides.home.dive_into_the_tools_integrations_and_comprehensive_tutorials_to_start_using_and_building_on_moonbeam') }}
       </h2>
       <div class="row hero-buttons">
         <a href="/builders/get-started/">
-          <button class="pink-primary-button md-button">Start Building <span class="md-icon">{% include
+          <button class="pink-primary-button md-button">{{ t('material_overrides.home.start_building') }} <span class="md-icon">{% include
               ".icons/material/arrow-right.svg" %}</span></button>
         </a>
         <a href="https://immunefi.com/bug-bounty/moonbeamnetwork/">
-          <button class="pink-secondary-button md-button">Bug Bounty <span class="md-icon">{% include
+          <button class="pink-secondary-button md-button">{{ t('material_overrides.home.bug_bounty') }} <span class="md-icon">{% include
               ".icons/material/arrow-right.svg" %}</span></button>
         </a>
         <a href="https://moonbeam.network/build/grants">
-          <button class="pink-secondary-button md-button">Grants Program <span class="md-icon">{% include
+          <button class="pink-secondary-button md-button">{{ t('material_overrides.home.grants_program') }} <span class="md-icon">{% include
               ".icons/material/arrow-right.svg" %}</span></button>
         </a>
       </div>
       <div class="row quick-refs">
-        <p class="quick-ref-title">Quick References</p>
+        <p class="quick-ref-title">{{ t('material_overrides.home.quick_references') }}</p>
         <div class="quick-ref-buttons">
           <a href="/learn/features/eth-compatibility/">
-            <button class="md-button quick-ref-button">Moonbeam vs Ethereum</button>
+            <button class="md-button quick-ref-button">{{ t('material_overrides.home.moonbeam_vs_ethereum') }}</button>
           </a>
           <a href="/builders/ethereum/canonical-contracts/">
-            <button class="md-button quick-ref-button">Canonical Contracts</button>
+            <button class="md-button quick-ref-button">{{ t('material_overrides.home.canonical_contracts') }}</button>
           </a>
           <a href="/builders/get-started/endpoints/">
-            <button class="md-button quick-ref-button">Network Endpoints</button>
+            <button class="md-button quick-ref-button">{{ t('material_overrides.home.network_endpoints') }}</button>
           </a>
           <a href="/learn/core-concepts/security/">
-            <button class="md-button quick-ref-button">Security Considerations</button>
+            <button class="md-button quick-ref-button">{{ t('material_overrides.home.security_considerations') }}</button>
           </a>
           <a href="/builders/build/historical-updates/">
-            <button class="md-button quick-ref-button">Historical Updates</button>
+            <button class="md-button quick-ref-button">{{ t('material_overrides.home.historical_updates') }}</button>
           </a>
           <a href="/ai-resources/ai-resources/">
-            <button class="md-button quick-ref-button">AI-Compatible Docs</button>
+            <button class="md-button quick-ref-button">{{ t('material_overrides.home.ai_compatible_docs') }}</button>
           </a>
         </div>
       </div>
     </div>
     <div class="column">
-      <img class="hero-img" src="{{ '/assets/images/organism.webp' }}" alt="representation of the Moonbeam docs site" width="668" height="668"/>
+      <img class="hero-img" src="{{ '/assets/images/organism.webp' }}" alt="{{ t('material_overrides.home.representation_of_the_moonbeam_docs_site') }}" width="668" height="668"/>
     </div>
   </div>
   <div class="row hero-buttons-small">
     <div class="row hero-buttons">
       <a href="/builders/get-started/">
-        <button class="pink-primary-button md-button">Start Building <span class="md-icon">{% include
+        <button class="pink-primary-button md-button">{{ t('material_overrides.home.start_building') }} <span class="md-icon">{% include
             ".icons/material/arrow-right.svg" %}</span></button>
       </a>
       <a href="https://immunefi.com/bug-bounty/moonbeamnetwork/">
-        <button class="pink-secondary-button md-button">Bug Bounty <span class="md-icon">{% include
+        <button class="pink-secondary-button md-button">{{ t('material_overrides.home.bug_bounty') }} <span class="md-icon">{% include
             ".icons/material/arrow-right.svg" %}</span></button>
       </a>
       <a href="https://moonbeam.network/build/grants">
-        <button class="pink-secondary-button md-button">Grants Program <span class="md-icon">{% include
+        <button class="pink-secondary-button md-button">{{ t('material_overrides.home.grants_program') }} <span class="md-icon">{% include
             ".icons/material/arrow-right.svg" %}</span></button>
       </a>
     </div>
   </div>
   <div class="row quick-refs-medium">
-    <p class="quick-ref-title">Quick References</p>
+    <p class="quick-ref-title">{{ t('material_overrides.home.quick_references') }}</p>
     <div class="quick-ref-buttons">
       <a href="/learn/features/eth-compatibility/">
-        <button class="md-button quick-ref-button">Moonbeam vs Ethereum</button>
+        <button class="md-button quick-ref-button">{{ t('material_overrides.home.moonbeam_vs_ethereum') }}</button>
       </a>
       <a href="/builders/ethereum/canonical-contracts/">
-        <button class="md-button quick-ref-button">Canonical Contracts</button>
+        <button class="md-button quick-ref-button">{{ t('material_overrides.home.canonical_contracts') }}</button>
       </a>
       <a href="/builders/get-started/endpoints/">
-        <button class="md-button quick-ref-button">Network Endpoints</button>
+        <button class="md-button quick-ref-button">{{ t('material_overrides.home.network_endpoints') }}</button>
       </a>
       <a href="/learn/core-concepts/security/">
-        <button class="md-button quick-ref-button">Security Considerations</button>
+        <button class="md-button quick-ref-button">{{ t('material_overrides.home.security_considerations') }}</button>
       </a>
       <a href="/builders/build/historical-updates/">
-        <button class="md-button quick-ref-button">Historical Updates</button>
+        <button class="md-button quick-ref-button">{{ t('material_overrides.home.historical_updates') }}</button>
       </a>
     </div>
   </div>
@@ -102,30 +101,29 @@
     <div class="card">
       <div class="card-header">
         <a href="/builders/">
-          <h2 class="card-title">Building on Moonbeam</h2>
+          <h2 class="card-title">{{ t('material_overrides.home.building_on_moonbeam') }}</h2>
         </a>
-        <img src="{{ '/assets/images/builders.webp' }}" alt="builders" width="55" height="55"/>
+        <img src="{{ '/assets/images/builders.webp' }}" alt="{{ t('material_overrides.home.builders') }}" width="55" height="55"/>
       </div>
       <div>
-        <p class="card-info">Learn how to build a new application or deploy existing Solidity/Vyper smart contracts to
-          Moonbeam, Moonriver, or the Moonbase Alpha TestNet.</p>
+        <p class="card-info">{{ t('material_overrides.home.learn_how_to_build_a_new_application_or_deploy_existing_solidity_vyper_smart_contracts_to_moonbeam_moonriver_or_the_moonbase_alpha_testnet') }}</p>
       </div>
       <div>
-        <a class="learn-more" href="/builders/">Learn More <span>{% include
+        <a class="learn-more" href="/builders/">{{ t('material_overrides.home.learn_more') }} <span>{% include
             ".icons/material/arrow-right.svg" %}</span></a>
       </div>
       <div>
-        <p class="card-info in-this-section">In this section</p>
+        <p class="card-info in-this-section">{{ t('material_overrides.home.in_this_section') }}</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="Icon of a page" width="12.27" height="14.4">
+          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="/builders/get-started/endpoints/">
-            How to get your own API endpoint for Moonbeam-based networks
+            {{ t('material_overrides.home.how_to_get_your_own_api_endpoint_for_moonbeam_based_networks') }}
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="Icon of a page" width="12.27" height="14.4">
+          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="/builders/ethereum/">
-            How to use Ethereum tools to send transactions & deploy contracts
+            {{ t('material_overrides.home.how_to_use_ethereum_tools_to_send_transactions_deploy_contracts') }}
           </a>
         </div>
       </div>
@@ -133,30 +131,29 @@
     <div class="card">
       <div class="card-header">
         <a href="/node-operators/">        
-          <h2 class="card-title">Operating a Node</h2>
+          <h2 class="card-title">{{ t('material_overrides.home.operating_a_node') }}</h2>
         </a>
-        <img src="{{ '/assets/images/node-operators.webp' }}" alt="node operators" width="55" height="55"/>
+        <img src="{{ '/assets/images/node-operators.webp' }}" alt="{{ t('material_overrides.home.node_operators') }}" width="55" height="55"/>
       </div>
       <div>
-        <p class="card-info">Everything you need to know about running a node on Moonbeam and Moonriver, how to become a
-          collator, and more.</p>
+        <p class="card-info">{{ t('material_overrides.home.everything_you_need_to_know_about_running_a_node_on_moonbeam_and_moonriver_how_to_become_a_collator_and_more') }}</p>
       </div>
       <div>
-        <a class="learn-more" href="/node-operators/">Learn More <span>{% include
+        <a class="learn-more" href="/node-operators/">{{ t('material_overrides.home.learn_more') }} <span>{% include
             ".icons/material/arrow-right.svg" %}</span></a>
       </div>
       <div>
-        <p class="card-info in-this-section">In this section</p>
+        <p class="card-info in-this-section">{{ t('material_overrides.home.in_this_section') }}</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="Icon of a page" width="12.27" height="14.4">
+          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="/node-operators/networks/run-a-node/overview/">
-            How to set up a Moonbeam-based node
+            {{ t('material_overrides.home.how_to_set_up_a_moonbeam_based_node') }}
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="Icon of a page" width="12.27" height="14.4">
+          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="/node-operators/networks/collators/">
-            Learn about collator requirements and how to spin up a collator node
+            {{ t('material_overrides.home.learn_about_collator_requirements_and_how_to_spin_up_a_collator_node') }}
           </a>
         </div>
       </div>
@@ -164,30 +161,29 @@
     <div class="card">
       <div class="card-header">
         <a href="/tokens/">
-          <h2 class="card-title">Using Your MOVR & GLMR Tokens</h2>
+          <h2 class="card-title">{{ t('material_overrides.home.using_your_movr_glmr_tokens') }}</h2>
         </a>
-        <img src="{{ '/assets/images/tokens.webp' }}" alt="tokens" width="55" height="55"/>
+        <img src="{{ '/assets/images/tokens.webp' }}" alt="{{ t('material_overrides.home.tokens') }}" width="55" height="55"/>
       </div>
       <div>
-        <p class="card-info">A series of guides showing you how and where you can use your MOVR and GLMR tokens with
-          wallets/DApps or earn rewards through staking.</p>
+        <p class="card-info">{{ t('material_overrides.home.a_series_of_guides_showing_you_how_and_where_you_can_use_your_movr_and_glmr_tokens_with_wallets_dapps_or_earn_rewards_through_staking') }}</p>
       </div>
       <div>
-        <a class="learn-more" href="/tokens/">Learn More <span>{% include
+        <a class="learn-more" href="/tokens/">{{ t('material_overrides.home.learn_more') }} <span>{% include
             ".icons/material/arrow-right.svg" %}</span></a>
       </div>
       <div>
-        <p class="card-info in-this-section">In this section</p>
+        <p class="card-info in-this-section">{{ t('material_overrides.home.in_this_section') }}</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="Icon of a page" width="12.27" height="14.4">
+          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="/tokens/connect/metamask/">
-            How to connect MetaMask to Moonbeam-based networks
+            {{ t('material_overrides.home.how_to_connect_metamask_to_moonbeam_based_networks') }}
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="Icon of a page" width="12.27" height="14.4">
+          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="/tokens/staking/stake/">
-            How to stake (delegate) a collator
+            {{ t('material_overrides.home.how_to_stake_delegate_a_collator') }}
           </a>
         </div>
       </div>
@@ -195,30 +191,29 @@
     <div class="card">
       <div class="card-header">
         <a href="/learn/">
-          <h2 class="card-title">Learning About Moonbeam</h2>
+          <h2 class="card-title">{{ t('material_overrides.home.learning_about_moonbeam') }}</h2>
         </a>
         <img src="{{ '/assets/images/learn.webp' }}" alt="learn" width="55" height="55"/>
       </div>
       <div>
-        <p class="card-info">Dive into the Moonbeam ecosystem and learn what makes this approach to Ethereum compatibility
-          so compelling.</p>
+        <p class="card-info">{{ t('material_overrides.home.dive_into_the_moonbeam_ecosystem_and_learn_what_makes_this_approach_to_ethereum_compatibility_so_compelling') }}</p>
       </div>
       <div>
-        <a class="learn-more" href="/learn/">Learn More <span>{% include
+        <a class="learn-more" href="/learn/">{{ t('material_overrides.home.learn_more') }} <span>{% include
             ".icons/material/arrow-right.svg" %}</span></a>
       </div>
       <div>
-        <p class="card-info in-this-section">In this section</p>
+        <p class="card-info in-this-section">{{ t('material_overrides.home.in_this_section') }}</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="Icon of a page" width="12.27" height="14.4">
+          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="/builders/get-started/networks/">
-            Moonbeam network overview
+            {{ t('material_overrides.home.moonbeam_network_overview') }}
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="Icon of a page" width="12.27" height="14.4">
+          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="/learn/dapp-directory/">
-            Explore the DApp directory
+            {{ t('material_overrides.home.explore_the_dapp_directory') }}
           </a>
         </div>
       </div>

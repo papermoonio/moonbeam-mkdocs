@@ -1,6 +1,6 @@
 {#- This file was automatically generated - do not edit -#}
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header.title') }}">
+  <nav class="md-header__inner md-grid" aria-label="{{ t('header.title') }}">
     <div class="md-header__left-nav">
       <a href="{{ config.site_url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo"
         aria-label="{{ config.site_name }}">
@@ -28,10 +28,10 @@
             ".icons/material/chevron-up.svg" %}</span>
       </div>
       <a href="#" class="md-header__button md-button connectMetaMask-nav md-typeset">
-        Connect Wallet
+        {{ t('material_overrides.partials.header.connect_wallet') }}
       </a>
       <a class="md-header__button md-button faucet md-typeset" href="https://faucet.moonbeam.network/" target="_blank">
-        Faucet
+        {{ t('material_overrides.partials.header.faucet') }}
       </a>
       {% if "material/search" in config["plugins"] %}
       <label class="md-header__button md-icon" for="__search">
