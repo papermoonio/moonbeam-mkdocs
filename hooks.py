@@ -438,10 +438,13 @@ def on_post_build(config):
         target_path.write_text(json.dumps(localized, ensure_ascii=False), encoding="utf-8")
 
     translator = _build_translator(config)
-    title_map = {
-        lang_cfg.locale: translator("error.404_title", lang=lang_cfg.locale)
-        for lang_cfg in i18n_plugin.config.languages
-    }
+    title_map = {}
+    for lang_cfg in i18n_plugin.config.languages:
+        locale = lang_cfg.locale
+        title = translator("material_overrides.404.404_not_found", lang=locale)
+        if not title or title == "material_overrides.404.404_not_found":
+            title = translator("error.404_title", lang=locale)
+        title_map[locale] = title
     locale_payload = {
         "locales": languages,
         "default": default_lang,
@@ -475,13 +478,18 @@ def on_post_build(config):
     if (window.__md_set) {{ try {{ __md_set("language", locale); }} catch(e) {{}} }}
     document.documentElement.setAttribute("lang", locale);
     var label = document.querySelector(".language-picker__label");
-    if (label) label.textContent = locale.toUpperCase();
+    var labelText = locale.toUpperCase();
+    if (locale && locale.toLowerCase().indexOf("zh") === 0) labelText = "\\u4e2d\\u6587";
+    if (label) label.textContent = labelText;
     document.querySelectorAll(".language-picker__code").forEach(function(el) {{
-      el.textContent = el.textContent.trim().toUpperCase();
-      if (el.closest("a")) {{
-        var hrefLang = el.closest("a").getAttribute("hreflang");
-        el.closest("a").classList.toggle("is-active", hrefLang === locale);
+      var link = el.closest("a");
+      var hrefLang = link ? (link.getAttribute("hreflang") || "") : "";
+      if (hrefLang.toLowerCase().indexOf("zh") === 0) {{
+        el.textContent = "\\u4e2d\\u6587";
+      }} else {{
+        el.textContent = el.textContent.trim().toUpperCase();
       }}
+      if (link) link.classList.toggle("is-active", hrefLang === locale);
     }});
     document.querySelectorAll('.language-picker__menu a[hreflang]').forEach(function(a) {{
       a.classList.toggle("is-active", a.getAttribute("hreflang") === locale);

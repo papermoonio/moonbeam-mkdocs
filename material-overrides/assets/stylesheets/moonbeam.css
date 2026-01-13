@@ -206,7 +206,7 @@ body[data-scroll-locked] {
 }
 
 .language-picker__label {
-  font-size: 0.55rem;
+  font-size: 0.6rem;
 }
 
 .language-picker__menu {
@@ -264,7 +264,7 @@ body[data-scroll-locked] {
   padding: 0.35rem 0.65rem;
   text-decoration: none;
   color: var(--teal-light);
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
