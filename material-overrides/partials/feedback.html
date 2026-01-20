@@ -10,14 +10,19 @@
   {% endif %}
 {% endif %}
 {% if feedback %}
-  <form class="md-feedback" name="feedback" hidden>
+  <form class="md-feedback" name="feedback" data-md-component="feedback">
     <fieldset>
       <legend class="md-feedback__title">
-        {{ feedback.title }}
+        {{ t("material_overrides.partials.feedback.title") or feedback.title }}
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           {% for rating in feedback.ratings %}
+            {% if rating.data == 1 %}
+              {% set rating_name = t("material_overrides.partials.feedback.rating_up_name") or rating.name %}
+            {% else %}
+              {% set rating_name = t("material_overrides.partials.feedback.rating_down_name") or rating.name %}
+            {% endif %}
             <button class="md-feedback__icon md-icon" type="submit" title="{{ rating.name }}" data-md-value="{{ rating.data }}">
               {% include ".icons/" ~ rating.icon ~ ".svg" %}
             </button>
@@ -32,12 +37,17 @@
               {% else %}
                 {% set title = page.title | urlencode %}
               {% endif %}
-              {{ rating.note.format(url = url, title = title) }}
+              {% if rating.data == 1 %}
+                {% set rating_note = t("material_overrides.partials.feedback.rating_up_note") or rating.note %}
+              {% else %}
+                {% set rating_note = t("material_overrides.partials.feedback.rating_down_note") or rating.note %}
+              {% endif %}
+              {{ rating_note.format(url = url, title = title) }}
             </div>
           {% endfor %}
         </div>
       </div>
     </fieldset>
-    <div class="divider"></div> {{ t('material_overrides.partials.feedback.divider') }}
+    <div class="divider"></div>
   </form>
 {% endif %}
