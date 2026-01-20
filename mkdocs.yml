@@ -18,15 +18,15 @@ extra_javascript:
   - js/clipboardCopyllms.js
   - js/cookbookEventHandler.js
 extra_css:
-  - /assets/stylesheets/moonbeam.css
-  - /assets/stylesheets/termynal.css
-  - /assets/stylesheets/timeline-neoteroi.css
+  - assets/stylesheets/moonbeam.css
+  - assets/stylesheets/termynal.css
+  - assets/stylesheets/timeline-neoteroi.css
 theme:
   name: material
   custom_dir: material-overrides
   language: en
-  favicon: /assets/images/favicon.webp
-  logo: /assets/images/logo.webp
+  favicon: assets/images/favicon.webp
+  logo: assets/images/logo.webp
   icon:
     edit: fontawesome/brands/github
   font:
@@ -110,9 +110,9 @@ plugins:
         - js/clipboardCopyllms.js
         - js/cookbookEventHandler.js
       css_files:
-        - /assets/stylesheets/timeline-neoteroi.css
-        - /assets/stylesheets/termynal.css
-        - /assets/stylesheets/moonbeam.css
+        - assets/stylesheets/timeline-neoteroi.css
+        - assets/stylesheets/termynal.css
+        - assets/stylesheets/moonbeam.css
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
