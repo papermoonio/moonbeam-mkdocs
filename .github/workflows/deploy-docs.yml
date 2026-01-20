@@ -54,5 +54,9 @@ jobs:
       - name: Replace `/assets` with `assets`
         run: |
           find . -type f -exec sed -i 's|/assets|assets|g' {} +
+      - name: Set site_url for GitHub Pages base path
+        run: |
+          BASE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          sed -i "s#^site_url:.*#site_url: ${BASE_URL}#" mkdocs.yml
       - name: Deploy Docs
         run: mkdocs gh-deploy --force --clean --site-dir ./site
