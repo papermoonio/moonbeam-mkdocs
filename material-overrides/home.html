@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block extrahead %}
-  <link rel="preload" as="image" href="/assets/images/organism.webp">
+  <link rel="preload" as="image" href="{{ 'assets/images/organism.webp' | url }}">
 {% endblock %}
 
 {% block content %}
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="column">
-      <img class="hero-img" src="{{ '/assets/images/organism.webp' }}" alt="{{ t('material_overrides.home.representation_of_the_moonbeam__37d819') }}" width="668" height="668"/>
+      <img class="hero-img" src="{{ 'assets/images/organism.webp' | url }}" alt="{{ t('material_overrides.home.representation_of_the_moonbeam__37d819') }}" width="668" height="668"/>
     </div>
   </div>
   <div class="row hero-buttons-small">
@@ -103,7 +103,7 @@
         <a href="builders/">
           <h2 class="card-title">{{ t('material_overrides.home.building_on_moonbeam') }}</h2>
         </a>
-        <img src="{{ '/assets/images/builders.webp' }}" alt="{{ t('material_overrides.home.builders') }}" width="55" height="55"/>
+        <img src="{{ 'assets/images/builders.webp' | url }}" alt="{{ t('material_overrides.home.builders') }}" width="55" height="55"/>
       </div>
       <div>
         <p class="card-info">{{ t('material_overrides.home.learn_how_to_build__870c14') }}</p>
@@ -115,13 +115,13 @@
       <div>
         <p class="card-info in-this-section">{{ t('material_overrides.home.in_this_section') }}</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
+          <img src="{{ 'assets/images/page.svg' | url }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="builders/get-started/endpoints/">
             {{ t('material_overrides.home.how_to_get_your__d48411') }}
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
+          <img src="{{ 'assets/images/page.svg' | url }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="builders/ethereum/">
             {{ t('material_overrides.home.how_to_use_ethereum__7f58d5') }}
           </a>
@@ -133,7 +133,7 @@
         <a href="node-operators/">
           <h2 class="card-title">{{ t('material_overrides.home.operating_a_node') }}</h2>
         </a>
-        <img src="{{ '/assets/images/node-operators.webp' }}" alt="{{ t('material_overrides.home.node_operators') }}" width="55" height="55"/>
+        <img src="{{ 'assets/images/node-operators.webp' | url }}" alt="{{ t('material_overrides.home.node_operators') }}" width="55" height="55"/>
       </div>
       <div>
         <p class="card-info">{{ t('material_overrides.home.everything_you_need_to__0e7eae') }}</p>
@@ -145,13 +145,13 @@
       <div>
         <p class="card-info in-this-section">{{ t('material_overrides.home.in_this_section') }}</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
+          <img src="{{ 'assets/images/page.svg' | url }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="node-operators/networks/run-a-node/overview/">
             {{ t('material_overrides.home.how_to_set_up__030179') }}
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
+          <img src="{{ 'assets/images/page.svg' | url }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="node-operators/networks/collators/">
             {{ t('material_overrides.home.learn_about_collator_requirements__ad8f20') }}
           </a>
@@ -163,7 +163,7 @@
         <a href="tokens/">
           <h2 class="card-title">{{ t('material_overrides.home.using_your_movr_glmr__4a127c') }}</h2>
         </a>
-        <img src="{{ '/assets/images/tokens.webp' }}" alt="{{ t('material_overrides.home.tokens') }}" width="55" height="55"/>
+        <img src="{{ 'assets/images/tokens.webp' | url }}" alt="{{ t('material_overrides.home.tokens') }}" width="55" height="55"/>
       </div>
       <div>
         <p class="card-info">{{ t('material_overrides.home.a_series_of_guides__141194') }}</p>
@@ -175,13 +175,13 @@
       <div>
         <p class="card-info in-this-section">{{ t('material_overrides.home.in_this_section') }}</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
+          <img src="{{ 'assets/images/page.svg' | url }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="tokens/connect/metamask/">
             {{ t('material_overrides.home.how_to_connect_metamask__e5c8c5') }}
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
+          <img src="{{ 'assets/images/page.svg' | url }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="tokens/staking/stake/">
             {{ t('material_overrides.home.how_to_stake_delegate__1d2881') }}
           </a>
@@ -193,7 +193,7 @@
         <a href="learn/">
           <h2 class="card-title">{{ t('material_overrides.home.learning_about_moonbeam') }}</h2>
         </a>
-        <img src="{{ '/assets/images/learn.webp' }}" alt="learn" width="55" height="55"/>
+        <img src="{{ 'assets/images/learn.webp' | url }}" alt="learn" width="55" height="55"/>
       </div>
       <div>
         <p class="card-info">{{ t('material_overrides.home.dive_into_the_moonbeam__b76b96') }}</p>
@@ -205,13 +205,13 @@
       <div>
         <p class="card-info in-this-section">{{ t('material_overrides.home.in_this_section') }}</p>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
+          <img src="{{ 'assets/images/page.svg' | url }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="builders/get-started/networks/">
             {{ t('material_overrides.home.moonbeam_network_overview') }}
           </a>
         </div>
         <div class="in-this-section-item">
-          <img src="{{ '/assets/images/page.svg' }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
+          <img src="{{ 'assets/images/page.svg' | url }}" alt="{{ t('material_overrides.home.icon_of_a_page') }}" width="12.27" height="14.4">
           <a class="in-this-section-link" href="learn/dapp-directory/">
             {{ t('material_overrides.home.explore_the_dapp_directory') }}
           </a>

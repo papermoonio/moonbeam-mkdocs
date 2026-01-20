@@ -29,8 +29,8 @@
                           {% else %}
                             {% set icon_key = path_parts[0] %}
                           {% endif %}
-                          {% set icon_url = "/assets/images/dropdown-icons/" + icon_key + ".webp" %}
-                          <img class="dropdown-icon" src="{{ icon_url }}" alt="{{ section_item.title }}" loading="lazy">
+                          {% set icon_url = "assets/images/dropdown-icons/" + icon_key + ".webp" %}
+                          <img class="dropdown-icon" src="{{ icon_url | url }}" alt="{{ section_item.title }}" loading="lazy">
                         </div>
                         <div class="text-col">
                           <span class="dropdown-title">{{ section_item.title }}</span>
@@ -53,8 +53,8 @@
                           {% else %}
                             {% set icon_key = path_parts[0] %}
                           {% endif %}
-                          {% set icon_url = "/assets/images/dropdown-icons/" + icon_key + ".webp" %}
-                          <img class="dropdown-icon" src="{{ icon_url }}" alt="{{ section_item.title }}" loading="lazy">
+                          {% set icon_url = "assets/images/dropdown-icons/" + icon_key + ".webp" %}
+                          <img class="dropdown-icon" src="{{ icon_url | url }}" alt="{{ section_item.title }}" loading="lazy">
                         </div>
                         <div class="text-col">
                           <span class="dropdown-title">{{ section_item.title }}</span>
