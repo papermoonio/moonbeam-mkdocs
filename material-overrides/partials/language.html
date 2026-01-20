@@ -47,7 +47,12 @@
       <ul>
         {% for alt in config.extra.alternate %}
           {% if page is defined %}
-            {% set lang_href = alt.link | url %}
+            {% set lang_href = alt.link %}
+            {% if lang_href[:1] == "/" %}
+              {% set lang_href = base_url ~ lang_href %}
+            {% else %}
+              {% set lang_href = lang_href | url %}
+            {% endif %}
           {% else %}
             {% set lang_href = alt.link %}
           {% endif %}
