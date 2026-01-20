@@ -1,0 +1,3 @@
+[mkdocs.plugins]
+copy_md = plugins.copy_md.plugin:CopyMDPlugin
+minify = plugins.minify.plugin:MinifyPlugin

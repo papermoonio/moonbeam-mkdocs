@@ -1,0 +1,3 @@
+[mkdocs.plugins]
+awesome-nav=mkdocs_awesome_nav.plugin:AwesomeNavPlugin
+

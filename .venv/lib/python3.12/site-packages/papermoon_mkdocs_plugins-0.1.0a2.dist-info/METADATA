@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: papermoon-mkdocs-plugins
+Version: 0.1.0a2
+Summary: A collection of MkDocs plugins
+Author: Papermoon
+License-Expression: BSD-2-Clause
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mkdocs>=1.6
+Requires-Dist: mkdocs-material>=9.0
+Requires-Dist: pymdown-extensions>=10.0
+Requires-Dist: htmlmin>=0.1.12
+Requires-Dist: jsmin>=3.0.1
+Requires-Dist: csscompressor>=0.9.5
+Dynamic: license-file
+
+# MkDocs Plugins Collection
+
+A collection of custom [MkDocs](https://www.mkdocs.org/) plugins designed to extend [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
+
+Currently included:
+
+- **[Copy Markdown](https://github.com/papermoonio/mkdocs-plugins/blob/main/docs/copy-md.md)**: Serve raw Markdown files by copying them directly to your site's build folder.
+- **[Minify](https://github.com/papermoonio/mkdocs-plugins/blob/main/docs/minify.md)**: Minify HTML, JS, and CSS files globally or by scope to optimize your site's performance.
+
+## Installation
+
+Install the plugins using pip from PyPI:
+
+```bash
+pip install papermoon-mkdocs-plugins
+```
+
+## Usage
+
+Enable one or more plugins in your `mkdocs.yml`:
+
+```yaml
+plugins:
+  - copy_md:
+      source_dir: docs/.example
+      target_dir: example
+  - minify:
+      minify_html: true
+      minify_css: true
+      minify_js: true
+```
+## License
+
+This repository is licensed under the [BSD-2-Clause License](LICENSE).

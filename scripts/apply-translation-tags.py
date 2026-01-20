@@ -292,6 +292,100 @@ def _iter_template_files(targets, extensions):
                 yield path
 
 
+def _ingest_snippet_locale(
+    snippet_root,
+    root,
+    min_length,
+    locale_data,
+    used_keys,
+    value_to_key,
+    dry_run=False,
+):
+    added = []
+    if not snippet_root.exists():
+        return added
+    allowed = {"_common", "_disclaimers"}
+    for path in snippet_root.rglob("*"):
+        if not path.is_file():
+            continue
+        parts = path.relative_to(snippet_root).parts
+        if not parts:
+            continue
+        if parts[0] not in allowed:
+            continue
+        try:
+            raw = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+        value = raw.strip()
+        if len(value) < min_length:
+            continue
+        key = _path_prefix(path, root) or _short_key_slug(path.stem, MAX_KEY_WORDS)
+        if key in used_keys:
+            continue
+        _ensure_key(locale_data, key, value)
+        used_keys.add(key)
+        value_to_key.setdefault(value, key)
+        added.append(key)
+    return added
+
+
+def _inject_feedback_from_config(root, locale_data, used_keys):
+    mkdocs_path = root / "mkdocs.yml"
+    if not mkdocs_path.exists():
+        return []
+    try:
+        cfg = yaml.safe_load(mkdocs_path.read_text(encoding="utf-8")) or {}
+    except Exception:
+        return []
+    extra = cfg.get("extra") or {}
+    analytics = extra.get("analytics") or {}
+    feedback = analytics.get("feedback") or {}
+    if not isinstance(feedback, dict):
+        return []
+
+    def set_if_absent(key, value):
+        if key not in used_keys and value:
+            _ensure_key(locale_data, key, value)
+            used_keys.add(key)
+
+    added = []
+    set_if_absent("partials.feedback.title", feedback.get("title"))
+    ratings = feedback.get("ratings") or []
+    if isinstance(ratings, list):
+        for item in ratings:
+            if not isinstance(item, dict):
+                continue
+            data_val = item.get("data")
+            if data_val == 1:
+                set_if_absent("partials.feedback.rating_up_name", item.get("name"))
+                set_if_absent("partials.feedback.rating_up_note", item.get("note"))
+                added.extend(
+                    [
+                        k
+                        for k in [
+                            "partials.feedback.rating_up_name",
+                            "partials.feedback.rating_up_note",
+                        ]
+                        if k in used_keys
+                    ]
+                )
+            elif data_val == 0:
+                set_if_absent("partials.feedback.rating_down_name", item.get("name"))
+                set_if_absent("partials.feedback.rating_down_note", item.get("note"))
+                added.extend(
+                    [
+                        k
+                        for k in [
+                            "partials.feedback.rating_down_name",
+                            "partials.feedback.rating_down_note",
+                        ]
+                        if k in used_keys
+                    ]
+                )
+    return added
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Apply translation tags to templates and write a locale file."
@@ -351,6 +445,11 @@ def main():
         help="Skip standardizing lang.t()/trans() to t().",
     )
     parser.add_argument(
+        "--skip-snippets",
+        action="store_true",
+        help="Skip ingesting .snippets/text content into the locale file.",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Show files that would change without writing.",
@@ -362,10 +461,10 @@ def main():
     else:
         cwd = Path.cwd()
         root = cwd if (cwd / "mkdocs.yml").exists() else Path(__file__).resolve().parents[1]
+    docs_dir = _load_docs_dir(root)
     if args.locale_file:
         locale_path = args.locale_file
     else:
-        docs_dir = _load_docs_dir(root)
         docs_path = Path(docs_dir)
         if not docs_path.is_absolute():
             docs_path = root / docs_path
@@ -436,6 +535,25 @@ def main():
             _ensure_key(locale_data, key, _humanize_key(key))
             used_keys.add(key)
 
+    snippet_msg = ""
+    if args.skip_snippets:
+        snippet_msg = "Skipped .snippets/text ingestion."
+        snippet_added = []
+    else:
+        snippet_root = (root / docs_dir) / ".snippets" / "text"
+        snippet_added = _ingest_snippet_locale(
+            snippet_root,
+            root,
+            args.min_length,
+            locale_data,
+            used_keys,
+            value_to_key,
+            dry_run=args.dry_run,
+        )
+        snippet_msg = f"Snippet keys added: {len(snippet_added)}" if snippet_added else "No snippet keys added."
+
+    feedback_added = _inject_feedback_from_config(root, locale_data, used_keys)
+
     locale_written = False
     if not args.skip_locale_write and locale_data and not args.dry_run:
         locale_path.parent.mkdir(parents=True, exist_ok=True)
@@ -458,10 +576,11 @@ def main():
         for path in changed_files:
             print(f"Updated {path}")
     print(
-        "Scanned {scanned} file(s). Updated {updated}. Locale written: {written}.".format(
+        "Scanned {scanned} file(s). Updated {updated}. Locale written: {written}. {snippet}".format(
             scanned=scanned_files,
             updated=len(changed_files),
             written="yes" if locale_written else "no",
+            snippet=f"{snippet_msg} Feedback keys added: {len(feedback_added)}",
         )
     )
 

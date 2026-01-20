@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+exclude-search = mkdocs_exclude_search:ExcludeSearch
