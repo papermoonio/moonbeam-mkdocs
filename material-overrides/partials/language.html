@@ -8,7 +8,8 @@
 {%- endmacro -%}
 
 {% if config.extra.alternate %}
-  {% set base_lang = config.theme.language | default("en") %}
+  {% set default_lang = config.theme.language | default("en") %}
+  {% set base_lang = default_lang %}
   {% if page is defined and page.lang %}
     {% set base_lang = page.lang %}
   {% endif %}
@@ -47,9 +48,9 @@
       <ul>
         {% for alt in config.extra.alternate %}
           {% if page is defined %}
-            {% set lang_href = alt.link %}
-            {% if lang_href[:1] == "/" %}
-              {% set lang_href = lang_href[1:] %}
+            {% set lang_href = "" %}
+            {% if alt.lang != default_lang %}
+              {% set lang_href = alt.lang ~ "/" %}
             {% endif %}
             {% set lang_href = lang_href | url %}
           {% else %}

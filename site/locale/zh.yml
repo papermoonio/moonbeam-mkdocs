@@ -1,0 +1,97 @@
+material_overrides:
+  home:
+    explore_the_dapp_directory: 探索 DApp 目录
+    icon_of_a_page: 页面图标
+    moonbeam_network_overview: Moonbeam 网络概览
+    in_this_section: 在本节中
+    learn_more: 了解更多
+    dive_into_the_moonbeam__b76b96: |-
+      深入了解 Moonbeam 生态系统，了解这种以太坊兼容性方法的引人之处。
+    learning_about_moonbeam: 了解 Moonbeam
+    how_to_stake_delegate__1d2881: 如何质押（委托）收集人
+    how_to_connect_metamask__e5c8c5: 如何将 MetaMask 连接到基于 Moonbeam 的网络
+    a_series_of_guides__141194: |-
+      一系列指南，向您展示如何以及在何处将您的 MOVR 和 GLMR 代币与钱包/DApp 一起使用，或者通过质押赚取奖励。
+    tokens: 代币
+    using_your_movr_glmr__4a127c: 使用您的 MOVR 和 GLMR 代币
+    learn_about_collator_requirements__ad8f20: 了解收集人的要求以及如何启动收集人节点
+    how_to_set_up__030179: 如何设置基于 Moonbeam 的节点
+    everything_you_need_to__0e7eae: |-
+      运行 Moonbeam 和 Moonriver 节点所需的一切，如何成为收集人等等。
+    node_operators: 节点运营商
+    operating_a_node: 运营节点
+    how_to_use_ethereum__7f58d5: 如何使用以太坊工具发送交易和部署合约
+    how_to_get_your__d48411: 如何获得基于 Moonbeam 的网络的 API 端点
+    learn_how_to_build__870c14: |-
+      了解如何构建新应用程序或将现有的 Solidity/Vyper 智能合约部署到 Moonbeam、Moonriver 或 Moonbase Alpha 测试网。
+    builders: 开发者
+    building_on_moonbeam: 在 Moonbeam 上构建
+    historical_updates: 历史更新
+    security_considerations: 安全注意事项
+    network_endpoints: 网络端点
+    canonical_contracts: 标准合约
+    moonbeam_vs_ethereum: Moonbeam vs Ethereum
+    quick_references: 快速参考
+    grants_program: 资助计划
+    bug_bounty: 漏洞赏金
+    start_building: 开始构建
+    representation_of_the_moonbeam__37d819: Moonbeam 文档站点的表示
+    ai_compatible_docs: AI 兼容文档
+    dive_into_the_tools__9abd82: 深入了解工具、集成和全面的教程，开始使用 Moonbeam 并基于其构建。
+    moonbeam_combines_the_best__3448ca: |-
+      Moonbeam 结合了两全其美的优势：以太坊熟悉且易于使用的工具，以及 Polkadot 可扩展、可互操作的架构。
+    moonbeam_network_resources_documentation: Moonbeam 网络资源和文档
+    moonbeam_docs: Moonbeam 文档
+  '404':
+    404_not_found: 404 - 未找到
+  main:
+    the_new_minimum_gas__85f959: 新的最低gas费
+    as_of_runtime_3400__7cf49d: “截至 Runtime 3400，最低 gas 价格已降低 4 倍至 31.25 Gwei。\n     了解更多关于"
+    documentation_for_the_moonbeam__bdfc98: Moonbeam 智能合约平台文档
+  partials:
+    consent:
+      center_section_title_and_description: 中心区域标题和描述
+      consent_settings: 同意设置
+      left_section_logo: 左侧区域徽标
+      manage_settings_toggle: 管理设置切换
+      moonbeam_logo_for_cookie_consent: 用于 Cookie 同意的 Moonbeam 徽标
+      right_section_buttons: 右侧区域按钮
+    feedback:
+      title: 这个页面有帮助吗？
+      rating_up_name: 这个页面有帮助
+      rating_up_note: 感谢您的反馈！
+      rating_down_name: 这个页面可以改进
+      rating_down_note: >-
+        感谢您的反馈！请提交
+        <a href="https://github.com/moonbeam-foundation/moonbeam-docs/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">更多反馈</a> 来帮助我们改进。
+    footer:
+      llms_by_topic: 按主题分类的法学硕士
+      llms_full_txt: 法学硕士全文
+      llms_txt: 法学硕士文本
+      made_with_by: 由 <a href="https://papermoon.io/" target="_blank">PaperMoon</a> with 🩵 制作
+      privacy_policy: 隐私政策
+      terms_of_use: 使用条款
+    header:
+      connect_wallet: 连接钱包
+      faucet: 水龙头
+disclaimer:
+  third_party: 所有可用信息，包括本项目中描述的声明、内容、设计、算法、估算、路线图、规范和性能测量，仅供参考，Moonbeam 不认可此处引用的任何项目。读者有责任检查和验证其准确性和真实性。此外，本项目中的任何信息均不构成投资邀请。创建 Moonbeam 网络或 Moonriver 网络的任何开发者或实体或编写此信息的作者均不对因您使用、无法使用或您与其他用户的互动而引起的任何索赔或损害负责， 包括任何直接、间接、附带、特殊、惩戒性、惩罚性或后果性损害，或利润、加密货币、代币或任何其他有价值物品的损失。本文包含的所有信息如有更改，恕不另行通知。
+action:
+  edit: 编辑
+  view: 查看
+clipboard:
+  copied: 已复制
+footer:
+  next: 下一个
+  previous: 上一个
+  title: 标题
+header:
+  title: 标题
+nav: 导航
+search: 搜索
+source:
+  file:
+    date:
+      created: 创建时间
+      updated: 更新时间
+tabs: 标签
