@@ -17,6 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Set variables
+        run: |
+          DOCS_REF="${{ github.event.inputs.branch }}"
+          if [ -z "$DOCS_REF" ]; then
+            DOCS_REF="${GITHUB_REF_NAME}"
+          fi
+          echo "DOCS_REF=$DOCS_REF" >> $GITHUB_ENV
+          echo "REPO_NAME=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
+          echo "REPO_OWNER=${GITHUB_REPOSITORY%%/*}" >> $GITHUB_ENV
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
@@ -25,7 +34,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: moonbeam-foundation/moonbeam-docs
-          ref: ${{ github.event.inputs.branch }}
+          ref: ${{ env.DOCS_REF }}
           path: moonbeam-docs
       - uses: actions/setup-python@v5
         with:
@@ -50,13 +59,13 @@ jobs:
       - name: Update image paths in Markdown files
         run: |
           # Replace old image paths with new paths in Markdown files
-          find moonbeam-docs -type f -name "*.md" -exec sed -i -e 's|](/|](/moonbeam-mkdocs/|g' -e 's|href="/|href="/moonbeam-mkdocs/|g' {} \;
+          find moonbeam-docs -type f -name "*.md" -exec sed -i -e "s|](/|](/${REPO_NAME}/|g" -e "s|href=\"/|href=\"/${REPO_NAME}/|g" {} \;
       - name: Replace `/assets` with `assets`
         run: |
           find . -type f -exec sed -i 's|/assets|assets|g' {} +
       - name: Set site_url for GitHub Pages base path
         run: |
-          BASE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          BASE_URL="https://${REPO_OWNER}.github.io/${REPO_NAME}/"
           sed -i "s#^site_url:.*#site_url: ${BASE_URL}#" mkdocs.yml
       - name: Deploy Docs
         run: mkdocs gh-deploy --force --clean --site-dir ./site
