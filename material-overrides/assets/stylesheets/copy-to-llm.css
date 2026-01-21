@@ -25,7 +25,7 @@
 }
 
 .copy-to-llm-split-container:hover {
-    background-color: var(--md-accent-fg-color--transparent);
+  background-color: var(--md-accent-fg-color--transparent);
 }
 
 /* Common styles for both parts */
