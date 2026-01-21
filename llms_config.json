@@ -14,7 +14,7 @@
         "repo": "moonbeam-docs",
         "default_branch": "master",
         "docs_path": ".",
-        "ai_artifacts_path": ".ai/pages"
+        "ai_artifacts_path": "ai/pages"
     },
 
     "content": {
@@ -47,19 +47,14 @@
                 "index.md",
                 "README.md",
                 ".CONTRIBUTING.md",
-                "pull-request-template.md",
-                "cookie-policy.md",
-                "LICENSE.md",
-                "ai-chatbot-policy.md",
-                "terms-of-use.md",
-                "privacy-policy.md"
+                "LICENSE.md"
             ],
-            "skip_paths": [".snippets", ".github", ".ai"]
+            "skip_paths": [".snippets", ".github"]
         }
     },
 
     "outputs": {
-        "public_root": "/.ai/",
+        "public_root": "/ai/",
         "files": {
             "llms_full": "llms-full.jsonl",
             "pages_dir": "pages"
