@@ -44,15 +44,8 @@
     <div class="language-picker__menu" role="menu">
       <ul>
         {% for alt in config.extra.alternate %}
-          {% set href = alt.link if alt.link is defined else "" %}
-          {% if not href %}
-            {% if alt.lang != default_lang %}
-              {% set href = alt.lang ~ "/" %}
-            {% else %}
-              {% set href = "/" %}
-            {% endif %}
-          {% endif %}
-          {% set href = href | url %}
+          {# Prefer the link provided by mkdocs-static-i18n; it already includes base/locale #}
+          {% set href = alt.link | default("") | url %}
           <li>
             <a
               href="{{ href }}"
