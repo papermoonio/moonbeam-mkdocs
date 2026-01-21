@@ -108,9 +108,9 @@ plugins:
         - js/clipboardCopyllms.js
         - js/cookbookEventHandler.js
       css_files:
-        - /assets/stylesheets/timeline-neoteroi.css
-        - /assets/stylesheets/termynal.css
-        - /assets/stylesheets/moonbeam.css
+        - assets/stylesheets/timeline-neoteroi.css
+        - assets/stylesheets/termynal.css
+        - assets/stylesheets/moonbeam.css
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
