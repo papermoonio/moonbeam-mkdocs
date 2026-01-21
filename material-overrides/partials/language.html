@@ -9,20 +9,17 @@
 
 {% if config.extra.alternate %}
   {% set default_lang = config.theme.language | default("en") %}
-  {% set base_lang = default_lang %}
-  {% if page is defined and page.lang %}
-    {% set base_lang = page.lang %}
+  {% set current_lang = default_lang %}
+  {% if page is defined and page is not none %}
+    {% if page.lang %}
+      {% set current_lang = page.lang %}
+    {% elif page.file is defined and page.file %}
+      {% set current_lang = page.file.locale or default_lang %}
+    {% endif %}
   {% endif %}
-  {% set current_lang = base_lang %}
   {% set labels = namespace(current_label=current_lang[:2] | upper) %}
-  {% if config.extra.alternate %}
-    {% for alt in config.extra.alternate %}
-      {% if alt.lang == current_lang or current_lang.startswith(alt.lang) or alt.lang.startswith(current_lang) %}
-        {% if alt.lang[:2] | lower == "zh" %}
-          {% set labels.current_label = "中文" %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
+  {% if current_lang[:2] | lower == "zh" %}
+    {% set labels.current_label = "中文" %}
   {% endif %}
   <div class="language-picker" data-md-component="language">
     <button
@@ -47,18 +44,18 @@
     <div class="language-picker__menu" role="menu">
       <ul>
         {% for alt in config.extra.alternate %}
-          {% if page is defined %}
-            {% set lang_href = "" %}
+          {% set href = alt.link if alt.link is defined else "" %}
+          {% if not href %}
             {% if alt.lang != default_lang %}
-              {% set lang_href = alt.lang ~ "/" %}
+              {% set href = alt.lang ~ "/" %}
+            {% else %}
+              {% set href = "/" %}
             {% endif %}
-            {% set lang_href = lang_href | url %}
-          {% else %}
-            {% set lang_href = alt.link %}
           {% endif %}
+          {% set href = href | url %}
           <li>
             <a
-              href="{{ lang_href }}"
+              href="{{ href }}"
               hreflang="{{ alt.lang }}"
               role="menuitem"
               aria-label="{{ alt.name }}"

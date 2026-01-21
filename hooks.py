@@ -126,7 +126,7 @@ def _sync_theme_translations(config):
     translations_dir = custom_path / ".translations"
     translations_dir.mkdir(parents=True, exist_ok=True)
 
-    project_name = config.get("site_name", "Tanssi Docs")
+    project_name = config.get("site_name") or Path(__file__).resolve().parent.name or "Docs"
     for locale, data in yaml_translations.items():
         target = translations_dir / f"{locale}.json"
         target.write_text(
@@ -248,6 +248,7 @@ def on_page_context(context, page, config, nav):
         config.get("theme", {}).get("language", "en"),
     )
     page_locale = page.file.locale or default_lang
+
     if page_locale == default_lang:
         return context
 
@@ -708,8 +709,7 @@ def on_post_build(config):
                 )
 
             # 404 pages live at the locale root, so base should be the current dir
-            base_value = "."
-            localized = _replace_config_base(localized, base_value)
+            localized = _replace_config_base(localized, ".")
 
             head_close = localized.find("</head>")
             if head_close != -1:

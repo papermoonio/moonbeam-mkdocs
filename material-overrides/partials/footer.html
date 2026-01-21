@@ -38,17 +38,57 @@ This file was automatically generated - do not edit
   </nav>
   {% endif %}
   <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="column llms-wrapper">
-        <p class="llms-title">
-          {{ t('material_overrides.home.ai_compatible_docs') }}
-        </p>
-        <div class="llms-options">
-          <a class="llms-link" href="/llms.txt">{{ t('material_overrides.partials.footer.llms_txt') }}</a>
-          <a class="llms-link" href="/llms-full.txt">{{ t('material_overrides.partials.footer.llms_full_txt') }}</a>
-      <a class="llms-link" href="{{ 'ai-resources/ai-resources/' | url }}">{{ t('material_overrides.partials.footer.llms_by_topic') }}</a>
+      <div class="md-footer-meta__inner md-grid">
+        <div class="column llms-wrapper">
+          <p class="llms-title">
+            {{ t('material_overrides.home.ai_compatible_docs') }}
+          </p>
+          {# Default link; adjusted at runtime based on current URL path #}
+          {% set ai_href = '/ai-resources/ai-resources/' %}
+          <div class="llms-options">
+            <a class="llms-link" href="/llms.txt">{{ t('material_overrides.partials.footer.llms_txt') }}</a>
+            <a class="llms-link" href="/llms-full.txt">{{ t('material_overrides.partials.footer.llms_full_txt') }}</a>
+            <a class="llms-link" href="{{ ai_href | url }}">{{ t('material_overrides.partials.footer.llms_by_topic') }}</a>
+          </div>
+          <script>
+            (function() {
+              var link = document.querySelector('.llms-link[href*="ai-resources"]');
+              if (!link) return;
+              var segments = (window.location.pathname || "/").split("/").filter(Boolean);
+
+              // If we're already on the ai-resources page, don't rewrite.
+              if (segments.slice(-2).join("/") === "ai-resources/ai-resources") {
+                return;
+              }
+
+              var langRegex = /^[a-z]{2}(?:-[A-Za-z0-9]+)?$/i;
+              var langIndex = segments.findIndex(function(seg) { return langRegex.test(seg); });
+              var lang = langIndex >= 0 ? segments[langIndex] : "";
+
+              // Preserve a repo/base segment if it precedes the locale.
+              var repoParts = [];
+              if (langIndex > 0) {
+                repoParts = segments.slice(0, langIndex);
+              } else if (langIndex === -1 && segments.length && !langRegex.test(segments[0]) && segments[0] !== "ai-resources") {
+                repoParts = [segments[0]];
+              }
+
+              var parts = [];
+              if (repoParts.length) parts = parts.concat(repoParts);
+              if (lang) parts.push(lang);
+              parts.push("ai-resources", "ai-resources");
+
+              var newPath = "/" + parts.join("/") + "/";
+              try {
+                var url = new URL(link.getAttribute("href"), window.location.origin + "/");
+                url.pathname = newPath;
+                link.setAttribute("href", url.pathname + url.search + url.hash);
+              } catch (e) {
+                link.setAttribute("href", newPath);
+              }
+            })();
+          </script>
         </div>
-      </div>
       <div class="column social">
         {% include "partials/social.html" %}
       </div>
