@@ -12,7 +12,7 @@ extra_javascript:
   - js/fixCreatedDate.js
   - js/externalLinkModal.js
   - js/cookbookInit.js
-  - js/clipboardCopyllms.js
+  - js/copy-to-llms.js
   - js/cookbookEventHandler.js
 extra_css:
   - /assets/stylesheets/moonbeam.css
@@ -81,7 +81,7 @@ plugins:
         - js/fixCreatedDate.js
         - js/externalLinkModal.js
         - js/cookbookInit.js
-        - js/clipboardCopyllms.js
+        - js/copy-to-llms.js
       css_files:
         - /assets/stylesheets/timeline-neoteroi.css
         - /assets/stylesheets/termynal.css
