@@ -8,14 +8,14 @@ copyright: © 2026 Moonbeam Foundation. All Rights Reserved.
 hooks:
   - hooks.py
 extra_javascript:
-  - js/connectMetaMask.js
-  - js/errorModal.js
-  - js/networkModal.js
-  - js/fixCreatedDate.js
-  - js/externalLinkModal.js
-  - js/cookbookInit.js
-  - js/clipboardCopyllms.js
-  - js/cookbookEventHandler.js
+  - javascript/connectMetaMask.js
+  - javascript/errorModal.js
+  - javascript/networkModal.js
+  - javascript/fixCreatedDate.js
+  - javascript/externalLinkModal.js
+  - javascript/cookbookInit.js
+  - javascript/clipboardCopyllms.js
+  - javascript/cookbookEventHandler.js
 extra_css:
   - /assets/stylesheets/moonbeam.css
   - /assets/stylesheets/termynal.css
@@ -95,34 +95,26 @@ plugins:
   # - privacy
   - minify:
       minify_html: true
-      minify_js: false
+      minify_js: true
       minify_css: true
       cache_safe: false
       js_files:
-        - js/connectMetaMask.js
-        - js/errorModal.js
-        - js/networkModal.js
-        - js/fixCreatedDate.js
-        - js/externalLinkModal.js
-        - js/cookbookInit.js
-        - js/clipboardCopyllms.js
-        - js/cookbookEventHandler.js
+        - javascript/connectMetaMask.js
+        - javascript/errorModal.js
+        - javascript/networkModal.js
+        - javascript/fixCreatedDate.js
+        - javascript/externalLinkModal.js
+        - javascript/cookbookInit.js
+        - javascript/clipboardCopyllms.js
+        - javascript/cookbookEventHandler.js
       css_files:
-        - /assets/stylesheets/timeline-neoteroi.css
-        - /assets/stylesheets/termynal.css
-        - /assets/stylesheets/moonbeam.css
+        - assets/stylesheets/timeline-neoteroi.css
+        - assets/stylesheets/termynal.css
+        - assets/stylesheets/moonbeam.css
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
 extra:
-  consent:
-    title: This website uses cookies
-    description: >-
-      We use essential cookies to make the website work. We would also like to use cookies to understand how you use the website and how you interact with certain features. We may share this information with our analytics partners. For further details, please see our <a href="https://moonbeam.network/cookie-policy" target="_blank" rel="noopener">cookie policy</a>. 
-    actions:
-      - accept
-      - manage
-      - reject
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.com/invite/PfpUATX

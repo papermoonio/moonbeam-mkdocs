@@ -67,6 +67,8 @@
   "material_overrides.partials.consent.left_section_logo": "Left section logo",
   "material_overrides.partials.consent.manage_settings_toggle": "Manage settings toggle",
   "material_overrides.partials.consent.moonbeam_logo_for_cookie_consent": "Moonbeam logo for cookie consent",
+  "material_overrides.partials.consent.popup_description": "We use essential cookies to make the website work. We would also like to use cookies to understand how you use the website and how you interact with certain features. We may share this information with our analytics partners. For further details, please see our <a href=\"https://moonbeam.network/cookie-policy\" target=\"_blank\" rel=\"noopener\">cookie policy</a>.",
+  "material_overrides.partials.consent.popup_title": "This website uses cookies",
   "material_overrides.partials.consent.right_section_buttons": "Right section buttons",
   "material_overrides.partials.feedback.rating_down_name": "This page could be improved",
   "material_overrides.partials.feedback.rating_down_note": "Thanks for your feedback! Help us improve this page by submitting <a href=\"https://github.com/moonbeam-foundation/moonbeam-docs/issues/new/?title=[Feedback]+{title}+-+{url}\" target=\"_blank\" rel=\"noopener\">additional feedback</a>.",

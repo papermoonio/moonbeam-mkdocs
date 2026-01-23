@@ -67,6 +67,8 @@
   "material_overrides.partials.consent.left_section_logo": "左侧区域徽标",
   "material_overrides.partials.consent.manage_settings_toggle": "管理设置切换",
   "material_overrides.partials.consent.moonbeam_logo_for_cookie_consent": "用于 Cookie 同意的 Moonbeam 徽标",
+  "material_overrides.partials.consent.popup_description": "我们使用必要的 Cookie 来确保网站正常运行。我们还希望使用 Cookie 来了解您如何使用本网站以及如何与某些功能交互。我们可能会与我们的分析合作伙伴共享这些信息。更多详情请参阅我们的 <a href=\"https://moonbeam.network/cookie-policy\" target=\"_blank\" rel=\"noopener\">Cookie 政策</a>。",
+  "material_overrides.partials.consent.popup_title": "本网站使用 Cookie",
   "material_overrides.partials.consent.right_section_buttons": "右侧区域按钮",
   "material_overrides.partials.feedback.rating_down_name": "这个页面可以改进",
   "material_overrides.partials.feedback.rating_down_note": "感谢您的反馈！请提交 <a href=\"https://github.com/moonbeam-foundation/moonbeam-docs/issues/new/?title=[Feedback]+{title}+-+{url}\" target=\"_blank\" rel=\"noopener\">更多反馈</a> 来帮助我们改进。",

@@ -280,6 +280,10 @@ def _apply_transforms(text, do_standardize):
     return "".join(parts)
 
 
+def _normalize_translation_calls(text):
+    return TRANSLATION_CALL_RE.sub(r"{{ t('\1') }}", text)
+
+
 def _iter_template_files(targets, extensions):
     for target in targets:
         if target.is_file():
@@ -290,6 +294,75 @@ def _iter_template_files(targets, extensions):
         for path in target.rglob("*"):
             if path.is_file() and path.suffix in extensions:
                 yield path
+
+
+def _ensure_trailing_newline(text):
+    if not text.endswith("\n"):
+        return text + "\n"
+    return text
+
+
+def _strip_common_prefix(stem, prefix):
+    prefix = prefix.strip().lower()
+    stem_lower = stem.lower()
+    for sep in ("-", "_"):
+        needle = f"{prefix}{sep}"
+        if stem_lower.startswith(needle):
+            return stem[len(needle) :]
+    return stem
+
+
+def _derive_snippet_key(parts, path):
+    if not parts:
+        return None
+    top = parts[0]
+    if top not in {"_common", "_disclaimer", "_disclaimers"}:
+        return None
+
+    if top == "_common":
+        base = ["common"]
+    else:
+        base = ["disclaimer"]
+
+    rel_dirs = list(parts[1:-1])
+    if rel_dirs:
+        base.extend(_slugify(d.replace("-", "_")) for d in rel_dirs if d)
+
+    stem = path.stem
+    if rel_dirs:
+        stem = _strip_common_prefix(stem, rel_dirs[-1])
+    leaf = _slugify(stem.replace("-", "_"))
+    if leaf:
+        base.append(leaf)
+    return ".".join(base)
+
+
+def _wrap_snippet_content_with_call(original, key):
+    call = f"{{{{ t('{key}') }}}}"
+    text = original.replace("\r\n", "\n")
+    # If this snippet is exactly a translation call already, just normalize it.
+    if TRANSLATION_CALL_RE.fullmatch(text.strip()):
+        return _ensure_trailing_newline(_normalize_translation_calls(text).strip())
+
+    # If it is a single wrapper tag, replace its inner content while preserving the wrapper.
+    m = re.match(
+        r"^(?P<open>\s*<(?P<tag>[a-z0-9]+)\b[^>]*>\s*)"
+        r"(?P<body>[\s\S]*?)"
+        r"(?P<close>\s*</(?P=tag)>\s*)$",
+        text,
+        flags=re.I,
+    )
+    if m:
+        open_part = m.group("open")
+        close_part = m.group("close")
+        # Try to keep indentation similar to existing content.
+        body = m.group("body") or ""
+        indent_match = re.search(r"\n([ \t]+)\S", body)
+        indent = indent_match.group(1) if indent_match else "  "
+        wrapped = f"{open_part}\n{indent}{call}\n{close_part}".strip()
+        return _ensure_trailing_newline(wrapped)
+
+    return _ensure_trailing_newline(call)
 
 
 def _ingest_snippet_locale(
@@ -304,7 +377,7 @@ def _ingest_snippet_locale(
     added = []
     if not snippet_root.exists():
         return added
-    allowed = {"_common", "_disclaimers"}
+    allowed = {"_common", "_disclaimer", "_disclaimers"}
     for path in snippet_root.rglob("*"):
         if not path.is_file():
             continue
@@ -317,16 +390,36 @@ def _ingest_snippet_locale(
             raw = path.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
             continue
+
+        # If snippet already contains a translation call, normalize it and ensure the key exists.
+        existing_keys = list(TRANSLATION_CALL_RE.findall(raw))
+        if existing_keys:
+            updated = _normalize_translation_calls(_apply_transforms(raw, do_standardize=True))
+            updated = _ensure_trailing_newline(updated.strip())
+            if not dry_run and updated != raw:
+                path.write_text(updated, encoding="utf-8")
+            for key in existing_keys:
+                if key not in used_keys:
+                    _ensure_key(locale_data, key, _humanize_key(key))
+                    used_keys.add(key)
+                    added.append(key)
+            continue
+
+        # Otherwise, derive a stable key from snippet path and replace the file with a translation call.
+        derived = _derive_snippet_key(parts, path)
+        if not derived:
+            continue
+
+        updated = _wrap_snippet_content_with_call(raw, derived)
+        if not dry_run and updated != raw:
+            path.write_text(updated, encoding="utf-8")
+
         value = raw.strip()
-        if len(value) < min_length:
-            continue
-        key = _path_prefix(path, root) or _short_key_slug(path.stem, MAX_KEY_WORDS)
-        if key in used_keys:
-            continue
-        _ensure_key(locale_data, key, value)
-        used_keys.add(key)
-        value_to_key.setdefault(value, key)
-        added.append(key)
+        if len(value) >= min_length and derived not in used_keys:
+            _ensure_key(locale_data, derived, value)
+            used_keys.add(derived)
+            value_to_key.setdefault(value, derived)
+            added.append(derived)
     return added
 
 
