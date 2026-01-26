@@ -115,8 +115,9 @@
         }
 
         // NOTE: same-origin assets: default for everything we ship in docs/ (llms, ai bundles, etc.)
+        // llms.txt is served from the site root; other AI artifacts live under /ai
+        if (normalized === 'llms.txt') return `${SITE_BASE}/${normalized}`;  
         if (dataPath.startsWith('/')) return `${SITE_BASE}/${stripLeading(dataPath)}`;
-        if (normalized === 'llms.txt' || normalized === 'llms-full.jsonl') return `${SITE_BASE}/${normalized}`;
 
         // Fallback → site-relative
         return `${SITE_BASE}/${normalized}`;
@@ -189,6 +190,25 @@
             path.split('/').pop() ||
             'download.txt';
           downloadViaFetch(url, filename);
+        });
+      });
+
+      // VIEW buttons: open raw files in a new tab
+      document.querySelectorAll('.llms-view').forEach((a) => {
+        const abs = toAbsolute(a.getAttribute('data-path'));
+        if (abs) {
+          a.setAttribute('href', abs);
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener');
+        }
+
+        a.addEventListener('click', (e) => {
+          const url = toAbsolute(a.getAttribute('data-path') || '');
+          if (!url) return;
+          if (a.getAttribute('target') !== '_blank') {
+            e.preventDefault();
+            window.open(url, '_blank', 'noopener');
+          }
         });
       });
     });
