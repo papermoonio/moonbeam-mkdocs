@@ -17,15 +17,15 @@ extra_javascript:
   - javascript/clipboardCopyllms.js
   - javascript/cookbookEventHandler.js
 extra_css:
-  - /assets/stylesheets/moonbeam.css
-  - /assets/stylesheets/termynal.css
-  - /assets/stylesheets/timeline-neoteroi.css
+  - assets/stylesheets/moonbeam.css
+  - assets/stylesheets/termynal.css
+  - assets/stylesheets/timeline-neoteroi.css
 theme:
   name: material
   custom_dir: material-overrides
   language: en
-  favicon: /assets/images/favicon.webp
-  logo: /assets/images/logo.webp
+  favicon: assets/images/favicon.webp
+  logo:  assets/images/logo.webp
   icon:
     edit: fontawesome/brands/github
   font:
