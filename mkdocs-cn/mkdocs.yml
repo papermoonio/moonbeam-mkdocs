@@ -12,12 +12,13 @@ extra_javascript:
   - js/fixCreatedDate.js
   - js/externalLinkModal.js
   - js/cookbookInit.js
-  - js/clipboardCopyllms.js
+  - js/copy-to-llms.js
   - js/cookbookEventHandler.js
 extra_css:
   - /assets/stylesheets/moonbeam.css
   - /assets/stylesheets/termynal.css
   - /assets/stylesheets/timeline-neoteroi.css
+  - /assets/stylesheets/copy-to-llm.css
 theme:
   language: zh
   name: material
@@ -81,11 +82,12 @@ plugins:
         - js/fixCreatedDate.js
         - js/externalLinkModal.js
         - js/cookbookInit.js
-        - js/clipboardCopyllms.js
+        - js/copy-to-llms.js
       css_files:
         - /assets/stylesheets/timeline-neoteroi.css
         - /assets/stylesheets/termynal.css
         - /assets/stylesheets/moonbeam.css
+        - /assets/stylesheets/copy-to-llm.css
   - redirects:
       redirect_maps:
         builders/build/eth-api/dev-env/truffle.md: builders/dev-env/index.md

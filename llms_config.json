@@ -1,0 +1,63 @@
+{
+    "schema_version": "1.2",
+
+    "project": {
+        "id": "moonbeam",
+        "name": "Moonbeam",
+        "project_url": "https://moonbeam.network",
+        "docs_base_url": "https://docs.moonbeam.network/"
+    },
+
+    "repository": {
+        "host": "github",
+        "org": "moonbeam-foundation",
+        "repo": "moonbeam-docs",
+        "default_branch": "master",
+        "docs_path": ".",
+        "ai_artifacts_path": "ai/pages"
+    },
+
+    "content": {
+        "docs_dir": ".",
+        "base_context_categories": ["Basics", "Reference"],
+        "categories_order": [
+            "Basics",
+            "Ethereum Toolkit", 
+            "Substrate Toolkit", 
+            "GMP Providers", 
+            "XCM", 
+            "XC-20", 
+            "XCM Remote Execution", 
+            "Precompiles", 
+            "Libraries and SDKs", 
+            "Dev Environments",
+            "JSON-RPC APIs", 
+            "Node Operators and Collators", 
+            "Oracle Nodes", 
+            "Indexers and Queries", 
+            "Tokens and Accounts", 
+            "Staking", 
+            "Governance", 
+            "Integrations", 
+            "Tutorials",
+            "Reference"
+        ],
+        "exclusions": {
+            "skip_basenames": [
+                "index.md",
+                "README.md",
+                ".CONTRIBUTING.md",
+                "LICENSE.md"
+            ],
+            "skip_paths": [".snippets", ".github"]
+        }
+    },
+
+    "outputs": {
+        "public_root": "/ai/",
+        "files": {
+            "llms_full": "llms-full.jsonl",
+            "pages_dir": "pages"
+        }
+    }
+}
