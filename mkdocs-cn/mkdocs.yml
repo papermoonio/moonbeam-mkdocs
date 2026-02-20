@@ -306,6 +306,15 @@ plugins:
   - macros:
       include_yaml:
         - moonbeam-docs-cn/variables.yml
+  - social:
+      enabled: !ENV [SOCIAL_CARDS, True]
+      cards_layout_dir: layouts
+      cards_layout: moonbeam
+      cards_layout_options:
+        background_image: layouts/moonbeam-bg.webp
+        background_color: transparent
+        logo: layouts/moonbeam-social.png
+        title: Moonbeam Documentation        
 extra:
   social:
     - icon: fontawesome/brands/discord
