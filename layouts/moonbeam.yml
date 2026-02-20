@@ -174,7 +174,7 @@ layers:
 
   # Page title
   - size: { width: 900, height: 180 }
-    offset: { x: 150, y: 150 }
+    offset: { x: 150, y: 130 }
     typography:
       content: *card_title
       overflow: shrink
@@ -188,8 +188,8 @@ layers:
         style: Medium
 
   # Page description
-  - size: { width: 800, height: 110 }
-    offset: { x: 200, y: 300 }
+  - size: { width: 700, height: 110 }
+    offset: { x: 255, y: 300 }
     typography:
       content: *page_description
       overflow: shrink
@@ -204,7 +204,7 @@ layers:
 
   # Logo
   - size: { width: 516, height: 77 }
-    offset: { x: 340, y: 440 }
+    offset: { x: 345, y: 460 }
     background:
       image: *logo
     icon:
