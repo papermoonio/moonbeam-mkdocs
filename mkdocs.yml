@@ -70,11 +70,11 @@ plugins:
   - search
   - awesome-nav
   - glightbox
-  - git-revision-date-localized:
-      exclude:
-        - .snippets/*
-      enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
-      enable_creation_date: true
+ # - git-revision-date-localized:
+ #     exclude:
+ #       - .snippets/*
+ #     enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
+ #     enable_creation_date: true
   # - privacy
   - minify:
       minify_html: true
@@ -97,6 +97,17 @@ plugins:
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
+  - social:
+     # debug: true
+      cache: false
+      enabled: true
+      cards_layout_dir: layouts
+      cards_layout: moonbeam
+      cards_layout_options:
+        background_image: layouts/moonbeam-bg.webp
+        background_color: transparent
+        logo: layouts/moonbeam-social.png
+        title: Moonbeam Network Resources & Documentation
 extra:
   consent:
     title: This website uses cookies
