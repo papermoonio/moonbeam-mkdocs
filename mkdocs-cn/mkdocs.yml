@@ -314,7 +314,7 @@ plugins:
         background_image: layouts/moonbeam-bg.webp
         background_color: transparent
         logo: layouts/moonbeam-social.png
-        title: Moonbeam Network Resources & Documentation        
+        title: Moonbeam Documentation        
 extra:
   social:
     - icon: fontawesome/brands/discord
