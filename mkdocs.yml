@@ -70,11 +70,11 @@ plugins:
   - search
   - awesome-nav
   - glightbox
- # - git-revision-date-localized:
- #     exclude:
- #       - .snippets/*
- #     enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
- #     enable_creation_date: true
+  - git-revision-date-localized:
+      exclude:
+        - .snippets/*
+      enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
+      enable_creation_date: true
   # - privacy
   - minify:
       minify_html: true
