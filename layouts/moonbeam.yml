@@ -203,8 +203,8 @@ layers:
         style: Regular
 
   # Logo
-  - size: { width: 516, height: 77 }
-    offset: { x: 345, y: 460 }
+  - size: { width: 110, height: 110 }
+    offset: { x: 549, y: 450 }
     background:
       image: *logo
     icon:
