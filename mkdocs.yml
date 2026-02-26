@@ -37,6 +37,7 @@ theme:
     - content.code.copy
     - announce.dismiss
     - content.action.edit
+    - navigation.path
 markdown_extensions:
   - codehilite
   - meta
