@@ -19,37 +19,117 @@
 
     "content": {
         "docs_dir": ".",
-        "base_context_categories": ["Basics", "Reference"],
-        "categories_order": [
-            "Basics",
-            "Ethereum Toolkit", 
-            "Substrate Toolkit", 
-            "GMP Providers", 
-            "XCM", 
-            "XC-20", 
-            "XCM Remote Execution", 
-            "Precompiles", 
-            "Libraries and SDKs", 
-            "Dev Environments",
-            "JSON-RPC APIs", 
-            "Node Operators and Collators", 
-            "Oracle Nodes", 
-            "Indexers and Queries", 
-            "Tokens and Accounts", 
-            "Staking", 
-            "Governance", 
-            "Integrations", 
-            "Tutorials",
-            "Reference"
-        ],
+        "base_context_categories": ["basics", "reference"],
+        "categories_info": {
+            "basics": {
+                "id": "basics",
+                "name": "Basics",
+                "description": "Moonbeam's framework, architecture, and core components."
+            },
+            "ethereum_toolkit": {
+                "id": "ethereum_toolkit",
+                "name": "Ethereum Toolkit",
+                "description": "Useful tools and smart contracts to work with Moonbeam's EVM."
+            },
+            "substrate_toolkit": {
+                "id": "substrate_toolkit",
+                "name": "Substrate Toolkit",
+                "description": "Useful tools and smart contracts to work with Substrate."
+            },
+            "gmp_providers": {
+                "id": "gmp_providers",
+                "name": "GMP Providers",
+                "description": "How to use General Message Passing (GMP) for cross-chain communication."
+            },
+            "xcm": {
+                "id": "xcm",
+                "name": "XCM",
+                "description": "Learn about and use Cross-Consensus Messaging (XCM)."
+            },
+            "xc_20": {
+                "id": "xc_20",
+                "name": "XC-20",
+                "description": "Guides for interacting with XC-20 tokens."
+            },
+            "xcm_remote_execution": {
+                "id": "xcm_remote_execution",
+                "name": "XCM Remote Execution",
+                "description": "How to make cross-chain calls with XCM."
+            },
+            "precompiles": {
+                "id": "precompiles",
+                "name": "Precompiles",
+                "description": "Guides to using Moonbeam's precompiles."
+            },
+            "libraries_and_sdks": {
+                "id": "libraries_and_sdks",
+                "name": "Libraries and SDKs",
+                "description": "Resources for commonly used libraries and SDKs."
+            },
+            "dev_environments": {
+                "id": "dev_environments",
+                "name": "Dev Environments",
+                "description": "How to set up developer environments such as Hardhat and Foundry."
+            },
+            "json_rpc_apis": {
+                "id": "json_rpc_apis",
+                "name": "JSON-RPC APIs",
+                "description": "RPC usage and tracing."
+            },
+            "node_operators_and_collators": {
+                "id": "node_operators_and_collators",
+                "name": "Node Operators and Collators",
+                "description": "How to run a full node or a block-producing collator."
+            },
+            "oracle_nodes": {
+                "id": "oracle_nodes",
+                "name": "Oracle Nodes",
+                "description": "How to integrate with oracle node providers."
+            },
+            "indexers_and_queries": {
+                "id": "indexers_and_queries",
+                "name": "Indexers and Queries",
+                "description": "How to integrate with indexer and query node providers."
+            },
+            "tokens_and_accounts": {
+                "id": "tokens_and_accounts",
+                "name": "Tokens and Accounts",
+                "description": "How to manage tokens and accounts on Moonbeam."
+            },
+            "staking": {
+                "id": "staking",
+                "name": "Staking",
+                "description": "Guides to delegate and collate."
+            },
+            "governance": {
+                "id": "governance",
+                "name": "Governance",
+                "description": "Guides to governance including voting and treasury."
+            },
+            "integrations": {
+                "id": "integrations",
+                "name": "Integrations",
+                "description": "Guides to integrating Moonbeam with various tools such as wallets and analytics."
+            },
+            "tutorials": {
+                "id": "tutorials",
+                "name": "Tutorials",
+                "description": "Comprehensive, step-by-step, guided project builds."
+            },
+            "reference": {
+                "id": "reference",
+                "name": "Reference",
+                "description": "Reference material including network endpoints, JSON-RPC methods, and contract or token addresses."
+            }
+        },
         "exclusions": {
             "skip_basenames": [
-                "index.md",
                 "README.md",
                 ".CONTRIBUTING.md",
-                "LICENSE.md"
+                "LICENSE.md",
+                "ai-resources.md"
             ],
-            "skip_paths": [".snippets", ".github"]
+            "skip_paths": ["cn", "venv"]
         }
     },
 

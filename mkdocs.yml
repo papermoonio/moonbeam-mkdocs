@@ -14,12 +14,12 @@ extra_javascript:
   - js/externalLinkModal.js
   - js/cookbookInit.js
   - js/cookbookEventHandler.js
-  - js/copy-to-llms.js
+  - js/ai-file-actions.js
 extra_css:
   - /assets/stylesheets/moonbeam.css
   - /assets/stylesheets/termynal.css
   - /assets/stylesheets/timeline-neoteroi.css
-  - /assets/stylesheets/copy-to-llm.css
+  - /assets/stylesheets/ai-file-actions.css
 theme:
   name: material
   custom_dir: material-overrides
@@ -72,6 +72,8 @@ plugins:
   - awesome-nav
   - resolve_md:
       llms_config: llms_config.json
+  - ai_resources_page
+  - ai_page_actions
   - glightbox
   - git-revision-date-localized:
       exclude:
@@ -92,12 +94,12 @@ plugins:
         - js/fixCreatedDate.js
         - js/externalLinkModal.js
         - js/cookbookInit.js
-        - js/copy-to-llms.js
+        - js/ai-file-actions.js
       css_files:
         - /assets/stylesheets/timeline-neoteroi.css
         - /assets/stylesheets/termynal.css
         - /assets/stylesheets/moonbeam.css
-        - /assets/stylesheets/copy-to-llm.css
+        - /assets/stylesheets/ai-file-actions.css
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
