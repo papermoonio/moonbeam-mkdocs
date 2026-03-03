@@ -1,5 +1,5 @@
-/** 
-* AI File Actions Styles 
+/**
+* AI File Actions Styles
 * Styling for the AI file actions component, including the split button and dropdown menu.
 */
 
@@ -7,7 +7,7 @@
 .ai-file-actions-container {
   display: inline-flex;
   margin-left: auto;
-  border: 1px solid var(--border-color);
+  border: var(--border-width-thin) solid var(--light-transparent-15);
   border-radius: var(--border-radius);
   overflow: visible;
   position: relative;
@@ -17,8 +17,8 @@
 /* --- Common Button Styles --- */
 .ai-file-actions-btn {
   padding: 0.6em 0.9em;
-  background-color: var(--secondary-bg-color);
-  color: var(--md-default-fg-color);
+  background-color: var(--teal-dark-transparent-15);
+  color: var(--teal-light);
   border: none;
   cursor: pointer;
   transition: all 0.2s;
@@ -26,17 +26,18 @@
   align-items: center;
   gap: 0.4em;
   font-size: 16px;
+  font-family: var(--label-font);
 }
 
 /* --- Hover effects on buttons --- */
 .ai-file-actions-btn:hover {
-  background-color: var(--warm-brown);
-  color: var(--cream);
+  background-color: var(--teal-light);
+  color: var(--md-default-bg-color);
 }
 
 /* --- Left Button (Copy) --- */
 .ai-file-actions-copy {
-  border-right: 1px solid var(--border-color);
+  border-right: var(--border-width-thin) solid var(--light-transparent-15);
   gap: 0.5em;
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
@@ -44,7 +45,7 @@
 
 /* Keep separator stable on hover */
 .ai-file-actions-container:hover .ai-file-actions-copy {
-  border-right-color: var(--border-color);
+  border-right-color: var(--light-transparent-15);
 }
 
 /* --- Right Button (Trigger) --- */
@@ -55,8 +56,8 @@
 }
 
 .ai-file-actions-trigger.active {
-  background-color: var(--warm-brown);
-  color: var(--cream);
+  background-color: var(--teal-light);
+  color: var(--md-default-bg-color);
 }
 
 /* --- Icons --- */
@@ -91,8 +92,8 @@
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  background-color: var(--secondary-bg-color);
-  border: 1px solid var(--border-color);
+  background-color: var(--teal-dark);
+  border: var(--border-width-thin) solid var(--light-transparent-15);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   z-index: 3;
@@ -103,13 +104,13 @@
 }
 
 [data-md-color-scheme] .ai-file-actions-menu {
-  border-color: var(--border-color);
+  border-color: var(--light-transparent-15);
 }
 
 /* Reset specific overrides if they exist for the active custom schemes */
 [data-md-color-scheme='custom-light'] .ai-file-actions-container,
 [data-md-color-scheme='custom-dark'] .ai-file-actions-container {
-  border-color: var(--border-color);
+  border-color: var(--light-transparent-15);
 }
 
 .ai-file-actions-menu.show {
@@ -125,12 +126,13 @@
   padding: 0.475rem 0.625rem;
   border: none;
   background: none;
-  color: var(--md-default-fg-color);
+  color: var(--teal-light);
   text-align: left;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.1s;
   font-size: 16px;
+  font-family: var(--label-font);
   line-height: 1.2;
 }
 
@@ -139,8 +141,8 @@
 }
 
 .md-typeset a.ai-file-actions-item:hover {
-  background-color: var(--warm-brown);
-  color: var(--cream);
+  background-color: var(--teal-light);
+  color: var(--md-default-bg-color);
 }
 
 /* --- Table-scoped overrides --- */
@@ -156,12 +158,24 @@
   overflow: visible;
 }
 
-/* Switching to inline-table prevents the table row from expanding to
-   accommodate the absolutely-positioned dropdown. As a block-level element,
-   display:table can stretch its rows to contain overflowing children;
-   inline-table does not exhibit this behaviour. */
+/* Force the table to fill the container width so columns have room to breathe.
+   The base moonbeam.css uses inline-table which shrinks to content width;
+   override to table here so the Description column isn't squeezed. */
 .md-typeset table:not([class]):has(.ai-file-actions-container) {
-  display: inline-table;
+  display: table;
+  width: 100%;
+}
+
+/* Let long filenames wrap instead of forcing the column wider */
+.md-typeset table:has(.ai-file-actions-container) td code {
+  white-space: normal;
+  word-break: break-all;
+}
+
+/* Right-align the actions column */
+.md-typeset table:has(.ai-file-actions-container) th:nth-child(4),
+.md-typeset table:has(.ai-file-actions-container) td:nth-child(4) {
+  text-align: right;
 }
 
 /* --- H1 + per-page AI actions wrapper --- */

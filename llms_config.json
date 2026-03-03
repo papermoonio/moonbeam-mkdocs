@@ -124,6 +124,7 @@
         },
         "exclusions": {
             "skip_basenames": [
+                "index.md",
                 "README.md",
                 ".CONTRIBUTING.md",
                 "LICENSE.md",
