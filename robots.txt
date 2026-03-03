@@ -1,3 +1,27 @@
-User-agent: * 
+# Search engine crawlers - block from /ai/ to prevent indexing raw markdown/JSONL
 
+User-agent: Googlebot
+Disallow: /ai/
+
+User-agent: Bingbot
+Disallow: /ai/
+
+User-agent: Yandexbot
+Disallow: /ai/
+
+User-agent: Baiduspider
+Disallow: /ai/
+
+User-agent: DuckDuckBot
+Disallow: /ai/
+
+User-agent: Applebot
+Disallow: /ai/
+
+User-agent: Sogou
+Disallow: /ai/
+
+# All other agents (including AI/LLM agents) - no restrictions
+
+User-agent: *
 Sitemap: https://docs.moonbeam.network/sitemap.xml
