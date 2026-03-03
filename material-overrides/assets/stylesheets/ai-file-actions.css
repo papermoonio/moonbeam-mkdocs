@@ -164,6 +164,7 @@
 .md-typeset table:not([class]):has(.ai-file-actions-container) {
   display: table;
   width: 100%;
+  overflow: visible;
 }
 
 /* Let long filenames wrap instead of forcing the column wider */
