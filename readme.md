@@ -86,7 +86,7 @@ mkdocs serve
 The `ai_resources_page`, `ai_page_actions`, and `resolve_md` plugins work together to provide clean Markdown files for use with AI coding assistants. When developing locally, this can slow down your development process as the plugin checks for any changes to the documentation and generates updated LLM files each time. To avoid this, you can change your start-up command to disable the plugin by running:
 
 ```bash
-export export ENABLED_LLMS_PLUGINS=false
+export ENABLED_LLMS_PLUGINS=false
 mkdocs serve
 ```
 
