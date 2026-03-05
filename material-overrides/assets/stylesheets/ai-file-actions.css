@@ -157,7 +157,7 @@
    beyond the table bounds without being clipped. */
 .md-typeset__scrollwrap:has(.ai-file-actions-container) {
   overflow: visible;
-}
+} 
 
 /* Force the table to fill the container width so columns have room to breathe.
    The base moonbeam.css uses inline-table which shrinks to content width;
@@ -165,8 +165,8 @@
 .md-typeset table:not([class]):has(.ai-file-actions-container) {
   display: table;
   width: 100%;
-  overflow: visible;
-}
+  overflow: visible; 
+} 
 
 /* Let long filenames wrap instead of forcing the column wider */
 .md-typeset table:has(.ai-file-actions-container) td code {
@@ -214,6 +214,12 @@
     left: 0;
     right: auto;
     min-width: 200px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .md-typeset__scrollwrap:has(.ai-file-actions-container) {
+    overflow: visible;
   }
 }
 

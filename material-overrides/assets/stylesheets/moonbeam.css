@@ -1379,19 +1379,16 @@ pre:hover > .md-code__nav {
   height: 1rem;
 }
 
+/* Custom styling "AI Resources" link in footer */
 .llms-wrapper {
   font-family: var(--label-font);
   font-size: 0.6rem;
   text-transform: uppercase;
 }
 
+/* Styles "AI Resources" link positioning in footer */
 .llms-title {
   margin: 0 0 0.5em 0;
-}
-
-.llms-options {
-  display: flex;
-  gap: 3em;
 }
 
 html .md-footer-meta.md-typeset a.llms-link {
@@ -1460,15 +1457,6 @@ html .md-footer-meta.md-typeset a.llms-link {
   .papermoon {
     position: unset;
     transform: unset;
-  }
-}
-
-@media screen and (max-width: 26em) {
-  .llms-options {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1em;
-    width: 100%;
   }
 }
 
