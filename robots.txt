@@ -1,3 +1,4 @@
-User-agent: * 
+User-agent: *
 
 Sitemap: https://docs.moonbeam.network/sitemap.xml
+Disallow: /ai/
