@@ -92,7 +92,7 @@
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  background-color: var(--teal-dark);
+  background-color: #0E1F1C; 
   border: var(--border-width-thin) solid var(--light-transparent-15);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
@@ -149,6 +149,7 @@
 .md-typeset table .ai-file-actions-btn,
 .md-typeset table .ai-file-actions-item {
   font-size: 0.64rem;
+  text-transform: uppercase;
 }
 
 /* Remove the scroll wrapper's overflow constraint on any table that contains
@@ -169,7 +170,7 @@
 
 /* Let long filenames wrap instead of forcing the column wider */
 .md-typeset table:has(.ai-file-actions-container) td code {
-  white-space: normal;
+  white-space: normal !important;
   word-break: break-all;
 }
 
