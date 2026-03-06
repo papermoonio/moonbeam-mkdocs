@@ -1,6 +1,10 @@
 {
   "data": [
     {
+      "key": "/ai-resources/ai-resources/",
+      "value": "/ai-resources/"
+    },
+    {
       "key": "/builders/build/",
       "value": "/builders/ethereum/"
     },
