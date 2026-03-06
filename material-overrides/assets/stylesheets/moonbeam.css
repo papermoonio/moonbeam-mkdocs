@@ -1386,8 +1386,7 @@ pre:hover > .md-code__nav {
   text-transform: uppercase;
 }
 
-/* Styles "AI Resources" link positioning in footer */
-html .md-footer-meta.md-typeset a.llms-link {
+html .md-footer-meta.md-typeset .llms-wrapper a {
   color: var(--md-typeset-a-color);
 }
 
