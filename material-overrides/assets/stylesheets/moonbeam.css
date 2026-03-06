@@ -1387,10 +1387,6 @@ pre:hover > .md-code__nav {
 }
 
 /* Styles "AI Resources" link positioning in footer */
-.llms-title {
-  margin: 0 0 0.5em 0;
-}
-
 html .md-footer-meta.md-typeset a.llms-link {
   color: var(--md-typeset-a-color);
 }

@@ -143,6 +143,7 @@
 .md-typeset a.ai-file-actions-item:hover {
   background-color: var(--teal-light);
   color: var(--md-default-bg-color);
+  opacity: 1;
 }
 
 /* --- Table-scoped overrides --- */
@@ -152,26 +153,9 @@
   text-transform: uppercase;
 }
 
-/* Remove the scroll wrapper's overflow constraint on any table that contains
-   the file actions widget, so the absolutely-positioned dropdown can extend
-   beyond the table bounds without being clipped. */
-.md-typeset__scrollwrap:has(.ai-file-actions-container) {
-  overflow: visible;
-} 
-
-/* Force the table to fill the container width so columns have room to breathe.
-   The base moonbeam.css uses inline-table which shrinks to content width;
-   override to table here so the Description column isn't squeezed. */
-.md-typeset table:not([class]):has(.ai-file-actions-container) {
-  display: table;
-  width: 100%;
-  overflow: visible; 
-} 
-
 /* Let long filenames wrap instead of forcing the column wider */
 .md-typeset table:has(.ai-file-actions-container) td code {
   white-space: normal !important;
-  word-break: break-all;
 }
 
 /* Right-align the actions column */
@@ -217,11 +201,6 @@
   }
 }
 
-@media screen and (min-width: 640px) {
-  .md-typeset__scrollwrap:has(.ai-file-actions-container) {
-    overflow: visible;
-  }
-}
 
 /* --- Loading Spinner --- */
 .ai-file-actions-container .loading-spinner {
