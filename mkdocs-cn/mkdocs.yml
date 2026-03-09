@@ -305,7 +305,7 @@ plugins:
         tutorials/eth-api/hardhat-start-to-end.md: index.md
   - macros:
       include_yaml:
-        - moonbeam-docs-cn/variables.yml    
+        - moonbeam-docs-cn/variables.yml
 extra:
   social:
     - icon: fontawesome/brands/discord
