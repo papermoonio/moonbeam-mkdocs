@@ -381,6 +381,10 @@
       "value": "/builders/interoperability/xcm/remote-execution/substrate-calls/"
     },
     {
+      "key": "/builders/interoperability/protocols/hyperlane/",
+      "value": "/builders/interoperability/protocols/"
+    },
+    {
       "key": "/builders/json-rpc/",
       "value": "/builders/ethereum/json-rpc/"
     },
