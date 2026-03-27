@@ -8,12 +8,15 @@ Disallow:
 
 User-agent: Googlebot
 Disallow: /ai/
+Disallow: /*.md$
 
 User-agent: Bingbot
 Disallow: /ai/
+Disallow: /*.md$
 
 User-agent: Yandex
 Disallow: /ai/
+Disallow: /*.md$
 
 # Training-specific crawlers: block entire site
 # These crawl for model training, NOT for user-initiated requests
