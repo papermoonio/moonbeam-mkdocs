@@ -103,6 +103,7 @@ plugins:
   - macros:
       include_yaml:
         - moonbeam-docs/variables.yml
+  - snippet_var_resolver
   - social:
       enabled: !ENV [SOCIAL_CARDS, True]
       cards_layout_dir: layouts
