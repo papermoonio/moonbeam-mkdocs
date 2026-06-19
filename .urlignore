@@ -14,6 +14,7 @@ https://x.com/
 
 # Ignore known working URLs
 https://ethereum.org/
+https://geth.ethereum.org/
 https://moonbase-minterc20.netlify.app/
 https://moonbeam-explorer.netlify.app/
 
