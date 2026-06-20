@@ -1,0 +1,481 @@
+---
+title: Register XC Assets
+description: This guide includes everything you need to know to register local and external XC-20s so you can begin transferring assets cross-chain via XCM.
+categories:
+- XC-20
+url: https://docs.moonbeam.network/builders/interoperability/xcm/xc-registration/assets/
+word_count: 3171
+token_estimate: 5298
+version_hash: sha256:d9a48d6b3c1d59fccb799e1ebdf7850d439f1b989853d1381453900127f463bc
+last_updated: '2026-05-21T21:21:53+00:00'
+---
+
+# How to Register Cross-Chain Assets via Governance
+
+## Introduction {: #introduction }
+
+For an asset to be transferred across chains via XCM, there needs to be an open channel between the two chains, and the asset needs to be registered on the destination chain. If a channel does not exist between the two chains, one will need to be opened. Please check out the [XC Channel Registration](/moonbeam-mkdocs/builders/interoperability/xcm/xc-registration/xc-integration/) guide for information on how to establish a channel between Moonbeam and another chain.
+
+This guide will show you how to register [external XC-20s](/moonbeam-mkdocs/builders/interoperability/xcm/xc20/overview/#external-xc20s) on Moonbeam and provide the information you need to register Moonbeam assets, including Moonbeam native assets (GLMR, MOVR, and DEV) and [local XC-20s](/moonbeam-mkdocs/builders/interoperability/xcm/xc20/overview/#local-xc20s) (XCM-enabled ERC-20s), on another chain.
+
+The examples in this guide use a CLI tool developed to ease the entire process, which you can find in the [xcm-tools GitHub repository](https://github.com/Moonsong-Labs/xcm-tools).
+
+```bash
+git clone https://github.com/Moonsong-Labs/xcm-tools && \
+cd xcm-tools && \
+yarn
+```
+
+## Register External XC-20s on Moonbeam {: #register-xc-20s }
+
+Registering External XC-20s on Moonbeam is a multi-step process that, at a high level, involves proposing the asset registration on the [Moonbeam Community Forum](https://forum.moonbeam.network) and creating an on-chain governance proposal.
+
+If a channel between Moonbeam and the origin chain of the asset does not yet exist, one will need to be opened. You can batch the channel-related calls with the asset registration calls, so you only need to submit a single proposal. You must start by creating a couple of forum posts: an [XCM Disclosure](/moonbeam-mkdocs/builders/interoperability/xcm/xc-registration/forum-templates/#xcm-disclosures) post and an [XCM Proposal](/moonbeam-mkdocs/builders/interoperability/xcm/xc-registration/forum-templates/#xcm-proposals) post.
+
+After you've collected feedback from community members, you can create a proposal to open a channel and register any assets. Please refer to the [Establishing an XC Integration with Moonbeam](/moonbeam-mkdocs/builders/interoperability/xcm/xc-registration/xc-integration/) guide for more information on opening a channel.
+
+![Asset registration if XC channel doesn't exist](/moonbeam-mkdocs/images/builders/interoperability/xcm/xc-registrationassetsassets-1.webp)
+
+If a channel between the chains already exists, you'll need to create a forum post to register the asset, collect feedback, and then submit the proposal to register the asset.
+
+![Asset registration if XC channel exists](/moonbeam-mkdocs/images/builders/interoperability/xcm/xc-registrationassetsassets-2.webp)
+
+### Create a Forum Post {: #create-a-forum-post }
+
+To create a forum post on the [Moonbeam Community Forum](https://forum.moonbeam.network), you'll need to make sure that you're adding the post to the correct category and adding relevant content. For general guidelines and a template to follow, please refer to the [Moonbeam Community Forum Templates for XCM Integrations](/moonbeam-mkdocs/builders/interoperability/xcm/xc-registration/forum-templates/#) page.
+
+### Calculate Relative Price {: #calculate-relative-price }
+
+An asset's `relativePrice` refers to a `u128` value that indicates how many units of said asset (in its smallest denomination) equate to one unit—i.e., `1 × 10^18 Wei`—of the native token (GLMR or MOVR). This helps determine how much of your asset to use for fees initially quoted in the native token, particularly in cross-chain messaging (XCM).
+
+You can use the following script (also available as part of [xcm-tools](https://github.com/Moonsong-Labs/xcm-tools) ) to calculate the correct `relativePrice` value for your asset.
+
+??? code "Calculate Relative Price"
+    ```typescript
+    
+    ```
+
+Only three parameters are required to calculate the relative price of an asset: 
+
+- **Asset Price (USD)** - a positive number representing how much 1 unit (in human-readable form) of your asset costs in USD
+- **Asset Decimals** - the number of decimal places your asset uses. For example, if your token has 12 decimals, specify 12
+- **Network** - either GLMR (Moonbeam) or MOVR (Moonriver). This should correspond to the network that you're registering the asset on, and this determines which native token’s USD price the script will fetch from CoinGecko
+
+First, ensure that you've installed the required dependencies by running:
+
+```bash
+yarn
+```
+
+Execute the script, making sure to provide the USD price of the asset you're registering, the number of decimals it has, and the network you're registering the asset on (either GLMR or MOVR):
+
+```bash
+yarn calculate-relative-price INSERT_ASSET_PRICE INSERT_DECIMALS GLMR
+```
+
+For example, if the asset you're registering has a USD price of $0.25 and 12 decimals and you're registering the asset on the Moonbeam network, you would run: 
+
+```bash
+yarn calculate-relative-price 0.25 12 GLMR
+```
+
+This instructs the script to calculate how many smallest units of an asset (priced at $0.25, with 12 decimals) correspond to 1 GLMR token.
+
+
+Upon successful execution, the script prints the computed `relativePrice` as a `BigInt`. This value represents the scaled ratio between the asset’s USD price and the native token’s USD price, multiplied up to 18 decimals. You can then use this result in on-chain asset registration or fee calculation scenarios—especially where a `u128` 18-decimal format is required.
+
+For additional info, usage details, or to see an example in action, you can invoke the help command by running: 
+
+```bash
+yarn calculate-relative-price --help
+```
+
+### Generate the Encoded Calldata for the Asset Registration {: #generate-encoded-calldata-for-asset-registration }
+
+Submitting a governance proposal on Moonbeam requires two steps: first, submit a preimage that defines the actions to be executed, then use that preimage to submit the proposal. For more details, see the [Governance on Moonbeam](/moonbeam-mkdocs/learn/features/governance/) page. To submit a preimage for asset registration, you'll need the encoded calldata for both the `evmForeignAssets.createForeignAsset` and `xcmWeightTrader.addAsset` extrinsics. An existing asset's price can be updated with `xcmWeightTrader.editAsset`. 
+
+Proposals must be submitted via the Fast General Admin track. A channel must be established before an asset can be registered. To get the encoded calldata for the `evmForeignAssets.createForeignAsset` extrinsic, you will need to provide the following arguments:
+
+- **`assetId`** - unique identifier of the asset, generated from the [`calculate-external-asset-info.ts`](https://github.com/Moonsong-Labs/xcm-tools/blob/main/scripts/calculate-external-asset-info.ts) script
+- **`xcmLocation`** - the multilocation of the asset relative to Moonbeam 
+- **`decimals`** - the number of decimals of the asset
+- **`symbol`**  - the symbol of the asset. Remember that "xc" should be prepended to the symbol to indicate the asset is an XCM-enabled asset
+- **`name`** - the asset name
+
+Using the above information, you can generate the encoded call data for the `createForeignAsset` call either via the Polkadot API or on [Polkadot.js Apps](https://polkadot.js.org/apps/?rpc=wss://wss.api.moonbeam.network#/extrinsics).
+
+You can generate this required calldata using the [xcm-asset-registrator script](https://github.com/Moonsong-Labs/xcm-tools/blob/main/scripts/xcm-asset-registrator.ts) as follows:
+
+```bash
+yarn register-asset --w wss://wss.api.moonbeam.network  \
+--asset "INSERT_MULTILOCATION" \
+--symbol "INSERT_ASSET_SYMBOL" \
+--decimals INSERT_DECIMALS \
+--name "INSERT_ASSET_NAME" \
+--relative-price INSERT_RELATIVE_PRICE
+```
+
+Upon running the script with the relevant parameters, you'll see output like the following: 
+
+
+The script will provide the encoded call data for each of the following calls:
+
+- The `registerAsset` call
+- The `setRelativePrice` call
+- The `batch` call that combines all of the above
+
+![Overview of the proposal process](/moonbeam-mkdocs/images/builders/interoperability/xcm/xc-registrationassetsassets-3.webp)
+
+### Construct the Add Asset Call
+
+If you've already used the [xcm-asset-registrator script](https://github.com/Moonsong-Labs/xcm-tools/blob/main/scripts/xcm-asset-registrator.ts) shown above, you can skip this section. This section dives into more detail about how the `xcmWeightTrader.addAsset` call is constructed. To get the encoded calldata for the `xcmWeightTrader.addAsset` extrinsic, you will need to provide the following arguments:
+
+- **`xcmLocation`** - the multilocation of the asset relative to Moonbeam 
+- **`relativePrice`** - A numeric value (u128) representing the fraction of the native token’s price that your asset’s price constitutes, scaled to 18 decimals. This value calculates cross-chain fees by determining how many units of the non-native asset are required to cover XCM operation costs 
+
+Using the above information, you can generate the encoded call data for the `addAsset` call either via the Polkadot API or on [Polkadot.js Apps](https://polkadot.js.org/apps/?rpc=wss://wss.api.moonbeam.network#/extrinsics).
+
+To create a batch transaction that combines both the `xcmWeightTrader.addAsset` and the `evmForeignAssets.createForeignAsset` calls together, you can use the [Polkadot API's `batch` method](/moonbeam-mkdocs/builders/substrate/libraries/polkadot-js-api/#batching-transactions). As mentioned previously, the [XCM asset registrator script](https://github.com/Moonsong-Labs/xcm-tools/blob/main/scripts/xcm-asset-registrator.ts) can help you build and submit the required calls. 
+
+### Submit the Preimage and Proposal for Asset Registration {: #submit-preimage-proposal }
+
+Your next task is to submit the preimage of your batched call containing both the `xcmWeightTrader.addAsset` and the `evmForeignAssets.createForeignAsset` by following the guidelines in the [Submit a Democracy Proposal Guide](/moonbeam-mkdocs/tokens/governance/proposals/#submitting-a-preimage-of-the-proposal).
+
+You do not need to go through governance for Moonbase Alpha, as Moonbase Alpha has sudo access. Instead, you can provide the output of the batch call data to the Moonbeam team, and they can submit the call with sudo. This will be a faster and easier process than going through governance. However, you may still wish to go through governance on Moonbase Alpha to prepare for Moonbeam's governance process.
+
+After submitting the preimage, you can submit the proposal by following the guidelines in the [Submitting a Proposal](/moonbeam-mkdocs/tokens/governance/proposals/#submitting-a-proposal-v2) section.
+
+If you prefer the script method and you're comfortable working with the scripts in the XCM tools repo, you can use the [generic call proposer](https://github.com/Moonsong-Labs/xcm-tools/blob/main/scripts/generic-call-proposer.ts) by passing in the requisite calls, including the acceptance and proposal of the XCM Channel, and the asset registration. The [generic call proposer](https://github.com/Moonsong-Labs/xcm-tools/blob/main/scripts/generic-call-proposer.ts) can help you assemble the multiple requisite calls as follows:
+
+```bash
+yarn generic-call-propose \
+  --call INSERT_CALLDATA_INCOMING_XCM_CHANNEL \
+  --call INSERT_CALLDATA_OUTGOING_XCM_CHANNEL \
+  --call INSERT_CALLDATA_BATCH_ASSET_REGISTRATION \
+  --ws-provider INSERT_WSS_PROVIDER
+```
+
+### Test the Asset Registration on Moonbeam {: #test-asset-registration }
+
+After your asset is registered, the team will provide the asset ID and the [XC-20 precompile](/moonbeam-mkdocs/builders/interoperability/xcm/xc20/interact/#the-erc20-interface) address. Your XC-20 precompile address is calculated by converting the asset ID decimal number to hex and prepending it with F's until you get a 40-hex character (plus the “0x”) address. For more information on how it is calculated, please refer to the [Calculate External XC-20 Precompile Addresses](/moonbeam-mkdocs/builders/interoperability/xcm/xc20/interact/#calculate-xc20-address) section of the External XC-20 guide. After the asset is successfully registered, you can transfer tokens from your parachain to the Moonbeam-based network you are integrating with.
+
+!!! note
+    Remember that Moonbeam-based networks use AccountKey20 (Ethereum-style addresses).
+
+For testing, please also provide your parachain WSS endpoint so that the [Moonbeam dApp](https://apps.moonbeam.network/moonbeam) can connect to it. Lastly, please fund the corresponding account:
+
+=== "Moonbeam"
+
+    ```text
+    AccountId: 5E6kHM4zFdH5KEJE3YEzX5QuqoETVKUQadeY8LVmeh2HyHGt
+    Hex:       0x5a071f642798f89d68b050384132eea7b65db483b00dbb05548d3ce472cfef48
+    ```
+
+=== "Moonriver"
+
+    ```text
+    AccountId: 5E6kHM4zFdH5KEJE3YEzX5QuqoETVKUQadeY8LVmeh2HyHGt
+    Hex:       0x5a071f642798f89d68b050384132eea7b65db483b00dbb05548d3ce472cfef48
+    ```
+
+=== "Moonbase Alpha"
+
+    ```text
+    AccountId: 5GWpSdqkkKGZmdKQ9nkSF7TmHp6JWt28BMGQNuG4MXtSvq3e
+    Hex:       0xc4db7bcb733e117c0b34ac96354b10d47e84a006b9e7e66a229d174e8ff2a063
+    ```
+
+!!! note
+    For Moonbeam and Moonriver testing, please send $50 worth of tokens to the aforementioned account. In addition, provide an Ethereum-style account to send $50 worth of GLMR/MOVR for testing purposes.
+
+[XC-20s](/moonbeam-mkdocs/builders/interoperability/xcm/xc20/) are Substrate-based assets with an [ERC-20 interface](/moonbeam-mkdocs/builders/interoperability/xcm/xc20/overview/#the-erc20-interface). This means they can be added to MetaMask and composed with any EVM DApp that exists in the ecosystem. The team can connect you with any DApp you find relevant for an XC-20 integration.
+
+If you need DEV tokens (the native token for Moonbase Alpha) to use your XC-20 asset, you can get some from the [Moonbase Alpha Faucet](/moonbeam-mkdocs/builders/get-started/networks/moonbase/#moonbase-alpha-faucet), which dispenses 1.1 DEV tokens every 24 hours. If you need more, feel free to reach out to the team on [Telegram](https://t.me/Moonbeam_Official) or [Discord](https://discord.com/invite/PfpUATX).
+
+### Set XC-20 Precompile Bytecode {: #set-bytecode }
+
+Once your XC-20 has been registered on Moonbeam, you can set the XC-20's precompile bytecode. This is necessary because precompiles are implemented inside the Moonbeam runtime and, by default, do not have bytecode. In Solidity, when a contract is called, there are checks that require the contract bytecode to be non-empty. So, setting the bytecode as a placeholder bypasses these checks and allows the precompile to be called.
+
+You can use the [Precompile Registry](/moonbeam-mkdocs/builders/ethereum/precompiles/utility/registry/), which is a Solidity interface, to update the XC-20 precompile's bytecode to avoid any issues and ensure that the precompile is callable from Solidity. To do so, you'll use the Precompile Registry's [`updateAccountCode` function](/moonbeam-mkdocs/builders/ethereum/precompiles/utility/registry/#the-solidity-interface).
+
+To get started, you'll need to [calculate your XC-20's precompile address](/moonbeam-mkdocs/builders/interoperability/xcm/xc20/overview/#calculate-xc20-address) and have the Precompile Registry's ABI.
+
+??? code "Precompile Registry ABI"
+
+    ```js
+    [
+    	{
+    		"inputs": [
+    			{
+    				"internalType": "address",
+    				"name": "a",
+    				"type": "address"
+    			}
+    		],
+    		"name": "isActivePrecompile",
+    		"outputs": [
+    			{
+    				"internalType": "bool",
+    				"name": "",
+    				"type": "bool"
+    			}
+    		],
+    		"stateMutability": "view",
+    		"type": "function"
+    	},
+    	{
+    		"inputs": [
+    			{
+    				"internalType": "address",
+    				"name": "a",
+    				"type": "address"
+    			}
+    		],
+    		"name": "isPrecompile",
+    		"outputs": [
+    			{
+    				"internalType": "bool",
+    				"name": "",
+    				"type": "bool"
+    			}
+    		],
+    		"stateMutability": "view",
+    		"type": "function"
+    	},
+    	{
+    		"inputs": [
+    			{
+    				"internalType": "address",
+    				"name": "a",
+    				"type": "address"
+    			}
+    		],
+    		"name": "updateAccountCode",
+    		"outputs": [],
+    		"stateMutability": "nonpayable",
+    		"type": "function"
+    	}
+    ]
+    ```
+
+Then, you can use the following scripts to set the dummy code for your XC-20's precompile.
+
+!!! remember
+    The following snippets are for demo purposes only. Never store your private keys in a JavaScript or Python file.
+
+=== "Ethers.js"
+
+    ```js
+    
+    ```
+
+=== "Web3.js"
+
+    ```js
+    
+    ```
+
+=== "Web3.py"
+
+    ```py
+    
+    ```
+
+After running the script to set the bytecode, you should see `The XC-20 precompile's bytecode is: 0x60006000fd` printed to your terminal.
+
+## Register Moonbeam Assets on Another Chain {: #register-moonbeam-assets-on-another-chain }
+
+To enable cross-chain transfers of Moonbeam assets, including Moonbeam native assets (GLMR, MOVR, DEV) and local XC-20s (XCM-enabled ERC-20s) deployed on Moonbeam, between Moonbeam and another chain, you'll need to register the assets on the other chain. Since each chain stores cross-chain assets differently, the exact steps to register Moonbeam assets on another chain will vary depending on the chain. At the very least, you'll need to know the metadata and the multilocation of the assets on Moonbeam.
+
+There are additional steps aside from asset registration that will need to be taken to enable cross-chain integration with Moonbeam. For more information, please refer to the [Establishing an XC Integration with Moonbeam](/moonbeam-mkdocs/builders/interoperability/xcm/xc-registration/xc-integration/) guide.
+
+### Register Moonbeam Native Assets on Another Chain {: #register-moonbeam-native-assets }
+
+The metadata for each network is as follows:
+
+=== "Moonbeam"
+    |      Variable       |        Value        |
+    |:-------------------:|:-------------------:|
+    |        Name         |       Glimmer       |
+    |       Symbol        |        GLMR         |
+    |      Decimals       |         18          |
+    | Existential deposit | 1 (1 * 10^-18 GLMR) |
+
+=== "Moonriver"
+    |      Variable       |        Value        |
+    |:-------------------:|:-------------------:|
+    |        Name         |      Moonriver      |
+    |       Symbol        |        MOVR         |
+    |      Decimals       |         18          |
+    | Existential deposit | 1 (1 * 10^-18 MOVR) |
+
+=== "Moonbase Alpha"
+    |      Variable       |       Value        |
+    |:-------------------:|:------------------:|
+    |        Name         |        DEV         |
+    |       Symbol        |        DEV         |
+    |      Decimals       |         18         |
+    | Existential deposit | 1 (1 * 10^-18 DEV) |
+
+The multilocation of Moonbeam native assets includes the parachain ID of the Moonbeam network and the pallet instance where Moonbeam assets live, which corresponds to the index of the Balances Pallet. The multilocation for each network is as follows:
+
+=== "Moonbeam"
+
+    ```js
+    {
+      V4: {
+        parents: 1,
+        interior: {
+          X2: [
+            { 
+              Parachain: 2004
+            },
+            {
+              PalletInstance: 10
+            }
+          ]
+        }
+      }
+    }
+    ```
+
+=== "Moonriver"
+
+    ```js
+    {
+      V4: {
+        parents: 1,
+        interior: {
+          X2: [
+            { 
+              Parachain: 2023
+            },
+            {
+              PalletInstance: 10
+            }
+          ]
+        }
+      }
+    }
+    ```
+
+=== "Moonbase Alpha"
+
+    ```js
+    {
+      V4: {
+        parents: 1,
+        interior: {
+          X2: [
+            { 
+              Parachain: 1000
+            },
+            {
+              PalletInstance: 3
+            }
+          ]
+        }
+      }
+    }
+    ```
+
+### Register Local XC-20s on Another Chain {: #register-local-xc20 }
+
+The multilocation for local XC-20s include the parachain ID of Moonbeam, the pallet instance, and the address of the ERC-20. The pallet instance corresponds to the index of the ERC-20 XCM Bridge Pallet, as this is the pallet that enables any ERC-20 to be transferred via XCM.
+
+**To be registered on other chains, local XC-20s must strictly comply with the standard ERC-20 interface as described in [EIP-20](https://eips.ethereum.org/EIPS/eip-20). In particular, the [`transfer` function](https://eips.ethereum.org/EIPS/eip-20#transfer) must be as described in EIP-20:**
+
+```js
+function transfer(address _to, uint256 _value) public returns (bool success)
+```
+
+If the function selector of the `transfer` function deviates from the standard, the cross-chain transfer will fail.
+
+You can use the following multilocation to register a local XC-20:
+
+=== "Moonbeam"
+
+    ```js
+    {
+      parents: 1,
+      interior: {
+        X3: [
+          { 
+            Parachain: 2004
+          },
+          {
+            PalletInstance: 110
+          },
+          {
+            AccountKey20: {
+              key: 'INSERT_ERC20_ADDRESS'
+            }
+          }
+        ]
+      }
+    }
+    ```
+
+=== "Moonriver"
+
+    ```js
+    {
+      parents: 1,
+      interior: {
+        X3: [
+          { 
+            Parachain: 2023
+          },
+          {
+            PalletInstance: 110
+          },
+          {
+            AccountKey20: {
+              key: 'INSERT_ERC20_ADDRESS'
+            }
+          }
+        ]
+      }
+    }
+    ```
+
+=== "Moonbase Alpha"
+
+    ```js
+    {
+      parents: 1,
+      interior: {
+        X3: [
+          { 
+            Parachain: 1000
+          },
+          {
+            PalletInstance: 48
+          },
+          {
+            AccountKey20: {
+              key: 'INSERT_ERC20_ADDRESS'
+            }
+          }
+        ]
+      }
+    }
+    ```
+
+Since local XC-20s are ERC-20s on Moonbeam, there are no deposits required to create an ERC-20 on Moonbeam. However, deposits may be required to register the asset on another parachain. Please consult with the parachain team you wish to register the asset with for more information.
+
+## Managing XC Assets 
+
+After completing the [registration process](#introduction) for an XC asset, you may need to periodically update asset details, such as the XCM multilocation details or asset price. This section will cover these topics.
+
+### Updating Foreign Asset XCM Location {: #updating-foreign-asset-xcm-location }
+
+You can update the multilocation of an asset with the `evmForeignAssets.changeXcmLocation` call, which takes as parameters the `assetId` and the new multilocation. You'll need to raise a [governance proposal](/moonbeam-mkdocs/tokens/governance/proposals/) and submit the update under the General Admin track. If you're testing in Moonbase Alpha, you can ask the Moonbeam Team to submit the extrinsic using Sudo to speed up the process. You can also submit the requisite governance proposal on Moonbase Alpha. 
+
+### Freezing a Foreign Asset {: #freezing-a--foreign-asset }
+
+You can freeze a foreign asset by calling `evmForeignAssets.freezeForeignAsset`, which takes as parameters the `assetId` and an `allowXcmDeposit` boolean. If set to true, XCM deposits from remote chains will still be allowed and mint tokens. If set to false, XCM deposits from remote chains will fail as no minting will be permitted. 
+
+### Paying XCM Fees with Foreign Assets {: #paying-xcm-fees-with-foreign-assets }
+
+After you've registered the foreign asset via the `evmForeignAssets` and the `xcmWeightTrader` pallet, your asset will now be among the supported assets for paying XCM fees. To verify, you can query the `xcmWeightTrader` pallet and the `supportedAssets` chain state query. Toggle the **Include Option** slider off to see the complete list, or you can filter the list by the multilocation of your asset.

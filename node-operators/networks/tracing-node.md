@@ -1,0 +1,472 @@
+---
+title: Run a Tracing Node
+description: Learn how to leverage Geth's Debug and Txpool APIs, and OpenEthereum's Trace module to run a tracing node on Moonbeam.
+categories:
+- Node Operators and Collators
+url: https://docs.moonbeam.network/node-operators/networks/tracing-node/
+word_count: 3006
+token_estimate: 5788
+version_hash: sha256:51cefbd11d04eade63adf24f0bd7797f78beadbaa1a96493a2c3bfd74a8e5ba4
+last_updated: '2026-05-21T21:21:53+00:00'
+---
+
+# Run a Tracing Node
+
+## Introduction {: #introduction }
+
+Geth's `debug` and `txpool` APIs and OpenEthereum's `trace` module provide non-standard RPC methods for getting a deeper insight into transaction processing. As part of Moonbeam's goal of providing a seamless Ethereum experience for developers, there is support for some of these non-standard RPC methods. Supporting these RPC methods is an important milestone because many projects, such as [The Graph](https://thegraph.com), rely on them to index blockchain data.
+
+To use the supported RPC methods, you need to run a tracing node, which is slightly different than running a full node. There is a different Docker image, called `moonbeamfoundation/moonbeam-tracing` that needs to be used for tracing. Additional flags will also need to be used to tell the node which of the non-standard features to support.
+
+This guide will show you how to get started running a tracing node on Moonbeam with the `debug`, `txpool`, and `tracing` flags enabled.
+
+## Checking Prerequisites {: #checking-prerequisites }
+
+Similarly to running a regular node, you can spin up a tracing node using Docker or Systemd. If you choose to use Docker, you must [install Docker](https://docs.docker.com/get-started/get-docker/) if you haven't already. At the time of writing, the Docker version used was 19.03.6.
+
+## Tracing Node Flags {: #tracing-node-flags }
+
+Spinning up a `debug`, `txpool`, or `tracing` node is similar to [running a full node](/moonbeam-mkdocs/node-operators/networks/run-a-node/overview/), but requires additional flags to enable the non-standard Ethereum RPC modules. These flags control tracing depth, caching, and runtime configuration.
+
+- **`--ethapi debug`**: Enables the `debug` module with RPC methods such as `debug_traceTransaction`, `debug_traceBlockByNumber`, `debug_traceBlockByHash`, and `debug_traceCall`.
+- **`--ethapi trace`**: Enables the `trace` module and its associated RPC methods like `trace_filter`.
+- **`--ethapi txpool`**: Enables the `txpool` module, which provides `txpool_content`, `txpool_inspect`, and `txpool_status`.
+- **`--wasm-runtime-overrides <path/to/overrides>`**: **Required** for tracing. Specifies the path where local Wasm runtimes are stored.  
+  - For Docker setups, use `/moonbeam/<network>-substitutes-tracing`, where `<network>` is `moonbeam`, `moonriver`, or `moonbase` (for Moonbase Alpha or dev nodes).
+- **`--runtime-cache-size 64`**: **Required**. Configures the number of different runtime versions preserved in the in-memory cache to `64`.
+- **`--ethapi-max-permits <uint>`**: Sets the number of concurrent tracing tasks shared by tracing modules (`debug`, `trace`). Default: `10`.
+- **`--ethapi-trace-max-count <uint>`**: Sets the maximum number of trace entries that a single `trace_filter` request can return. Default: `500`.
+- **`--ethapi-trace-cache-duration <uint>`**: Duration (in seconds) after which cached `trace_filter` results for a block are discarded. Default: `300`.
+- **`--eth-log-block-cache <bytes>`**: Size of the LRU cache (in bytes) used for storing block data. Default: `300000000`.
+- **`--eth-statuses-cache <bytes>`**: Size of the LRU cache (in bytes) used for storing transaction status data. Default: `300000000`.
+- **`--fee-history-limit <uint>`**: Sets the maximum fee history cache size for `eth_feeHistory` requests. Default: `2048`.
+- **`--max-past-logs <uint>`**: Maximum number of logs returned by a single log query. Default: `10000`.
+- **`--max-block-range <uint>`**: Maximum block span allowed in a single log query. Default: `1024`.
+- **`--tracing-raw-max-memory-usage <bytes>`**: Upper bound for memory used by raw tracing requests (stack, storage, and memory data). Default: `20000000`.
+
+!!! note
+    If you want to run an RPC endpoint to connect to Polkadot.js Apps or your own dApp, use the `--unsafe-rpc-external` flag to allow external access to RPC ports. More details are available by running `moonbeam --help`.
+ 
+
+## Run a Tracing Node with Docker {: #run-a-tracing-node-with-docker }
+
+If you haven't previously run a standard full Moonbeam node, you will need to setup a directory to store chain data:
+
+=== "Moonbeam"
+
+    ```bash
+    mkdir /var/lib/moonbeam-data
+    ```
+
+=== "Moonriver"
+
+    ```bash
+    mkdir /var/lib/moonriver-data
+    ```
+
+=== "Moonbase Alpha"
+
+    ```bash
+    mkdir /var/lib/alphanet-data
+    ```
+
+Before getting started, you'll need to set the necessary permissions either for a specific or current user (replace `INSERT_DOCKER_USER` for the actual user that will run the `docker` command):
+
+=== "Moonbeam"
+
+    ```bash
+    # chown to a specific user
+    chown INSERT_DOCKER_USER /var/lib/moonbeam-data
+
+    # chown to current user
+    sudo chown -R $(id -u):$(id -g) /var/lib/moonbeam-data
+    ```
+
+=== "Moonriver"
+
+    ```bash
+    # chown to a specific user
+    chown INSERT_DOCKER_USER /var/lib/moonriver-data
+
+    # chown to current user
+    sudo chown -R $(id -u):$(id -g) /var/lib/moonriver-data
+    ```
+
+=== "Moonbase Alpha"
+
+    ```bash
+    # chown to a specific user
+    chown INSERT_DOCKER_USER /var/lib/alphanet-data
+
+    # chown to current user
+    sudo chown -R $(id -u):$(id -g) /var/lib/alphanet-data
+    ```
+
+Instead of the standard `moonbeamfoundation/moonbeam` docker image, you will need to use `moonbeamfoundation/moonbeam-tracing` image. The latest supported version can be found on the [Docker Hub for the `moonbeam-tracing` image](https://hub.docker.com/r/moonbeamfoundation/moonbeam-tracing/tags).
+
+Now, execute the docker run command. Note that you have to:
+
+ - Replace `INSERT_YOUR_NODE_NAME` in two different places
+ - Replace `INSERT_RAM_IN_MB` for 50% of the actual RAM your server has. For example, for 32 GB RAM, the value must be set to `16000`. The minimum value is `2000`, but it is below the recommended specs
+
+!!! note
+    As of client v0.33.0, the `--ws-port` and `--ws-max-connections` flags have been deprecated and removed in favor of the `--rpc-port` and `--rpc-max-connections` flags for both RPC and WSS connections. The default port is `9944`, and the default maximum number of connections is set to 100.
+The complete command for running a tracing node is as follows:
+
+=== "Moonbeam"
+
+    ```bash
+    docker run --network="host" -v "/var/lib/moonbeam-data:/data" \
+    -u $(id -u ${USER}):$(id -g ${USER}) \
+    moonbeamfoundation/moonbeam-tracing:v0.51.2-4301-2fd9 \
+    --base-path /data \
+    --chain moonbeam \
+    --name "INSERT_YOUR_NODE_NAME" \
+    --state-pruning archive \
+    --trie-cache-size 1073741824 \
+    --db-cache INSERT_RAM_IN_MB \
+    --ethapi debug,trace,txpool \
+    --wasm-runtime-overrides /moonbeam/moonbeam-substitutes-tracing \
+    --runtime-cache-size 64 \
+    -- \
+    --name "INSERT_YOUR_NODE_NAME (Embedded Relay)"
+    ```
+
+=== "Moonriver"
+
+    ```bash
+    docker run --network="host" -v "/var/lib/moonriver-data:/data" \
+    -u $(id -u ${USER}):$(id -g ${USER}) \
+    moonbeamfoundation/moonbeam-tracing:v0.51.2-4301-2fd9 \
+    --base-path /data \
+    --chain moonriver \
+    --name "INSERT_YOUR_NODE_NAME" \
+    --state-pruning archive \
+    --trie-cache-size 1073741824 \
+    --db-cache INSERT_RAM_IN_MB \
+    --ethapi debug,trace,txpool \
+    --wasm-runtime-overrides /moonbeam/moonriver-substitutes-tracing \
+    --runtime-cache-size 64 \
+    -- \
+    --name "INSERT_YOUR_NODE_NAME (Embedded Relay)"
+    ```
+
+=== "Moonbase Alpha"
+
+    ```bash
+    docker run --network="host" -v "/var/lib/alphanet-data:/data" \
+    -u $(id -u ${USER}):$(id -g ${USER}) \
+    moonbeamfoundation/moonbeam-tracing:v0.51.2-4301-2fd9 \
+    --base-path /data \
+    --chain alphanet \
+    --name "INSERT_YOUR_NODE_NAME" \
+    --state-pruning archive \
+    --trie-cache-size 1073741824 \
+    --db-cache INSERT_RAM_IN_MB \
+    --ethapi debug,trace,txpool \
+    --wasm-runtime-overrides /moonbeam/moonbase-substitutes-tracing \
+    --runtime-cache-size 64 \
+    -- \
+    --name "INSERT_YOUR_NODE_NAME (Embedded Relay)"
+    ```
+
+=== "Moonbeam Dev Node"
+
+    ```bash
+    docker run --network="host" \
+    -u $(id -u ${USER}):$(id -g ${USER}) \
+    moonbeamfoundation/moonbeam-tracing:v0.51.2-4301-2fd9 \
+    --name "INSERT_YOUR_NODE_NAME" \
+    --ethapi debug,trace,txpool \
+    --wasm-runtime-overrides /moonbeam/moonbase-substitutes-tracing \
+    --runtime-cache-size 64 \
+    --dev
+    ```
+
+You should see a terminal log similar to the following if you spun up a Moonbase Alpha tracing node:
+
+<div id="termynal" data-termynal>
+  <span data-ty="input"><span class="file-path"></span>docker run --network host  \
+    <br>-u $(id -u ${USER}):$(id -g ${USER}) \
+        moonbeamfoundation/moonbeam-tracing:v0.51.2-4301-2fd9 \
+    <br>--name="Moonbeam-Tracing-Tutorial" \
+    <br>--unsafe-rpc-external \
+    <br>--ethapi=debug,trace,txpool \
+    <br>--wasm-runtime-overrides=/moonbeam/moonbase-substitutes-tracing \
+    <br>--runtime-cache-size 64 \
+    <br>--dev
+  </span>
+  <br>
+  <span data-ty> 2025-07-10 09:04:26 Moonbeam Parachain Collator
+    <br> 2025-07-10 09:04:26 ✌️  version 0.51.2
+    <br> 2025-07-10 09:04:26 ❤️  by PureStake, 2019-2025
+    <br> 2025-07-10 09:04:26 📋 Chain specification: Moonbase Development Testnet
+    <br> 2025-07-10 09:04:26 🏷  Node name: Moonbeam-Tracing-Tutorial
+    <br> 2025-07-10 09:04:26 👤 Role: AUTHORITY
+    <br> 2025-07-10 09:04:26 💾 Database: RocksDb at /tmp/substrateO3YeRz/chains/moonbase_dev/db/full
+    <br> 2025-07-10 09:04:26 Found wasm override. version=moonbase-300 (moonbase-0.tx2.au3) file=/moonbeam/moonbase-substitutes-tracing/moonbase-runtime-300-substitute-tracing.wasm
+    <br> ...
+    <br> 2025-07-10 09:04:26 💤 Idle (0 peers), best: #0 (0x18e6…2eb1), finalized #0 (0x18e6…2eb1), ⬇ 0 ⬆ 0
+  </span>
+</div>
+## Run a Tracing Node with Systemd {: #run-a-tracing-node-with-systemd }
+
+When you run a node using Systemd, you'll need to start off by setting up the Moonbeam binary. To do so you'll need to follow the instructions on the [Run a Node on Moonbeam Using Systemd](/moonbeam-mkdocs/node-operators/networks/run-a-node/systemd/) page. In general, you'll need to:
+
+1. Setup the Moonbeam binary by following the [Release Binary](/moonbeam-mkdocs/node-operators/networks/run-a-node/systemd/#the-release-binary) instructions. Or if you want to compile the binary yourself, you can follow the [Compile the Binary](/moonbeam-mkdocs/node-operators/networks/run-a-node/systemd/#compile-the-binary) instructions
+2. Follow the instructions in the [Setup the Service](/moonbeam-mkdocs/node-operators/networks/run-a-node/systemd/#setup-the-service) instructions
+
+Once you've finished going through the instructions in those specific sections, you can continue on to the below instructions.
+
+### Setup the Wasm Overrides {: #setup-the-wasm-overrides }
+
+You'll need to create a directory for the Wasm runtime overrides and obtain them from the [Moonbeam Runtime Overrides repository](https://github.com/moonbeam-foundation/moonbeam-runtime-overrides) on GitHub.
+
+You can clone the repository to any location on your local machine. For simplicity, you can use the directory where you're storing on-chain data. To set up the Wasm override files, you can take the following steps:
+
+1. Clone the [Moonbeam Runtime Overrides repository](https://github.com/moonbeam-foundation/moonbeam-runtime-overrides)
+
+    ```bash
+    git clone https://github.com/moonbeam-foundation/moonbeam-runtime-overrides.git
+    ```
+
+2. Move the Wasm overrides into your on-chain data directory:
+
+    === "Moonbeam"
+
+        ```bash
+        mv moonbeam-runtime-overrides/wasm /var/lib/moonbeam-data
+        ```
+
+    === "Moonriver"
+
+        ```bash
+        mv moonbeam-runtime-overrides/wasm /var/lib/moonriver-data
+        ```
+
+    === "Moonbase Alpha"
+
+        ```bash
+        mv moonbeam-runtime-overrides/wasm /var/lib/alphanet-data
+        ```
+
+3. Delete the override files for the networks that you aren't running
+
+    === "Moonbeam"
+
+        ```bash
+        rm /var/lib/moonbeam-data/wasm/moonriver-runtime-* &&  rm /var/lib/moonbeam-data/wasm/moonbase-runtime-*
+        ```
+
+    === "Moonriver"
+
+        ```bash
+        rm /var/lib/moonriver-data/wasm/moonbeam-runtime-* &&  rm /var/lib/moonriver-data/wasm/moonbase-runtime-*
+        ```
+
+    === "Moonbase Alpha"
+
+        ```bash
+        rm /var/lib/alphanet-data/wasm/moonbeam-runtime-* &&  rm /var/lib/alphanet-data/wasm/moonriver-runtime-*
+        ```
+
+4. Set user permissions for the overrides:
+
+    === "Moonbeam"
+
+        ```bash
+        chmod +x /var/lib/moonbeam-data/wasm/*
+        chown moonbeam_service /var/lib/moonbeam-data/wasm/*
+        ```
+
+    === "Moonriver"
+
+        ```bash
+        chmod +x /var/lib/moonriver-data/wasm/*
+        chown moonriver_service /var/lib/moonriver-data/wasm/*
+        ```
+
+    === "Moonbase Alpha"
+
+        ```bash
+        chmod +x /var/lib/alphanet-data/wasm/*
+        chown moonbase_service /var/lib/alphanet-data/wasm/*
+        ```
+
+### Create the Configuration File {: #create-the-configuration-file }
+
+The next step is to create the systemd configuration file, you'll need to:
+
+ - Replace `INSERT_YOUR_NODE_NAME` in two different places
+ - Replace `INSERT_RAM_IN_MB` for 50% of the actual RAM your server has. For example, for 32 GB RAM, the value must be set to `16000`. The minimum value is `2000`, but it is below the recommended specs
+ - Double-check that the binary is in the proper path as described below (_ExecStart_)
+ - Double-check the base path if you've used a different directory
+ - Name the file `/etc/systemd/system/moonbeam.service`
+
+!!! note
+    As of client v0.33.0, the `--ws-port` and `--ws-max-connections` flags have been deprecated and removed in favor of the `--rpc-port` and `--rpc-max-connections` flags for both RPC and WSS connections. The default port is `9944`, and the default maximum number of connections is set to 100.
+=== "Moonbeam"
+
+    ```bash
+    [Unit]
+    Description="Moonbeam systemd service"
+    After=network.target
+    StartLimitIntervalSec=0
+
+    [Service]
+    Type=simple
+    Restart=on-failure
+    RestartSec=10
+    User=moonbeam_service
+    SyslogIdentifier=moonbeam
+    SyslogFacility=local7
+    KillSignal=SIGHUP
+    ExecStart=/var/lib/moonbeam-data/moonbeam \
+         --state-pruning archive \
+         --trie-cache-size 1073741824 \
+         --db-cache INSERT_RAM_IN_MB \
+         --base-path /var/lib/moonbeam-data \
+         --ethapi debug,trace,txpool \
+         --wasm-runtime-overrides /var/lib/moonbeam-data/wasm \
+         --runtime-cache-size 64 \
+         --chain moonbeam \
+         --name "INSERT_YOUR_NODE_NAME" \
+         -- \
+         --name "INSERT_YOUR_NODE_NAME (Embedded Relay)"
+    
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+=== "Moonriver"
+
+    ```bash
+    [Unit]
+    Description="Moonriver systemd service"
+    After=network.target
+    StartLimitIntervalSec=0
+
+    [Service]
+    Type=simple
+    Restart=on-failure
+    RestartSec=10
+    User=moonriver_service
+    SyslogIdentifier=moonriver
+    SyslogFacility=local7
+    KillSignal=SIGHUP
+    ExecStart=/var/lib/moonriver-data/moonbeam \
+         --state-pruning archive \
+         --trie-cache-size 1073741824 \
+         --db-cache INSERT_RAM_IN_MB \
+         --base-path /var/lib/moonriver-data \
+         --ethapi debug,trace,txpool \
+         --wasm-runtime-overrides /var/lib/moonriver-data/wasm \
+         --runtime-cache-size 64 \
+         --chain moonriver \
+         --name "INSERT_YOUR_NODE_NAME" \
+         -- \
+         --name "INSERT_YOUR_NODE_NAME (Embedded Relay)"
+    
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+=== "Moonbase Alpha"
+
+    ```bash
+    [Unit]
+    Description="Moonbase Alpha systemd service"
+    After=network.target
+    StartLimitIntervalSec=0
+
+    [Service]
+    Type=simple
+    Restart=on-failure
+    RestartSec=10
+    User=moonbase_service
+    SyslogIdentifier=moonbase
+    SyslogFacility=local7
+    KillSignal=SIGHUP
+    ExecStart=/var/lib/alphanet-data/moonbeam \
+         --state-pruning archive \
+         --trie-cache-size 1073741824 \
+         --db-cache INSERT_RAM_IN_MB \
+         --base-path /var/lib/alphanet-data \
+         --ethapi debug,trace,txpool \
+         --wasm-runtime-overrides /var/lib/alphanet-data/wasm \
+         --runtime-cache-size 64 \
+         --chain alphanet \
+         --name "INSERT_YOUR_NODE_NAME" \
+         -- \
+         --name "INSERT_YOUR_NODE_NAME (Embedded Relay)"
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+!!! note
+    If you want to run an RPC endpoint, to connect polkadot.js.org, or to run your own application, use the `--unsafe-rpc-external` flag to run the full node with external access to the RPC ports. More details are available by running `moonbeam --help`.
+
+### Run the Service {: #run-the-service }
+
+Register and start the service by running:
+
+```bash
+systemctl enable moonbeam.service
+systemctl start moonbeam.service
+```
+
+And lastly, verify that the service is running:
+
+```bash
+systemctl status moonbeam.service
+```
+<div id="termynal" data-termynal>
+  <span data-ty="input"><span class="file-path"></span>systemctl status moonbeam.service</span>
+  <span data-ty>● moonbeam.service - "Moonbase Alpha systemd service"
+    <br>Loaded: loaded (/etc/systemd/system/moonbeam.service; enabled; vendor preset: enabled)
+    <br>Active: active (running) since Fri 2022-06-03 12:45:08 EDT; 10min ago
+    <br>Main PID: 2115 (moonbeam)
+    <br>Tasks: 43 (limit: 19141)
+    <br>Memory: 9.5G
+    <br>CGroup:/system.slice/moonbeam.service
+    <br>--2115 /var/lib/alphanet-data/moonbeam --port 30334 --rpc-port 9944
+  </span>
+  <br>
+  <span data-ty>Jun 03 12:55:07 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:07 [🌗] >
+    <br>Jun 03 12:55:08 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:08 [Rela>
+    <br>Jun 03 12:55:12 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:12 [🌗] >
+    <br>Jun 03 12:55:13 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:13 [Rela>
+    <br>Jun 03 12:55:17 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:17 [🌗] >
+    <br>Jun 03 12:55:18 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:18 [Rela>
+    <br>Jun 03 12:55:19 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:19 [Rela>
+    <br>Jun 03 12:55:19 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:19 [Rela>
+    <br>Jun 03 12:55:19 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:19 [Rela>
+    <br>Jun 03 12:55:19 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:55:19 [Rela>
+  </span>
+</div>
+You can also run the following command to see logs of the tracing node spinning up:
+
+```bash
+journalctl -f -u moonbeam.service
+```
+
+Your terminal should display logs similar to the following:
+
+<div id="termynal" data-termynal>
+  <span data-ty>asm override. version=moonbase-400 (moonbase-0.tx2.au3) file=/var/lib/alphanet-data/wasm/moo nbase-runtime-400-substitute-tracing.wasm
+    <br>Jun 03 12:45:55 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:45:55 [🌗] Found w asm override. version-moonbase-155 (moonbase-0.tx2.au3) file=/var/lib/alphanet-data/wasm/moo
+    nbase-runtime-155-substitute-tracing. wasm
+    <br>Jun 03 12:45:56 vmi719182. contaboserver.net moonbase [2115]: 2022-06-03 12:45:56 [🌗] Found w asm override. version-moonbase-501 (moonbase-0.tx2.au3) file=/var/lib/alphanet-data/wasm/moo nbase-runtime-501-substitute-tracing.wasm
+    <br>Jun 03 12:45:57 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:45:57 [🌗] Found w asm override. version-moonbase-1200 (moonbase-0.tx2.au3) file=/var/lib/alphanet-data/wasm/mo onbase-runtime-1200-substitute-tracing.wasm
+    <br>Jun 03 12:45:58 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:45:58 [🌗] Found w asm override. version-moonbase-47 (moonbase-1.tx2.au3) file=/var/lib/alphanet-data/wasm/moon base-runtime-47-substitute-tracing.wasm
+    <br>Jun 03 12:46:00 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:46:00 [🌗] Found w asm override. version=moonbase-1501 (moonbase-0.tx2.au3) file=/var/lib/alphanet-data/wasm/mo onbase-runtime-1501-substitute-tracing.wasm
+    <br>Jun 03 12:46:01 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:46:01 [🌗] Found w asm override. version-moonbase-900 (moonbase-0.tx2.au3) file=/var/lib/alphanet-data/wasm/moo nbase-runtime-900-substitute-tracing.wasm
+    <br>Jun 03 12:46:04 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:46:04 [🌗] Found w asm override. version-moonbase-1504 (moonbase-0.tx2.au3) file=/var/lib/alphanet-data/wasm/mo onbase-runtime-1504-substitute-tracing.wasm
+    <br>Jun 03 12:46:05 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:46:05 [🌗] Found w asm override. version-moonbase-1101 (moonbase-0.tx2.au3) file=/var/lib/alphanet-data/wasm/mo onbase-runtime-1101-substitute-tracing.wasm
+    <br>Jun 03 12:46:07 vmi719182.contaboserver.net moonbase [2115]: 2022-06-03 12:46:07 [🌗] Found w asm override. version-moonbase-800 (moonbase-0.tx2.au3) file=/var/lib/alphanet-data/wasm/moo nbase-runtime-800-substitute-tracing.wasm
+  </span>
+</div>
+## Using a Tracing Node {: #using-a-tracing-node }
+
+To explore the different non-standard RPC methods available on Moonbeam, and how to use these methods with a tracing node, check out the [Debug & Trace](/moonbeam-mkdocs/builders/ethereum/json-rpc/debug-trace/) guide.
